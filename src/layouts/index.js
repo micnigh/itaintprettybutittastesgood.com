@@ -10,6 +10,7 @@ import {Details} from "../components/details"
 import {GatsbyLogo} from "../components/gatsby-logo"
 import {Masonry} from "../components/masonry"
 import {Menu} from "../components/menu"
+import {Metadata} from '../components/metadata'
 
 const LayoutIndex = ({children}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -121,7 +122,14 @@ const LayoutIndex = ({children}) => {
           }}
         >
           <MDXProvider
-            components={{Button, Details, GatsbyLogo, Masonry, Link}}
+            components={{
+              Button,
+              Details,
+              GatsbyLogo,
+              Masonry,
+              Link,
+              Metadata,
+            }}
           >
             {children}
           </MDXProvider>
