@@ -7,7 +7,8 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "dev": "gatsby develop",
     "serve": "gatsby serve",
-    "token": "gatsby-source-google-docs-token"
+    "token": "gatsby-source-google-docs-token",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -37,9 +38,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.3.1",
-    "theme-ui": "^0.15.4"
+    "theme-ui": "^0.15.4",
+    "typescript": "^4.9.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.20.7",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
@@ -52,6 +55,7 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-jest": "^26.1.5",
     "eslint-plugin-react": "^7.29.4",
+    "eslint-webpack-plugin": "^3.2.0",
     "gatsby-source-google-docs": "^2.3.0",
     "gh-pages": "^3.2.3",
     "jest": "^28.0.3",

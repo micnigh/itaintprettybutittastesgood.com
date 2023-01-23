@@ -22,7 +22,7 @@ export const Menu = ({open, onClose}) => {
         onClick={onClose}
         onKeyDown={onClose}
         role="button"
-        tabIndex="0"
+        tabIndex={0}
         sx={{
           position: "fixed",
           top: 0,

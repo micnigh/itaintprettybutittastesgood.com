@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import {Button, Themed, jsx, useColorMode} from "theme-ui"
+import React from 'react';
+import {Button, useColorMode} from "theme-ui"
 import {MDXProvider} from "@mdx-js/react"
 import {useLocation} from "@reach/router"
 import {Link} from "gatsby"
@@ -11,6 +11,9 @@ import {GatsbyLogo} from "../components/gatsby-logo"
 import {Masonry} from "../components/masonry"
 import {Menu} from "../components/menu"
 import {Metadata} from '../components/metadata'
+
+/** @jsx jsx */
+import {jsx} from "theme-ui"
 
 const LayoutIndex = ({children}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

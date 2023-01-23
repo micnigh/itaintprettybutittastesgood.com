@@ -21,5 +21,6 @@ module.exports = {
     "no-control-regex": 0,
     "react/prop-types": "off",
     "react/display-name": "off",
+    "react/no-unknown-property": "warn",
   },
 }

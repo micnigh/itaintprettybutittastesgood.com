@@ -22,6 +22,10 @@ sudo corepack prepare yarn@stable --activate
 # initial setup
 yarn install
 
+# refresh token data (about once a month)
+yarn token
+
+# start server
 yarn dev
 ```
 
