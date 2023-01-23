@@ -15,13 +15,6 @@ const PageTemplate = ({
 }) => {
   return (
     <React.Fragment>
-      <H1>{name}</H1>
-      {/*
-        To add a cover:
-        Add an image in your Google Doc first page header
-        https://support.google.com/docs/answer/86629
-      */}
-      {cover && <GatsbyImage image={getImage(cover.image)} />}
       <MDXRenderer>{childMdx.body}</MDXRenderer>
     </React.Fragment>
   )

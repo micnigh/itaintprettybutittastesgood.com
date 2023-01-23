@@ -14,6 +14,7 @@ import {Metadata} from '../components/metadata'
 
 /** @jsx jsx */
 import {jsx} from "theme-ui"
+import { Themed } from '@theme-ui/mdx';
 
 const LayoutIndex = ({children}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -41,8 +42,9 @@ const LayoutIndex = ({children}) => {
           justifyContent: "space-between",
           alignItems: "center",
           display: "flex",
-          color: "white",
-          mb: 3,
+          color: "black",
+          mt: 1,
+          mb: 1,
         }}
       >
         <div
@@ -62,13 +64,14 @@ const LayoutIndex = ({children}) => {
         <Link
           to="/"
           sx={{
-            color: "inherit",
             textDecoration: "none",
             fontSize: [1, 3, 4],
             textAlign: "center",
           }}
         >
-          {"itaintprettybutittastesgood.com"}
+          <Themed.h1 sx={{
+            color: 'primary',
+          }}>itaintprettybutittastesgood</Themed.h1>
         </Link>
         <div //eslint-disable-line
           sx={{
@@ -88,10 +91,9 @@ const LayoutIndex = ({children}) => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          p: [2, 3],
+          px: 2,
           bg: "background",
           color: "text",
-          borderRadius: 2,
         }}
       >
         <Menu open={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
@@ -137,17 +139,12 @@ const LayoutIndex = ({children}) => {
             {children}
           </MDXProvider>
         </div>
-        {location.pathname !== "/" && (
-          <Link to="/" sx={{mt: 3, alignSelf: "center"}}>
-            <Button>{"Home"}</Button>
-          </Link>
-        )}
       </main>
       <footer
         sx={{
           mt: 2,
           mx: "auto",
-          color: "white",
+          color: "black",
           textAlign: "center",
         }}
       >

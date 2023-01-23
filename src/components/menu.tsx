@@ -33,6 +33,7 @@ export const Menu = ({open, onClose}) => {
           opacity: "0.5",
           display: open ? "block" : "none",
           zIndex: 1,
+          color: 'primary',
         }}
       >
         {" "}
@@ -70,7 +71,7 @@ export const Menu = ({open, onClose}) => {
                 px: 3,
                 "&:hover": {
                   bg: "secondary",
-                  color: "white",
+                  color: "black",
                 },
               },
             },
