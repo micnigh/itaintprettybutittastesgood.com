@@ -20,10 +20,10 @@ const RecipeTemplate = ({
       {cover && <GatsbyImage image={getImage(cover.image)} alt={name} sx={{
         // float: 'left',
         float: 'right',
-        // height: '500px',
+        height: '500px',
       }}  />}
       <div sx={{
-        fontSize: 1,
+        fontSize: 2,
         'h1, h2, h3, h4, h5': {
           mt: 2,
         },

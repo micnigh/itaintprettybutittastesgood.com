@@ -8,17 +8,18 @@ import { Themed } from "@theme-ui/mdx"
 export const Metadata = ({ prep, cook, servings, level }) => {
   return (
     <div sx={{
-      flexDirection: 'column',
+      flexDirection: 'row',
+      display: 'flex',
       "& > *": {
         flexGrow: 1,
         "& > *": {
           mr: 1,
-          fontSize: 1,
+          fontSize: 0,
           whiteSpace: 'nowrap'
         }
       }
     }}>
-      <Themed.h3>Meta</Themed.h3>
+      {/* <Themed.h3></Themed.h3> */}
       <div>
         <GiCook /><span>Prep: {prep}</span>
       </div>

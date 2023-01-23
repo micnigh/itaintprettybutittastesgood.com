@@ -2,7 +2,7 @@ const theme = {
   space: [0, 8, 16, 32, 64],
   radii: [0, 10, 20],
   breakpoints: ["500px", "800px", "1080px"],
-  fontSizes: [20, 22, 24, 26, 28, 30, 32],
+  fontSizes: [12, 14, 16, 24, 26, 28, 30, 32],
   colors: {
     text: "#333333",
     background: "#FFFFFF",
@@ -49,15 +49,15 @@ const theme = {
     },
     h2: {
       variant: "textStyles.heading",
-      fontSize: [3, 3, 4],
+      fontSize: [6],
     },
     h3: {
       variant: "textStyles.heading",
-      fontSize: 3,
+      fontSize: 5,
     },
     h4: {
       variant: "textStyles.heading",
-      fontSize: 2,
+      fontSize: 4,
     },
     h5: {
       variant: "textStyles.heading",
