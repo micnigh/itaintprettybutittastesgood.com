@@ -16,7 +16,7 @@ export const PageHome = ({ data }) => {
       <div sx={{
         display: 'grid',
         gap: '10px',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))',
         gridTemplateRows: 'masonry',
       }}>
         {recipes.map((r, rI) => (
