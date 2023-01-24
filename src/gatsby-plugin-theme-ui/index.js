@@ -13,7 +13,7 @@ const theme = {
     modes: {
       dark: {
         text: "#333",
-        background: "#eadbcb",
+        background: "#ffffff",
       },
     },
   },

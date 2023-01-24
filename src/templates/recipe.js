@@ -17,8 +17,8 @@ export const RecipeTemplate = ({ data }) => {
       {cover && <GatsbyImage image={getImage(cover.image)} alt={name} sx={{
         // float: 'left',
         float: 'right',
-        height: '500px',
-        width: '500px',
+        maxHeight: '500px',
+        maxWidth: '500px',
       }}  />}
       <div sx={{
         fontSize: 2,

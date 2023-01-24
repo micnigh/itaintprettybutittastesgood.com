@@ -4,14 +4,13 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
 /** @jsx jsx */
 import {jsx} from "theme-ui"
-import { Masonry } from "../components/masonry"
 
 export const PageHome = ({ data }) => {
-  console.log(data);
-  const { page: homePage, recipes: { nodes: recipes } } = data;
+  console.log(data, data.page, data.recipes);
   return (
     <main>
-      <MDXRenderer>{homePage.childMdx.body}</MDXRenderer>
+      {data.page && <MDXRenderer>{data.page.childMdx.body}</MDXRenderer>}
+      {data.recipes && <>
       <h3>Recipes</h3>
       <div sx={{
         display: 'grid',
@@ -19,7 +18,7 @@ export const PageHome = ({ data }) => {
         gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))',
         gridTemplateRows: 'masonry',
       }}>
-        {recipes.map((r, rI) => (
+        {data.recipes.nodes.map((r, rI) => (
           <Link to={r.path} key={rI}>
             <GatsbyImage image={getImage(r.cover.image)} title={r.name} alt={r.name} sx={{
               
@@ -27,6 +26,7 @@ export const PageHome = ({ data }) => {
           </Link>
         ))}
       </div>
+      </>}
     </main>
   )
 }
