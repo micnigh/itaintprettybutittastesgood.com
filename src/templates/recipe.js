@@ -18,6 +18,7 @@ export const RecipeTemplate = ({ data }) => {
         // float: 'left',
         float: 'right',
         height: '500px',
+        width: '500px',
       }}  />}
       <div sx={{
         fontSize: 2,
