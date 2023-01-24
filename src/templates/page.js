@@ -1,26 +1,19 @@
-import {graphql} from "gatsby"
-import {GatsbyImage, getImage} from "gatsby-plugin-image"
+import {graphql, useStaticQuery} from "gatsby"
 import {MDXRenderer} from "gatsby-plugin-mdx"
 import React from "react"
 import {Themed} from "@theme-ui/mdx"
 /** @jsx jsx */
 import {jsx} from "theme-ui"
 
-const H1 = Themed.h1
-
-const PageTemplate = ({
-  data: {
-    page: {name, cover, childMdx},
-  },
+export const PageTemplate = ({
+  data,
 }) => {
   return (
     <React.Fragment>
-      <MDXRenderer>{childMdx.body}</MDXRenderer>
+      <MDXRenderer>{data.page.childMdx.body}</MDXRenderer>
     </React.Fragment>
   )
 }
-
-export default PageTemplate
 
 export const pageQuery = graphql`
   query Page($path: String!) {
@@ -39,3 +32,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default PageTemplate;

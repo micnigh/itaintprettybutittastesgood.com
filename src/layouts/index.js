@@ -45,6 +45,7 @@ const LayoutIndex = ({children}) => {
           color: "black",
           mt: 1,
           mb: 1,
+          position: 'relative',
         }}
       >
         <div
@@ -73,6 +74,21 @@ const LayoutIndex = ({children}) => {
             color: 'primary',
           }}>itaintprettybutittastesgood</Themed.h1>
         </Link>
+        {process.env.NODE_ENV === 'development' &&
+        <a sx={{
+          fontSize: '16px',
+          textDecoration: 'none',
+          ml: 2,
+          position: 'absolute',
+          right: '240px',
+          bottom: '16px',
+          fontWeight: 'bold',
+        }} target='_blank' rel='noreferrer' href={`http://localhost:8000/__refresh`} onClick={e => {
+          e.preventDefault();
+          fetch('http://localhost:8000/__refresh', {
+            method: 'POST'
+          })
+        }}>Refresh</a>}
         <div //eslint-disable-line
           sx={{
             display: "flex",
@@ -148,7 +164,6 @@ const LayoutIndex = ({children}) => {
           textAlign: "center",
         }}
       >
-        
       </footer>
     </div>
   )
