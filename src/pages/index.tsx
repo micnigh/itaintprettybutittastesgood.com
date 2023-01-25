@@ -11,18 +11,28 @@ export const PageHome = ({ data }) => {
     <main>
       {data.page && <MDXRenderer>{data.page.childMdx.body}</MDXRenderer>}
       {data.recipes && <>
-      <h3>Recipes</h3>
+      {/* <h3>Recipes</h3> */}
       <div sx={{
         display: 'grid',
-        gap: '10px',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(310px, 1fr))',
-        gridTemplateRows: 'masonry',
+        gap: 2,
+        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
       }}>
         {data.recipes.nodes.map((r, rI) => (
-          <Link to={r.path} key={rI}>
+          <Link to={r.path} key={rI} sx={{
+            textDecoration: 'none',
+          }}>
             <GatsbyImage image={getImage(r.cover.image)} title={r.name} alt={r.name} sx={{
-              
+              height: '200px',
             }}/>
+            <div sx={{
+              border: '1px solid black',
+              py: 1,
+              color: 'black',
+              fontWeight: 'normal',
+              textAlign: 'center',
+            }}>
+              {r.name}
+            </div>
           </Link>
         ))}
       </div>

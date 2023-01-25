@@ -42,6 +42,7 @@ const theme = {
     a: {
       textDecoration: "none",
       color: "secondary",
+      fontWeight: 'bold',
     },
     h1: {
       variant: "textStyles.heading",

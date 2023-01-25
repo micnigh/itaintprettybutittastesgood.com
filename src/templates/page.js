@@ -10,7 +10,8 @@ export const PageTemplate = ({
 }) => {
   return (
     <React.Fragment>
-      <MDXRenderer>{data.page.childMdx.body}</MDXRenderer>
+      {process.env.NODE_ENV === 'development' && <Themed.a sx={{ fontSize: '16px', textDecoration: 'none', ml: 2, position: 'absolute', right: '0px', color: '#ccc !important' }} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${data.page.id}/edit`}>Edit</Themed.a>}
+      <MDXRenderer sx={{ position: 'relative' }}>{data.page.childMdx.body}</MDXRenderer>
     </React.Fragment>
   )
 }
@@ -18,6 +19,7 @@ export const PageTemplate = ({
 export const pageQuery = graphql`
   query Page($path: String!) {
     page: googleDocs(slug: {eq: $path}) {
+      id
       name
       cover {
         image {

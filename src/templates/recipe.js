@@ -10,10 +10,11 @@ export const RecipeTemplate = ({ data }) => {
   const { page: {id, name, cover, childMdx}} = data;
   return (
     <React.Fragment>
+      {process.env.NODE_ENV === 'development' && <Themed.a sx={{ fontSize: '16px', textDecoration: 'none', ml: 2, position: 'absolute', right: '0px', top: 3, color: '#ccc !important'}} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${id}/edit`}>Edit</Themed.a>}
       <Themed.h2 sx={{
         textAlign: 'left',
         my: 3,
-      }}>{name}{process.env.NODE_ENV === 'development' && <a sx={{ fontSize: '16px', textDecoration: 'none', ml: 2 }} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${id}/edit`}>Edit</a>}</Themed.h2>
+      }}>{name}</Themed.h2>
       {cover && <GatsbyImage image={getImage(cover.image)} alt={name} sx={{
         // float: 'left',
         float: 'right',

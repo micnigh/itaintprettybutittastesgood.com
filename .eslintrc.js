@@ -5,12 +5,13 @@ module.exports = {
     node: true,
     jest: true,
   },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: "module",
     ecmaVersion: 2019,
   },
-  plugins: ["jest"],
-  extends: ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  plugins: ["@typescript-eslint", "jest"],
+  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:react/recommended", "prettier"],
   settings: {
     react: {
       version: "detect",
@@ -22,5 +23,6 @@ module.exports = {
     "react/prop-types": "off",
     "react/display-name": "off",
     "react/no-unknown-property": "warn",
+    "no-undef": "warn",
   },
 }
