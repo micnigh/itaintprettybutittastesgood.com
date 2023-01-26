@@ -1,8 +1,6 @@
 import {graphql, useStaticQuery} from "gatsby"
 import {MDXRenderer} from "gatsby-plugin-mdx"
 import React from "react"
-/** @jsx jsx */
-import {jsx} from "theme-ui"
 
 export const Menu = ({open, onClose}) => {
   const data = useStaticQuery(graphql`

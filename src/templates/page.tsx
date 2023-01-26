@@ -1,9 +1,7 @@
-import {graphql, useStaticQuery} from "gatsby"
+import {graphql} from "gatsby"
 import {MDXRenderer} from "gatsby-plugin-mdx"
 import React from "react"
 import {Themed} from "@theme-ui/mdx"
-/** @jsx jsx */
-import {jsx} from "theme-ui"
 
 export const PageTemplate = ({
   data,

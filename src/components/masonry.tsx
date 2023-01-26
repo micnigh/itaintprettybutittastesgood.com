@@ -1,6 +1,4 @@
 import React from "react"
-/** @jsx jsx */
-import {jsx} from "theme-ui"
 
 export const Masonry = ({children}) => {
   return (

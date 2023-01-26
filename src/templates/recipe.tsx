@@ -1,10 +1,8 @@
-import {graphql, useStaticQuery} from "gatsby"
+import {graphql} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import {MDXRenderer} from "gatsby-plugin-mdx"
 import React from "react"
 import {Themed} from "@theme-ui/mdx"
-/** @jsx jsx */
-import {jsx} from "theme-ui"
 
 export const RecipeTemplate = ({ data }) => {
   const { page: {id, name, cover, childMdx}} = data;

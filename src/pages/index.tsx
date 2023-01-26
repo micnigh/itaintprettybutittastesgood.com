@@ -2,22 +2,35 @@ import {graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
-/** @jsx jsx */
-import {jsx} from "theme-ui"
+import { useState } from "react"
+import { useEffect } from "react"
+
+import { useStore } from '../layouts'
 
 export const PageHome = ({ data }) => {
+  const search = useStore(state => state.search)
+  const [recipes, setRecipes] = useState([])
+  
+  useEffect(() => {
+    if (!data.recipes) return;
+    if (!search) return setRecipes(data.recipes.nodes)
+    setRecipes(data.recipes.nodes.filter(r => new RegExp(`${search}`, 'i').test(r.name) ))
+  }, [data.recipes, setRecipes, search])
+  
+  console.log({ search });
   console.log(data, data.page, data.recipes);
+  console.log({ recipes })
   return (
     <main>
       {data.page && <MDXRenderer>{data.page.childMdx.body}</MDXRenderer>}
-      {data.recipes && <>
+      {recipes && <>
       {/* <h3>Recipes</h3> */}
       <div sx={{
         display: 'grid',
         gap: 2,
         gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
       }}>
-        {data.recipes.nodes.map((r, rI) => (
+        {recipes.map((r, rI) => (
           <Link to={r.path} key={rI} sx={{
             textDecoration: 'none',
           }}>
@@ -51,19 +64,15 @@ query HomeQuery {
       body
     }
   }
-  recipes: allGoogleDocs(filter: { template: {eq: "recipe" }}) {
+  recipes: allGoogleDocs(filter: { template: {eq: "recipe.tsx" }}) {
 		nodes {
 			id
       name
-      slug
       path
-      childMdx {
-        body
-      }
       cover {
         image {
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED)
+            gatsbyImageData(placeholder: BLURRED, width: 600)
           }
         }
       }

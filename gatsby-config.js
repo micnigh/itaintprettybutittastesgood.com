@@ -4,21 +4,13 @@ const DEV = process.env.NODE_ENV === "development"
 
 module.exports = {
   pathPrefix: "/",
+  graphqlTypegen: true,
   plugins: [
     {
       resolve: "gatsby-source-google-docs",
       options: {
-        // https://drive.google.com/drive/u/0/folders/1rLwZdOpl3WxkNNuKPbO1s2YR9Ew7jZRf
-        folder: "1rLwZdOpl3WxkNNuKPbO1s2YR9Ew7jZRf",
-        // --------
-        // Optional
-        // --------
-        debug: true,
+        folder: "1rLwZdOpl3WxkNNuKPbO1s2YR9Ew7jZRf", // https://drive.google.com/drive/u/0/folders/1rLwZdOpl3WxkNNuKPbO1s2YR9Ew7jZRf
         createPages: true,
-        // skipImages: DEV ? true : false,
-        imagesOptions: {
-          width: DEV ? 512 : 1024,
-        },
       },
     },
     {
