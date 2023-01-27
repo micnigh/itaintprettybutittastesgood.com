@@ -24,6 +24,8 @@ export const RecipeTemplate = ({ data }) => {
         float: 'right',
         maxHeight: '500px',
         maxWidth: '500px',
+        m: 2,
+        borderRadius: '5%',
       }}  />}
       <div sx={{
         fontSize: 2,
