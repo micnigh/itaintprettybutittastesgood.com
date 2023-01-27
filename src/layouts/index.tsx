@@ -71,7 +71,7 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
             }}>itaintprettybutittastesgood</Themed.h1>
           </Link>
         </div>
-        <div sx={{ flexGrow: 1, textAlign: 'left' }}>
+        <div sx={{ flexGrow: 1, textAlign: 'right' }}>
           {displaySearch &&
             <Input type='text' placeholder='filter'
               value={search}
@@ -93,11 +93,6 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
             ml: 3,
           }
         }} >
-          <Link to='/about' sx={{
-            color: 'secondary',
-            fontWeight: 'bold',
-            textDecoration: 'none',
-          }} >About</Link>
         </span>
         {process.env.NODE_ENV === 'development' &&
           <Themed.a sx={{
@@ -105,10 +100,10 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
             textDecoration: 'none',
             fontWeight: 'bold',
             position: 'absolute',
-            top: '0px',
+            top: '-30px',
             right: '0px',
             color: '#ccc'
-          }} target='_blank' rel='noreferrer' href={`http://localhost:8000/__refresh`} onClick={e => {
+          }} target='_blank' rel='noreferrer' href={`http://localhost:8000/__refresh`} title={'refresh data from google drive'} onClick={e => {
             e.preventDefault();
             fetch('http://localhost:8000/__refresh', {
               method: 'POST'
@@ -119,7 +114,6 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          px: 2,
           bg: "background",
           color: "text",
           position: 'relative',

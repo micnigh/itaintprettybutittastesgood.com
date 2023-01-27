@@ -3,6 +3,12 @@ import {MDXRenderer} from "gatsby-plugin-mdx"
 import React from "react"
 import {Themed} from "@theme-ui/mdx"
 
+export const Head = ({ location, params, data, pageContext }) =>
+  <>
+    <meta name='robots' content='noindex,nofollow' />
+    <title>itaintprettybutittastesgood - {data.page.name}</title>
+  </>
+
 export const PageTemplate = ({
   data,
 }) => {

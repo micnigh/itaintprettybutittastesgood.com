@@ -7,6 +7,11 @@ import { useEffect } from "react"
 
 import { useStore } from '../layouts'
 
+export const Head = ({ location, params, data, pageContext }) => <>
+  <meta name='robots' content='noindex,nofollow' />
+  <title>itaintprettybutittastesgood</title>
+</>
+
 export const PageHome = ({ data }) => {
   const search = useStore(state => state.search)
   const [recipes, setRecipes] = useState([])
