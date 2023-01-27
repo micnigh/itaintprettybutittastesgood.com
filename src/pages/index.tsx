@@ -36,8 +36,15 @@ export const PageHome = ({ data }) => {
         gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
       }}>
         {recipes.map((r, rI) => (
-          <Link to={r.path} key={rI} sx={{
+          <Link to={r.path} key={rI} activeClassName='active' sx={{
             textDecoration: 'none',
+            '&:hover,&:active': {
+              textDecoration: 'none !important',
+              '& > div': {
+                bg: 'primary',
+                color: 'white',
+              }
+            }
           }}>
             <GatsbyImage image={getImage(r.cover.image)} title={r.name} alt={r.name} sx={{
               height: '200px',
@@ -46,6 +53,7 @@ export const PageHome = ({ data }) => {
               border: '1px solid black',
               py: 1,
               color: 'black',
+              bg: '#f0f0f0',
               fontWeight: 'normal',
               textAlign: 'center',
             }}>
