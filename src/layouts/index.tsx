@@ -52,7 +52,7 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
           mb: 3,
           display: 'grid',
           position: 'relative',
-          gridTemplateColumns: '1fr min-content 1fr',
+          gridTemplateColumns: [null, null, 'min-content min-content 1fr', '1fr min-content 1fr'],
           alignItems: 'center'
         }}
       >
@@ -78,10 +78,11 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
               onChange={e => setSearch(e.target.value)}
               sx={{
                 display: 'inline-block',
-                width: 'calc(100% - 80px)',
+                width: [null, null, 'calc(100% - 60px)'],
                 py: 1,
                 px: 1,
-                ml: 1,
+                mt: [1, 1, 0],
+                ml: [null, null, 1],
               }}
             />}
         </div>
