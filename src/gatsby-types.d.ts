@@ -6818,7 +6818,7 @@ type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: 
 type HomeQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type HomeQueryQuery = { readonly page: { readonly id: string, readonly childMdx: { readonly body: string } | null } | null, readonly recipes: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly name: string | null, readonly path: string, readonly cover: { readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null }> } };
+type HomeQueryQuery = { readonly page: { readonly id: string, readonly childMdx: { readonly body: string } | null } | null, readonly recipes: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly name: string | null, readonly path: string, readonly date: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly prep: string | null, readonly cook: string | null, readonly servings: number | null, readonly level: string | null, readonly cover: { readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null }> } };
 
 type MenuQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -6830,7 +6830,7 @@ type PageQueryVariables = Exact<{
 }>;
 
 
-type PageQuery = { readonly page: { readonly name: string | null, readonly id: string, readonly cover: { readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly childMdx: { readonly body: string } | null } | null };
+type PageQuery = { readonly page: { readonly id: string, readonly name: string | null, readonly date: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly prep: string | null, readonly cook: string | null, readonly servings: number | null, readonly level: string | null, readonly cover: { readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null, readonly childMdx: { readonly body: string } | null } | null };
 
 
 }

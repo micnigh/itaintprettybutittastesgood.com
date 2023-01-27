@@ -82,6 +82,12 @@ query HomeQuery {
 			id
       name
       path
+      date
+      tags
+      prep
+      cook
+      servings
+      level
       cover {
         image {
           childImageSharp {
