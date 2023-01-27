@@ -19,14 +19,20 @@ export const RecipeTemplate = ({ data }) => {
         textAlign: 'left',
         my: 3,
       }}>{name}</Themed.h2>
-      {cover && <GatsbyImage image={getImage(cover.image)} alt={name} sx={{
-        // float: 'left',
-        float: 'right',
-        maxHeight: '500px',
-        maxWidth: '500px',
-        m: 2,
-        borderRadius: '5%',
-      }}  />}
+      <div sx={{
+        textAlign: 'center',
+        width: ['100%']
+      }}>
+        {cover && <GatsbyImage image={getImage(cover.image)} alt={name} sx={{
+          // float: 'left',
+          width: ['100%'],
+          float: [null, null, 'right'],
+          maxHeight: ['500px'],
+          maxWidth: ['100%', null, '500px'],
+          m: [null, null, 2],
+          borderRadius: '5%',
+        }}  />}
+      </div>
       <div sx={{
         fontSize: 2,
         'h1, h2, h3, h4, h5': {
