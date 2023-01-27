@@ -52,7 +52,7 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
           mb: 3,
           display: 'grid',
           position: 'relative',
-          gridTemplateColumns: [null, null, 'min-content min-content 1fr', '1fr min-content 1fr'],
+          gridTemplateColumns: [null, null, displaySearch ? 'min-content min-content 1fr' : null, '1fr min-content 1fr'],
           alignItems: 'center'
         }}
       >
