@@ -77,7 +77,7 @@ query HomeQuery {
       body
     }
   }
-  recipes: allGoogleDocs(filter: { template: {eq: "recipe.tsx" }}) {
+  recipes: allGoogleDocs(sort:{ order: DESC, fields: date }, filter: { template: {eq: "recipe.tsx" }}) {
 		nodes {
 			id
       name
