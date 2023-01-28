@@ -40,8 +40,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
               height: '200px',
             }}/>
             <div className="label" sx={{
-              border: '1px solid black',
-              py: 1,
+              py: 2,
               color: 'black',
               bg: '#f0f0f0',
               fontWeight: 'normal',
