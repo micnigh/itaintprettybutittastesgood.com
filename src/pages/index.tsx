@@ -1,55 +1,45 @@
-import {graphql, Link } from "gatsby"
+import React from "react"
+import {graphql, HeadProps, PageProps, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import React from "react"
 import { useState } from "react"
 import { useEffect } from "react"
 
 import { useStore } from '../layouts'
 
-export const Head = ({ location, params, data, pageContext }) => <>
-  <meta name='robots' content='noindex,nofollow' />
-  <title>itaintprettybutittastesgood</title>
-</>
-
-export const PageHome = ({ data }) => {
+export const PageHome = ({ data }: PageProps<PageData>) => {
   const search = useStore(state => state.search)
-  const [recipes, setRecipes] = useState([])
+  const [recipes, setRecipes] = useState<Queries.GoogleDocs[]>([])
   
   useEffect(() => {
     if (!data.recipes) return;
     if (!search) return setRecipes(data.recipes.nodes)
     setRecipes(data.recipes.nodes.filter(r => new RegExp(`${search}`, 'i').test(r.name) ))
   }, [data.recipes, setRecipes, search])
-  
-  console.log({ search });
-  console.log(data, data.page, data.recipes);
-  console.log({ recipes })
+
   return (
     <main>
       {data.page && <MDXRenderer>{data.page.childMdx.body}</MDXRenderer>}
       {recipes && <>
-      {/* <h3>Recipes</h3> */}
       <div sx={{
         display: 'grid',
         gap: 2,
         gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
       }}>
         {recipes.map((r, rI) => (
-          <Link to={r.path} key={rI} activeClassName='active' sx={{
-            textDecoration: 'none',
+          <Link to={r.path} key={rI} sx={{
+            variant: 'styles.a',
             '&:hover,&:active': {
-              textDecoration: 'none !important',
-              '& > div': {
+              '.label': {
                 bg: 'primary',
                 color: 'white',
               }
             }
           }}>
-            <GatsbyImage image={getImage(r.cover.image)} title={r.name} alt={r.name} sx={{
+            <GatsbyImage image={getImage(r.cover.image.childImageSharp.gatsbyImageData)} title={r.name} alt={r.name} sx={{
               height: '200px',
             }}/>
-            <div sx={{
+            <div className="label" sx={{
               border: '1px solid black',
               py: 1,
               color: 'black',
@@ -68,6 +58,18 @@ export const PageHome = ({ data }) => {
 }
 
 export default PageHome
+
+export const Head = (props: HeadProps<PageProps>) => {
+  return <>
+    <meta name='robots' content='noindex,nofollow' />
+    <title>itaintprettybutittastesgood</title>
+  </>
+}
+
+type PageData = {
+  page: Queries.GoogleDocs,
+  recipes: { nodes: Queries.GoogleDocs[] },
+}
 
 export const pageQuery = graphql`
 query HomeQuery {

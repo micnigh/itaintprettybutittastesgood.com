@@ -6820,11 +6820,6 @@ type HomeQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type HomeQueryQuery = { readonly page: { readonly id: string, readonly childMdx: { readonly body: string } | null } | null, readonly recipes: { readonly nodes: ReadonlyArray<{ readonly id: string, readonly name: string | null, readonly path: string, readonly date: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly prep: string | null, readonly cook: string | null, readonly servings: number | null, readonly level: string | null, readonly cover: { readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null }> } };
 
-type MenuQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type MenuQueryQuery = { readonly menu: { readonly childMdx: { readonly body: string } | null } | null };
-
 type PageQueryVariables = Exact<{
   path: Scalars['String'];
 }>;

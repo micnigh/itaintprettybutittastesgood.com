@@ -1,20 +1,12 @@
 import React from 'react';
-import { Button, useColorMode } from "theme-ui"
 import { MDXProvider } from "@mdx-js/react"
 import { useLocation } from "@reach/router"
-import { useEffect, useState } from "react"
-import { RiMenuLine, RiMoonLine, RiSunLine } from "react-icons/ri"
 
-import { Details } from "../components/details"
-import { GatsbyLogo } from "../components/gatsby-logo"
-import { Masonry } from "../components/masonry"
-import { Menu } from "../components/menu"
-import { Metadata } from '../components/metadata'
-import { Link } from '../components/ThemedLink'
 import { create } from 'zustand'
 
 import { Themed } from '@theme-ui/mdx';
 import { Input } from 'theme-ui';
+import { Link } from 'gatsby';
 
 interface StoreState {
   search: string;
@@ -27,7 +19,6 @@ export const useStore = create<StoreState>(set => ({
 }))
 
 const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [colorMode, setColorMode] = useColorMode()
   const location = useLocation()
 
   const displaySearch = location.pathname === '/'
@@ -38,7 +29,6 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        minHeight: "100vh",
         width: "100%",
         maxWidth: "1024px",
         mx: "auto",
@@ -61,7 +51,7 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
           <Link
             to="/"
             sx={{
-              textDecoration: "none",
+              variant: 'styles.a',
               fontSize: [1, 3, 4],
               textAlign: "center",
             }}
@@ -120,58 +110,12 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
           position: 'relative',
         }}
       >
-        <div
-          sx={{
-            "& > p": {
-              mb: 0,
-            },
-            "& > * + *:not(h1):not(h2):not(h3)": {
-              mt: 2,
-            },
-            "& > * + h1, & > * + h2, & > * + h3": {
-              mt: 3,
-            },
-            "& > table": {
-              width: "100%",
-              border: "1px solid",
-              borderColor: "grey",
-              "& td, & th": {
-                p: 1,
-                border: "1px solid",
-                borderColor: "grey",
-              },
-            },
-            "& a": {
-              color: "secondary",
-              "&:hover": {
-                textDecoration: "underline",
-              },
-            },
-          }}
-        >
-          <MDXProvider
-            components={{
-              Button,
-              Details,
-              GatsbyLogo,
-              Masonry,
-              Link,
-              Metadata,
-            }}
-          >
+        <div>
+          <MDXProvider>
             {children}
           </MDXProvider>
         </div>
       </main>
-      <footer
-        sx={{
-          mt: 2,
-          mx: "auto",
-          color: "black",
-          textAlign: "center",
-        }}
-      >
-      </footer>
     </div>
   )
 }

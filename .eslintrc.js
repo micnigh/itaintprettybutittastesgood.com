@@ -18,11 +18,7 @@ module.exports = {
     },
   },
   rules: {
-    // "no-unused-vars": "warn",
-    // "no-control-regex": 0,
     "react/prop-types": "off",
-    // "react/display-name": "off",
     "react/no-unknown-property": "off",
-    // "no-undef": "warn",
   },
 }

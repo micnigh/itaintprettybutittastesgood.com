@@ -8,8 +8,7 @@
     "dev": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop",
     "auto_refresh": "watch -n5 'curl -X POST http://localhost:8000/__refresh'",
     "serve": "gatsby serve",
-    "token": "gatsby-source-google-docs-token",
-    "tsc": "tsc"
+    "token": "gatsby-source-google-docs-token"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",

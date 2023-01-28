@@ -1,16 +1,10 @@
-import {graphql} from "gatsby"
+import {graphql, HeadProps, PageProps} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import {MDXRenderer} from "gatsby-plugin-mdx"
 import React from "react"
 import {Themed} from "@theme-ui/mdx"
 
-export const Head = ({ location, params, data, pageContext }) =>
-  <>
-    <meta name='robots' content='noindex,nofollow' />
-    <title>itaintprettybutittastesgood - {data.page.name}</title>
-  </>
-
-export const RecipeTemplate = ({ data }) => {
+export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
   const { page: {id, name, cover, childMdx, date, tags, prep, cook, servings, level }} = data;
   return (
     <React.Fragment>
@@ -25,7 +19,7 @@ export const RecipeTemplate = ({ data }) => {
         textAlign: 'center',
         width: ['100%']
       }}>
-        {cover && <GatsbyImage image={getImage(cover.image)} alt={name} sx={{
+        {cover && <GatsbyImage image={getImage(cover.image.childImageSharp.gatsbyImageData)} alt={name} sx={{
           // float: 'left',
           width: ['100%'],
           float: [null, null, 'right'],
@@ -51,6 +45,17 @@ export const RecipeTemplate = ({ data }) => {
 }
 
 export default RecipeTemplate
+
+export const Head = (props: HeadProps<PageData>) => {
+  return <>
+    <meta name='robots' content='noindex,nofollow' />
+    <title>itaintprettybutittastesgood - {props.data.page.name}</title>
+  </>
+}
+
+type PageData = {
+  page: Queries.GoogleDocs,
+};
 
 export const pageQuery = graphql`
   query Page($path: String!) {

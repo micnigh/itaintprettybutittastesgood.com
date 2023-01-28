@@ -1,8 +1,9 @@
-require("dotenv").config()
+import DotEnv from 'dotenv'
+import { GatsbyConfig } from 'gatsby'
 
-const DEV = process.env.NODE_ENV === "development"
+DotEnv.config()
 
-module.exports = {
+const config: GatsbyConfig = {
   pathPrefix: "/",
   graphqlTypegen: true,
   plugins: [
@@ -29,12 +30,16 @@ module.exports = {
         usePreload: true,
       },
     },
-    // "gatsby-plugin-tailwindcss",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-react-svg",
     "gatsby-plugin-eslint",
     "gatsby-plugin-layout",
-    "gatsby-plugin-theme-ui",
+    {
+      resolve: "gatsby-plugin-theme-ui",
+      options: {
+        preset: require('./src/theme-ui/index.ts')
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
@@ -52,3 +57,5 @@ module.exports = {
     },
   ],
 }
+
+export default config;

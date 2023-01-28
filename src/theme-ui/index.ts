@@ -1,4 +1,6 @@
-const theme = {
+import { Theme } from "theme-ui"
+
+const theme: Theme = {
   space: [0, 8, 16, 32, 64],
   radii: [0, 10, 20],
   breakpoints: ["500px", "800px", "1080px"],
@@ -8,25 +10,13 @@ const theme = {
     background: "#FFFFFF",
     primary: "#6F2B9F",
     secondary: "#4d90fe",
-    white: "#FFFFFF",
-    grey: "#F3F3F3",
     modes: {
       dark: {
-        text: "#333",
-        background: "#ffffff",
+        
       },
     },
   },
-  buttons: {
-    primary: {
-      py: 2,
-      px: 4,
-      cursor: "pointer",
-    },
-  },
   textStyles: {
-    fontSize: 3,
-    color: 'green',
     heading: {
       margin: 0,
       mb: 1,
@@ -35,38 +25,37 @@ const theme = {
   },
   styles: {
     root: {
-      padding: [2, 3],
+      padding: 3,
       fontFamily: "Quicksand",
-      backgroundColor: 'white',
     },
     a: {
-      textDecoration: "none",
       color: "secondary",
+      textDecoration: "none",
       fontWeight: 'bold',
     },
     h1: {
       variant: "textStyles.heading",
-      fontSize: [4, 5, 6],
+      fontSize: 6,
     },
     h2: {
       variant: "textStyles.heading",
-      fontSize: [6],
+      fontSize: 5,
     },
     h3: {
       variant: "textStyles.heading",
-      fontSize: 5,
+      fontSize: 4,
     },
     h4: {
       variant: "textStyles.heading",
-      fontSize: 4,
+      fontSize: 3,
     },
     h5: {
       variant: "textStyles.heading",
-      fontSize: 1,
+      fontSize: 2,
     },
     h6: {
       variant: "textStyles.heading",
-      fontSize: 0,
+      fontSize: 1,
     },
   },
 }
