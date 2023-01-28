@@ -7,7 +7,7 @@ const theme: Theme = {
   fontSizes: [12, 14, 16, 24, 26, 28, 30, 32],
   colors: {
     text: "#333333",
-    background: "#FFFFFF",
+    background: "#F9DFC9",
     primary: "#6F2B9F",
     secondary: "#4d90fe",
     modes: {
