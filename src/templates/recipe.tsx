@@ -7,17 +7,52 @@ import { GiCook, GiCampCookingPot, GiLevelEndFlag } from "react-icons/gi"
 import { BiCookie } from "react-icons/bi"
 
 export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
-  const { page: {id, name, cover, childMdx, date, cook, level, prep, servings }} = data;
+  const { page: {id, name, cover, childMdx, date, cook, level, prep, servings, tags }} = data;
   return (
     <>
       {process.env.NODE_ENV === 'development' && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', top: 3, color: '#ccc'}} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${id}/edit`}>Edit</a>}
-      <h2 sx={{
-        variant: 'styles.h2',
-        textAlign: 'left',
+      <div sx={{
+        display: 'flex',
         my: 3,
-        marginBottom: date ? 0 : undefined,
-      }}>{name}</h2>
-      {date && <div sx={{ mt: '0px', mb: 3 }}>{new Date(date).toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}</div>}
+        alignItems: ['left', null, 'center'],
+        flexDirection: ['column', null, 'row']
+      }}>
+        <span sx={{}}>
+          <h2 sx={{
+            variant: 'styles.h2',
+            textAlign: 'left',
+            whiteSpace: 'nowrap',
+            marginBottom: date ? 0 : undefined,
+          }}>{name}</h2>
+          {date && <div sx={{ mt: '0px' }}>{new Date(date).toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}</div>}
+        </span>
+        {tags &&
+        <div sx={{
+          display: 'block',
+          flexGrow: 1,
+          whiteSpace: 'normal',
+          ml: 2,
+          mt: [3, null, 0],
+          fontSize: [1, 2],
+          '.tag': {
+            bg: 'secondary',
+            color: 'white',
+            borderRadius: '10px',
+            py: '2px',
+            px: '8px',
+            mr: [1, 2],
+            mb: [1, 1, 0],
+            whiteSpace: 'nowrap',
+            display: 'inline-block',
+          }
+        }}>
+          {tags && tags.map(t => <span key={t} className='tag' sx={{
+
+          }}>
+            {t}
+          </span>)}
+        </div>}
+      </div>
       <div sx={{
         textAlign: 'center',
         width: ['100%']
