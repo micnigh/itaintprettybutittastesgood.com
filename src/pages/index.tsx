@@ -1,5 +1,5 @@
 import React from "react"
-import {graphql, HeadProps, PageProps, Link } from "gatsby"
+import {graphql, PageProps, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { useState } from "react"
@@ -10,7 +10,7 @@ import { useStore } from '../layouts'
 export const PageHome = ({ data }: PageProps<PageData>) => {
   const search = useStore(state => state.search)
   const [recipes, setRecipes] = useState<Queries.GoogleDocs[]>([])
-  
+
   useEffect(() => {
     if (!data.recipes) return;
     if (!search) return setRecipes(data.recipes.nodes)
@@ -59,7 +59,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
 
 export default PageHome
 
-export const Head = (props: HeadProps<PageProps>) => {
+export const Head = () => {
   return <>
     <meta name='robots' content='noindex,nofollow' />
     <title>itaintprettybutittastesgood</title>

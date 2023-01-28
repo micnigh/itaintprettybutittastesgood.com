@@ -12,20 +12,19 @@ const theme: Theme = {
     secondary: "#4d90fe",
     modes: {
       dark: {
-        
+
       },
     },
   },
   textStyles: {
     heading: {
-      margin: 0,
+      m: 0,
       mb: 1,
       color: 'black',
     },
   },
   styles: {
     root: {
-      padding: 3,
       fontFamily: "Quicksand",
     },
     a: {

@@ -1,16 +1,15 @@
+import React from "react"
 import {graphql, HeadProps, PageProps} from "gatsby"
 import {MDXRenderer} from "gatsby-plugin-mdx"
-import React from "react"
-import {Themed} from "@theme-ui/mdx"
 
 export const PageTemplate = ({
   data,
 }: PageProps<PageData>) => {
   return (
-    <React.Fragment>
-      {process.env.NODE_ENV === 'development' && <Themed.a sx={{ fontSize: '16px', textDecoration: 'none', ml: 2, position: 'absolute', right: '0px', color: '#ccc !important' }} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${data.page.id}/edit`}>Edit</Themed.a>}
+    <>
+      {process.env.NODE_ENV === 'development' && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', color: '#ccc' }} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${data.page.id}/edit`}>Edit</a>}
       <MDXRenderer sx={{ position: 'relative' }}>{data.page.childMdx.body}</MDXRenderer>
-    </React.Fragment>
+    </>
   )
 }
 

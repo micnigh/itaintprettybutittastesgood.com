@@ -1,20 +1,20 @@
+import React from "react"
 import {graphql, HeadProps, PageProps} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import {MDXRenderer} from "gatsby-plugin-mdx"
-import React from "react"
-import {Themed} from "@theme-ui/mdx"
 
 export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
-  const { page: {id, name, cover, childMdx, date, tags, prep, cook, servings, level }} = data;
+  const { page: {id, name, cover, childMdx, date }} = data;
   return (
-    <React.Fragment>
-      {process.env.NODE_ENV === 'development' && <Themed.a sx={{ fontSize: '16px', textDecoration: 'none', ml: 2, position: 'absolute', right: '0px', top: 3, color: '#ccc !important'}} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${id}/edit`}>Edit</Themed.a>}
-      <Themed.h2 sx={{
+    <>
+      {process.env.NODE_ENV === 'development' && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', top: 3, color: '#ccc'}} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${id}/edit`}>Edit</a>}
+      <h2 sx={{
+        variant: 'styles.h2',
         textAlign: 'left',
         my: 3,
-        mb: date ? 0 : undefined,
-      }}>{name}</Themed.h2>
-      {date && <div sx={{ mt: '0px !important', mb: 3 }}>{new Date(date).toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}</div>}
+        marginBottom: date ? 0 : undefined,
+      }}>{name}</h2>
+      {date && <div sx={{ mt: '0px', mb: 3 }}>{new Date(date).toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}</div>}
       <div sx={{
         textAlign: 'center',
         width: ['100%']
@@ -40,7 +40,7 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
       }}>
         <MDXRenderer>{childMdx.body}</MDXRenderer>
       </div>
-    </React.Fragment>
+    </>
   )
 }
 

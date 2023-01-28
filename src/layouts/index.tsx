@@ -76,20 +76,9 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
               }}
             />}
         </div>
-        <span sx={{
-          position: 'absolute',
-          right: '0px',
-          bottom: 1,
-          '& > *': {
-            ml: 3,
-          }
-        }} >
-        </span>
         {process.env.NODE_ENV === 'development' &&
-          <Themed.a sx={{
-            fontSize: '16px',
-            textDecoration: 'none',
-            fontWeight: 'bold',
+          <a sx={{
+            variant: 'styles.a',
             position: 'absolute',
             top: '-30px',
             right: '0px',
@@ -99,7 +88,7 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
             fetch('http://localhost:8000/__refresh', {
               method: 'POST'
             })
-          }}>Refresh</Themed.a>}
+          }}>Refresh</a>}
       </header>
       <main
         sx={{
