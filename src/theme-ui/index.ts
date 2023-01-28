@@ -3,8 +3,8 @@ import { Theme } from "theme-ui"
 const theme: Theme = {
   space: [0, 8, 16, 32, 64],
   radii: [0, 10, 20],
-  breakpoints: ["500px", "800px", "1080px"],
-  fontSizes: [12, 14, 16, 24, 26, 28, 30, 32],
+  breakpoints: ["500px", "800px", "1000px"],
+  fontSizes: [12, 14, 16, 18, 24, 28, 32],
   colors: {
     text: "#333333",
     background: "#F9DFC9",

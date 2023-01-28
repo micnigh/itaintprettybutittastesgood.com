@@ -3,8 +3,11 @@ import {graphql, HeadProps, PageProps} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import {MDXRenderer} from "gatsby-plugin-mdx"
 
+import { GiCook, GiCampCookingPot, GiLevelEndFlag } from "react-icons/gi"
+import { BiCookie } from "react-icons/bi"
+
 export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
-  const { page: {id, name, cover, childMdx, date }} = data;
+  const { page: {id, name, cover, childMdx, date, cook, level, prep, servings }} = data;
   return (
     <>
       {process.env.NODE_ENV === 'development' && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', top: 3, color: '#ccc'}} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${id}/edit`}>Edit</a>}
@@ -20,14 +23,41 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
         width: ['100%']
       }}>
         {cover && <GatsbyImage image={getImage(cover.image.childImageSharp.gatsbyImageData)} alt={name} sx={{
-          // float: 'left',
-          width: ['100%'],
+          width: [null, null, '325px', '450px'],
+          height: [null, null, '325px', '450px'],
+          maxHeight: ['300px', '400px', '450px'],
           float: [null, null, 'right'],
-          maxHeight: ['500px'],
-          maxWidth: ['100%', null, '500px'],
-          m: [null, null, 2],
-          borderRadius: '5%',
+          ml: [null, null, 2],
+          borderRadius: '10%',
         }}  />}
+      </div>
+      <div sx={{
+        display: ['grid', null, 'inline-grid'],
+        gridTemplateColumns: ['repeat(2, minmax(min-content, 1fr))', null, 'repeat(2, minmax(min-content, 1fr))', 'repeat(2, minmax(min-content, 1fr)))'],
+        gap: [1, null, null, 1],
+        alignItems: 'center',
+        justifyItems: 'left',
+        fontSize: [null, null, null, 2],
+        mt: [2, null, 0],
+        '.icon': {
+          mr: '4px',
+        },
+        '.container': {
+          whiteSpace: 'nowrap',
+        },
+      }}>
+        <span className="container">
+          <GiCook className="icon" /><span className="value">Prep: {prep}</span>
+        </span>
+        <span className="container">
+          <GiCampCookingPot className="icon" /><span className="value">Cook: {cook}</span>
+        </span>
+        <span className="container">
+          <BiCookie className="icon" /><span className="value">Servings: {servings}</span>
+        </span>
+        <span className="container">
+          <GiLevelEndFlag className="icon" /><span className="value">Level: {level}</span>
+        </span>
       </div>
       <div sx={{
         fontSize: 2,

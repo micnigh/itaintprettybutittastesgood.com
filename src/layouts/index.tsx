@@ -4,7 +4,6 @@ import { useLocation } from "@reach/router"
 
 import { create } from 'zustand'
 
-import { Themed } from '@theme-ui/mdx';
 import { Input } from 'theme-ui';
 import { Link } from 'gatsby';
 
@@ -37,7 +36,7 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
           mx: "auto",
           position: 'relative',
           minHeight: "100vh",
-          p: 3,
+          p: [2, 3],
           bg: 'white',
         }}
       >
@@ -62,9 +61,11 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
                 textAlign: "center",
               }}
             >
-              <Themed.h1 sx={{
+              <h1 sx={{
+                variant: 'styles.h1',
                 color: 'primary',
-              }}>itaintprettybutittastesgood</Themed.h1>
+                fontSize: [4, 6]
+              }}>itaintprettybutittastesgood</h1>
             </Link>
           </div>
           <div sx={{ flexGrow: 1, textAlign: 'right' }}>
