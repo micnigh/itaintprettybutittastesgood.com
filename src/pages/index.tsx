@@ -36,6 +36,9 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
               '.label': {
                 bg: 'primary',
                 color: 'white',
+              },
+              '.tag': {
+                bg: 'secondary',
               }
             }
           }}>
@@ -45,11 +48,38 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
             <div className="label" sx={{
               py: 2,
               color: 'black',
-              bg: '#f0f0f0',
+              bg: '#f5f5f5',
               fontWeight: 'normal',
               textAlign: 'center',
             }}>
-              {r.name}
+              <span>{r.name}</span>
+              {r.tags &&
+              <div sx={{
+                display: 'block',
+                flexGrow: 1,
+                whiteSpace: 'normal',
+                ml: 2,
+                mt: 1,
+                fontSize: [0, 1],
+                textAlign: 'left',
+                '.tag': {
+                  bg: '#ccc',
+                  color: 'white',
+                  borderRadius: '10px',
+                  py: '2px',
+                  px: '8px',
+                  mr: '4px',
+                  mb: '4px',
+                  whiteSpace: 'nowrap',
+                  display: 'inline-block',
+                },
+              }}>
+                {r.tags && r.tags.map(t => <span key={t} className='tag' sx={{
+
+                }}>
+                  {t}
+                </span>)}
+              </div>}
             </div>
           </Link>
         ))}
