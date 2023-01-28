@@ -14,7 +14,10 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
   useEffect(() => {
     if (!data.recipes) return;
     if (!search) return setRecipes(data.recipes.nodes)
-    setRecipes(data.recipes.nodes.filter(r => new RegExp(`${search}`, 'i').test(r.name) ))
+    setRecipes(data.recipes.nodes.filter(r => {
+      const matcher = new RegExp(`${search}`, 'i');
+      return matcher.test(r.name) || (r.tags && r.tags.some(t => matcher.test(t)))
+    }))
   }, [data.recipes, setRecipes, search])
 
   return (
