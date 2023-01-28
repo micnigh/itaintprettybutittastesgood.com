@@ -26,6 +26,7 @@ const theme: Theme = {
   styles: {
     root: {
       fontFamily: "Quicksand",
+      scrollbarGutter: 'stable both-edges',
     },
     a: {
       color: "secondary",
