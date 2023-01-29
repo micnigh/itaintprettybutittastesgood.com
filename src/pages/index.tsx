@@ -51,7 +51,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
       <div ref={recipesRef} sx={{
         display: 'grid',
         gap: 2,
-        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
       }}>
         {recipes.map((r, rI) => (
           <Link to={r.path} key={rI} sx={{
@@ -67,7 +67,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
             }
           }}>
             <GatsbyImage image={getImage(r.cover.image.childImageSharp.gatsbyImageData)} title={r.name} alt={r.name} sx={{
-              height: '200px',
+              height: '250px',
             }}/>
             <div className="label" sx={{
               py: 2,
@@ -76,7 +76,9 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
               fontWeight: 'normal',
               textAlign: 'center',
             }}>
-              <span>{r.name}</span>
+              <span sx={{
+                fontSize: [3, 2],
+              }}>{r.name}</span>
               {r.tags &&
               <div sx={{
                 display: 'block',
@@ -84,7 +86,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
                 whiteSpace: 'normal',
                 ml: 2,
                 mt: 1,
-                fontSize: [0, 1],
+                fontSize: [2, 1],
                 textAlign: 'left',
                 '.tag': {
                   bg: '#ccc',
