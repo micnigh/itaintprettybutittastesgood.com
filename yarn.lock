@@ -3279,6 +3279,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/js-search@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@types/js-search@npm:1.4.0"
+  checksum: c30950636d60a1456ab305a90c850d604b2629f4593639a012dd974a03fe71e94b9e5077cd731b8ce5cd6aa8fc160ce9f6da7b81df749211693733789e5d296b
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:*, @types/json-schema@npm:^7.0.4, @types/json-schema@npm:^7.0.5, @types/json-schema@npm:^7.0.7, @types/json-schema@npm:^7.0.8, @types/json-schema@npm:^7.0.9":
   version: 7.0.11
   resolution: "@types/json-schema@npm:7.0.11"
@@ -10447,6 +10454,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-search@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "js-search@npm:2.0.0"
+  checksum: 2dc0ff4c63843fdeef76f8642d98f0be20231e78e75c5e106410836c26ca35860ea56e257804ecabd7026c096fd6abf1f3a78931f875afc4f81ab164c32738b0
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -14414,6 +14428,7 @@ __metadata:
     "@mdx-js/mdx": ^1.6.22
     "@mdx-js/react": ^1.6.22
     "@theme-ui/mdx": ^0.15.4
+    "@types/js-search": ^1.4.0
     "@typescript-eslint/eslint-plugin": ^5.49.0
     "@typescript-eslint/parser": ^5.49.0
     dotenv: ^16.0.3
@@ -14438,6 +14453,7 @@ __metadata:
     gatsby-source-google-docs: ^2.3.0
     gatsby-transformer-remark: ^5.25.1
     gatsby-transformer-sharp: ^4.25.0
+    js-search: ^2.0.0
     mdx-embed: ^1.1.2
     prismjs: ^1.29.0
     react: ^18.2.0

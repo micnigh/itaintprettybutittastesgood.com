@@ -6,9 +6,12 @@ import { useState } from "react"
 import { useEffect } from "react"
 import autoAnimate from '@formkit/auto-animate'
 
+import * as JsSearch from 'js-search'
+
 import { useStore } from '../layouts'
 
 export const PageHome = ({ data }: PageProps<PageData>) => {
+  const [searchStore, setSearchStore] = useState<JsSearch.Search>(null)
   const search = useStore(state => state.search)
   const [recipes, setRecipes] = useState<Queries.GoogleDocs[]>([])
 
@@ -21,12 +24,21 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
   }, [recipesRef])
 
   useEffect(() => {
+    if (data.recipes) {
+      const nextSearchStore = new JsSearch.Search('id');
+      nextSearchStore.addDocuments(data.recipes.nodes)
+      nextSearchStore.addIndex('name')
+      nextSearchStore.addIndex('tags')
+      nextSearchStore.addIndex('date')
+      nextSearchStore.addIndex('level')
+      setSearchStore(nextSearchStore)
+    }
+  }, [data.recipes])
+
+  useEffect(() => {
     if (!data.recipes) return;
     if (!search) return setRecipes(data.recipes.nodes)
-    setRecipes(data.recipes.nodes.filter(r => {
-      const matcher = new RegExp(`${search}`, 'i');
-      return matcher.test(r.name) || (r.tags && r.tags.some(t => matcher.test(t)))
-    }))
+    setRecipes(searchStore.search(search) as Queries.GoogleDocs[])
   }, [data.recipes, setRecipes, search])
 
   return (
