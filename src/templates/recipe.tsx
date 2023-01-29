@@ -81,18 +81,18 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
           whiteSpace: 'nowrap',
         },
       }}>
-        <span className="container">
+        {prep && <span className="container">
           <GiCook className="icon" /><span className="value">Prep: {prep}</span>
-        </span>
-        <span className="container">
+        </span>}
+        {cook && <span className="container">
           <GiCampCookingPot className="icon" /><span className="value">Cook: {cook}</span>
-        </span>
-        <span className="container">
+        </span>}
+        {servings && <span className="container">
           <BiCookie className="icon" /><span className="value">Servings: {servings}</span>
-        </span>
-        <span className="container">
+        </span>}
+        {level && <span className="container">
           <GiLevelEndFlag className="icon" /><span className="value">Level: {level}</span>
-        </span>
+        </span>}
       </div>
       <div sx={{
         fontSize: 2,

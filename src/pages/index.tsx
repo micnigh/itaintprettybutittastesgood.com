@@ -6,6 +6,8 @@ import { useState } from "react"
 import { useEffect } from "react"
 import autoAnimate from '@formkit/auto-animate'
 import { useBreakpointIndex } from '@theme-ui/match-media'
+import { GiCook, GiCampCookingPot, GiLevelEndFlag } from "react-icons/gi"
+import { BiCookie } from "react-icons/bi"
 
 import * as JsSearch from 'js-search'
 
@@ -106,6 +108,35 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
                   {t}
                 </span>)}
               </div>}
+              <div sx={{
+                display: ['grid'],
+                gridTemplateColumns: 'repeat(4, minmax(50px, 1fr))',
+                gap: 1,
+                alignItems: 'center',
+                justifyItems: 'center',
+                overflow: 'hidden',
+                fontSize: 1,
+                mt: 1,
+                '.icon': {
+                  mr: '4px',
+                },
+                '.container': {
+                  whiteSpace: 'nowrap',
+                },
+              }}>
+                {r.prep && <span className="container" title='Prep'>
+                  <GiCook className="icon" /><span className="value">{r.prep}</span>
+                </span>}
+                {r.cook && <span className="container" title='Cook'>
+                  <GiCampCookingPot className="icon" /><span className="value">{r.cook}</span>
+                </span>}
+                {r.servings && <span className="container" title='Servings'>
+                  <BiCookie className="icon" /><span className="value">{r.servings}</span>
+                </span>}
+                {r.level && <span className="container" title='Level'>
+                  <GiLevelEndFlag className="icon" /><span className="value">{r.level}</span>
+                </span>}
+              </div>
             </div>
           </Link>
         ))}
