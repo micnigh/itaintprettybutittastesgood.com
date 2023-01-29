@@ -1,15 +1,24 @@
-import React from "react"
+import React, { useRef } from "react"
 import {graphql, PageProps, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { useState } from "react"
 import { useEffect } from "react"
+import autoAnimate from '@formkit/auto-animate'
 
 import { useStore } from '../layouts'
 
 export const PageHome = ({ data }: PageProps<PageData>) => {
   const search = useStore(state => state.search)
   const [recipes, setRecipes] = useState<Queries.GoogleDocs[]>([])
+
+  const recipesRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    recipesRef.current && autoAnimate(recipesRef.current, {
+      duration: 200,
+    })
+  }, [recipesRef])
 
   useEffect(() => {
     if (!data.recipes) return;
@@ -24,7 +33,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
     <main>
       {data.page && <MDXRenderer>{data.page.childMdx.body}</MDXRenderer>}
       {recipes && <>
-      <div sx={{
+      <div ref={recipesRef} sx={{
         display: 'grid',
         gap: 2,
         gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
