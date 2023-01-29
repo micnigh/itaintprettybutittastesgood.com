@@ -5,7 +5,7 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "dev": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop",
+    "dev": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop -H 0.0.0.0",
     "auto_refresh": "watch -n5 'curl -X POST http://localhost:8000/__refresh'",
     "serve": "gatsby serve",
     "token": "gatsby-source-google-docs-token"
