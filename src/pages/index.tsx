@@ -81,33 +81,6 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
               <span sx={{
                 fontSize: [3, 2],
               }}>{r.name}</span>
-              {r.tags &&
-              <div sx={{
-                display: 'block',
-                flexGrow: 1,
-                whiteSpace: 'normal',
-                ml: 2,
-                mt: 1,
-                fontSize: [2, 1],
-                textAlign: 'left',
-                '.tag': {
-                  bg: '#ccc',
-                  color: 'white',
-                  borderRadius: '10px',
-                  py: '2px',
-                  px: '8px',
-                  mr: '4px',
-                  mb: '4px',
-                  whiteSpace: 'nowrap',
-                  display: 'inline-block',
-                },
-              }}>
-                {r.tags && r.tags.map(t => <span key={t} className='tag' sx={{
-
-                }}>
-                  {t}
-                </span>)}
-              </div>}
               <div sx={{
                 display: ['grid'],
                 gridTemplateColumns: 'repeat(4, minmax(50px, 1fr))',
