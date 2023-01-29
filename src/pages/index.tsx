@@ -16,7 +16,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
 
   useEffect(() => {
     recipesRef.current && autoAnimate(recipesRef.current, {
-      duration: 200,
+      duration: 250,
     })
   }, [recipesRef])
 
