@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { useState } from "react"
 import { useEffect } from "react"
 import autoAnimate from '@formkit/auto-animate'
+import { useBreakpointIndex } from '@theme-ui/match-media'
 
 import * as JsSearch from 'js-search'
 
@@ -15,13 +16,15 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
   const search = useStore(state => state.search)
   const [recipes, setRecipes] = useState<Queries.GoogleDocs[]>([])
 
-  const recipesRef = useRef<HTMLDivElement>(null)
+  const breakpointIndex = useBreakpointIndex()
 
+  const recipesRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    recipesRef.current && autoAnimate(recipesRef.current, {
+    // enable in/out animation on larger devices
+    breakpointIndex > 0 && recipesRef.current && autoAnimate(recipesRef.current, {
       duration: 250,
     })
-  }, [recipesRef])
+  }, [recipesRef, breakpointIndex])
 
   useEffect(() => {
     if (data.recipes) {

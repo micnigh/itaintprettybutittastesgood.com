@@ -3067,6 +3067,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@theme-ui/match-media@npm:^0.15.4":
+  version: 0.15.4
+  resolution: "@theme-ui/match-media@npm:0.15.4"
+  peerDependencies:
+    "@theme-ui/core": ^0.15.4
+    "@theme-ui/css": ^0.15.4
+    react: ">=18"
+  checksum: 4cbc988d3977207c1d32cc2c724c2c932d2a6f4fbd36bdd753a88c4bb6c4edb6d8a839a33a1ab2ff7797ca461af9954778fc170ead8c3a13c11cadebf0d707fa
+  languageName: node
+  linkType: hard
+
 "@theme-ui/mdx@npm:^0.15.4":
   version: 0.15.4
   resolution: "@theme-ui/mdx@npm:0.15.4"
@@ -14427,6 +14438,7 @@ __metadata:
     "@formkit/auto-animate": ^1.0.0-beta.6
     "@mdx-js/mdx": ^1.6.22
     "@mdx-js/react": ^1.6.22
+    "@theme-ui/match-media": ^0.15.4
     "@theme-ui/mdx": ^0.15.4
     "@types/js-search": ^1.4.0
     "@typescript-eslint/eslint-plugin": ^5.49.0

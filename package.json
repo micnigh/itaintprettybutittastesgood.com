@@ -43,6 +43,7 @@
   "devDependencies": {
     "@emotion/eslint-plugin": "^11.10.0",
     "@formkit/auto-animate": "^1.0.0-beta.6",
+    "@theme-ui/match-media": "^0.15.4",
     "@types/js-search": "^1.4.0",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
