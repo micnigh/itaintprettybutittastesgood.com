@@ -1,7 +1,6 @@
 import React, { useRef } from "react"
 import {graphql, PageProps, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import { useState } from "react"
 import { useEffect } from "react"
 import autoAnimate from '@formkit/auto-animate'
@@ -48,7 +47,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
 
   return (
     <main>
-      {data.page && <MDXRenderer>{data.page.childMdx.body}</MDXRenderer>}
+      {data.page && <div dangerouslySetInnerHTML={{ __html: data.page.childMarkdownRemark.html }} />}
       {recipes && <>
       <div ref={recipesRef} sx={{
         display: 'grid',
@@ -137,11 +136,11 @@ export const pageQuery = graphql`
 query HomeQuery {
   page: googleDocs(name: {eq: "Home"}) {
     id
-    childMdx {
-      body
+    childMarkdownRemark {
+      html
     }
   }
-  recipes: allGoogleDocs(sort:{ order: DESC, fields: date }, filter: { template: {eq: "recipe.tsx" }}) {
+  recipes: allGoogleDocs(sort:{ date: DESC }, filter: { template: {eq: "recipe.tsx" }}) {
 		nodes {
 			id
       name

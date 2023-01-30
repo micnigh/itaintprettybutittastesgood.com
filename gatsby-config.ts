@@ -6,6 +6,7 @@ DotEnv.config()
 const config: GatsbyConfig = {
   pathPrefix: "/",
   graphqlTypegen: true,
+  trailingSlash: 'ignore',
   plugins: [
     {
       resolve: "gatsby-source-google-docs",
@@ -43,18 +44,29 @@ const config: GatsbyConfig = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    "gatsby-plugin-mdx-embed",
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: "gatsby-transformer-remark",
       options: {
-        gatsbyRemarkPlugins: [
+        plugins: [
           "gatsby-remark-unwrap-images",
           "gatsby-remark-images",
           "gatsby-remark-gifs",
           "gatsby-remark-prismjs",
-        ],
-      },
+        ]
+      }
     },
+    // "gatsby-plugin-mdx-embed",
+    // {
+    //   resolve: `gatsby-plugin-mdx`,
+    //   options: {
+    //     gatsbyRemarkPlugins: [
+    //       "gatsby-remark-unwrap-images",
+    //       "gatsby-remark-images",
+    //       "gatsby-remark-gifs",
+    //       "gatsby-remark-prismjs",
+    //     ],
+    //   },
+    // },
   ],
 }
 

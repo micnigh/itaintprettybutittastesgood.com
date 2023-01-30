@@ -1,6 +1,5 @@
 import React from "react"
 import {graphql, HeadProps, PageProps} from "gatsby"
-import {MDXRenderer} from "gatsby-plugin-mdx"
 
 export const PageTemplate = ({
   data,
@@ -8,7 +7,7 @@ export const PageTemplate = ({
   return (
     <>
       {process.env.NODE_ENV === 'development' && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', color: '#ccc' }} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${data.page.id}/edit`}>Edit</a>}
-      <MDXRenderer sx={{ position: 'relative' }}>{data.page.childMdx.body}</MDXRenderer>
+      <div sx={{ position: 'relative' }} dangerouslySetInnerHTML={{ __html: data.page.childMarkdownRemark.html }} />
     </>
   )
 }
@@ -36,8 +35,8 @@ export const pageQuery = graphql`
           }
         }
       }
-      childMdx {
-        body
+      childMarkdownRemark {
+        html
       }
     }
   }

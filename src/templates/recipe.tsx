@@ -1,13 +1,12 @@
 import React from "react"
 import {graphql, HeadProps, PageProps} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
-import {MDXRenderer} from "gatsby-plugin-mdx"
 
 import { GiCook, GiCampCookingPot, GiLevelEndFlag } from "react-icons/gi"
 import { BiCookie } from "react-icons/bi"
 
 export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
-  const { page: {id, name, cover, childMdx, date, cook, level, prep, servings, tags }} = data;
+  const { page: {id, name, childMarkdownRemark: { html }, cover, date, cook, level, prep, servings, tags }} = data;
   return (
     <>
       {process.env.NODE_ENV === 'development' && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', top: 3, color: '#ccc'}} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${id}/edit`}>Edit</a>}
@@ -103,7 +102,7 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
           mb: 2,
         }
       }}>
-        <MDXRenderer>{childMdx.body}</MDXRenderer>
+        <div dangerouslySetInnerHTML={{ __html: html }}/>
       </div>
     </>
   )
@@ -133,15 +132,15 @@ export const pageQuery = graphql`
       cook
       servings
       level
+      childMarkdownRemark {
+        html
+      }
       cover {
         image {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED)
           }
         }
-      }
-      childMdx {
-        body
       }
     }
   }
