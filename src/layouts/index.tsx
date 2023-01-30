@@ -1,5 +1,4 @@
 import React from 'react';
-import { MDXProvider } from "@mdx-js/react"
 import { useLocation } from "@reach/router"
 
 import { create } from 'zustand'
@@ -106,9 +105,7 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
           }}
         >
           <div>
-            <MDXProvider>
-              {children}
-            </MDXProvider>
+            {children}
           </div>
         </main>
       </div>

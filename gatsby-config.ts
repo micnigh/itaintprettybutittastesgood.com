@@ -55,18 +55,6 @@ const config: GatsbyConfig = {
         ]
       }
     },
-    // "gatsby-plugin-mdx-embed",
-    // {
-    //   resolve: `gatsby-plugin-mdx`,
-    //   options: {
-    //     gatsbyRemarkPlugins: [
-    //       "gatsby-remark-unwrap-images",
-    //       "gatsby-remark-images",
-    //       "gatsby-remark-gifs",
-    //       "gatsby-remark-prismjs",
-    //     ],
-    //   },
-    // },
   ],
 }
 
