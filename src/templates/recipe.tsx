@@ -83,11 +83,11 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
         {prep && <span className="container">
           <GiCook className="icon" /><span className="value">Prep: {prep}</span>
         </span>}
-        {cook && <span className="container">
-          <GiCampCookingPot className="icon" /><span className="value">Cook: {cook}</span>
-        </span>}
         {servings && <span className="container">
           <BiCookie className="icon" /><span className="value">Servings: {servings}</span>
+        </span>}
+        {cook && <span className="container">
+          <GiCampCookingPot className="icon" /><span className="value">Cook: {cook}</span>
         </span>}
         {level && <span className="container">
           <GiLevelEndFlag className="icon" /><span className="value">Level: {level}</span>

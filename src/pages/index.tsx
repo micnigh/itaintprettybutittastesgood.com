@@ -85,7 +85,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
               }}>{r.name}{!r.published && <span> - draft</span>}</span>
               <div sx={{
                 display: ['grid'],
-                gridTemplateColumns: 'repeat(4, minmax(50px, 1fr))',
+                gridTemplateColumns: 'repeat(4, minmax(min-content, 1fr))',
                 gap: 1,
                 alignItems: 'center',
                 justifyItems: 'center',
@@ -102,11 +102,11 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
                 {r.prep && <span className="container" title='Prep'>
                   <GiCook className="icon" /><span className="value">{r.prep}</span>
                 </span>}
-                {r.cook && <span className="container" title='Cook'>
-                  <GiCampCookingPot className="icon" /><span className="value">{r.cook}</span>
-                </span>}
                 {r.servings && <span className="container" title='Servings'>
                   <BiCookie className="icon" /><span className="value">{r.servings}</span>
+                </span>}
+                {r.cook && <span className="container" title='Cook'>
+                  <GiCampCookingPot className="icon" /><span className="value">{r.cook}</span>
                 </span>}
                 {r.level && <span className="container" title='Level'>
                   <GiLevelEndFlag className="icon" /><span className="value">{r.level}</span>
