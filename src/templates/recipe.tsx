@@ -138,7 +138,7 @@ export const pageQuery = graphql`
       cover {
         image {
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED)
+            gatsbyImageData(placeholder: BLURRED, width: 800)
           }
         }
       }
