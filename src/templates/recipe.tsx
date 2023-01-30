@@ -6,7 +6,7 @@ import { GiCook, GiCampCookingPot, GiLevelEndFlag } from "react-icons/gi"
 import { BiCookie } from "react-icons/bi"
 
 export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
-  const { page: {id, name, childMarkdownRemark: { html }, cover, date, cook, level, prep, servings, tags }} = data;
+  const { page: {id, name, childMarkdownRemark: { html }, cover, date, cook, level, prep, servings, tags, published }} = data;
   return (
     <>
       {process.env.NODE_ENV === 'development' && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', top: 3, color: '#ccc'}} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${id}/edit`}>Edit</a>}
@@ -23,7 +23,7 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
             whiteSpace: 'nowrap',
             marginBottom: date ? 0 : undefined,
           }}>{name}</h2>
-          {date && <div sx={{ mt: '0px' }}>{new Date(date).toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}</div>}
+          {date && <div sx={{ mt: '0px' }}>{new Date(date).toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}{!published && <span> - draft</span>}</div>}
         </span>
         {tags &&
         <div sx={{
@@ -132,6 +132,7 @@ export const pageQuery = graphql`
       cook
       servings
       level
+      published
       childMarkdownRemark {
         html
       }

@@ -27,10 +27,12 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
     })
   }, [recipesRef, breakpointIndex])
 
+  const getPublishedRecipes = () => data.recipes.nodes.filter(r => process.env.NODE_ENV === 'development' ? true : r.published)
+
   useEffect(() => {
     if (data.recipes) {
       const nextSearchStore = new JsSearch.Search('id');
-      nextSearchStore.addDocuments(data.recipes.nodes)
+      nextSearchStore.addDocuments(getPublishedRecipes())
       nextSearchStore.addIndex('name')
       nextSearchStore.addIndex('tags')
       nextSearchStore.addIndex('date')
@@ -41,7 +43,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
 
   useEffect(() => {
     if (!data.recipes) return;
-    if (!search) return setRecipes(data.recipes.nodes)
+    if (!search) return setRecipes(getPublishedRecipes())
     setRecipes(searchStore.search(search) as Queries.GoogleDocs[])
   }, [data.recipes, setRecipes, search])
 
@@ -57,6 +59,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
         {recipes.map((r, rI) => (
           <Link to={r.path} key={rI} sx={{
             variant: 'styles.a',
+            opacity: r.published ? undefined : 0.75,
             '&:hover,&:active': {
               '.label': {
                 bg: 'primary',
@@ -79,7 +82,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
             }}>
               <span sx={{
                 fontSize: [3, 2],
-              }}>{r.name}</span>
+              }}>{r.name}{!r.published && <span> - draft</span>}</span>
               <div sx={{
                 display: ['grid'],
                 gridTemplateColumns: 'repeat(4, minmax(50px, 1fr))',
@@ -140,9 +143,21 @@ query HomeQuery {
       html
     }
   }
-  recipes: allGoogleDocs(sort:{ date: DESC }, filter: { template: {eq: "recipe.tsx" }}) {
+  recipes: allGoogleDocs(
+    sort: [{
+      published: ASC
+    }, {
+      date: DESC
+    }, {
+      name: DESC
+    }]
+    filter: {
+      template: {eq: "recipe.tsx"}
+    }
+  ) {
 		nodes {
 			id
+      published
       name
       path
       date
