@@ -5,6 +5,7 @@ import { create } from 'zustand'
 
 import { Input } from 'theme-ui';
 import { Link } from 'gatsby';
+import { getGithubToken, isEditMode } from '../pages/admin';
 
 interface StoreState {
   search: string;
@@ -82,18 +83,29 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
                 }}
               />}
           </div>
-          {process.env.NODE_ENV === 'development' &&
+          {(isEditMode() || process.env.NODE_ENV === 'development') &&
             <a sx={{
               variant: 'styles.a',
               position: 'absolute',
               top: '-30px',
               right: '0px',
               color: '#ccc'
-            }} target='_blank' rel='noreferrer' href={`http://localhost:8000/__refresh`} title={'refresh data from google drive'} onClick={e => {
+            }} target='_blank' rel='noreferrer' href={``} title={'refresh data from google drive'} onClick={e => {
               e.preventDefault();
-              fetch('http://localhost:8000/__refresh', {
-                method: 'POST'
-              })
+              if (process.env.NODE_ENV === 'development') {
+                fetch('http://localhost:8000/__refresh', {
+                  method: 'POST'
+                })
+              } else if (isEditMode()) {
+                fetch(`https://api.github.com/micnigh/itaintprettybutittastesgood.com/dispatches`, {
+                  method: 'POST',
+                  headers: {
+                    "Accept": "application/vnd.github+json",
+                    "Authorization": getGithubToken(),
+                  },
+                  body: JSON.stringify({"event_type": "webhook"})
+                })
+              }
             }}>Refresh</a>}
         </header>
         <main

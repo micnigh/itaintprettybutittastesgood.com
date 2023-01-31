@@ -5,12 +5,13 @@ import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import { GiCook, GiCampCookingPot, GiLevelEndFlag } from "react-icons/gi"
 import { BiCookie } from "react-icons/bi"
 import { PuppyPlaceholder } from "../components/placepuppy"
+import { isEditMode } from "../pages/admin"
 
 export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
   const { page: {id, name, childMarkdownRemark: { html }, cover, date, cook, level, prep, servings, tags, published }, recipes } = data;
   return (
     <>
-      {process.env.NODE_ENV === 'development' && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', top: 3, color: '#ccc'}} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${id}/edit`}>Edit</a>}
+      {(isEditMode() || process.env.NODE_ENV === 'development') && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', top: 3, color: '#ccc'}} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${id}/edit`}>Edit</a>}
       <div sx={{
         display: 'flex',
         my: 3,

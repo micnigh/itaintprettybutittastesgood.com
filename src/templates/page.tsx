@@ -1,12 +1,13 @@
 import React from "react"
 import {graphql, HeadProps, PageProps} from "gatsby"
+import { isEditMode } from "../pages/admin"
 
 export const PageTemplate = ({
   data,
 }: PageProps<PageData>) => {
   return (
     <>
-      {process.env.NODE_ENV === 'development' && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', color: '#ccc' }} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${data.page.id}/edit`}>Edit</a>}
+      {(isEditMode() || process.env.NODE_ENV === 'development') && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', color: '#ccc' }} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${data.page.id}/edit`}>Edit</a>}
       <div sx={{ position: 'relative' }} dangerouslySetInnerHTML={{ __html: data.page.childMarkdownRemark.html }} />
     </>
   )
