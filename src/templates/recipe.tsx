@@ -7,7 +7,7 @@ import { BiCookie } from "react-icons/bi"
 import { PuppyPlaceholder } from "../components/placepuppy"
 
 export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
-  const { page: {id, name, childMarkdownRemark: { html }, cover, date, cook, level, prep, servings, tags, published }} = data;
+  const { page: {id, name, childMarkdownRemark: { html }, cover, date, cook, level, prep, servings, tags, published }, recipes } = data;
   return (
     <>
       {process.env.NODE_ENV === 'development' && <a sx={{ variant: 'styles.a', ml: 2, position: 'absolute', right: '0px', top: 3, color: '#ccc'}} target='_blank' rel='noreferrer' href={`https://docs.google.com/document/d/${id}/edit`}>Edit</a>}
@@ -65,7 +65,7 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
           ml: [null, null, 2],
           borderRadius: '10%',
         }}  />}
-        {!cover && <PuppyPlaceholder index={Math.ceil(Math.random() * 27)} moreSx={{
+        {!cover && <PuppyPlaceholder index={recipes.nodes.findIndex(r => r.id === data.page.id) % 27 + 1} moreSx={{
           width: [null, null, '325px', '450px'],
           height: [null, null, '325px', '450px'],
           maxHeight: ['300px', '400px', '450px'],
@@ -127,6 +127,7 @@ export const Head = (props: HeadProps<PageData>) => {
 
 type PageData = {
   page: Queries.GoogleDocs,
+  recipes: { nodes: Queries.GoogleDocs[] },
 };
 
 export const pageQuery = graphql`
@@ -150,6 +151,22 @@ export const pageQuery = graphql`
             gatsbyImageData(placeholder: BLURRED, width: 800)
           }
         }
+      }
+    }
+    recipes: allGoogleDocs(
+      sort: [{
+        published: ASC
+      }, {
+        date: DESC
+      }, {
+        name: DESC
+      }]
+      filter: {
+        template: {eq: "recipe.tsx"}
+      }
+    ) {
+      nodes {
+        id
       }
     }
   }
