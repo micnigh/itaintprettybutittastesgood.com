@@ -28,7 +28,8 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
     })
   }, [recipesRef, breakpointIndex])
 
-  const getPublishedRecipes = () => data.recipes.nodes.filter(r => process.env.NODE_ENV === 'development' ? true : r.published)
+  // const getPublishedRecipes = () => data.recipes.nodes.filter(r => process.env.NODE_ENV === 'development' ? true : r.published)
+  const getPublishedRecipes = () => data.recipes.nodes
 
   useEffect(() => {
     if (data.recipes) {
@@ -75,7 +76,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
             ? <GatsbyImage image={r.cover.image.childImageSharp.gatsbyImageData} title={r.name} alt={r.name} sx={{
               height: '250px',
             }}/>
-            : <PuppyPlaceholder index={rI} moreSx={{ height: '250px' }} />}
+            : <PuppyPlaceholder index={Math.ceil(Math.random() * 27)} moreSx={{ height: '250px' }} />}
             <div className="label" sx={{
               py: 2,
               color: 'black',
