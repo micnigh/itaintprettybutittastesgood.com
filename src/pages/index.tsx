@@ -12,6 +12,7 @@ import * as JsSearch from 'js-search'
 
 import { useStore } from '../layouts'
 import { PuppyPlaceholder } from "../components/placepuppy"
+import { isEditMode } from "./admin"
 
 export const PageHome = ({ data }: PageProps<PageData>) => {
   const [searchStore, setSearchStore] = useState<JsSearch.Search>(null)
@@ -28,8 +29,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
     })
   }, [recipesRef, breakpointIndex])
 
-  // const getPublishedRecipes = () => data.recipes.nodes.filter(r => process.env.NODE_ENV === 'development' ? true : r.published)
-  const getPublishedRecipes = () => data.recipes.nodes
+  const getPublishedRecipes = () => isEditMode() ? data.recipes.nodes : data.recipes.nodes.filter(r => process.env.NODE_ENV === 'development' ? true : r.published)
 
   useEffect(() => {
     if (data.recipes) {
