@@ -66,8 +66,8 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
           borderRadius: '10%',
         }}  />}
         {!cover && <PuppyPlaceholder index={recipes.nodes.findIndex(r => r.id === data.page.id) % 27 + 1} moreSx={{
-          width: [null, null, '325px', '450px'],
-          height: [null, null, '325px', '450px'],
+          width: ['100%', '100%', '325px', '450px'],
+          height: ['300px', '300px', '325px', '450px'],
           maxHeight: ['300px', '400px', '450px'],
           float: [null, null, 'right'],
           ml: [null, null, 2],
