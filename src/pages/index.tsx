@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import {graphql, PageProps, Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import { useState } from "react"
 import { useEffect } from "react"
 import autoAnimate from '@formkit/auto-animate'
@@ -11,6 +11,7 @@ import { BiCookie } from "react-icons/bi"
 import * as JsSearch from 'js-search'
 
 import { useStore } from '../layouts'
+import { PuppyPlaceholder } from "../components/placepuppy"
 
 export const PageHome = ({ data }: PageProps<PageData>) => {
   const [searchStore, setSearchStore] = useState<JsSearch.Search>(null)
@@ -56,10 +57,10 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
         gap: 2,
         gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
       }}>
-        {recipes.map((r, rI) => (
+        {recipes.map((r, rI) => {
+          return (
           <Link to={r.path} key={rI} sx={{
             variant: 'styles.a',
-            opacity: r.published ? undefined : 0.75,
             '&:hover,&:active': {
               '.label': {
                 bg: 'primary',
@@ -70,13 +71,15 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
               }
             }
           }}>
-            <GatsbyImage image={getImage(r.cover.image.childImageSharp.gatsbyImageData)} title={r.name} alt={r.name} sx={{
+            {r.cover
+            ? <GatsbyImage image={r.cover.image.childImageSharp.gatsbyImageData} title={r.name} alt={r.name} sx={{
               height: '250px',
             }}/>
+            : <PuppyPlaceholder index={rI} moreSx={{ height: '250px' }} />}
             <div className="label" sx={{
               py: 2,
               color: 'black',
-              bg: '#f5f5f5',
+              bg: r.published ? '#f5f5f5' : '#ccc',
               fontWeight: 'normal',
               textAlign: 'center',
             }}>
@@ -114,7 +117,9 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
               </div>
             </div>
           </Link>
-        ))}
+          )
+        }
+      )}
       </div>
       </>}
     </main>

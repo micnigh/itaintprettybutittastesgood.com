@@ -4,6 +4,7 @@ import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
 import { GiCook, GiCampCookingPot, GiLevelEndFlag } from "react-icons/gi"
 import { BiCookie } from "react-icons/bi"
+import { PuppyPlaceholder } from "../components/placepuppy"
 
 export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
   const { page: {id, name, childMarkdownRemark: { html }, cover, date, cook, level, prep, servings, tags, published }} = data;
@@ -64,6 +65,13 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
           ml: [null, null, 2],
           borderRadius: '10%',
         }}  />}
+        {!cover && <PuppyPlaceholder index={Math.ceil(Math.random() * 27)} moreSx={{
+          width: [null, null, '325px', '450px'],
+          height: [null, null, '325px', '450px'],
+          maxHeight: ['300px', '400px', '450px'],
+          float: [null, null, 'right'],
+          ml: [null, null, 2],
+          borderRadius: '10%', }} />}
       </div>
       <div sx={{
         display: ['grid', null, 'inline-grid'],
