@@ -2,6 +2,8 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import { Label, Input, Checkbox } from 'theme-ui'
 
+const localStorage = typeof window !== 'undefined' ? window.localStorage : { getItem: () => null, setItem: () => null }
+
 const getKey = key => `itaintprettybutittastesgood.com/${key}`
 export const isEditMode = () => localStorage.getItem(getKey('edit-mode')) === 'true'
 export const getGithubToken = () => localStorage.getItem(getKey('github-token'))
