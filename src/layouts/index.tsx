@@ -101,7 +101,7 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
                   method: 'POST',
                   headers: {
                     "Accept": "application/vnd.github+json",
-                    "Authorization": getGithubToken(),
+                    "Authorization": `Bearer ${getGithubToken()}`,
                   },
                   body: JSON.stringify({"event_type": "build"})
                 })
