@@ -1,4 +1,3 @@
-import { graphql } from 'gatsby'
 import React from 'react'
 import { Label, Input, Checkbox } from 'theme-ui'
 
@@ -8,7 +7,7 @@ const getKey = key => `itaintprettybutittastesgood.com/${key}`
 export const isEditMode = () => localStorage.getItem(getKey('edit-mode')) === 'true'
 export const getGithubToken = () => localStorage.getItem(getKey('github-token'))
 
-export const PageAdmin = ({}: PageData) => {
+export const PageAdmin = () => {
   return (
     <div sx={{}}>
       <h2 sx={{ variant: 'styles.h2' }}>Admin</h2>
@@ -44,18 +43,3 @@ export const Head = () => {
     <title>itaintprettybutittastesgood - admin</title>
   </>
 }
-
-type PageData = {
-  page: Queries.GoogleDocs,
-  recipes: { nodes: Queries.GoogleDocs[] },
-}
-
-export const pageQuery = graphql`
-query HomeQuery {
-  page: googleDocs(name: {eq: "Admin"}) {
-    id
-    childMarkdownRemark {
-      html
-    }
-  }
-}`
