@@ -97,13 +97,13 @@ const LayoutIndex: React.FC<React.PropsWithChildren> = ({ children }) => {
                   method: 'POST'
                 })
               } else if (isEditMode()) {
-                fetch(`https://api.github.com/micnigh/itaintprettybutittastesgood.com/dispatches`, {
+                fetch(`https://api.github.com/repos/micnigh/itaintprettybutittastesgood.com/dispatches`, {
                   method: 'POST',
                   headers: {
                     "Accept": "application/vnd.github+json",
                     "Authorization": getGithubToken(),
                   },
-                  body: JSON.stringify({"event_type": "webhook"})
+                  body: JSON.stringify({"event_type": "build"})
                 })
               }
             }}>Refresh</a>}

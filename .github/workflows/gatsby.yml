@@ -14,8 +14,7 @@ on:
 
   # Allows external webhook trigger
   repository_dispatch:
-    types:
-      - webhook
+    types: [build]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
