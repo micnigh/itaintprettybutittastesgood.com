@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import {graphql, PageProps, Link } from "gatsby"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { useState } from "react"
 import { useEffect } from "react"
 import autoAnimate from '@formkit/auto-animate'
@@ -51,8 +51,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
 
   return (
     <main>
-      {data.page && <div dangerouslySetInnerHTML={{ __html: data.page.childMarkdownRemark.html }} />}
-      {recipes && <>
+      {<>
       <div ref={recipesRef} sx={{
         display: 'grid',
         gap: 2,
@@ -62,6 +61,12 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
           return (
           <Link to={r.path} key={rI} sx={{
             variant: 'styles.a',
+            display: 'flex',
+            position: 'relative',
+            flexDirection: 'column',
+            width: '100%',
+            height: '300px',
+            bg: '#ddd',
             '&:hover,&:active': {
               '.label': {
                 bg: 'primary',
@@ -74,15 +79,21 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
           }}>
             {r.cover
             ? <GatsbyImage image={r.cover.image.childImageSharp.gatsbyImageData} title={r.name} alt={r.name} sx={{
-              height: '250px',
+              height: '100%',
             }}/>
-            : <PuppyPlaceholder index={data.recipes.nodes.findIndex(dr => dr.id === r.id) % 27 + 1} moreSx={{ height: '250px' }} />}
+            : <PuppyPlaceholder index={data.recipes.nodes.findIndex(dr => dr.id === r.id) % 27 + 1} moreSx={{ height: '100%' }} />}
             <div className="label" sx={{
               py: 2,
               color: 'black',
               bg: r.published ? '#f5f5f5' : '#ccc',
               fontWeight: 'normal',
               textAlign: 'center',
+              width: '100%',
+              // position: 'absolute',
+              // bottom: 0,
+              // right: 0,
+              // left: 0,
+              // opacity: .5,
             }}>
               <span sx={{
                 fontSize: [3, 2],
