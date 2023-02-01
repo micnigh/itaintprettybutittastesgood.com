@@ -81,7 +81,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
             ? <GatsbyImage image={r.cover.image.childImageSharp.gatsbyImageData} title={r.name} alt={r.name} sx={{
               height: '100%',
             }}/>
-            : <PuppyPlaceholder index={data.recipes.nodes.findIndex(dr => dr.id === r.id) % 27 + 1} moreSx={{ height: '100%' }} />}
+            : <PuppyPlaceholder index={data.recipes.nodes.findIndex(dr => dr.id === r.id) % 27 + 1} sx={{ height: '100%' }} />}
             <div className="label" sx={{
               py: 2,
               color: 'black',
