@@ -1,9 +1,34 @@
 import React from 'react'
-import * as puppyPlaceholders from './assets'
+import { graphql, useStaticQuery } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-export const puppyCount = Object.keys(puppyPlaceholders).length
+type StaticQuery = {
+  images: {
+    nodes: Queries.File[]
+  }
+}
 
 export const PuppyPlaceholder = ({ index = 0, className = '' }) => {
-  const PuppyImage = puppyPlaceholders[`puppy${(index % puppyCount - 1) + 1}`];
-  return <PuppyImage className={className} />
+  const { images:{ nodes: images } } = useStaticQuery<StaticQuery>(graphql`
+    query puppyPower {
+      images: allFile (
+        filter: {
+          sourceInstanceName: {eq: "src"},
+          relativePath: {glob: "components/placepuppy/*.jpg"}
+        }
+        sort: [{ birthTime: ASC}, {relativePath: ASC }]
+      ) {
+        nodes {
+          id
+          relativePath
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED, width: 800)
+          }
+        }
+      }
+    }
+  `)
+
+  const puppyImage = images[index % (images.length - 1)];
+  return <GatsbyImage image={puppyImage.childImageSharp.gatsbyImageData} alt='placeholder' className={className} />
 }

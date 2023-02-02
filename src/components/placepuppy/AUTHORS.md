@@ -155,9 +155,3 @@
     <http://creativecommons.org/licenses/by-sa/2.0/>
     by emarquetti on Flickr
     <http://www.flickr.com/photos/emarquetti/23798083/>
-    
-29) "A dog paw print made with black ink"
-    CreativeCommons Attribution 2.0
-    <http://creativecommons.org/licenses/by/2.0/>
-    by Drab Makyo on Flickr
-    <http://www.flickr.com/photos/ranna/5190030044/>

@@ -55,6 +55,17 @@ const config: GatsbyConfig = {
         ]
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+        // Ignore files starting with a dot
+        ignore: [`**/\.*`,`**/*\.d\.ts`],
+        // Use "mtime" and "inode" to fingerprint files (to check if file has changed)
+        fastHash: true,
+      },
+    },
   ],
 }
 

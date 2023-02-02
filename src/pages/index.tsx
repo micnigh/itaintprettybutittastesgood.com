@@ -11,7 +11,7 @@ import { BiCookie } from "react-icons/bi"
 import * as JsSearch from 'js-search'
 
 import { useStore } from '../layouts'
-import { puppyCount, PuppyPlaceholder } from "../components/placepuppy"
+import { PuppyPlaceholder } from "../components/placepuppy"
 import { isEditMode } from "./admin"
 
 export const PageHome = ({ data }: PageProps<PageData>) => {
@@ -81,7 +81,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
             ? <GatsbyImage image={r.cover.image.childImageSharp.gatsbyImageData} title={r.name} alt={r.name} sx={{
               height: '100%',
             }}/>
-            : <PuppyPlaceholder index={data.recipes.nodes.findIndex(dr => dr.id === r.id) % (puppyCount - 1) + 1} sx={{ height: '100%' }} />}
+            : <PuppyPlaceholder index={data.recipes.nodes.findIndex(dr => dr.id === r.id)} sx={{ height: '100%' }} />}
             <div className="label" sx={{
               py: 2,
               color: 'black',
