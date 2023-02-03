@@ -14,7 +14,7 @@ export const PuppyPlaceholder = ({ index = 0, className = '' }) => {
       images: allFile (
         filter: {
           sourceInstanceName: {eq: "src"},
-          relativePath: {glob: "components/placepuppy/*.jpg"}
+          relativePath: {glob: "components/placepuppy/assets/*.jpg"}
         }
         sort: [{relativePath: ASC }, { birthTime: ASC}]
       ) {
