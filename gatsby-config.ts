@@ -19,16 +19,13 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-webfonts",
       options: {
         fonts: {
-          google: [
+          google2: [
             {
               family: "Quicksand",
-              variants: ["400", "700"],
-              fontDisplay: "fallback",
+              axes: "wght@300..700",
             },
           ],
         },
-        formats: ["woff2"],
-        usePreload: true,
       },
     },
     "gatsby-plugin-catch-links",
