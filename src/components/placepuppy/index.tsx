@@ -16,7 +16,7 @@ export const PuppyPlaceholder = ({ index = 0, className = '' }) => {
           sourceInstanceName: {eq: "src"},
           relativePath: {glob: "components/placepuppy/*.jpg"}
         }
-        sort: [{ birthTime: ASC}, {relativePath: ASC }]
+        sort: [{relativePath: ASC }, { birthTime: ASC}]
       ) {
         nodes {
           id
