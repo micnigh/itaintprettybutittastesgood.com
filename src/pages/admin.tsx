@@ -30,7 +30,7 @@ export const PageAdmin = () => {
               localStorage.setItem(getKey('github-token'), e.target.value)
             }} defaultValue={localStorage.getItem(getKey('github-token'))} />
             <Label sx={{ flexGrow: 0, width: 'auto', fontSize: 3, alignItems: 'center' }}>
-              <Checkbox checked={displayGithubToken} onChange={e => setDisplayGithubToken(!displayGithubToken)} sx={{ mr: 0, ml: 1 }} />Show
+              <Checkbox checked={displayGithubToken} onChange={() => setDisplayGithubToken(!displayGithubToken)} sx={{ mr: 0, ml: 1 }} />Show
             </Label>
           </span>
         </span>
