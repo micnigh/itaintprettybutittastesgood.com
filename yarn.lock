@@ -14980,6 +14980,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@babel/preset-typescript": ^7.18.6
     "@emotion/eslint-plugin": ^11.10.0
     "@emotion/react": ^11.10.5
     "@formkit/auto-animate": ^1.0.0-pre-alpha.3

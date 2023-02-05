@@ -1,45 +1,16 @@
 import { CreateNodeArgs, CreateSchemaCustomizationArgs } from "gatsby"
-import { parse } from 'recipe-ingredient-parser-v3';
+import { getRecipeIngredientList } from "./gatsby-node.recipe";
 
 export const onCreateNode = async ({ node, actions }: CreateNodeArgs) => {
-  const { createNodeField } = actions
+  const { createNodeField, deleteNode, createNode } = actions
   if (node.internal.type === `GoogleDocs`) {
     const doc = node as unknown as Queries.GoogleDocs;
-    // const ingredientsCopy = doc.markdown.matchAll(/#+\s*Ingredients\s*(.*?)\s*#+/gm)[1].trim()
-    // const naturalIngredients = ingredientsCopy.split(' - ').map(s => s.trim()).filter(s => s !== '').map(s => s.replace('- ', ''))
-
-
-    const ingredientsCopyMatchAll = [...doc.markdown.matchAll(/#+\s*Ingredients\s*([\s\S]*?)#+/gm)][0]
-    if (!ingredientsCopyMatchAll) {
-      return;
-    }
-    const ingredientsCopyMatchGroup = ingredientsCopyMatchAll[1].trim()
-    const ingredientsArray = ingredientsCopyMatchGroup.split(' - ').map(s => s.trim()).filter(s => s !== '').map(s => s.replace('- ', ''))
-    const ingredients = ingredientsArray.map(i => { console.log(i); return parse(i, 'eng') })
-
+    if (doc.template !== 'recipe.tsx') return;
+    const ingredients = getRecipeIngredientList(doc);
     createNodeField({
       node,
       name: `ingredients`,
       value: ingredients,
     })
   }
-}
-
-export const createSchemaCustomization = async ({ actions }: CreateSchemaCustomizationArgs) => {
-  const { createTypes,  } = actions
-
-  createTypes(`#graphql
-    type Ingredient {
-      quantity: Float
-      unit: String
-      unitPlural: String
-      symbol: String
-      ingredient: String
-      minQty: Float
-      maxQty: Float
-    }
-    type GoogleDocs implements Node {
-      ingredients: [Ingredient!]
-    }
-  `)
 }
