@@ -15,9 +15,11 @@ import { PuppyPlaceholder } from "../components/placepuppy"
 import { isEditMode } from "./admin"
 
 export const PageHome = ({ data }: PageProps<PageData>) => {
+  const getPublishedRecipes = () => isEditMode() ? data.recipes.nodes : data.recipes.nodes.filter(r => process.env.NODE_ENV === 'development' ? true : r.published)
+
   const [searchStore, setSearchStore] = useState<JsSearch.Search>(null)
   const search = useStore(state => state.search)
-  const [recipes, setRecipes] = useState<Queries.GoogleDocs[]>([])
+  const [recipes, setRecipes] = useState<Queries.GoogleDocs[]>(getPublishedRecipes())
 
   const breakpointIndex = useBreakpointIndex()
 
@@ -28,8 +30,6 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
       duration: 250,
     })
   }, [recipesRef, breakpointIndex])
-
-  const getPublishedRecipes = () => isEditMode() ? data.recipes.nodes : data.recipes.nodes.filter(r => process.env.NODE_ENV === 'development' ? true : r.published)
 
   useEffect(() => {
     if (data.recipes) {
