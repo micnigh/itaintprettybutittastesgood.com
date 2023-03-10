@@ -1,4 +1,5 @@
 import React from "react"
+import moment from 'moment'
 import {graphql, HeadProps, PageProps} from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
@@ -25,7 +26,7 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
             whiteSpace: 'nowrap',
             marginBottom: date ? 0 : undefined,
           }}>{name}</h2>
-          {date && <div sx={{ mt: '0px' }}>{new Date(date).toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: 'numeric' })}{!published && <span> - draft</span>}</div>}
+          {date && <div sx={{ mt: '0px' }}>{moment.utc(date).format('MMM D, YYYY')}{!published && <span> - draft</span>}</div>}
         </span>
         {tags &&
         <div sx={{
