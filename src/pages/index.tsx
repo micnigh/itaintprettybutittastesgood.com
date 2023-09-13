@@ -181,7 +181,6 @@ query HomeQuery {
       tags
       prep
       cook
-      servings
       level
       cover {
         image {
