@@ -142,6 +142,7 @@ export const pageQuery = graphql`
       prep
       cook
       level
+      servings
       published
       childMarkdownRemark {
         html

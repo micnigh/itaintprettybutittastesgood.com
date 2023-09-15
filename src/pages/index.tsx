@@ -180,6 +180,7 @@ query HomeQuery {
       date
       tags
       prep
+      servings
       cook
       level
       cover {
