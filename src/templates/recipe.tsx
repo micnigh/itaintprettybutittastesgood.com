@@ -59,7 +59,7 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
         textAlign: 'center',
         width: ['100%']
       }}>
-        {cover && <GatsbyImage image={getImage(cover.image.childImageSharp.gatsbyImageData)} alt={name} sx={{
+        {cover && cover.image && <GatsbyImage image={getImage(cover.image.childImageSharp.gatsbyImageData)} alt={name} sx={{
           width: [null, null, '325px', '450px'],
           height: [null, null, '325px', '450px'],
           maxHeight: ['300px', '400px', '450px'],
@@ -67,7 +67,7 @@ export const RecipeTemplate = ({ data }: PageProps<PageData>) => {
           ml: [null, null, 2],
           borderRadius: '10%',
         }}  />}
-        {!cover && <PuppyPlaceholder index={recipes.nodes.findIndex(r => r.id === data.page.id)} sx={{
+        {(!cover || !cover.image) && <PuppyPlaceholder index={recipes.nodes.findIndex(r => r.id === data.page.id)} sx={{
           width: ['100%', '100%', '325px', '450px'],
           height: ['300px', '300px', '325px', '450px'],
           maxHeight: ['300px', '400px', '450px'],

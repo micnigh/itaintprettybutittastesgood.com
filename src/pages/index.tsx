@@ -77,7 +77,7 @@ export const PageHome = ({ data }: PageProps<PageData>) => {
               }
             }
           }}>
-            {r.cover
+            {r.cover && r.cover.image
             ? <GatsbyImage image={r.cover.image.childImageSharp.gatsbyImageData} title={r.name} alt={r.name} sx={{
               height: '100%',
             }}/>
