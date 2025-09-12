@@ -4,7 +4,7 @@
   "title": "Biscotti (Twice Bakes Cookie)",
   "ingredients": [
     {
-      "name": "butter, softened",
+      "name": "butter",
       "quantity": "½",
       "unit": "cup"
     },
@@ -54,8 +54,13 @@
       "unit": "teaspoons"
     },
     {
-      "name": "egg white w/2 teaspoon water beaten",
+      "name": "egg white",
       "quantity": "1",
+      "unit": "teaspoon"
+    },
+    {
+      "name": "water",
+      "quantity": "2",
       "unit": "teaspoon"
     }
   ],

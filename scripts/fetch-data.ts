@@ -46,7 +46,7 @@ interface Recipe {
 }
 
 interface CachedDoc extends docs_v1.Schema$Document {
-    revisionId: string;
+    modifiedTime: string;
 }
 
 async function authorize() {
@@ -79,7 +79,7 @@ async function listDocsRecursive(auth: any, folderId: string): Promise<drive_v3.
   async function traverse(currentFolderId: string): Promise<void> {
     const res = await drive.files.list({
       q: `'${currentFolderId}' in parents`,
-      fields: 'files(*)',
+      fields: 'files(id, name, mimeType, modifiedTime, description)',
     });
     const files = res.data.files;
     
@@ -99,12 +99,12 @@ async function listDocsRecursive(auth: any, folderId: string): Promise<drive_v3.
   return docs;
 }
 
-async function fetchDoc(auth: any, docId: string): Promise<docs_v1.Schema$Document & { revisionId?: string }> {
+async function fetchDoc(auth: any, docId: string): Promise<docs_v1.Schema$Document> {
   const docs = google.docs({ version: 'v1', auth });
   const res = await docs.documents.get({
     documentId: docId,
   });
-  return res.data as docs_v1.Schema$Document & { revisionId?: string };
+  return res.data;
 }
 
 function slugify(text: string): string {
@@ -369,7 +369,7 @@ async function main() {
     return;
   }
   
-  console.log(`Found ${docFiles.length} documents. Processing with revision-based cache...`);
+  console.log(`Found ${docFiles.length} documents. Processing with modification-time-based cache...`);
   
   for (const file of docFiles) {
     const slug = slugify(file.name || '');
@@ -379,26 +379,29 @@ async function main() {
     const cachePath = path.join(CACHE_DIR, `${slug}.json`);
     const recipePath = path.join(recipeDir, `index.json`);
     
-    // Stage 1: Fetch from Google Docs API only if revision ID has changed
-    let doc: (docs_v1.Schema$Document & { revisionId?: string }) | undefined;
+    // Stage 1: Fetch from Google Docs API only if modification time has changed
+    let doc: docs_v1.Schema$Document | undefined;
     try {
       const cachedData = await fs.readFile(cachePath, 'utf-8');
       const cachedDoc: CachedDoc = JSON.parse(cachedData);
       
-      // Fetch the document to get the current revisionId
-      const currentDoc = await fetchDoc(auth, file.id!);
-      
-      if (currentDoc.revisionId !== cachedDoc.revisionId) {
-        console.log(`[FETCH] Revision change detected, re-fetching: ${file.name}`);
-        doc = currentDoc;
-        await fs.writeFile(cachePath, JSON.stringify(doc, null, 2));
+      if (file.modifiedTime !== cachedDoc.modifiedTime) {
+        console.log(`[FETCH] Modification change detected, re-fetching: ${file.name}`);
+        doc = await fetchDoc(auth, file.id!);
+        // Add modifiedTime to the document for caching
+        const docWithModifiedTime = { ...doc, modifiedTime: file.modifiedTime! };
+        await fs.writeFile(cachePath, JSON.stringify(docWithModifiedTime, null, 2));
+        doc = docWithModifiedTime as docs_v1.Schema$Document;
       } else {
         // console.log(`[FETCH] Using raw cache for: ${file.name}`);
       }
     } catch (error) { // Not in raw cache
       console.log(`[FETCH] Not in cache, fetching: ${file.name}`);
       doc = await fetchDoc(auth, file.id!);
-      await fs.writeFile(cachePath, JSON.stringify(doc, null, 2));
+      // Add modifiedTime to the document for caching
+      const docWithModifiedTime = { ...doc, modifiedTime: file.modifiedTime! };
+      await fs.writeFile(cachePath, JSON.stringify(docWithModifiedTime, null, 2));
+      doc = docWithModifiedTime as docs_v1.Schema$Document;
     }
     
     // Stage 2: Process with Gemini only if necessary
