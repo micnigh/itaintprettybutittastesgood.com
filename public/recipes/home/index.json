@@ -3,5 +3,8 @@
   "slug": "home",
   "title": "Home",
   "ingredients": [],
-  "markdown": ""
+  "markdown": "",
+  "metadata": {
+    "page": false
+  }
 }

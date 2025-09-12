@@ -3,5 +3,8 @@
   "slug": "menu",
   "title": "Menu",
   "ingredients": [],
-  "markdown": "Home\n\nAbout\n\n"
+  "markdown": "Home\n\nAbout\n\n",
+  "metadata": {
+    "page": false
+  }
 }

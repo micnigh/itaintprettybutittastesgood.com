@@ -9,7 +9,7 @@
       "unit": "Tbs"
     },
     {
-      "name": "chocolate ships",
+      "name": "chocolate chips",
       "quantity": "1",
       "unit": "cup"
     },
@@ -25,17 +25,7 @@
     },
     {
       "name": "eggs",
-      "quantity": "2",
-      "unit": null
-    },
-    {
-      "name": "egg yolks",
-      "quantity": "2",
-      "unit": null
-    },
-    {
-      "name": "egg whites",
-      "quantity": "2",
+      "quantity": "4",
       "unit": null
     },
     {

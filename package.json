@@ -5,12 +5,13 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "fetch": "tsx scripts/fetch-data.ts",
-    "fetch:clean": "tsx scripts/fetch-data.ts --no-cache"
+    "fetch-data": "tsx scripts/fetch-data.ts",
+    "fetch-data:clean": "tsx scripts/fetch-data.ts --no-cache"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "googleapis": "^159.0.0",
+    "js-yaml": "^4.1.0",
     "moment": "^2.30.1",
     "node-fetch": "^3.3.2",
     "prismjs": "^1.30.0",
@@ -29,6 +30,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.13",
     "@types/js-search": "^1.4.4",
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^24.3.1",
     "@types/node-fetch": "^2.6.13",
     "@types/prismjs": "^1.26.5",

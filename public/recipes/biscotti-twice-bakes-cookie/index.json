@@ -4,7 +4,7 @@
   "title": "Biscotti (Twice Bakes Cookie)",
   "ingredients": [
     {
-      "name": "butter",
+      "name": "butter, softened",
       "quantity": "½",
       "unit": "cup"
     },
@@ -39,12 +39,12 @@
       "unit": "teaspoons"
     },
     {
-      "name": "pecans",
+      "name": "chopped pecans",
       "quantity": "1",
       "unit": "cup"
     },
     {
-      "name": "cranberries",
+      "name": "chopped cranberries",
       "quantity": "1",
       "unit": "cup"
     },
@@ -54,15 +54,23 @@
       "unit": "teaspoons"
     },
     {
-      "name": "egg white",
+      "name": "egg white w/2 teaspoon water beaten",
       "quantity": "1",
-      "unit": "teaspoon"
-    },
-    {
-      "name": "water",
-      "quantity": "2",
       "unit": "teaspoon"
     }
   ],
-  "markdown": "### \n\n### Summary\n\nNathan,\n\nEveryone and their mother (literally) have asked me for this recipe when they try these cookies. I make them as a fall/winter treat for others because they go best with a hot cup of coffee on a cold day. There are so many ways to make this recipe and I make them with lemon and orange or cherries and cranberries just making the best cookie I can and mixing it up so that there is some fun with it. I love you dearly.\n\nMom\n\n### Ingredients \n\n* ½ cup butter, softened\n* 1 cup sugar\n* 2 eggs\n* 1 teaspoons vanilla extract (or almond)\n* 2 ½ cups flour\n* 2 teaspoons baking powder\n* ¼ teaspoons salt\n* 1 cup chopped pecans (baking nut)\n* 1 cup chopped cranberries (dried fruit)\n* 2 teaspoons lemon zest (citrus zest)\n* 1 teaspoon egg white w/2 teaspoon water beaten \n### Preparation\n\n* Preheat oven to 325 degrees and set a baking tray with a silicone mat aside\n* Beat butter and sugar until fluffy\n* Add eggs one at a time then add vanilla\n* Mix dry ingredients and add to the wet mixture in 2 additions\n* Add the chopped pecans, cranberries and lemon zest into cookie batter mixture\n* Form into a ball and place on a lightly floured surface and divide in half\n* Form each half into a log and flatten (slightly) to top brush on the egg white wash on the baking tray lined with a silicone mat\n* Bake at 325 degrees for 35 min\n* Remove form the oven and cool for 15-20 min\n* With a sharp knife cut into ½ inch slices on a slight diagonal\n* Lay slices face down on the cookie sheet and bake at 300 degrees for 30 min flipping over half way through\n* Allow the cookies to rest for a day in a cool and dry location\n* Package and these will keep for up to 1 month in an airtight package\n"
+  "markdown": "### \n\n### Summary\n\nNathan,\n\nEveryone and their mother (literally) have asked me for this recipe when they try these cookies. I make them as a fall/winter treat for others because they go best with a hot cup of coffee on a cold day. There are so many ways to make this recipe and I make them with lemon and orange or cherries and cranberries just making the best cookie I can and mixing it up so that there is some fun with it. I love you dearly.\n\nMom\n\n### Ingredients \n\n* ½ cup butter, softened\n* 1 cup sugar\n* 2 eggs\n* 1 teaspoons vanilla extract (or almond)\n* 2 ½ cups flour\n* 2 teaspoons baking powder\n* ¼ teaspoons salt\n* 1 cup chopped pecans (baking nut)\n* 1 cup chopped cranberries (dried fruit)\n* 2 teaspoons lemon zest (citrus zest)\n* 1 teaspoon egg white w/2 teaspoon water beaten \n### Preparation\n\n* Preheat oven to 325 degrees and set a baking tray with a silicone mat aside\n* Beat butter and sugar until fluffy\n* Add eggs one at a time then add vanilla\n* Mix dry ingredients and add to the wet mixture in 2 additions\n* Add the chopped pecans, cranberries and lemon zest into cookie batter mixture\n* Form into a ball and place on a lightly floured surface and divide in half\n* Form each half into a log and flatten (slightly) to top brush on the egg white wash on the baking tray lined with a silicone mat\n* Bake at 325 degrees for 35 min\n* Remove form the oven and cool for 15-20 min\n* With a sharp knife cut into ½ inch slices on a slight diagonal\n* Lay slices face down on the cookie sheet and bake at 300 degrees for 30 min flipping over half way through\n* Allow the cookies to rest for a day in a cool and dry location\n* Package and these will keep for up to 1 month in an airtight package\n",
+  "metadata": {
+    "date": "2022-08-16T00:00:00.000Z",
+    "tags": [
+      "cookie",
+      "cranberry",
+      "sweet",
+      "Christmas"
+    ],
+    "prep": "20m",
+    "cook": "35m",
+    "servings": "48approx",
+    "level": "medium"
+  }
 }

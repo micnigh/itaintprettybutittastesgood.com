@@ -14,6 +14,9 @@ importers:
       googleapis:
         specifier: ^159.0.0
         version: 159.0.0
+      js-yaml:
+        specifier: ^4.1.0
+        version: 4.1.0
       moment:
         specifier: ^2.30.1
         version: 2.30.1
@@ -63,6 +66,9 @@ importers:
       '@types/js-search':
         specifier: ^1.4.4
         version: 1.4.4
+      '@types/js-yaml':
+        specifier: ^4.0.9
+        version: 4.0.9
       '@types/node':
         specifier: ^24.3.1
         version: 24.3.1
@@ -694,6 +700,9 @@ packages:
 
   '@types/js-search@1.4.4':
     resolution: {integrity: sha512-NYIBuSRTi2h6nLne0Ygx78BZaiT/q0lLU7YSkjOrDJWpSx6BioIZA/i2GZ+WmMUzEQs2VNIWcXRRAqisrG3ZNA==}
+
+  '@types/js-yaml@4.0.9':
+    resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -2848,6 +2857,8 @@ snapshots:
   '@types/history@4.7.11': {}
 
   '@types/js-search@1.4.4': {}
+
+  '@types/js-yaml@4.0.9': {}
 
   '@types/json-schema@7.0.15': {}
 

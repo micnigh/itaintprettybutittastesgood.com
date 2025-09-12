@@ -30,7 +30,7 @@
     },
     {
       "name": "pears",
-      "quantity": "3 large",
+      "quantity": "3",
       "unit": null
     },
     {
@@ -59,5 +59,17 @@
       "unit": "teaspoon"
     }
   ],
-  "markdown": "### Summary\n\nNathan,\n\nSo Grandpa Catfish has this small spiral notebook full of delicious recipes and I have tried to steal them all. He likes to put in recipes that he wants to try as well and full vetted recipes that are the best. That is sort of what I am trying to do with these recipes. I want you to have all the good things in life and maybe a few of these will bring you joy when you remember baking and cooking with me. I love you dearly.\n\nMom\n\n### Ingredients \n\n* 2 cups sugar\n* 2 cups flour\n* 1 teaspoon soda\n* 2 eggs\n* 1 cup oil\n* 3 large pears (peeled and sliced thin)\n* 2 teaspoon ground cinnamon\n* ¼ teaspoon salt\n* ½ teaspoon ground nutmeg\n* 1 teaspoon vanilla\n* 1 teaspoon water\n### Preparation\n\n* Preheat oven to 350 degrees\n* Combine eggs and toil till foamy then add vanilla and water and set aside\n* Mix dry ingredients in separate bowl\n* Combine wet and dry ingredients and fold in pears\n* Pour into 9x13 pan and bake for 1 hour\n* Frosting is not needed but it you want a little added sweetness mix up some powdered sugar glaze (powdered sugar and milk)\n"
+  "markdown": "### Summary\n\nNathan,\n\nSo Grandpa Catfish has this small spiral notebook full of delicious recipes and I have tried to steal them all. He likes to put in recipes that he wants to try as well and full vetted recipes that are the best. That is sort of what I am trying to do with these recipes. I want you to have all the good things in life and maybe a few of these will bring you joy when you remember baking and cooking with me. I love you dearly.\n\nMom\n\n### Ingredients \n\n* 2 cups sugar\n* 2 cups flour\n* 1 teaspoon soda\n* 2 eggs\n* 1 cup oil\n* 3 large pears (peeled and sliced thin)\n* 2 teaspoon ground cinnamon\n* ¼ teaspoon salt\n* ½ teaspoon ground nutmeg\n* 1 teaspoon vanilla\n* 1 teaspoon water\n### Preparation\n\n* Preheat oven to 350 degrees\n* Combine eggs and toil till foamy then add vanilla and water and set aside\n* Mix dry ingredients in separate bowl\n* Combine wet and dry ingredients and fold in pears\n* Pour into 9x13 pan and bake for 1 hour\n* Frosting is not needed but it you want a little added sweetness mix up some powdered sugar glaze (powdered sugar and milk)\n",
+  "metadata": {
+    "date": "2022-08-16T00:00:00.000Z",
+    "tags": [
+      "sweet",
+      "pear",
+      "cake"
+    ],
+    "prep": "15m",
+    "cook": "1h",
+    "servings": "12s",
+    "level": "easy"
+  }
 }

@@ -4,7 +4,7 @@
   "title": "Oma's Toll House Cupcakes",
   "ingredients": [
     {
-      "name": "soft butter",
+      "name": "butter",
       "quantity": "½",
       "unit": "cup"
     },
@@ -44,7 +44,7 @@
       "unit": "tsp"
     },
     {
-      "name": "packed brown sugar",
+      "name": "brown sugar",
       "quantity": "½",
       "unit": "cup"
     },

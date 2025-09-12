@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import fetch from 'node-fetch';
+import * as yaml from 'js-yaml';
 import 'dotenv/config';
 
 // 1. Follow this guide to create a service account and credentials:
@@ -41,6 +42,7 @@ interface Recipe {
     title: string;
     ingredients: Ingredient[];
     markdown: string;
+    metadata?: Record<string, any>;
 }
 
 interface CachedDoc extends docs_v1.Schema$Document {
@@ -77,9 +79,10 @@ async function listDocsRecursive(auth: any, folderId: string): Promise<drive_v3.
   async function traverse(currentFolderId: string): Promise<void> {
     const res = await drive.files.list({
       q: `'${currentFolderId}' in parents`,
-      fields: 'files(id, name, mimeType, headRevisionId)',
+      fields: 'files(*)',
     });
     const files = res.data.files;
+    
 
     if (files) {
         for (const file of files) {
@@ -96,12 +99,12 @@ async function listDocsRecursive(auth: any, folderId: string): Promise<drive_v3.
   return docs;
 }
 
-async function fetchDoc(auth: any, docId: string): Promise<docs_v1.Schema$Document> {
+async function fetchDoc(auth: any, docId: string): Promise<docs_v1.Schema$Document & { revisionId?: string }> {
   const docs = google.docs({ version: 'v1', auth });
   const res = await docs.documents.get({
     documentId: docId,
   });
-  return res.data;
+  return res.data as docs_v1.Schema$Document & { revisionId?: string };
 }
 
 function slugify(text: string): string {
@@ -316,6 +319,21 @@ function getTextFromTableCell(cell: docs_v1.Schema$TableCell) {
   return text.replace(/\n/g, '');
 }
 
+function parseYamlMetadata(description: string | undefined): Record<string, any> | undefined {
+  if (!description || !description.trim()) {
+    return undefined;
+  }
+
+  try {
+    // Try to parse the description as YAML
+    const metadata = yaml.load(description.trim()) as Record<string, any>;
+    return metadata;
+  } catch (error) {
+    console.warn(`Failed to parse YAML metadata from description: ${error}`);
+    return undefined;
+  }
+}
+
 
 async function main() {
   const noCache = process.argv.includes('--no-cache');
@@ -330,7 +348,7 @@ async function main() {
   await fs.mkdir(CACHE_DIR, { recursive: true });
   await fs.mkdir(RECIPES_DIR, { recursive: true });
 
-  if (FOLDER_ID === 'your-folder-id-here') {
+  if (FOLDER_ID === 'your-folder-id-here' as any) {
     console.log('No folder ID provided. Please update `scripts/fetch-data.js`.');
     return;
   }
@@ -354,7 +372,7 @@ async function main() {
   console.log(`Found ${docFiles.length} documents. Processing with revision-based cache...`);
   
   for (const file of docFiles) {
-    const slug = slugify(file.name);
+    const slug = slugify(file.name || '');
     const recipeDir = path.join(RECIPES_DIR, slug);
     await fs.mkdir(recipeDir, { recursive: true });
 
@@ -366,10 +384,13 @@ async function main() {
     try {
       const cachedData = await fs.readFile(cachePath, 'utf-8');
       const cachedDoc: CachedDoc = JSON.parse(cachedData);
-      if (file.headRevisionId !== cachedDoc.revisionId) {
+      
+      // Fetch the document to get the current revisionId
+      const currentDoc = await fetchDoc(auth, file.id!);
+      
+      if (currentDoc.revisionId !== cachedDoc.revisionId) {
         console.log(`[FETCH] Revision change detected, re-fetching: ${file.name}`);
-        doc = await fetchDoc(auth, file.id!);
-        doc.revisionId = file.headRevisionId!; // Add revisionId to the doc object
+        doc = currentDoc;
         await fs.writeFile(cachePath, JSON.stringify(doc, null, 2));
       } else {
         // console.log(`[FETCH] Using raw cache for: ${file.name}`);
@@ -377,7 +398,6 @@ async function main() {
     } catch (error) { // Not in raw cache
       console.log(`[FETCH] Not in cache, fetching: ${file.name}`);
       doc = await fetchDoc(auth, file.id!);
-      doc.revisionId = file.headRevisionId!; // Add revisionId to the doc object
       await fs.writeFile(cachePath, JSON.stringify(doc, null, 2));
     }
     
@@ -404,13 +424,15 @@ async function main() {
         }
         const markdown = await parseGdoc(doc as docs_v1.Schema$Document, recipeDir);
         const ingredients = await getIngredientsWithGemini(markdown);
+        const metadata = parseYamlMetadata(file.description || '');
 
         const recipe: Recipe = {
-          id: doc.documentId!,
+          id: doc?.documentId!,
           slug: slug,
-          title: doc.title!,
+          title: doc?.title!,
           ingredients,
           markdown,
+          metadata,
         };
         
         await fs.writeFile(recipePath, JSON.stringify(recipe, null, 2));
