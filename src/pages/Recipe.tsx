@@ -19,12 +19,13 @@ const Recipe: FC = () => {
   }
   
   const Image: FC<ImageProps> = ({src, alt}) => {
-    const imagePath = `/recipes/${slug}/${src}`;
-    return <img src={imagePath} alt={alt} style={{maxWidth: '100%'}} />;
+    // Vite serves files from the 'public' directory at the root
+    const imagePath = `/recipes/${slug}/${src?.replace('./', '')}`;
+    return <img src={imagePath} alt={alt} className="max-w-full h-auto rounded-lg my-4" />;
   }
 
   return (
-    <div>
+    <article className="prose lg:prose-xl">
       <h1>{recipe.title}</h1>
       
       <h2>Ingredients</h2>
@@ -44,7 +45,7 @@ const Recipe: FC = () => {
       >
         {recipe.markdown}
       </ReactMarkdown>
-    </div>
+    </article>
   );
 };
 

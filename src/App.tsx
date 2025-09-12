@@ -1,10 +1,7 @@
-/// <reference types="@emotion/react" />
 import { FC, PropsWithChildren } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { create } from 'zustand';
-import { Input, ThemeProvider } from 'theme-ui';
 import { Link } from 'react-router-dom';
-import { theme } from './theme';
 import Home from './pages/Home';
 import Recipe from './pages/Recipe';
 
@@ -28,74 +25,30 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
   const displaySearch = location.pathname === '/';
   const { search, setSearch } = useStore(state => state);
 
+  const headerGridClass = displaySearch 
+    ? "lg:grid-cols-[min-content_min-content_1fr]" 
+    : "lg:grid-cols-[1fr_min-content_1fr]";
+
   return (
-    <div sx={{
-      bg: 'background',
-    }}>
-      <div
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          maxWidth: "1024px",
-          mx: "auto",
-          position: 'relative',
-          minHeight: "100vh",
-          p: [2, 3],
-          bg: 'white',
-        }}
-      >
-        <header
-          sx={{
-            color: "black",
-            mt: 1,
-            mb: 3,
-            display: 'grid',
-            position: 'relative',
-            gridTemplateColumns: [null, null, displaySearch ? 'min-content min-content 1fr' : null, '1fr min-content 1fr'],
-            alignItems: 'center'
-          }}
-        >
-          <span sx={{ flexGrow: 1 }} />
+    <div className="bg-gray-100">
+      <div className="flex flex-col w-full max-w-5xl mx-auto relative min-h-screen p-2 sm:p-3 bg-white">
+        <header className={`text-black mt-1 mb-3 grid relative items-center ${headerGridClass}`}>
+          <span className="flex-grow" />
           <div>
-            <Link
-              to="/"
-              sx={{
-                variant: 'styles.a',
-                fontSize: [1, 3, 4],
-                textAlign: "center",
-              }}
-            >
-              <h1 sx={{
-                variant: 'styles.h1',
-                color: 'primary',
-                fontSize: [4, 6]
-              }}>itaintprettybutittastesgood</h1>
+            <Link to="/" className="text-lg sm:text-2xl md:text-3xl text-center no-underline">
+              <h1 className="text-blue-600 text-3xl sm:text-5xl font-bold">itaintprettybutittastesgood</h1>
             </Link>
           </div>
-          <div sx={{ flexGrow: 1, textAlign: 'right' }}>
+          <div className="flex-grow text-right">
             {displaySearch &&
-              <Input type='text' placeholder='filter'
+              <input type='text' placeholder='filter'
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                sx={{
-                  display: 'inline-block',
-                  width: [null, null, 'calc(100% - 60px)'],
-                  py: 1,
-                  px: 1,
-                  mt: [1, 1, 0],
-                  ml: [null, null, 1],
-                }}
+                className="inline-block lg:w-[calc(100%-60px)] py-1 px-1 mt-1 lg:mt-0 lg:ml-1 border rounded"
               />}
           </div>
           {(isEditMode() || process.env.NODE_ENV === 'development') &&
-            <a sx={{
-              variant: 'styles.a',
-              position: 'absolute',
-              top: '-30px',
-              right: '0px',
-              color: '#ccc'
-            }} target='_blank' rel='noreferrer' href={``} title={'refresh data from google drive'} onClick={e => {
+            <a className="no-underline absolute -top-8 right-0 text-gray-400" target='_blank' rel='noreferrer' href={``} title={'refresh data from google drive'} onClick={e => {
               e.preventDefault();
               if (process.env.NODE_ENV === 'development') {
                 // This will need to be adapted for Vite's environment
@@ -111,14 +64,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
               }
             }}>Refresh</a>}
         </header>
-        <main
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            color: "text",
-            position: 'relative',
-          }}
-        >
+        <main className="flex flex-col text-gray-800 relative">
           <div>
             {children}
           </div>
@@ -130,16 +76,14 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
 
 const App = () => {
     return (
-        <ThemeProvider theme={theme}>
-            <Router>
-                <Layout>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/recipe/:slug" element={<Recipe />} />
-                    </Routes>
-                </Layout>
-            </Router>
-        </ThemeProvider>
+        <Router>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/recipe/:slug" element={<Recipe />} />
+                </Routes>
+            </Layout>
+        </Router>
     )
 }
 
