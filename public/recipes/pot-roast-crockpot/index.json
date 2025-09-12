@@ -30,23 +30,23 @@
     },
     {
       "name": "Carrots",
-      "quantity": "3 large",
+      "quantity": "3",
       "unit": null
     },
     {
       "name": "Onion",
-      "quantity": "1 medium",
-      "unit": null
-    },
-    {
-      "name": "Garlic Cloves",
-      "quantity": "4",
-      "unit": null
-    },
-    {
-      "name": "Rosemary sprig",
       "quantity": "1",
       "unit": null
+    },
+    {
+      "name": "Garlic",
+      "quantity": "4",
+      "unit": "Cloves"
+    },
+    {
+      "name": "Rosemary",
+      "quantity": "1",
+      "unit": "sprig"
     },
     {
       "name": "Chuck Roast",

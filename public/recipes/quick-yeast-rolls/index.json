@@ -4,7 +4,7 @@
   "title": "Quick Yeast Rolls",
   "ingredients": [
     {
-      "name": "shortening",
+      "name": "shortening (softened butter)",
       "quantity": "2",
       "unit": "tablespoons"
     },
@@ -20,8 +20,8 @@
     },
     {
       "name": "active dry yeast",
-      "quantity": "1 .25oz",
-      "unit": "package"
+      "quantity": "1",
+      "unit": ".25oz package"
     },
     {
       "name": "egg, beaten",

@@ -19,7 +19,7 @@
       "unit": "cup"
     },
     {
-      "name": "med apples, peeled and sliced",
+      "name": "apples, peeled and sliced",
       "quantity": "2",
       "unit": null
     },
@@ -44,8 +44,8 @@
       "unit": "cup"
     },
     {
-      "name": "Whipped cream or ice cream optional",
-      "quantity": null,
+      "name": "Whipped cream or ice cream",
+      "quantity": "optional",
       "unit": null
     }
   ],
