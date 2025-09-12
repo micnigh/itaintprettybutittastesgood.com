@@ -1,17 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import recipes from '../recipes.json';
+import { slugify } from '../utils';
 
-function slugify(text) {
-    return text.toString().toLowerCase()
-        .replace(/\s+/g, '-')           // Replace spaces with -
-        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-        .replace(/^-+/, '')             // Trim - from start of text
-        .replace(/-+$/, '');            // Trim - from end of text
-}
-
-const Home = () => {
+const Home: FC = () => {
   return (
     <div>
       <h1>All Recipes</h1>

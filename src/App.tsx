@@ -1,4 +1,5 @@
-import React from 'react';
+/// <reference types="@emotion/react" />
+import { FC, PropsWithChildren } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { create } from 'zustand';
 import { Input, ThemeProvider } from 'theme-ui';
@@ -18,10 +19,10 @@ interface StoreState {
 
 export const useStore = create<StoreState>(set => ({
   search: '',
-  setSearch: (search: string) => set(() => ({ search })),
+  setSearch: (search) => set(() => ({ search })),
 }));
 
-const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
+const Layout: FC<PropsWithChildren> = ({ children }) => {
   const location = useLocation();
 
   const displaySearch = location.pathname === '/';

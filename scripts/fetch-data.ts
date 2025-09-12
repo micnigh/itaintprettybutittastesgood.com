@@ -1,9 +1,9 @@
-const { google } = require('googleapis');
-const fs = require('fs').promises;
-const path = require('path');
-const { GoogleGenerativeAI } = require('@google/generative-ai');
-const fetch = require('node-fetch');
-require('dotenv').config();
+import { google, docs_v1, drive_v3 } from 'googleapis';
+import { promises as fs } from 'fs';
+import path from 'path';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import fetch from 'node-fetch';
+import 'dotenv/config';
 
 // 1. Follow this guide to create a service account and credentials:
 //    https://developers.google.com/workspace/guides/create-credentials
@@ -24,9 +24,32 @@ const FOLDER_ID = '1rLwZdOpl3WxkNNuKPbO1s2YR9Ew7jZRf'; // <-- ADD YOUR FOLDER ID
 const CACHE_DIR = path.join(process.cwd(), 'cache/google-docs');
 const RECIPES_DIR = path.join(process.cwd(), 'public/recipes');
 
+interface Credentials {
+    client_email: string;
+    private_key: string;
+}
+
+interface Ingredient {
+    name: string;
+    quantity: string | null;
+    unit: string | null;
+}
+
+interface Recipe {
+    id: string;
+    slug: string;
+    title: string;
+    ingredients: Ingredient[];
+    markdown: string;
+}
+
+interface CachedDoc extends docs_v1.Schema$Document {
+    revisionId: string;
+}
+
 async function authorize() {
-  const content = await fs.readFile(CREDENTIALS_PATH);
-  const keys = JSON.parse(content);
+  const content = await fs.readFile(CREDENTIALS_PATH, 'utf-8');
+  const keys: Credentials = JSON.parse(content);
 
   console.log('Attempting to authorize with email:', keys.client_email);
   console.log('Private key starts with:', keys.private_key.substring(0, 40));
@@ -47,23 +70,25 @@ async function authorize() {
   return client;
 }
 
-async function listDocsRecursive(auth, folderId) {
+async function listDocsRecursive(auth: any, folderId: string): Promise<drive_v3.Schema$File[]> {
   const drive = google.drive({ version: 'v3', auth });
-  let docs = [];
+  const docs: drive_v3.Schema$File[] = [];
   
-  async function traverse(currentFolderId) {
+  async function traverse(currentFolderId: string): Promise<void> {
     const res = await drive.files.list({
       q: `'${currentFolderId}' in parents`,
       fields: 'files(id, name, mimeType, headRevisionId)',
     });
     const files = res.data.files;
 
-    for (const file of files) {
-      if (file.mimeType === 'application/vnd.google-apps.document') {
-        docs.push(file);
-      } else if (file.mimeType === 'application/vnd.google-apps.folder') {
-        await traverse(file.id); // Recurse into subfolder
-      }
+    if (files) {
+        for (const file of files) {
+          if (file.mimeType === 'application/vnd.google-apps.document') {
+            docs.push(file);
+          } else if (file.mimeType === 'application/vnd.google-apps.folder' && file.id) {
+            await traverse(file.id); // Recurse into subfolder
+          }
+        }
     }
   }
 
@@ -71,7 +96,7 @@ async function listDocsRecursive(auth, folderId) {
   return docs;
 }
 
-async function fetchDoc(auth, docId) {
+async function fetchDoc(auth: any, docId: string): Promise<docs_v1.Schema$Document> {
   const docs = google.docs({ version: 'v1', auth });
   const res = await docs.documents.get({
     documentId: docId,
@@ -79,7 +104,7 @@ async function fetchDoc(auth, docId) {
   return res.data;
 }
 
-function slugify(text) {
+function slugify(text: string): string {
     return text.toString().toLowerCase()
         .replace(/\s+/g, '-')           // Replace spaces with -
         .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
@@ -88,10 +113,12 @@ function slugify(text) {
         .replace(/-+$/, '');            // Trim - from end of text
 }
 
-async function parseGdoc(doc, recipeDir) {
+async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string): Promise<string> {
   let markdown = '';
   let imageCounter = 0;
-  const downloadedImageIds = new Set();
+  const downloadedImageIds = new Set<string>();
+
+  if (!doc.body?.content) return '';
 
   for (const element of doc.body.content) {
     if (element.paragraph) {
@@ -99,32 +126,34 @@ async function parseGdoc(doc, recipeDir) {
       const isList = !!element.paragraph.bullet;
 
       let line = '';
-      for (const pe of element.paragraph.elements) {
-        if (pe.textRun) {
-          let text = pe.textRun.content;
-          if (pe.textRun.textStyle?.bold) {
-            text = `**${text}**`;
-          }
-          if (pe.textRun.textStyle?.italic) {
-            text = `*${text}*`;
-          }
-          line += text;
-        } else if (pe.inlineObjectElement) {
-            const objectId = pe.inlineObjectElement.inlineObjectId;
-            const image = doc.inlineObjects[objectId].inlineObjectProperties.embeddedObject;
-            if (image.imageProperties) {
-                downloadedImageIds.add(objectId);
-                imageCounter++;
-                const url = image.imageProperties.contentUri;
-                const res = await fetch(url);
-                const buffer = await res.buffer();
-                const contentType = res.headers.get('content-type') || 'image/jpeg';
-                const extension = contentType.split('/')[1];
-                const filename = `image-${imageCounter}.${extension}`;
-                await fs.writeFile(path.join(recipeDir, filename), buffer);
-                line += `![${doc.title} image ${imageCounter}](./${filename})`;
+      if (element.paragraph.elements) {
+          for (const pe of element.paragraph.elements) {
+            if (pe.textRun && pe.textRun.content) {
+              let text = pe.textRun.content;
+              if (pe.textRun.textStyle?.bold) {
+                text = `**${text}**`;
+              }
+              if (pe.textRun.textStyle?.italic) {
+                text = `*${text}*`;
+              }
+              line += text;
+            } else if (pe.inlineObjectElement?.inlineObjectId) {
+                const objectId = pe.inlineObjectElement.inlineObjectId;
+                const image = doc.inlineObjects?.[objectId]?.inlineObjectProperties?.embeddedObject;
+                if (image?.imageProperties?.contentUri) {
+                    downloadedImageIds.add(objectId);
+                    imageCounter++;
+                    const url = image.imageProperties.contentUri;
+                    const res = await fetch(url);
+                    const buffer = await res.buffer();
+                    const contentType = res.headers.get('content-type') || 'image/jpeg';
+                    const extension = contentType.split('/')[1];
+                    const filename = `image-${imageCounter}.${extension}`;
+                    await fs.writeFile(path.join(recipeDir, filename), buffer);
+                    line += `![${doc.title} image ${imageCounter}](./${filename})`;
+                }
             }
-        }
+          }
       }
       
       line = line.replace(/\n$/, '');
@@ -184,7 +213,7 @@ async function parseGdoc(doc, recipeDir) {
   return markdown;
 }
 
-async function getIngredientsWithGemini(markdownContent) {
+async function getIngredientsWithGemini(markdownContent: string): Promise<Ingredient[]> {
   if (!process.env.GEMINI_API_KEY) {
     throw new Error("GEMINI_API_KEY is not set in the .env file.");
   }
@@ -230,7 +259,7 @@ async function getIngredientsWithGemini(markdownContent) {
 
         const jsonString = text.substring(startIndex, endIndex + 1);
         return JSON.parse(jsonString);
-      } catch (error) {
+      } catch (error: any) {
         if (error.status === 503 && attempt < MAX_RETRIES - 1) {
             console.warn(`Gemini API returned 503. Retrying in ${delay / 1000}s... (Attempt ${attempt + 1}/${MAX_RETRIES})`);
             await new Promise(res => setTimeout(res, delay));
@@ -242,11 +271,12 @@ async function getIngredientsWithGemini(markdownContent) {
         }
       }
   }
+  return []; // Should not be reached if MAX_RETRIES > 0
 }
 
 
-function extractMetadataFromTable(doc) {
-  const metadata = {};
+function extractMetadataFromTable(doc: docs_v1.Schema$Document) {
+  const metadata: Record<string, string> = {};
   if (!doc.body || !doc.body.content) {
     return metadata;
   }
@@ -272,7 +302,7 @@ function extractMetadataFromTable(doc) {
   return metadata;
 }
 
-function getTextFromTableCell(cell) {
+function getTextFromTableCell(cell: docs_v1.Schema$TableCell) {
   let text = '';
   if (cell.content) {
     for (const element of cell.content) {
@@ -332,22 +362,22 @@ async function main() {
     const recipePath = path.join(recipeDir, `index.json`);
     
     // Stage 1: Fetch from Google Docs API only if revision ID has changed
-    let doc;
+    let doc: (docs_v1.Schema$Document & { revisionId?: string }) | undefined;
     try {
       const cachedData = await fs.readFile(cachePath, 'utf-8');
-      const cachedDoc = JSON.parse(cachedData);
+      const cachedDoc: CachedDoc = JSON.parse(cachedData);
       if (file.headRevisionId !== cachedDoc.revisionId) {
         console.log(`[FETCH] Revision change detected, re-fetching: ${file.name}`);
-        doc = await fetchDoc(auth, file.id);
-        doc.revisionId = file.headRevisionId; // Add revisionId to the doc object
+        doc = await fetchDoc(auth, file.id!);
+        doc.revisionId = file.headRevisionId!; // Add revisionId to the doc object
         await fs.writeFile(cachePath, JSON.stringify(doc, null, 2));
       } else {
         // console.log(`[FETCH] Using raw cache for: ${file.name}`);
       }
     } catch (error) { // Not in raw cache
       console.log(`[FETCH] Not in cache, fetching: ${file.name}`);
-      doc = await fetchDoc(auth, file.id);
-      doc.revisionId = file.headRevisionId; // Add revisionId to the doc object
+      doc = await fetchDoc(auth, file.id!);
+      doc.revisionId = file.headRevisionId!; // Add revisionId to the doc object
       await fs.writeFile(cachePath, JSON.stringify(doc, null, 2));
     }
     
@@ -372,13 +402,13 @@ async function main() {
             const cachedData = await fs.readFile(cachePath, 'utf-8');
             doc = JSON.parse(cachedData);
         }
-        const markdown = await parseGdoc(doc, recipeDir);
+        const markdown = await parseGdoc(doc as docs_v1.Schema$Document, recipeDir);
         const ingredients = await getIngredientsWithGemini(markdown);
 
-        const recipe = {
-          id: doc.documentId,
+        const recipe: Recipe = {
+          id: doc.documentId!,
           slug: slug,
-          title: doc.title,
+          title: doc.title!,
           ingredients,
           markdown,
         };
@@ -388,7 +418,7 @@ async function main() {
   }
   
   // Combine all recipes into a single file for the app
-  const allRecipes = [];
+  const allRecipes: Recipe[] = [];
   const recipeDirs = await fs.readdir(RECIPES_DIR, { withFileTypes: true });
   for (const recipeDir of recipeDirs) {
     if (recipeDir.isDirectory()) {
