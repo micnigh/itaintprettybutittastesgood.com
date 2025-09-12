@@ -22,3 +22,5 @@ coverage
 .env.production.local
 
 credentials.json
+
+src/recipes.json

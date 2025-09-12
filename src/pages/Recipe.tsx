@@ -28,14 +28,14 @@ const Recipe: FC = () => {
     <article className="prose lg:prose-xl">
       <h1>{recipe.title}</h1>
       
-      <h2>Ingredients</h2>
+      {/* <h2>Ingredients</h2>
       <ul>
         {recipe.ingredients.map((ingredient, index) => (
           <li key={index}>
             {ingredient.quantity} {ingredient.unit} {ingredient.name}
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
