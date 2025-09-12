@@ -1,0 +1,2318 @@
+[
+  {
+    "id": "17wKtZvIHOSoVnx4h_y82vXTEZI77fCCLdsP5iH-P8OQ",
+    "slug": "about",
+    "title": "About",
+    "ingredients": [],
+    "markdown": "Recipe website for Nigh family recipes\n\n**Features\n**\n\n* Content stored in google drive\n* Static website, so hosting is freeish\n* Source code available if someone wants to make their own\n**First version should have\n**\n\n* Recipes\n* Cover photo\n* Tags\n* Theme similar to gatsby-theme-recipes\n**\n**\n\n**Future features (not prioritized)\n**\n\n* Estimated time\n* Search\n* Unit converter (metric/us)\n* Servings modifier\n* Nutrition info\n* Estimated cost\n* Grocery list builder\n"
+  },
+  {
+    "id": "1oeXLJUGuIOxmb2N6Rasi4eP0i_9PClgwrygjTvVFCVU",
+    "slug": "admin",
+    "title": "Admin",
+    "ingredients": [],
+    "markdown": "Github_token\n\n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\n\n"
+  },
+  {
+    "id": "1QEuWyrrxn6UoxQVMEM9Vs4UcXpf-icD8xa0uhvyKejs",
+    "slug": "alfredo-sauce",
+    "title": "Alfredo Sauce",
+    "ingredients": [
+      {
+        "name": "butter",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "heavy cream",
+        "quantity": "1 ½",
+        "unit": "cup"
+      },
+      {
+        "name": "minced garlic",
+        "quantity": "2",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "salt",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "pepper",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "italian seasoning",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "fresh grated parmesan cheese",
+        "quantity": "2",
+        "unit": "cups"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nI love alfredo. I mean it is one of my favorite sauces. It is so quick and easy and just makes me happy to make some pasta and grilled chicken with this sauce to comfort me after a long day. I hope you find comfort in it too. I love you dearly.\n\nMom\n\n### Ingredients \n\n* ½ cup butter\n* 1 ½ cup heavy cream\n* 2 teaspoons minced garlic\n* ½ teaspoon salt\n* ½ teaspoon pepper\n* 1 teaspoon italian seasoning\n* 2 cups fresh grated parmesan cheese\n### Preparation\n\n* All this will be made in one pot! And takes all of 10 min to make!!\n* Saute garlic with the butter, salt, pepper, and italian seasoning\n* When the garlic is fragrant (about 2 min of cooking) add in the heavy cream\n* Set the whole thing on medium heat and stir constantly and watch for the cream to thicken\n* When there is a light simmer add in the parmesan cheese (fresh is better for taste and just the overall consistency) \n* And when everything is combined and the sauce has thickened it is ready to use\n"
+  },
+  {
+    "id": "1AWPa5VIcue7ubd2mYNt7IsEU07Y1wXewxJXojwh-wQs",
+    "slug": "aunt-lauras-bread",
+    "title": "Aunt Laura's Bread",
+    "ingredients": [
+      {
+        "name": "flour",
+        "quantity": "3",
+        "unit": "cups"
+      },
+      {
+        "name": "salt",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "yeast",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1-2",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "hot water",
+        "quantity": "1 ½",
+        "unit": "cups"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nSo for a time my biological mother Dawn didn’t think that Laura could cook so she always had Laura bring store bought bread/rolls for holiday events. We decided that it was bullcrap. So for our first thanksgiving in the new house I asked Laura what she wanted to do and she had a whole lot of ideas! One of those ideas was this lovely bread. It is so perfect not just for holidays but for every day. I hope that you love this as much as we do. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 3 cups flour, beast to use bread flour (make it pressed and slightly heaping cups)\n* 1 teaspoon salt (slightly heaping)\n* ½ teaspoon yeast (slightly under ½ teaspoon)\n* 1-2 teaspoons sugar\n* 1 ½ cups hot water (not boiling)\n### Preparation\n\n* Pin the bowl combine yeast, sugar, and hot water and allow to bloom\n* Add in flour and salt. Combine until dough is hydrated and fully incorporated, if the dough is too dry add a bit (small amounts) of hot water until dough is hydrated but not wet\n* Cover bowl with cling wrap and a towel and set on the counter until the dough has significantly risen (approx 6 hours to overnight)\n* Turn out risen dough on a well floured surface and knead to a smoother finish and shape dough into a ball (2-3 min) cut the top of the dough with a x shape to allow for ventilation \n* Place dough ball into a parchment lined bowl (can use the same bowl that the dough was originally resing in it just needs to be quickly cleaned and dried\n* Cover bowl with a towel\n* Heat oven to 450 and place dutch oven into heating over and allow to come to temp (leave it in there for 30 min)\n* Place parchment and dough in the the warmed dutch oven and with a lid on bake for 30 min allowing the dough to steam slightly and the top will become golden brown\n* Remove dough and parchment from the dutch oven and return the dough to the warm pot bake again without the lid allowing the whole bread to turn golden brown 5-6 min for lightly browned and 10-15 for a deeper brown\n* Set bread out for 2 hours before cutting\n"
+  },
+  {
+    "id": "1nRSyY_jyP0WKd-VAb8irR9Qdj0yqozfT25UsKHphmk4",
+    "slug": "banana-bread-with-coconut-oil",
+    "title": "Banana Bread with Coconut Oil",
+    "ingredients": [
+      {
+        "name": "flour",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "baking powder",
+        "quantity": "1 ½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "baking soda",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "cinnamon",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "nutmeg",
+        "quantity": "⅛",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "eggs",
+        "quantity": "2",
+        "unit": null
+      },
+      {
+        "name": "mashed banana",
+        "quantity": "1 ½",
+        "unit": "cups"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "coconut oil",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "walnuts",
+        "quantity": "¼",
+        "unit": "cup"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nSo I wanted banana bread that didn’t get hard when reheated because of the butter so I just tried it with coconut oil. It worked!!  I love you dearly.\n\nMom\n\n### Ingredients \n\n* 2 cups flour\n* 1 ½ teaspoon baking powder\n* ½ teaspoon baking soda\n* ¼ teaspoon cinnamon\n* ⅛ teaspoon nutmeg\n* 2 eggs\n* 1 ½ cups mashed banana\n* 1 cup sugar\n* ½ cup coconut oil (melted)\n* ¼ cup walnuts\n### Preparation\n\n* Preheat oven to 350 degrees and grease bread pan (1 regular or 5 mini)\n* Mix all wet ingredients in a stand mixer\n* Mix all dry ingredients in a separate bowl\n* Add dry ingredients into the wet mixture and then add the walnuts\n* Pour batter into either 1 regular sized greased bread pan or 5 mini pans\n* Bake at 350 degrees for 30 min for mini loafs for 55 min for standard size \n* Bake until a toothpick comes out clean\n* Can be frozen for 3 months\n"
+  },
+  {
+    "id": "11j-yOda2EOVpSRVC_0I9AzP_PN-LVo_CCNafnZ50pWk",
+    "slug": "biscotti-twice-bakes-cookie",
+    "title": "Biscotti (Twice Bakes Cookie)",
+    "ingredients": [
+      {
+        "name": "butter",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "eggs",
+        "quantity": "2",
+        "unit": null
+      },
+      {
+        "name": "vanilla extract",
+        "quantity": "1",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "flour",
+        "quantity": "2 ½",
+        "unit": "cups"
+      },
+      {
+        "name": "baking powder",
+        "quantity": "2",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "salt",
+        "quantity": "¼",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "pecans",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "cranberries",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "lemon zest",
+        "quantity": "2",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "egg white",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "water",
+        "quantity": "2",
+        "unit": "teaspoon"
+      }
+    ],
+    "markdown": "### \n\n### Summary\n\nNathan,\n\nEveryone and their mother (literally) have asked me for this recipe when they try these cookies. I make them as a fall/winter treat for others because they go best with a hot cup of coffee on a cold day. There are so many ways to make this recipe and I make them with lemon and orange or cherries and cranberries just making the best cookie I can and mixing it up so that there is some fun with it. I love you dearly.\n\nMom\n\n### Ingredients \n\n* ½ cup butter, softened\n* 1 cup sugar\n* 2 eggs\n* 1 teaspoons vanilla extract (or almond)\n* 2 ½ cups flour\n* 2 teaspoons baking powder\n* ¼ teaspoons salt\n* 1 cup chopped pecans (baking nut)\n* 1 cup chopped cranberries (dried fruit)\n* 2 teaspoons lemon zest (citrus zest)\n* 1 teaspoon egg white w/2 teaspoon water beaten \n### Preparation\n\n* Preheat oven to 325 degrees and set a baking tray with a silicone mat aside\n* Beat butter and sugar until fluffy\n* Add eggs one at a time then add vanilla\n* Mix dry ingredients and add to the wet mixture in 2 additions\n* Add the chopped pecans, cranberries and lemon zest into cookie batter mixture\n* Form into a ball and place on a lightly floured surface and divide in half\n* Form each half into a log and flatten (slightly) to top brush on the egg white wash on the baking tray lined with a silicone mat\n* Bake at 325 degrees for 35 min\n* Remove form the oven and cool for 15-20 min\n* With a sharp knife cut into ½ inch slices on a slight diagonal\n* Lay slices face down on the cookie sheet and bake at 300 degrees for 30 min flipping over half way through\n* Allow the cookies to rest for a day in a cool and dry location\n* Package and these will keep for up to 1 month in an airtight package\n"
+  },
+  {
+    "id": "1zHE7jQFD0yOZ2vPu9v7dBjjRq5N9dHU05X0ZLgA8gVM",
+    "slug": "brioche",
+    "title": "Brioche ",
+    "ingredients": [
+      {
+        "name": "butter",
+        "quantity": "1",
+        "unit": "lb"
+      },
+      {
+        "name": "whole milk",
+        "quantity": "4",
+        "unit": "cups"
+      },
+      {
+        "name": "yeast",
+        "quantity": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "salt",
+        "quantity": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "eggs",
+        "quantity": "6",
+        "unit": null
+      },
+      {
+        "name": "flour",
+        "quantity": "11",
+        "unit": "cups"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nSo this recipe is going to be a little hard at first but once you do it a few times this is an easy recipe to master. This is the full recipe for making brioche as my Aunt Camille taught me. You don’t know her and that is ok but she is a brilliant chef and for all of her faults she has amazing taste and some recipes that are just to die for. This recipe can be used for cinnamon rolls, sticky rolls, sticky buns,or really anything you can think of. This is one of them. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 1lb butter- melted\n* 4 cups whole milk (warm milk to reach temperatures between 105-110 degrees)\n* 2 tablespoons yeast\n* 2 tablespoons salt\n* 1 cup sugar\n* 6 eggs\n* 11 cups flour\n### Preparation\n\n* Preheat oven to 375 degrees (this is an “until done” recipe)\n* Bloom sugar, milk, and yeast until it foams. This takes a few minutes and you can start to smell the yeast. \n* Melt the butter and let it cool (let it cool till it is just warm not boiling)\n* Once the butter is cool and the yeast is foamy add all of the other ingredients in except the last 4 cups of the flour and mix thoroughly\n* Add in the flour reserve small amounts at a time\n* Mix on a low speed with a bread hook for 20-30 min (I( like to make it closer to 20 thean 30 just my opinion)\n* Remove bowl from the mixer and allow the dough to double in size on the counter\n* Punch down the risen dough and shape into its desired shape (if you are making cinnamon rolls this is the time to flatten the dough and roll it out with all of the ingredients and then make the roll shape), allow it to rise again\n"
+  },
+  {
+    "id": "1zwS32L2APjOzO1fw3L-8smWKQlWgY7CEZUKxG06JUJs",
+    "slug": "brown-butter-cardamom-cookies",
+    "title": "Brown Butter Cardamom Cookies",
+    "ingredients": [
+      {
+        "name": "brown butter",
+        "quantity": "1",
+        "unit": "Cup"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "¾",
+        "unit": "Cup"
+      },
+      {
+        "name": "large egg yolk",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "vanilla",
+        "quantity": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "name": "ground cardamom",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "flour",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "powdered sugar",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nThese cookies came to our family because I bought too much ground cardamom and I needed something to do with it all.Cardamom smells so so lovely and vibrant that I instantly thought that baking with it would be the best. I found this recipe online and the rest is history. I make some slight changes every time I bake them but this is the base recipe that is so good. Best with a “spot” of tea. I love you dearly.\n\nMom\n\n### Ingredients \n\n* 1 Cup brown butter\n* ¾ Cup Sugar\n* 1 large egg yolk\n* 1 tablespoon vanilla\n* ½ teaspoon ground cardamom\n* 2 cups flour\n* 1 cup powdered sugar (use as coating at the end of the baking cycle)\n### Preparation\n\n* Preheat oven to 350 degrees\n* Combine cooled brown butter and sugar until well mixed adding all ingredients at a time (excluding powdered sugar) until dough forms\n* Shape dough into 1” balls and place on cookie sheet 1” apart\n* Bake for 10-12 min until cookie puffs and start to turn light brown, cookies will have cracks in them\n* Immediately remove from cookie sheets and allow to cool for 1 min\n* Roll cookies in powdered sugar while warm and again when completely cooled\n"
+  },
+  {
+    "id": "1Ogr5pEnFG4PwrMEwvAcsFiPqiXyc-8d0hH8jrMhXLkM",
+    "slug": "chicken-enchilada-soup-crockpot",
+    "title": "Chicken Enchilada Soup - Crockpot",
+    "ingredients": [
+      {
+        "name": "Chopped Onion",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "Chili Powder",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Cumin",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Garlic Powder",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Red Enchilada Sauce",
+        "quantity": "1",
+        "unit": "19oz can"
+      },
+      {
+        "name": "Fire-Roasted Diced Tomatoes",
+        "quantity": "1",
+        "unit": "28oz can"
+      },
+      {
+        "name": "Black Beans, drained and rinsed",
+        "quantity": "1",
+        "unit": "15oz can"
+      },
+      {
+        "name": "Chicken Breasts, cut into thirds",
+        "quantity": "2",
+        "unit": "lb"
+      },
+      {
+        "name": "Chicken Broth",
+        "quantity": "2 ½",
+        "unit": "cup"
+      },
+      {
+        "name": "Cheddar Cheese, shredded",
+        "quantity": "⅓",
+        "unit": "cup"
+      },
+      {
+        "name": "Heavy Cream",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "Sour Cream",
+        "quantity": null,
+        "unit": null
+      },
+      {
+        "name": "Sliced Lime",
+        "quantity": null,
+        "unit": null
+      },
+      {
+        "name": "Crushed Tortilla Chips or Tortilla Strips",
+        "quantity": null,
+        "unit": null
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOn cold days I want something that soothes my soul. This is one of the many crockpot meals that I like to do just that. It has some good flavors and an ode to our Texas roots. No matter where you are in this world I hope that when you need to soothe your soul that these recipes may bring you some peace and good memories. I love you dearly.\n\nMom\n\n### Ingredients \n\n* ½ cup Chopped Onion\n* 1 tsp Chili Powder\n* 1 tsp Cumin\n* 1 tsp Garlic Powder\n* 1 19oz can Red Enchilada Sauce\n* 1 28oz can Fire-Roasted Diced Tomatoes\n* 1 15oz can Black Beans, drained and rinsed\n* 2lb Chicken Breasts, cut into thirds\n* 2 ½ cup Chicken Broth\n* ⅓ cup Cheddar Cheese, shredded\n* ¼ cup Heavy Cream\n### Toppings\n\n* Sour Cream\n* Sliced Lime\n* Crushed Tortilla Chips or Tortilla Strips\n### Preparation\n\n* Combine all ingredients (exclude Cheese and heavy cream) and place in crockpot on high for 3 ½ hours or on low for 6 hours\n* Once done remove and shred chicken and add back to pot adding cheese and heavy cream\n* Stir until combined and serve hot with desired toppings\n"
+  },
+  {
+    "id": "1OCa_NzgVcjir007uxpl6C1W3Vi2jn7TAz8xuDjHkuqs",
+    "slug": "coconut-chocolate-chip-cookies",
+    "title": "Coconut Chocolate Chip Cookies",
+    "ingredients": [
+      {
+        "name": "coconut oil",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "brown sugar",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "milk",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "vanilla extract",
+        "quantity": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "name": "flour",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "baking soda",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "baking powder",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "salt",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "chocolate chips",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nThese cookies can be made vegan with just a little bit of ingredient swaps if you are into that thing. Everyone who has had these either vegan or not have loved them and said that it is their favorite way to have chocolate chip cookies. I like to make a huge batch of these and scoop them out to freeze them so that when we just want a few we can go to the freezer and pull them out. These can also be eaten without baking at all! I love you dearly.\n\nMom\n\n### Ingredients (* vegan alternative)\n\n* ½ cup coconut oil, softened not liquid\n* 1 cup brown sugar\n* ¼ cup milk (*almond milk)\n* 1 tablespoon vanilla extract\n* 2 cups flour\n* 1 teaspoon baking soda\n* 1 teaspoon baking powder\n* ½ teaspoon salt\n* 1 cup chocolate chips (*vegan chocolate chips)\n### Preparation\n\n* Preheat oven to 350 degrees and set a baking tray with a silicone mat aside\n* Mix coconut oil, brown sugar, milk, and vanilla extract in stand mixer\n* In a separate bowl mix the flour, baking soda, baking powder, and salt\n* Combine the flour mixture into the wet mixture slowly till crumbly\n* Add chocolate chips\n* This recipe will be crumbly and that is OK!\n* If you are freezing this recipe please please please scoop this recipe into balls and freeze prior to putting these into a bag or vacuum seal bag for later use.\n* If you are going to eat them right away bake at 350 degrees for 7-10 min\n* If you are going to make them from frozen bake at 350 degrees for 15-18 min\n"
+  },
+  {
+    "id": "1J1kez7l-eOhjyZBwXlC7vRv_uhSzwaygCr8blQURCkM",
+    "slug": "coffee-cake-muffins",
+    "title": "Coffee Cake Muffins",
+    "ingredients": [
+      {
+        "name": "flour",
+        "quantity": "3",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "brown sugar",
+        "quantity": "3",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "cinnamon",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "butter (softened)",
+        "quantity": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "chopped walnuts or pecans",
+        "quantity": "3",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "flour",
+        "quantity": "1 ½",
+        "unit": "cups"
+      },
+      {
+        "name": "sugar",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "baking powder",
+        "quantity": "1 ¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "cinnamon",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground ginger",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "baking soda",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "salt",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "softened butter",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "egg",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "buttermilk or sour milk",
+        "quantity": "½",
+        "unit": "cup"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nThese muffins aren’t the most fun to make but they really make a splash at any breakfast or tea party. I love you dearly.\n\nMom\n\n### Ingredients (topping)\n\n* 3 tablespoons flour\n* 3 tablespoons brown sugar\n* ¼ teaspoon cinnamon\n* 2 tablespoons butter (softened)\n* 3 tablespoons chopped walnuts or pecans\n### Ingredients (muffin * dry ingredients, ** wed ingredients)\n\n* * 1 ½ cups flour\n* * ½ cup sugar\n* * 1 ¼ teaspoon baking powder\n* * ½ teaspoon cinnamon\n* * ¼ teaspoon ground ginger\n* * ¼ teaspoon baking soda\n* * ¼ teaspoon salt\n* * ¼ cup softened butter\n* ** 1 egg\n* ** ½ cup buttermilk or sour milk\n### Preparation\n\n* Preheat oven to 400 degrees and put 12 muffin cups into muffin tins\n* Mix all topping ingredients in a small bowl and set aside\n* Mix dry ingredients in medium bowl cut in the butter until mixture resembles coarse crumbs\n* Mix egg and buttermilk and add all at once to the dry mixture. \n* Stir until moistened (should be lumpy)\n* Spoon ½ of the batter into the muffin cups filling each one ⅓ full\n* Put ½ of the topping mixture in the muffin cups on the 1st half of the batter\n* Spoon the remaining batter into the muffin cups \n* Finish with the last of the topping mixture making a layered muffin\n* Bake at 400 degrees for 15 to 18 min\n"
+  },
+  {
+    "id": "1ZC9MlyyYGBrwLHc5V29HuNbOjh_8rMHOe0IaCvQhx44",
+    "slug": "cranberry-cookies",
+    "title": "Cranberry Cookies",
+    "ingredients": [
+      {
+        "name": "eggs",
+        "quantity": "3",
+        "unit": null
+      },
+      {
+        "name": "sugar",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "softened butter",
+        "quantity": "¾",
+        "unit": "cups"
+      },
+      {
+        "name": "vanilla",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "salt",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "flour",
+        "quantity": "2 ½",
+        "unit": "cups"
+      },
+      {
+        "name": "fresh cranberries",
+        "quantity": "12",
+        "unit": "oz"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nThese are fun and easy cookies to capture the holiday spirit and can all be made in one bowl so that is a bonus! I started with these cookies for your first Christmas. I wanted you to have a tradition that wasn’t gift based to share with others as well as to capture the Christmas spirit. I had a lot of fun making these with you. You were strapped to my chest and I just got to dance and sing Christmas songs with you. You smiled the whole time. Please share them with all your loved ones and know that every moment of my life I have been the happiest just being with you and your father. I love you dearly.\n\nMom\n\nP.S.\n\nOk one more thing if you want to add other spices go for it! It would be so much fun for you to make these just a little more your own if you want. Over the years I will be doing the same thing but I am thinking Nutmeg and Cinnamon and Clove would bring in the warmth this holiday makes me feel. Just a thought!!\n\n### Ingredients\n\n* 3 eggs\n* 2 cups sugar\n* ¾ cups softened butter (just leave it on the counter a day before)\n* 1 teaspoon vanilla\n* 1 teaspoon salt\n* 2 ½ cups flour\n* 12oz fresh cranberries (you can use frozen too!)\n### Preparation\n\n* Preheat oven to 350 degrees and set out your baking trays with a silicone baking sheet and your wire racks for cooling\n* With a mixer (you can use my stand mixer; either one will work for this) beat the eggs and sugar until slightly thickened and light in color (like 5-7 min, you can put it on the 2 setting and walk away and gather the rest of the ingredients while it is going). The egg and sugar mixture will almost double in size and should form a ribbon when you lift the beaters (remember when I showed you how to make a figure 8 by lifting the beaters with some of the batter on it and you should be able to still see the “ribbon” before it incorporates back with the rest of the mixture)\n* Add softened butter, vanilla, and salt to the egg/sugar mixture and mix well for 2 more min. This does not have to be extremely smooth by any means. There will still be small bits of butter that will not completely go away and that is a good thing.\n* Stir in flour until just combined (don’t over mix)\n* Stir in whole cranberries (they will piece a little with the mixer but that just makes it fun)\n* Scoop onto a silicone baking sheet and bake for 18 min. \n* When finished place on a wire rack for cooling (this will also help the cookies harden a little more so that they don’t break apart when you dive right in and eat them all)\n"
+  },
+  {
+    "id": "1w58P_lC7_AoiUy1KXz-buquPRZjI_IOODRxWgPD9jBA",
+    "slug": "cranberry-pie",
+    "title": "Cranberry Pie",
+    "ingredients": [
+      {
+        "name": "fresh cranberries or frozen",
+        "quantity": "4",
+        "unit": "cups"
+      },
+      {
+        "name": "orange",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "sugar",
+        "quantity": "1 ½",
+        "unit": "cups"
+      },
+      {
+        "name": "salt",
+        "quantity": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "name": "flour",
+        "quantity": "1",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "gelatin",
+        "quantity": "1",
+        "unit": "packet"
+      },
+      {
+        "name": "store bought pie crust",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "egg",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "sugar to top",
+        "quantity": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOk so I had way too many cranberries over the holiday because I shopped at Costco like i always do and I needed to find a way to use up all the cranberries and there are just so many cookies that a person can make! I thought a pie would be nice because the smell of a pie baking in the oven is too tasty to pass up. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 4 cups fresh cranberries or frozen\n* 1 orange (zest then juice) if you don’t want to juice it yourself then like a 1/2c oj\n* 1 ½ cups sugar\n* 1 tablespoon salt\n* 1 tablespoons flour\n* 1 packet gelatin (.25oz)\n* 1 store bought pie crust (1 top and one bottom, let's make this easy!)\n* 1 egg beaten to wash\n* 3 tablespoons sugar to top\n### Preparation\n\n* Preheat oven to 325 degrees and \n* Place one pie crust in a 9”or 10” glass pie pan and set aside\n* Simmer on low cranberries, orange juice with or without the pulp, 1 ½ cups sugar, and salt on the stove top until the cranberries burst (if you use the frozen cranberries this will take a little longer but you still hear the “popping” sound when they burst and that is always fun)\n* Add flour and gelatin until the mixture thickens\n* Once thickened, pour the mixture into the pie pan and top with 1 teaspoon of the orange zest and then the second pie crust.\n* Make slits in the top of the pie crust so that it has some ventilation (if you want to be fancy you can cut designs in the top just use a cookie cutter to make it a little easier) and brush with the egg wash. When fully washed sprinkle on the 3 tablespoons of sugar (or add as much as you want at this point)\n* Bake in the over for 40-45 mins at 325 degrees \n"
+  },
+  {
+    "id": "1B3O1lyXixYc6SoHuLi5DyZTh22XMdRIO3bpMxBcnsck",
+    "slug": "dawns-cranberry-chutney",
+    "title": "Dawn's Cranberry Chutney",
+    "ingredients": [
+      {
+        "name": "orange juice",
+        "quantity": "⅓",
+        "unit": "cup"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1 ½",
+        "unit": "cups"
+      },
+      {
+        "name": "package of fresh cranberries",
+        "quantity": "12",
+        "unit": "oz"
+      },
+      {
+        "name": "raisins/currants",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "apple",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "orange",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "pecans",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "apple cider vinegar",
+        "quantity": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "name": "cinnamon",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "allspice",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground ginger",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground clove",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nThis recipe comes to you from my biological mother’s kitchen. Your Aunt Emily loves this recipe and requests it every year for Thanksgiving. She makes it better than I ever could. Just remember that I love you dearly.\n\nMom\n\n### Ingredients\n\n* ⅓ cup orange juice\n* 1 ½ cups sugar\n* 12oz package of fresh cranberries\n* 1 cup raisins/currants\n* 1 apple (peeled, core removed, and chopped\n* 1 orange (peeled, seeded, and chopped)\n* ½ cup pecans (toasted and chopped)\n* 1 tablespoon apple cider vinegar\n* ¼ teaspoon cinnamon\n* ¼ teaspoon allspice\n* ¼ teaspoon ground ginger\n* ¼ teaspoon ground clove\n### Preparation\n\n* Bring orange juice and sugar to a boil\n* Reduce heat and add remaining ingredients\n* Cook on low heat, stirring often, until all ingredients are soft\n* Cover and refrigerate\n* Serve cold\n"
+  },
+  {
+    "id": "1y8c0HSi84--n72lj3yHrY46kaXWZQbokbeO0C61Mp5o",
+    "slug": "grandpa-catfishs-cornbread",
+    "title": "Grandpa Catfish's Cornbread",
+    "ingredients": [
+      {
+        "name": "Cornmeal",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Flour",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": "1",
+        "unit": "Tbs"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "salt",
+        "quantity": "½",
+        "unit": "Tbs"
+      },
+      {
+        "name": "Oil or melted butter",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "milk",
+        "quantity": "¾ - 1",
+        "unit": "cup"
+      },
+      {
+        "name": "egg",
+        "quantity": "1",
+        "unit": null
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nPlease please please follow this recipe if you want cornbread.  It will never do you wrong and you won’t have the same experience I did the first time I made cornbread for your father and turned out inedible.  I love you dearly.\n\nMom\n\n### Ingredients \n\n* 1 cup Cornmeal\n* 1 cup Flour\n* 1Tbs Baking Powder\n* ¼ cup Sugar (⅓ cup if you want it sweeter)\n* ½ Tbs salt\n* ¼ cup Oil or melted butter\n* ¾ - 1 cup milk\n* 1 egg\n### Preparation\n\n* Mix together in a bowl\n* Pour into a oiled 10” skillet\n* Bake at 350 degrees for 35 min until done\n"
+  },
+  {
+    "id": "1MAvdleMIVLJm0qlhBet-WvjDFlrMU1uERgLnoOhHYMQ",
+    "slug": "grandpa-catfishs-peach-cobbler",
+    "title": "Grandpa Catfish's Peach Cobbler",
+    "ingredients": [
+      {
+        "name": "butter melted",
+        "quantity": "1/3",
+        "unit": "cups"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "flour",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "baking powder",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "milk",
+        "quantity": "¾",
+        "unit": "cups"
+      },
+      {
+        "name": "salt",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground cinnamon",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "peaches",
+        "quantity": "1",
+        "unit": "can"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nThis one comes from Grandpa Catfish as well and please trust that it is so amazing and everything you could ever want a peach to be. I love you dearly.\n\nMom\n\n### Ingredients \n\n* 1/3 cups butter melted\n* 1 cup sugar\n* 1 cup flour\n* 1 teaspoon baking powder\n* ¾ cups milk\n* ¼ teaspoon salt\n* 1 teaspoon ground cinnamon\n* 1 can of peaches (see **for directions if you want to do the peaches from fresh or frozen)\n### Preparation\n\n* Preheat oven to 350 degrees\n* In a baking dish pour in the can of peaches\n* ** if you are making the peaches from frozen or fresh\n* Put 2 cups of sliced frozen or fresh peaches into a pot and place on a medium to low setting\n* Mix in 1 cup of sugar and 3 tablespoons lime juice\n* Allow the peaches to cook down in the simple syrup for approximately 5 min\n* In a bowl mix all the other ingredients other than the melted butter to make a batter\n* Pour batter mixture over the peaches in the baking dish spreading out evenly\n* Take melted butter and spread over all the contents in the baking dish\n* Bake for 1 hour or until batter is cooked through and golden brown\n"
+  },
+  {
+    "id": "1zhLPUryr7NGMYFwJrJ3Kd37nwzrsEUJ2WP7IuKWO_9I",
+    "slug": "grandpa-catfishs-pear-cake",
+    "title": "Grandpa Catfish's Pear Cake",
+    "ingredients": [
+      {
+        "name": "sugar",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "flour",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "soda",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "eggs",
+        "quantity": "2",
+        "unit": null
+      },
+      {
+        "name": "oil",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "pears",
+        "quantity": "3 large",
+        "unit": null
+      },
+      {
+        "name": "ground cinnamon",
+        "quantity": "2",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "salt",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground nutmeg",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "vanilla",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "water",
+        "quantity": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nSo Grandpa Catfish has this small spiral notebook full of delicious recipes and I have tried to steal them all. He likes to put in recipes that he wants to try as well and full vetted recipes that are the best. That is sort of what I am trying to do with these recipes. I want you to have all the good things in life and maybe a few of these will bring you joy when you remember baking and cooking with me. I love you dearly.\n\nMom\n\n### Ingredients \n\n* 2 cups sugar\n* 2 cups flour\n* 1 teaspoon soda\n* 2 eggs\n* 1 cup oil\n* 3 large pears (peeled and sliced thin)\n* 2 teaspoon ground cinnamon\n* ¼ teaspoon salt\n* ½ teaspoon ground nutmeg\n* 1 teaspoon vanilla\n* 1 teaspoon water\n### Preparation\n\n* Preheat oven to 350 degrees\n* Combine eggs and toil till foamy then add vanilla and water and set aside\n* Mix dry ingredients in separate bowl\n* Combine wet and dry ingredients and fold in pears\n* Pour into 9x13 pan and bake for 1 hour\n* Frosting is not needed but it you want a little added sweetness mix up some powdered sugar glaze (powdered sugar and milk)\n"
+  },
+  {
+    "id": "1VikX9ofH5auf-bi5iLBazairLUVk7Ev7N7Dozyj3Roc",
+    "slug": "home",
+    "title": "Home",
+    "ingredients": [],
+    "markdown": ""
+  },
+  {
+    "id": "1JOXXMhpisnAeuwbmiG350nM--LVdONVgCwU0op1Q4_g",
+    "slug": "italian-meringue",
+    "title": "Italian Meringue",
+    "ingredients": [
+      {
+        "name": "sugar",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "water",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "egg whites",
+        "quantity": "4",
+        "unit": null
+      },
+      {
+        "name": "cream of tartar",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "lemon",
+        "quantity": "1",
+        "unit": null
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nSo this meringue recipe is considered a basic recipe but it can be a very hard recipe to do just because you are working with very VERY **VERY** hot sugar. Please be careful. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 1 cup sugar (7 ounces; 200g)\n* ½ cup water\n* 4 egg whites at room temperature (fresh is best)\n* ½ teaspoon cream of tartar or alternative of 1 lemon juiced \n### Preparation\n\n* In a small saucepan combine sugar and water, Heat over hight heat, stirring only until it comes to a boil. Once it reaches a boil STOP STIRRING. \n* Cook until sugar syrup registers 240 degrees (115 degrees celsius) on an instant-read or candy thermometer. Brush down the sides of the pot as necessary with a pastry brush dipped in water (just to get the crystals of the walls of the pot)\n* Meanwhile,  combine egg whites and cream of tartar in a bowl of a stand mixer fitted with a whisk attachment. Mix on medium speed until soft peaks form about 2 min\n* With the mixer running, carefully and slowly drizzle in how sugar syrup\n* Increase speed to high until hard peaks form\n* Transfer to piping bag with desired tip\n"
+  },
+  {
+    "id": "1STG0iEmsb6shpy8rIGwUktaA-ejFplMM_VckK6o7Rwk",
+    "slug": "kitchen-sink-cookies",
+    "title": "Kitchen Sink Cookies",
+    "ingredients": [
+      {
+        "name": "whole wheat flour",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "soy flour",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "rolled oats",
+        "quantity": "1 ⅓",
+        "unit": "cups"
+      },
+      {
+        "name": "unsweetened flaked coconut",
+        "quantity": "¾",
+        "unit": "cups"
+      },
+      {
+        "name": "milk powder",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "salt",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "cinnamon",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "powdered ginger",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "raisins",
+        "quantity": "⅔",
+        "unit": "cups"
+      },
+      {
+        "name": "chocolate chips",
+        "quantity": "⅔",
+        "unit": "cups"
+      },
+      {
+        "name": "chopped peanuts",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "sunflower seeds",
+        "quantity": "⅓",
+        "unit": "cup"
+      },
+      {
+        "name": "oil or melted butter",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "molasses",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "honey",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "eggs beaten",
+        "quantity": "2",
+        "unit": null
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOk so as you know I do not have a good relationship with my own biological mother. I however don’t have all bad memories of our time together before I had to make the decision to remove her from our lives. One of the memories that I do have is about us making kitchen sink cookies together. She was a bit of a health nut and thought that these protein packed cookies could be a healthy snack. I however didn’t think that they would be that good so I was hesitant. These are so good that I had to redo my thinking on healthy snacks from then on. I love you dearly.\n\nMom\n\n### Ingredients (dry* then wet**)\n\n* * 1 cup whole wheat flour\n* * ¼ cup soy flour\n* * 1 ⅓ cups rolled oats\n* * ¾ cups unsweetened flaked coconut\n* * ¼ cup milk powder (⅓ cup instant)\n* * ½ teaspoon salt\n* * 1 teaspoon cinnamon\n* * ½ teaspoon powdered ginger\n* * ⅔ cups raisins (currants)\n* * ⅔ cups chocolate chips\n* * ¼ cup chopped peanuts\n* * ⅓ cup sunflower seeds\n* ** ¼ cup oil or melted butter\n* ** ¼ cup molasses\n* ** ¼ cup honey\n* ** 2 eggs beaten\n### Preparation\n\n* Preheat oven to 350 degrees\n* Mix all dry ingredients * in one bowl\n* Mix all wet ingredients ** in separate bowl\n* Combine the wet mixture into the dry mixture. If the dough is too dry add some milk or water until “drop cookie” consistency \n* Bake at 350 degrees for 10-12 min \n"
+  },
+  {
+    "id": "1jVeYKU4sNzU9vZkaKFhCPdPxAdYX7z1Q2uG-CI4dbuQ",
+    "slug": "mascarpone-cream-filling",
+    "title": "Mascarpone Cream filling",
+    "ingredients": [
+      {
+        "name": "heavy whipping cream",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "powdered sugar",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "mascarpone",
+        "quantity": "½ cup + 1 tablespoon",
+        "unit": null
+      },
+      {
+        "name": "vanilla",
+        "quantity": "½",
+        "unit": "teaspoon"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nThis is a heavier filling for deserts but it is so rich and savory that it cuts the sweet of all the other ingredients. Just something to balance. Just like in life not everything will be sweet, some things will be savory or salty but together they create complex and beautiful recipes. I know that sounds like some hippy stuff but some of those sayings are good because they are truthful. I love you dearly.\n\nMom\n\n### Ingredients\n\n* ½ cup heavy whipping cream; cold\n* ¼ cup powdered sugar\n* ½ cup + 1 tablespoon mascarpone at room temperature (drain for 10-15 min to remove any excess liquid for best results)\n* ½ teaspoon vanilla\n### Preparation\n\n* In a bowl beat the whipping cream and sugar until stiff peaks form\n* Beat mascarpone and vanilla until smooth\n* Combine both mixtures and whip until smooth (don’t over whip!!)\n"
+  },
+  {
+    "id": "1zv7du-XtYE7ncGuXgVTAnfKAN4CvPNzkCdf4c4i5nH4",
+    "slug": "menu",
+    "title": "Menu",
+    "ingredients": [],
+    "markdown": "Home\n\nAbout\n\n"
+  },
+  {
+    "id": "16ndhgVenbsIQvXEmnGQaKtHFvqEQe8rQf0BNuHCRARc",
+    "slug": "omas-butter-nut-pound-cake",
+    "title": "Oma's Butter Nut Pound Cake",
+    "ingredients": [
+      {
+        "name": "butter",
+        "quantity": "2",
+        "unit": "sticks"
+      },
+      {
+        "name": "crisco",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "white sugar",
+        "quantity": "3",
+        "unit": "cup"
+      },
+      {
+        "name": "salt",
+        "quantity": "¼",
+        "unit": "tsp"
+      },
+      {
+        "name": "large eggs",
+        "quantity": "5",
+        "unit": null
+      },
+      {
+        "name": "flour",
+        "quantity": "3",
+        "unit": "cups"
+      },
+      {
+        "name": "milk",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Vanilla Butter and Nut Flavoring (McCormick)",
+        "quantity": "2",
+        "unit": "Tbs"
+      },
+      {
+        "name": "chopped walnuts",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "chopped and drained maraschino cherries",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 2 sticks butter\n* ½ cup crisco\n* 3 cup white sugar\n* ¼ tsp salt\n* 5 large eggs\n* 3 cups flour\n* 1 cup milk\n* 2 Tbs Vanilla Butter and Nut Flavoring (McCormick)\n* ½ cup chopped walnuts\n* 1 cup chopped and drained maraschino cherries\n### Preparation\n\n* Mix all ingredients in stand mixer\n* Start in a cold over 325 degrees and bake for 1 hr and 45 min\n"
+  },
+  {
+    "id": "1GDtwJiiWpcjXtha16hNesqq0rfBY5ycNSl8B40hOLBA",
+    "slug": "omas-caramel-apple-cake",
+    "title": "Oma's Caramel Apple Cake",
+    "ingredients": [
+      {
+        "name": "bisquick",
+        "quantity": "1 ½",
+        "unit": "cup"
+      },
+      {
+        "name": "sugar",
+        "quantity": "⅔",
+        "unit": "cup"
+      },
+      {
+        "name": "milk",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "med apples, peeled and sliced",
+        "quantity": "2",
+        "unit": null
+      },
+      {
+        "name": "lemon juice",
+        "quantity": "1",
+        "unit": "Tbs"
+      },
+      {
+        "name": "packed brown sugar",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "ground cinnamon",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "boiling water",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Whipped cream or ice cream",
+        "quantity": null,
+        "unit": null
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 1 ½ cup bisquick\n* ⅔ cup sugar\n* ½ cup milk\n* 2 med apples, peeled and sliced (2 cups)\n* 1 Tbs lemon juice\n* 1 cup packed brown sugar\n* 1 tsp ground cinnamon\n* 1 cup boiling water\n* Whipped cream or ice cream optional\n### Preparation\n\n* Preheat oven at 350\n* Mix bisquick, water, and milk in a bowl\n* Pour in ungreased square pan 9x9x2. \n* Top with apples mixed with lemon juice\n* Stir together brown sugar and cinnamon, sprinkle over apples\n* Bake 50-60 min or until center comes out clean\n"
+  },
+  {
+    "id": "1fSASPCCfguXdIl6ku_Owbfu66FJ1HuTbj4qwL6No7wg",
+    "slug": "omas-cheesecake-cookies",
+    "title": "Oma's Cheesecake Cookies",
+    "ingredients": [
+      {
+        "name": "butter",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "firmly packed brown sugar",
+        "quantity": "⅓",
+        "unit": "cup"
+      },
+      {
+        "name": "flour",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "chopped pecans",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "currant jelly",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "cream cheese",
+        "quantity": "1",
+        "unit": "8oz package"
+      },
+      {
+        "name": "egg",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "sugar",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "milk",
+        "quantity": "2",
+        "unit": "Tbs"
+      },
+      {
+        "name": "lemon juice",
+        "quantity": "2",
+        "unit": "Tbs"
+      },
+      {
+        "name": "vanilla extract",
+        "quantity": "½",
+        "unit": "tsp"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nEvery year since I met your Oma Dianne I have been obsessed with her cheesecake cookies. They are my favorite thing on Christmas morning. Oma Dianne started making for any important gathering because she knew I would be so happy to have them. I hope that they bring you joy and if they don’t then please make them with love for others.I love you dearly.\n\nMom\n\n### Ingredients (crust)\n\n* ¼ cup butter\n* ⅓ cup firmly packed brown sugar\n* 1 cup flour\n* ½ cup chopped pecans\n* ¼ cup currant jelly\n### Ingredients (filling) \n\n* 1 8oz package cream cheese\n* 1 egg\n* ¼ cup sugar\n* 2 Tbs milk\n* 2 Tbs lemon juice\n* ½ tsp vanilla extract\n### Preparation\n\n* Preheat oven at 350\n* For the crust: \n* Cream butter, brown sugar and flour in blender\n* Stir in pecans (reserve ½ c of this mixture for the topping)\n* Press remainder into bottom of and 8 in square baking pan\n* Bake at 350 degrees for 15 min\n* Cool, and when cooled spread with jelly\n* For the filling:\n* Cream the cream cheese and sugar\n* Beat in egg and milk\n* Slowly add in lemon juice and vanilla extract\n* Pour over bott and sprinkle with the reserved topping mixture\n* Bake for 30 min\n* Cool and cut\n"
+  },
+  {
+    "id": "1yG_Ah8SLMHvAUeUr0S2ruvXltCqKtOuVmnmIVruEyWo",
+    "slug": "omas-chocolate-mouse",
+    "title": "Oma's Chocolate Mouse",
+    "ingredients": [
+      {
+        "name": "coffee liquor",
+        "quantity": "2",
+        "unit": "Tbs"
+      },
+      {
+        "name": "chocolate ships",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "whipping cream",
+        "quantity": "1",
+        "unit": "pint"
+      },
+      {
+        "name": "orange juice",
+        "quantity": "1",
+        "unit": "Tbs"
+      },
+      {
+        "name": "eggs",
+        "quantity": "2",
+        "unit": null
+      },
+      {
+        "name": "egg yolks",
+        "quantity": "2",
+        "unit": null
+      },
+      {
+        "name": "egg whites",
+        "quantity": "2",
+        "unit": null
+      },
+      {
+        "name": "vanilla",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "sugar",
+        "quantity": "¼",
+        "unit": "cup"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 2 Tbs coffee liquor\n* 1 cup chocolate ships\n* 1 pint whipping cream\n* 1 Tbs orange juice\n* 4 eggs (2 eggs and 2 egg yolks and 2 egg whites)\n* 1 tsp vanilla\n* ¼ cup sugar\n### Preparation\n\n* Melt chocolate chips and liquor in double boiler over low heat\n* Beat or blend orange juice, eggs, egg yolks, vanilla, and sugar blend thoroughly to the chocolate mixture\n* Beat whipped cream and add egg whites to soft peaks\n* Fold into chocolate mixture\n"
+  },
+  {
+    "id": "1UKjF_gyfH_1l5NEII5uLv1Kudg-WnYPi7kCbl-0qtHs",
+    "slug": "omas-cilantro-bean-dip",
+    "title": "Oma's Cilantro Bean Dip",
+    "ingredients": [
+      {
+        "name": "frozen corn",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Black beans",
+        "quantity": "1 can 15 oz",
+        "unit": null
+      },
+      {
+        "name": "large fresh tomato",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "red pepper",
+        "quantity": "¾",
+        "unit": "cup"
+      },
+      {
+        "name": "red onion",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "italian dressing",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "fresh minced cilantro",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "hot pepper sauce",
+        "quantity": "¾",
+        "unit": "tsp"
+      },
+      {
+        "name": "garlic powder",
+        "quantity": "½",
+        "unit": "tsp"
+      },
+      {
+        "name": "fresh garlic",
+        "quantity": null,
+        "unit": null
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 2 cups frozen corn\n* 1 can 15 oz Black beans, drained and rinsed\n* 1 large fresh tomato, chopped\n* ¾ cup red pepper, chopped\n* ½ cup red onion, chopped\n* ½ cup italian dressing\n* ¼ cup fresh minced cilantro\n* ¾ tsp hot pepper sauce\n* ½ tsp garlic powder or fresh garlic\n### Preparation\n\n* Mix and store in refrigerator several hours ahead\n"
+  },
+  {
+    "id": "1NoNrk4NLxq6VncoldP2yh5LEXEcN_DbTw0HMqNMN-d4",
+    "slug": "omas-creamy-chocolate-fudge",
+    "title": "Oma's Creamy Chocolate Fudge",
+    "ingredients": [
+      {
+        "name": "evaporated milk",
+        "quantity": "¾",
+        "unit": "cups"
+      },
+      {
+        "name": "marshmallow cream",
+        "quantity": "1",
+        "unit": "jar"
+      },
+      {
+        "name": "butter",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1 ½",
+        "unit": "cup"
+      },
+      {
+        "name": "salt",
+        "quantity": "¼",
+        "unit": "tsp"
+      },
+      {
+        "name": "semisweet chocolate chips",
+        "quantity": "2",
+        "unit": "6oz packages"
+      },
+      {
+        "name": "vanilla extract",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients\n\n* ¾ cups evaporated milk\n* 1 jar marshmallow cream\n* ¼ cup butter \n* 1 ½ cup sugar\n* ¼ tsp salt\n* 2 6oz packages semisweet chocolate chips\n* 1 tsp vanilla extract\n### Preparation\n\n* Mix milk, marshmallow, butter, sugar and salt in saucepan\n* Bring to boil, stirring \n* Boil for 5 min over med heat\n* Remove from heat and add chocolate chips and vanilla extract\n* Stir until smooth\n* Turn out into a greased 8x8x2 square pan\n* Chill for several hours, cut into squares\n"
+  },
+  {
+    "id": "1mDbkvYzMidFQHamFM-Fz_B6wuscWpnDK8o8B6U-sv7U",
+    "slug": "omas-easy-fudge",
+    "title": "Oma's Easy Fudge",
+    "ingredients": [
+      {
+        "name": "butter",
+        "quantity": "½",
+        "unit": null
+      },
+      {
+        "name": "water",
+        "quantity": "⅓",
+        "unit": "cup"
+      },
+      {
+        "name": "powdered sugar",
+        "quantity": "1 16oz",
+        "unit": "package"
+      },
+      {
+        "name": "nonfat dry milk powder",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "unsweetened cocoa powder",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "salt",
+        "quantity": "Dash",
+        "unit": null
+      },
+      {
+        "name": "chopped nuts",
+        "quantity": "½",
+        "unit": "cup"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients\n\n* ½ butter\n* ⅓ cup water\n* 1 16oz package powdered sugar\n* ½ cup nonfat dry milk powder\n* ½ cup unsweetened cocoa powder\n* Dash salt\n* ½ cup chopped nuts (toasted is good!)\n### Preparation\n\n* In a small saucepan heat butter and water just to boiling, stirring to melt\n* Mix together powdered sugar, dry milk, cocoa powder, and dash of salt into large bowl\n* Add melted butter to dry mixture and stir until blended\n* Stir in nuts\n* Turn out into a buttered 8x8x2 pan\n* Chill for several hours. Cut into squares\n"
+  },
+  {
+    "id": "16IXnnebYmsGqpjbeob5bz9E9hZZDSOJ6Ygd5Qf7myxA",
+    "slug": "omas-gazpacho",
+    "title": "Oma's Gazpacho",
+    "ingredients": [
+      {
+        "name": "ripe tomatoes",
+        "quantity": "6 to 8",
+        "unit": null
+      },
+      {
+        "name": "cold water with ice cubes",
+        "quantity": "1 to 2",
+        "unit": "cups"
+      },
+      {
+        "name": "onion",
+        "quantity": "⅓ to ½",
+        "unit": null
+      },
+      {
+        "name": "green pepper",
+        "quantity": "½",
+        "unit": null
+      },
+      {
+        "name": "cucumber",
+        "quantity": "⅓ to ¾",
+        "unit": null
+      },
+      {
+        "name": "garlic",
+        "quantity": "1 to 2",
+        "unit": "cloves"
+      },
+      {
+        "name": "olive oil",
+        "quantity": "⅓ to ½",
+        "unit": "cup"
+      },
+      {
+        "name": "sherry vinegar",
+        "quantity": "⅓ to ½",
+        "unit": "c"
+      },
+      {
+        "name": "salt",
+        "quantity": "1 ½",
+        "unit": "Tbs"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 6 to 8 ripe tomatoes\n* 1 to 2 cups of cold water with ice cubes\n* ⅓ to ½ onion\n* ½ green pepper\n* ⅓ to ¾ cucumber\n* 1 to 2 cloves garlic\n* ⅓ to ½ cup olive oil\n* ⅓ to ½ c sherry vinegar\n* 1 ½ Tbs salt\n* 1 tsp sugar\n### Preparation\n\n* Finely diced onion, pepper, cucumber, tomato, and garlic in pieces\n* Combine oil, vinegar, salt, and sugar in measuring cup and stir\n* Place veg and vinegar oil mix in blender until all veg is pureed serve chilled\n"
+  },
+  {
+    "id": "13EzlJ9b5p4-80p_2XbJx8rknGRy5rKNfobpZqog8IxE",
+    "slug": "omas-german-apple-pancake",
+    "title": "Oma's German Apple Pancake",
+    "ingredients": [
+      {
+        "name": "flour",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1",
+        "unit": "Tbs"
+      },
+      {
+        "name": "large eggs",
+        "quantity": "2",
+        "unit": null
+      },
+      {
+        "name": "half and half",
+        "quantity": "⅔",
+        "unit": "cup"
+      },
+      {
+        "name": "vanilla",
+        "quantity": "1",
+        "unit": "Tsp"
+      },
+      {
+        "name": "butter",
+        "quantity": "2",
+        "unit": "Tbs"
+      },
+      {
+        "name": "apples",
+        "quantity": "1 ¼",
+        "unit": "lbs"
+      },
+      {
+        "name": "brown sugar",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "cinnamon",
+        "quantity": "¼",
+        "unit": "tsp"
+      },
+      {
+        "name": "lemon Juice",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Confectioners sugar",
+        "quantity": null,
+        "unit": null
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients\n\n* ½ cup flour\n* 1 Tbs sugar\n* 2 large eggs\n* ⅔ cup half and half\n* 1 Tsp vanilla\n* 2 Tbs butter\n* 1 ¼ lbs apples, 3-4 apples pealed and grated or cut into slices\n* ¼ cup brown sugar\n* ¼ tsp cinnamon\n* 1 tsp lemon Juice\n* Confectioners sugar for topping\n### Preparation\n\n* Preheat oven to 500 degrees\n* Heat 10 in ovenproof skillet in the oven as it comes to temp\n* Mix flour, sugar and a pinch of salk in a bowl. In a second bowl wisk eggs, half and half, and vanilla until combined. Add liquid ingredients to dry \n* \n"
+  },
+  {
+    "id": "1go9tudc5YK7OaEC_rv1Ti41htI42TGu0CQTwCZwefaI",
+    "slug": "omas-hot-buttered-rum",
+    "title": "Oma's Hot Buttered Rum",
+    "ingredients": [
+      {
+        "name": "butter",
+        "quantity": "¼",
+        "unit": "lb"
+      },
+      {
+        "name": "dark brown sugar",
+        "quantity": "1",
+        "unit": "lb"
+      },
+      {
+        "name": "ground cinnamon",
+        "quantity": "¼",
+        "unit": "tsp"
+      },
+      {
+        "name": "ground nutmeg",
+        "quantity": "¼",
+        "unit": "tsp"
+      },
+      {
+        "name": "ground cloves",
+        "quantity": "¼",
+        "unit": "tsp"
+      },
+      {
+        "name": "batter",
+        "quantity": "1 heaping",
+        "unit": "tablespoon"
+      },
+      {
+        "name": "dark rum",
+        "quantity": "1 ½",
+        "unit": "oz"
+      },
+      {
+        "name": "fum flavoring",
+        "quantity": null,
+        "unit": null
+      },
+      {
+        "name": "boiling hot water",
+        "quantity": null,
+        "unit": null
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Preparation Batter\n\n* Cream ¼ lb butter with 1 lb of dark brown sugar. Sprinkle and mix thoroughly into batter ¼ tsp each of ground cinnamon, ground nutmeg, and ground cloves. Refrigerate in covered container\n### To make a drink\n\n* In each cup or mug place 1 heaping tablespoon of the batter. Add 1 ½ oz of dark rum or fum flavoring to taste. Fill with boiling hot water, stir and serve\n* Garnish wi\n"
+  },
+  {
+    "id": "1CP7fL3WJAQl6ZYD7IbIB3RD73GOQqxyY8T--SLWeIZU",
+    "slug": "omas-key-lime-pie-with-coconut-cookie-crust",
+    "title": "Oma's Key Lime Pie with Coconut Cookie Crust",
+    "ingredients": [
+      {
+        "name": "vanilla wafers",
+        "quantity": "43",
+        "unit": null
+      },
+      {
+        "name": "sweetened coconut",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "melted butter",
+        "quantity": "6",
+        "unit": "Tbs"
+      },
+      {
+        "name": "egg yolks",
+        "quantity": "3",
+        "unit": null
+      },
+      {
+        "name": "sweetened condensed milk",
+        "quantity": "1",
+        "unit": "can"
+      },
+      {
+        "name": "key lime juice",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "lime zest",
+        "quantity": "1",
+        "unit": "tsp"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients (crust)\n\n* 43 vanilla wafers (¼ cups crumbs)\n* ½ cup sweetened coconut\n* 6 Tbs melted butter\n### Ingredients (filling)\n\n* 3 egg yolks\n* 1 can sweetened condensed milk\n* ½ cup key lime juice\n* 1 tsp lime zest\n### Preparation\n\n* Preheat oven to 350 degrees\n* Crust:\n* Pulse in food processor all the vanilla wafers (you’ll need ¼ cups crumbs)\n* Add coconut and melted butter and pulse to blend\n* Press mixture along bottom and up side of a 9in pan\n* Filling: \n* Beat yolks until they are lemon colored\n* Blend in sweetened condensed milk then add in lime juice and zest\n* Stir until well blended\n* Pour into the 9in pan\n* Bake 12 min until mixture is set\n* If using a glass pie pan, bake at 325 degrees\n"
+  },
+  {
+    "id": "1ahE5z-SOFdzoGQBOjq0KKjNok-4YPWtDeajMRFGVi50",
+    "slug": "omas-rolled-butter-cookie-christmas",
+    "title": "Oma's Rolled Butter Cookie - Christmas",
+    "ingredients": [
+      {
+        "name": "sifted flour",
+        "quantity": "3",
+        "unit": "cups"
+      },
+      {
+        "name": "baking powder",
+        "quantity": "1 ½",
+        "unit": "tsp"
+      },
+      {
+        "name": "salt",
+        "quantity": "½",
+        "unit": "tsp"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "soft butter",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "egg",
+        "quantity": "1",
+        "unit": null
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 3 cups sifted flour\n* 1 ½ tsp baking powder\n* ½ tsp salt\n* 1 cup sugar\n* 1 cup soft butter\n* 1 egg\n### Preparation\n\n* Preheat oven to 400\n* Mix all ingredients in a med bowl\n* Us a spoon to scoop cookie batter, roll between your hands\n* Place on a cookie sheet with a silicone pad\n* Bake for 5-8 min\n"
+  },
+  {
+    "id": "11l_Dm7cZ55ZM6csiR6AhyBuPuxBrl53LIXTdXumyJ0w",
+    "slug": "omas-shrimp-dip",
+    "title": "Oma's Shrimp Dip",
+    "ingredients": [
+      {
+        "name": "cream cheese",
+        "quantity": "1",
+        "unit": "8oz package"
+      },
+      {
+        "name": "lemon juice",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "cooked shrimp chopped",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "green pepper",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "onion soup mix",
+        "quantity": "1 ¼",
+        "unit": "oz package"
+      },
+      {
+        "name": "horseradish",
+        "quantity": "1",
+        "unit": "Tbs"
+      },
+      {
+        "name": "sour cream",
+        "quantity": "1",
+        "unit": "cup"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 1 8oz package cream cheese\n* ¼ cup lemon juice ( a little less)\n* 1 cup cooked shrimp chopped\n* ½ cup green pepper\n* 1 ¼ oz package onion soup mix\n* 1 Tbs horseradish\n* 1 cup sour cream\n### Preparation\n\n* Mix and store in refrigerator several hours ahead\n"
+  },
+  {
+    "id": "18XRFCSpF5Ya60TLuvPD1EP3sUf3mbsQ_05E6Wet-Cvs",
+    "slug": "omas-toll-house-cupcakes",
+    "title": "Oma's Toll House Cupcakes",
+    "ingredients": [
+      {
+        "name": "soft butter",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "sugar",
+        "quantity": "6",
+        "unit": "Tbs"
+      },
+      {
+        "name": "brown sugar",
+        "quantity": "6",
+        "unit": "Tbs"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "½",
+        "unit": "tsp"
+      },
+      {
+        "name": "egg",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "flour",
+        "quantity": "1 cup and 2 Tbs",
+        "unit": null
+      },
+      {
+        "name": "baking soda",
+        "quantity": "½",
+        "unit": "tsp"
+      },
+      {
+        "name": "salt",
+        "quantity": "½",
+        "unit": "tsp"
+      },
+      {
+        "name": "packed brown sugar",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "egg",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "salt",
+        "quantity": "⅛",
+        "unit": "tsp"
+      },
+      {
+        "name": "chocolate chips",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "nuts",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "vanilla",
+        "quantity": "½",
+        "unit": "tsp"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n### Ingredients (batter)\n\n* ½ cup soft butter\n* 6 Tbs sugar\n* 6 Tbs brown sugar\n* ½ tsp Vanilla\n* 1 egg\n* 1 cup and 2 Tbs flour (sifted)\n* ½ tsp baking soda\n* ½ tsp salt\n### Ingredients (topping)\n\n* ½ cup packed brown sugar\n* 1 egg\n* ⅛ tsp salt\n* 1 cup chocolate chips\n* ½ cup nuts\n* ½ tsp vanilla\n### Preparation\n\n* Preheat oven to 375 degrees\n* Batter:\n* Combine and beat till creamy butter, sugar, brown sugar, vanilla, and egg \n* Sift together and and stir in remaining dry ingredients\n* Spoon by rounded tablespoons into cupcake cups\n* Bake at 375 for 10 - 12 min remove from oven\n* Topping: \n* Combine all ingredients\n* Spoon 1 tablespoon over each cupcake\n* Return to oven for 15 min\n"
+  },
+  {
+    "id": "1jczizWI9w0nUAyiBIWD4_7lgHe_VgnAq68dDWTm8LqY",
+    "slug": "orange-sponge-cake",
+    "title": "Orange Sponge Cake",
+    "ingredients": [
+      {
+        "name": "eggs",
+        "quantity": "6",
+        "unit": null
+      },
+      {
+        "name": "cake flour",
+        "quantity": "1 ⅓",
+        "unit": "cups"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1 ½",
+        "unit": "cups"
+      },
+      {
+        "name": "salt",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "orange juice",
+        "quantity": "⅓",
+        "unit": "cup"
+      },
+      {
+        "name": "grated orange zest",
+        "quantity": "3",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "cream of tartar",
+        "quantity": "¾",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "butter",
+        "quantity": "⅓",
+        "unit": "cup"
+      },
+      {
+        "name": "confectioners sugar",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "water",
+        "quantity": "3 to 5",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "vanilla extract",
+        "quantity": "1 ½",
+        "unit": "teaspoons"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nI have this love of citrus desserts paired with different fruit textures and combined to make delicious treats. I found that it is a good versatile cake recipe and it is good to have for a nice spring tea party or a summer cake with sweetened whipped cream filling.I love you dearly.\n\nMom\n\n### Ingredients (cake)\n\n* 6 large eggs , separated\n* 1 ⅓ cups cake flour\n* 1 ½ cups sugar, divided\n* ¼ teaspoon salt\n* ⅓ cup orange juice (fresh squeezed is good)\n* 3 teaspoons grated orange zest (fresh)\n* ¾ teaspoons cream of tartar\n### Ingredients (optional glaze)\n\n* ⅓ cup butter, cubed\n* 2 cups confectioners sugar\n* 3 to 5 teaspoons water\n* 1 ½ teaspoons vanilla extract\n### Preparation (Cake)\n\n* Preheat oven at 325 degrees \n* Place egg whites in a large bowl; let stand at room temperature for 30 min\n* Sift flour, ⅓ cup of sugar, and salt together twice; set aside\n* In another bowl beat egg yolks on high speed for 5 min or until thick and lemony colored\n* Gradually beat in ⅔ cups sugar, orange juice, and orange zest; beat for 3 min longer\n* Gradually add flour mixture and mix well\n* Add cream of tartar to egg whites (when at room temperature) and beat on medium speed until soft peaks form\n* Add remaining sugar and tablespoon at a time on high until stiff peaks form\n* Fold egg white mixture into batter\n* Gently spoon into an ungreased 10in tube pan (if making a cake roll use a cookie sheet with a  silicone liner and only cover ½ thick)\n* Cut though batter with a knife to remove air pockets\n* Bake on the lowest oven rack for 45-55 mins or until the cake springs back when lightly touched (for cake rolls bake until golden top and toothpick can be inserted and comes out clean)\n* Immediately invert pan and cool completely about 1 hour (for cake roll invert on a lightly floured linen cloth rag and allow to cool till warm)\n### Preparation (optional glaze)\n\n* Melt butter in small saucepan; remove from the heat\n* Add confectioners sugar, water, and vanilla\n* Stir until smooth pour over cake, allowing it to drizzle down sides \n"
+  },
+  {
+    "id": "1WyrdAfCgRvnzy3bOZaFG62U982PmowwHpmWWu441EWU",
+    "slug": "papas-beans",
+    "title": "PaPa's Beans",
+    "ingredients": [
+      {
+        "name": "Pinto Beans",
+        "quantity": "1",
+        "unit": "Lb"
+      },
+      {
+        "name": "Ham Hawks smoked",
+        "quantity": "Couple",
+        "unit": null
+      },
+      {
+        "name": "bacon",
+        "quantity": "1",
+        "unit": "Lb"
+      },
+      {
+        "name": "Pepper",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Garlic Powder",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Onion Powder",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Chicken Broth",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Water",
+        "quantity": "4",
+        "unit": "cups"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nPlease please please follow this recipe if you want beans.  It will never do you wrong and you won’t have the same experience I did the first time I made beans for you father and they turned out inedible. He is such a sweet man and he still asked for seconds.  I love you dearly.\n\nMom\n\n### Ingredients \n\n* 1Lb Pinto Beans\n* Couple Ham Hawks smoked, or 1Lb bacon\n* 1tsp Pepper\n* 1tsp Salt\n* 1tsp Garlic Powder\n* 1tsp Onion Powder\n* 2cups Chicken Broth\n* 4cups Water\n### Preparation\n\n* Soak Pinto beans over night for best results and shorter cooking time 2 hours\n* If you don’t soak the beans the cooking time is between 4-6 hours\n* Place all ingredients into a pot on the stove top on low\n"
+  },
+  {
+    "id": "1KtnA-mvZNkP0LmDXEsyhuQgfb9ySy7aCQT33mYGQckE",
+    "slug": "pappys-homemade-christmas-irish-cream",
+    "title": "Pappy's Homemade Christmas Irish Cream",
+    "ingredients": [
+      {
+        "name": "heavy cream",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "sweetened condensed milk",
+        "quantity": "1",
+        "unit": "14oz can"
+      },
+      {
+        "name": "Irish whiskey",
+        "quantity": "1 ⅔",
+        "unit": "cups"
+      },
+      {
+        "name": "instant coffee granules",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "chocolate syrup",
+        "quantity": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "vanilla extract",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "almond extract",
+        "quantity": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nYour Pappy is a closet genius when it comes to food and drink. He has this special talent to learn a recipe and make subtle tweaks that just make the whole recipe unique and blossom into something that everyone craves. This particular recipe is for when you get older! I love you dearly.\n\nMom\n\n### Ingredients\n\n* 1 cup heavy cream\n* 1 14oz can of sweetened condensed milk\n* 1 ⅔ cups Irish whiskey (Canadian Club)\n* 1 teaspoon instant coffee granules\n* 2 tablespoons chocolate syrup\n* 1 teaspoon vanilla extract\n* 1 teaspoon almond extract\n### Preparation\n\n* In a blender combine all ingredients and blend on high for 20-30 seconds\n* Store in a tightly sealed container in the refrigerator\n* Shake well before serving\n"
+  },
+  {
+    "id": "1-ikGd80Gm0QYpYY0AmiBLLuJ3MQTDEpiIu7j6nB8EYg",
+    "slug": "picadillo",
+    "title": "Picadillo",
+    "ingredients": [
+      {
+        "name": "ground beef",
+        "quantity": "1",
+        "unit": "lb"
+      },
+      {
+        "name": "onion diced",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "green bell pepper diced",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "medium carrots diced",
+        "quantity": "4",
+        "unit": null
+      },
+      {
+        "name": "potato diced",
+        "quantity": "1",
+        "unit": "cups"
+      },
+      {
+        "name": "garlic minced",
+        "quantity": "4",
+        "unit": "cloves"
+      },
+      {
+        "name": "tomato sauce",
+        "quantity": "8",
+        "unit": "ounces"
+      },
+      {
+        "name": "beef broth",
+        "quantity": "1 ½",
+        "unit": "cup"
+      },
+      {
+        "name": "salt",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground black pepper",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground cumin",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground coriander",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "bay leaf",
+        "quantity": "1",
+        "unit": null
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nI love you dearly.\n\nMom\n\n### Ingredients \n\n* 1 lb ground beef\n* ½ cup onion diced\n* 1 green bell pepper diced\n* 4 medium carrots diced\n* 1 cups potato diced\n* 4 cloves of garlic minced\n* 8 ounces tomato sauce\n* 1 ½ cup beef broth\n* 1 teaspoon salt\n* ¼ teaspoon ground black pepper\n* 1 teaspoon ground cumin\n* 1 teaspoon ground coriander\n* 1 bay leaf\n### Preparation\n\n* Heat a large skillet over medium heat, add ground beef. Cook over medium heat while breaking up the meat. Cook until mostly browned, drain grease and return to heat\n* Add diced onion, green bell pepper, carrots, and potatoes. Continue to cook over medium heat until onion and peppers are softened. Add garlic and cook an additional 30 seconds\n* Pour in tomato sauce and beef broth. Add in seasonings and stir to combine. Add bay leaf\n* Bring mixture to a simmer, cover and let cook for 10 min\n* Remove lid, stir, and continue cooking with a lid off for an additional 10 min to until potatoes are softened and most of the liquid is gone\n* Serve war with flour tortillas and rice\n"
+  },
+  {
+    "id": "1til6jJg8MxWy8G3yaQJha1VKF14gZtgcGRmIVMlJObg",
+    "slug": "pot-roast-crockpot",
+    "title": "Pot Roast - Crockpot",
+    "ingredients": [
+      {
+        "name": "Beef Broth",
+        "quantity": "¾",
+        "unit": "cup"
+      },
+      {
+        "name": "Tomato Paste",
+        "quantity": "2",
+        "unit": "Tbs"
+      },
+      {
+        "name": "Worcestershire Sauce",
+        "quantity": "2",
+        "unit": "Tbs"
+      },
+      {
+        "name": "Cornstarch",
+        "quantity": "1",
+        "unit": "Tbs"
+      },
+      {
+        "name": "Potatoes",
+        "quantity": "1",
+        "unit": "Lb"
+      },
+      {
+        "name": "large Carrots",
+        "quantity": "3",
+        "unit": null
+      },
+      {
+        "name": "medium Onion",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "Garlic Cloves",
+        "quantity": "4",
+        "unit": null
+      },
+      {
+        "name": "Rosemary sprig",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "Chuck Roast",
+        "quantity": "3 ½",
+        "unit": "Lbs"
+      },
+      {
+        "name": "Salt",
+        "quantity": null,
+        "unit": null
+      },
+      {
+        "name": "Pepper",
+        "quantity": null,
+        "unit": null
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nThis is one of your Dads favorite recipes. As you know by now your dad is a meat eater and chuck is one of his favorite cuts for a few reasons and one of those being pot roast. This is a great “put in the pot before work and get home to some good food” recipe. I like to put all of this in the crockpot the night before and pull it out of the fridge and turn it on so that it is even faster when you know that you have to run out the door. I love you dearly.\n\nMom\n\n### Ingredients \n\n* ¾ cup Beef Broth\n* 2Tbs Tomato Paste\n* 2Tbs Worcestershire Sauce\n* 1Tbs Cornstarch\n* 1Lb Potatoes, peeled and and cut in 2” chunks\n* 3large Carrots, peeled and cut into 2” pieces\n* 1medium Onion, cut into ½” wedges \n* 4 Garlic Cloves, minced\n* 1 Rosemary sprig (1 tsp dried)\n* 3 ½ Lbs Chuck Roast\n* Salt\n* Pepper\n### Preparation\n\n* In the bottom of a slow cooker whisk together broth, tomato paste, worcestershire, and cornstarch. Add potatoes, carrots, onion, garlic, and rosemary\n* Season Beef with salt and pepper then nestle into veggies\n* Cover and cook on high for 5 - 6 hours or on low for 8 hours\n"
+  },
+  {
+    "id": "1v8gltWfuPzs2rpoiMCUfnfwgN3TIVg1b-XX7gA8wR-s",
+    "slug": "quick-yeast-rolls",
+    "title": "Quick Yeast Rolls",
+    "ingredients": [
+      {
+        "name": "shortening (softened butter)",
+        "quantity": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "white sugar",
+        "quantity": "3",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "hot water",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "0.25 oz package of active dry yeast",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "egg, beaten",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "salt",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "flour",
+        "quantity": "2 ¼",
+        "unit": "cups"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nSo for Christmas and Thanksgiving your Aunt Laura was always relegated to bringing rolls. She thinks that this is because we didn’t think that she could cook but it was really because she always brought the best rolls. She has started to make her own bread at home and it is taking center stage in our house. This roll recipe was to try and mimic the rolls that she used to bring over. They are a good staple to have for your future gathering needs. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 2 tablespoons shortening (softened butter)\n* 3 tablespoons white sugar\n* 1 cup hot water \n* 1 .25oz package of active dry yeast\n* 1 egg, beaten\n* 1 teaspoon salt\n* 2 ¼ cups flour\n### Preparation\n\n* Preheat oven at 425 degrees\n* Grease 8 muffin cups and set aside\n* In a large bowl mix the shortening, sugar and hot water, allow to cool until luke warm (110 degrees) and mix in the yeast until dissolved and froths\n* Mix in all the rest of the ingredients \n* Allow the doubt to rise and double in size\n* Punch down the dough and separate into 8 equal parts\n* Put each part into the greased muffin tin and allow it to rise for a second time (double in size again)\n* Bake for 10min\n"
+  },
+  {
+    "id": "1HilbtxPL9JIRKc7LtNCaoD72jGWlbWXw0KXd7iP2yYk",
+    "slug": "soft-dinner-rolls",
+    "title": "Soft Dinner Rolls",
+    "ingredients": [
+      {
+        "name": "milk",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "yeast",
+        "quantity": "2 ¼",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "sugar",
+        "quantity": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "egg",
+        "quantity": "1",
+        "unit": null
+      },
+      {
+        "name": "butter",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "salt",
+        "quantity": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "flour",
+        "quantity": "3",
+        "unit": "cups"
+      },
+      {
+        "name": "butter",
+        "quantity": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "name": "honey",
+        "quantity": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nI love to use this recipe to make “after thanksgiving” sandwiches. You know the kind with a little of everything on it and somehow it almost tastes better than the day of. I love you dearly.\n\nMom\n\n### Ingredients \n\n* 1 cup milk warmed to 110 degrees\n* 2 ¼ teaspoons yeast\n* 2 tablespoons sugar\n* 1 egg\n* ¼ cup butter softened to room temperature\n* 1 teaspoon salt\n* 3 cups flour\n* Optional topping:\n*  2 tablespoons butter and 1 tablespoon honey\n### Preparation\n\n* Bloom milk, yeast, and 1 tablespoon sugar\n* Once bloomed add remaining ingredients (1 cup of flour at a time)\n* Knead dough for 3 to 5 min (use a standing mixer with dough hook)\n* Allow time to rise 1-2 hours and then punch down\n* Shape into 12-15 balls and place in a greased baking dish and allow to rise a 2nd time (1 hour)\n* Bake at 350 degrees for 20-25 min\n* Optional: Top with butter and honey with a brush\n"
+  },
+  {
+    "id": "1KVvDILz0dG0Uyed3UhTt3z0fWNfbL4SAdHEPYNap7UA",
+    "slug": "spiced-cranberry-and-orange-yule-log-with-italian-meringue",
+    "title": "Spiced Cranberry and Orange Yule Log with Italian Meringue",
+    "ingredients": [
+      {
+        "name": "eggs",
+        "quantity": "6",
+        "unit": null
+      },
+      {
+        "name": "cake flour",
+        "quantity": "1 ⅓",
+        "unit": "cups"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1 ½",
+        "unit": "cups"
+      },
+      {
+        "name": "salt",
+        "quantity": "¼",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "orange juice",
+        "quantity": "⅓",
+        "unit": "cup"
+      },
+      {
+        "name": "grated orange zest",
+        "quantity": "3",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "cream of tartar",
+        "quantity": "¾",
+        "unit": "teaspoons"
+      },
+      {
+        "name": "cranberries",
+        "quantity": "12",
+        "unit": "oz"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1 ¾",
+        "unit": "cups"
+      },
+      {
+        "name": "water",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "cinnamon",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground allspice",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "salt",
+        "quantity": "⅛",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground ginger",
+        "quantity": "⅛",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground cloves",
+        "quantity": "⅛",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "heavy whipping cream",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "powdered sugar",
+        "quantity": "¼",
+        "unit": "cup"
+      },
+      {
+        "name": "mascarpone",
+        "quantity": "½ cup + 1 tablespoon",
+        "unit": null
+      },
+      {
+        "name": "vanilla",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "water",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "egg whites",
+        "quantity": "4",
+        "unit": null
+      },
+      {
+        "name": "cream of tartar",
+        "quantity": "½",
+        "unit": "teaspoon"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nI made up this recipe the year before you were born for my office Christmas potluck. I wanted to make something that was traditional, yule log, but with a twist. I couldn’t find anything online that I was looking for so I had to come up with a recipe that worked and could be all combined for the perfect recipe. So this recipe you will see will be in 5 parts. There are ingredients and preparation for each of the components and then at the very end a guide to create this special yule log recipe. I love you dearly.\n\nMom\n\n### Ingredients (cake)\n\n* 6 large eggs , separated\n* 1 ⅓ cups cake flour\n* 1 ½ cups sugar, divided\n* ¼ teaspoon salt\n* ⅓ cup orange juice (fresh squeezed is good)\n* 3 teaspoons grated orange zest (fresh)\n* ¾ teaspoons cream of tartar\n* Put each part into the greased muffin tin and allow it to rise for a second time (double in size again)\n* Bake for 10min\n### Preparation (Cake)\n\n* Preheat oven at 325 degrees \n* Place egg whites in a large bowl; let stand at room temperature for 30 min\n* Sift flour, ⅓ cup of sugar, and salt together twice; set aside\n* In another bowl beat egg yolks on high speed for 5 min or until thick and lemony colored\n* Gradually beat in ⅔ cups sugar, orange juice, and orange zest; beat for 3 min longer\n* Gradually add flour mixture and mix well\n* Add cream of tartar to egg whites (when at room temperature) and beat on medium speed until soft peaks form\n* Add remaining sugar and tablespoon at a time on high until stiff peaks form\n* Fold egg white mixture into batter\n* Gently spoon into a cookie sheet with a silicone liner ½inch thick\n* Cut though batter with a knife to remove air pockets\n* Bake on the lowest oven rack until the cake springs back when lightly touched and is  golden on top and toothpick can be inserted and comes out clean)\n* Immediately invert on a lightly floured linen cloth rag (roll into desired shape with the cloth rolled up into the cake) and allow to cool till warm\n### Ingredients (spiced cranberry sauce)\n\n* 12oz fresh or frozen cranberries\n* 1 ¾ cups sugar\n* ½ cup water\n* ½ teaspoon cinnamon\n* ½ teaspoon ground allspice\n* ⅛ teaspoon salt\n* ⅛ teaspoon ground ginger\n* ⅛ teaspoon ground cloves\n### Preparation (spiced cranberry sauce)\n\n* PIn a large saucepan combine all ingredients and bring to a boil\n* Reduce heat; simmer uncovered until the berries pop and the mixture is thickened, about 30 min\n* Cool and transfer to a covered container and refrigerate until chilled\n### Ingredients (mascarpone filling)\n\n* ½ cup heavy whipping cream; cold\n* ¼ cup powdered sugar\n* ½ cup + 1 tablespoon mascarpone at room temperature (drain for 10-15 min to remove any excess liquid for best results)\n* ½ teaspoon vanilla\n### Preparation (mascarpone filling)\n\n* In a bowl beat the whipping cream and sugar until stiff peaks form\n* Beat mascarpone and vanilla until smooth\n* Combine both mixtures and whip until smooth (don’t over whip!!)\n### Ingredients (italian meringue)\n\n* 1 cup sugar (7 ounces; 200g)\n* ½ cup water\n* 4 egg whites at room temperature (fresh is best)\n* ½ teaspoon cream of tartar or alternative of 1 lemon juiced \n### Preparation (italian meringue)\n\n* In a small saucepan combine sugar and water, Heat over hight heat, stirring only until it comes to a boil. Once it reaches a boil STOP STIRRING. \n* Cook until sugar syrup registers 240 degrees (115 degrees celsius) on an instant-read or candy thermometer. Brush down the sides of the pot as necessary with a pastry brush dipped in water (just to get the crystals of the walls of the pot)\n* Meanwhile,  combine egg whites and cream of tartar in a bowl of a stand mixer fitted with a whisk attachment. Mix on medium speed until soft peaks form about 2 min\n* With the mixer running, carefully and slowly drizzle in how sugar syrup\n* Increase speed to high until hard peaks form\n* Transfer to piping bag with desired tip\n### Assembly\n\nWith the cake warm and rolled with the lightly floured linen gently unroll and allow it to keep its shape slightly. Spread mascarpone cream filling over inside of the cake roll (leave 1 inch on every edge free of filling. Drop spread spiced cranberry sauce over the mascarpone filling (does not need to be exact just drop and lightly spread). Once the filling is in the cake roll re roll the cake in the lightly floured linen cloth. Do not roll the cloth back up into the roll this time. Once it is rolled tight, place in the freezer for 2 hours. Take it out of the freezer and place it on an oven safe serving dish. Pipe italian meringue lengthwise on the log and add swirls to mimic tree branch stumps when still soft, drag a fork over the meringue to add bark texture. Place the whole thing in the oven and broil until a nice golden crust forms on the meringue. Watch it carefully or it will burn. Serve to loved ones!\n\n"
+  },
+  {
+    "id": "1TqXBcNg25LaFT7Zv3CmDaJiVQ7rQOXL8ULpyntpkrPw",
+    "slug": "spiced-cranberry-sauce",
+    "title": "Spiced Cranberry Sauce",
+    "ingredients": [
+      {
+        "name": "fresh or frozen cranberries",
+        "quantity": "12",
+        "unit": "oz"
+      },
+      {
+        "name": "sugar",
+        "quantity": "1 ¾",
+        "unit": "cups"
+      },
+      {
+        "name": "water",
+        "quantity": "½",
+        "unit": "cup"
+      },
+      {
+        "name": "cinnamon",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground allspice",
+        "quantity": "½",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "salt",
+        "quantity": "⅛",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground ginger",
+        "quantity": "⅛",
+        "unit": "teaspoon"
+      },
+      {
+        "name": "ground cloves",
+        "quantity": "⅛",
+        "unit": "teaspoon"
+      }
+    ],
+    "markdown": "### Summary\n\nNathan,\n\nThis recipe was made specifically for my Christmas orange yule log but I think that it can add a warmth to any type of desert that your heart desires. I love you dearly.\n\nMom\n\n### Ingredients\n\n* 12oz fresh or frozen cranberries\n* 1 ¾ cups sugar\n* ½ cup water\n* ½ teaspoon cinnamon\n* ½ teaspoon ground allspice\n* ⅛ teaspoon salt\n* ⅛ teaspoon ground ginger\n* ⅛ teaspoon ground cloves\n### Preparation\n\n* PIn a large saucepan combine all ingredients and bring to a boil\n* Reduce heat; simmer uncovered until the berries pop and the mixture is thickened, about 30 min\n* Cool and transfer to a covered container and refrigerate until chilled\n"
+  }
+]

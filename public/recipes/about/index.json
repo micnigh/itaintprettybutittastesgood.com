@@ -1,0 +1,7 @@
+{
+  "id": "17wKtZvIHOSoVnx4h_y82vXTEZI77fCCLdsP5iH-P8OQ",
+  "slug": "about",
+  "title": "About",
+  "ingredients": [],
+  "markdown": "Recipe website for Nigh family recipes\n\n**Features\n**\n\n* Content stored in google drive\n* Static website, so hosting is freeish\n* Source code available if someone wants to make their own\n**First version should have\n**\n\n* Recipes\n* Cover photo\n* Tags\n* Theme similar to gatsby-theme-recipes\n**\n**\n\n**Future features (not prioritized)\n**\n\n* Estimated time\n* Search\n* Unit converter (metric/us)\n* Servings modifier\n* Nutrition info\n* Estimated cost\n* Grocery list builder\n"
+}
