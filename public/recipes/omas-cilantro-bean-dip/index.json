@@ -9,22 +9,22 @@
       "unit": "cups"
     },
     {
-      "name": "Black beans",
-      "quantity": "1 can 15 oz",
-      "unit": null
+      "name": "15 oz Black beans, drained and rinsed",
+      "quantity": "1",
+      "unit": "can"
     },
     {
-      "name": "large fresh tomato",
+      "name": "large fresh tomato, chopped",
       "quantity": "1",
       "unit": null
     },
     {
-      "name": "red pepper",
+      "name": "red pepper, chopped",
       "quantity": "¾",
       "unit": "cup"
     },
     {
-      "name": "red onion",
+      "name": "red onion, chopped",
       "quantity": "½",
       "unit": "cup"
     },

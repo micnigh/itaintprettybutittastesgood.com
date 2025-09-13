@@ -4,7 +4,7 @@
   "title": "Cranberry Pie",
   "ingredients": [
     {
-      "name": "fresh cranberries",
+      "name": "cranberries",
       "quantity": "4",
       "unit": "cups"
     },
@@ -12,11 +12,6 @@
       "name": "orange",
       "quantity": "1",
       "unit": null
-    },
-    {
-      "name": "orange juice",
-      "quantity": "1/2",
-      "unit": "cup"
     },
     {
       "name": "sugar",
@@ -39,7 +34,7 @@
       "unit": "packet"
     },
     {
-      "name": "store bought pie crust",
+      "name": "pie crust",
       "quantity": "1",
       "unit": null
     },

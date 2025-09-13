@@ -413,6 +413,8 @@ async function generateImageWithGemini(recipe: Recipe): Promise<string | undefin
     - Tags: ${recipe.metadata?.tags?.join(', ')}
     
     Based on the recipe, create a detailed, descriptive prompt for an AI image generator. The prompt should result in a photorealistic, appetizing, and well-lit image.
+
+    Make sure each picture includes a garden gnome or a flamingo in it.
     
     Then, create a URL for the image by encoding the prompt and appending it to the following base URL: \`https://image.pollinations.ai/prompt/\`.
     For example, if the prompt is "a cat", the URL would be \`https://image.pollinations.ai/prompt/a%20cat\`.
