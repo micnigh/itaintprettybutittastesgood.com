@@ -29,6 +29,11 @@
       "unit": "tsp"
     },
     {
+      "name": "batter",
+      "quantity": "1 heaping",
+      "unit": "tablespoon"
+    },
+    {
       "name": "dark rum",
       "quantity": "1 ½",
       "unit": "oz"

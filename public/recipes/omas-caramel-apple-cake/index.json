@@ -21,7 +21,7 @@
     {
       "name": "apples, peeled and sliced",
       "quantity": "2",
-      "unit": null
+      "unit": "med"
     },
     {
       "name": "lemon juice",
@@ -45,7 +45,7 @@
     },
     {
       "name": "Whipped cream or ice cream",
-      "quantity": "optional",
+      "quantity": null,
       "unit": null
     }
   ],

@@ -43,6 +43,7 @@ interface Recipe {
     ingredients: Ingredient[];
     markdown: string;
     metadata?: Record<string, any>;
+    heroImage?: string;
 }
 
 interface CachedDoc extends docs_v1.Schema$Document {
@@ -116,12 +117,76 @@ function slugify(text: string): string {
         .replace(/-+$/, '');            // Trim - from end of text
 }
 
-async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string): Promise<string> {
+interface GdocParseResult {
+    markdown: string;
+    imagePaths: string[];
+}
+
+async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string, auth: any): Promise<GdocParseResult> {
   let markdown = '';
   let imageCounter = 0;
   const downloadedImageIds = new Set<string>();
+  const imagePaths: string[] = [];
 
-  if (!doc.body?.content) return '';
+  if (!doc.body?.content) return { markdown: '', imagePaths: [] };
+
+  // Helper function to process elements and extract images
+  const processElements = async (elements: docs_v1.Schema$ParagraphElement[] | undefined) => {
+      if (!elements) return '';
+      let text = '';
+      for (const pe of elements) {
+          if (pe.textRun && pe.textRun.content) {
+              let content = pe.textRun.content;
+              if (pe.textRun.textStyle?.bold) content = `**${content}**`;
+              if (pe.textRun.textStyle?.italic) content = `*${content}*`;
+              text += content;
+          } else if (pe.inlineObjectElement?.inlineObjectId) {
+              const objectId = pe.inlineObjectElement.inlineObjectId;
+              const image = doc.inlineObjects?.[objectId]?.inlineObjectProperties?.embeddedObject;
+              if (image?.imageProperties?.contentUri) {
+                  downloadedImageIds.add(objectId);
+                  imageCounter++;
+                  const url = image.imageProperties.contentUri;
+                  
+                  const accessToken = await auth.getAccessToken();
+                  const res = await fetch(url, {
+                      headers: {
+                          'Authorization': `Bearer ${accessToken.token}`
+                      }
+                  });
+
+                  const contentType = res.headers.get('content-type') || 'image/jpeg';
+                  
+                  if (!contentType.startsWith('image/')) {
+                      console.warn(`Skipping download of non-image content: ${contentType}`);
+                      return text;
+                  }
+
+                  const buffer = await res.buffer();
+                  const extension = contentType.split(';')[0].split('/')[1];
+                  const filename = `image-${imageCounter}.${extension}`;
+                  await fs.writeFile(path.join(recipeDir, filename), buffer);
+                  text += `![${doc.title} image ${imageCounter}](./${filename})`;
+                  imagePaths.push(filename);
+              }
+          }
+      }
+      return text;
+  };
+
+  // Process headers
+  if (doc.headers) {
+    for (const headerId in doc.headers) {
+        const header = doc.headers[headerId];
+        if (header.content) {
+            for (const element of header.content) {
+                if (element.paragraph) {
+                    await processElements(element.paragraph.elements);
+                }
+            }
+        }
+    }
+  }
 
   for (const element of doc.body.content) {
     if (element.paragraph) {
@@ -130,33 +195,7 @@ async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string): Promi
 
       let line = '';
       if (element.paragraph.elements) {
-          for (const pe of element.paragraph.elements) {
-            if (pe.textRun && pe.textRun.content) {
-              let text = pe.textRun.content;
-              if (pe.textRun.textStyle?.bold) {
-                text = `**${text}**`;
-              }
-              if (pe.textRun.textStyle?.italic) {
-                text = `*${text}*`;
-              }
-              line += text;
-            } else if (pe.inlineObjectElement?.inlineObjectId) {
-                const objectId = pe.inlineObjectElement.inlineObjectId;
-                const image = doc.inlineObjects?.[objectId]?.inlineObjectProperties?.embeddedObject;
-                if (image?.imageProperties?.contentUri) {
-                    downloadedImageIds.add(objectId);
-                    imageCounter++;
-                    const url = image.imageProperties.contentUri;
-                    const res = await fetch(url);
-                    const buffer = await res.buffer();
-                    const contentType = res.headers.get('content-type') || 'image/jpeg';
-                    const extension = contentType.split('/')[1];
-                    const filename = `image-${imageCounter}.${extension}`;
-                    await fs.writeFile(path.join(recipeDir, filename), buffer);
-                    line += `![${doc.title} image ${imageCounter}](./${filename})`;
-                }
-            }
-          }
+        line = await processElements(element.paragraph.elements);
       }
       
       line = line.replace(/\n$/, '');
@@ -186,12 +225,26 @@ async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string): Promi
         if (image?.imageProperties?.contentUri) {
             imageCounter++;
             const url = image.imageProperties.contentUri;
-            const res = await fetch(url);
-            const buffer = await res.buffer();
+            
+            const accessToken = await auth.getAccessToken();
+            const res = await fetch(url, {
+                headers: {
+                    'Authorization': `Bearer ${accessToken.token}`
+                }
+            });
+
             const contentType = res.headers.get('content-type') || 'image/jpeg';
-            const extension = contentType.split('/')[1];
+
+            if (!contentType.startsWith('image/')) {
+                console.warn(`Skipping download of non-image content: ${contentType}`);
+                continue;
+            }
+
+            const buffer = await res.buffer();
+            const extension = contentType.split(';')[0].split('/')[1];
             const filename = `image-${imageCounter}.${extension}`;
             await fs.writeFile(path.join(recipeDir, filename), buffer);
+            imagePaths.push(filename);
         }
     }
   }
@@ -203,17 +256,31 @@ async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string): Promi
            if (image?.imageProperties?.contentUri) {
               imageCounter++;
               const url = image.imageProperties.contentUri;
-              const res = await fetch(url);
-              const buffer = await res.buffer();
+
+              const accessToken = await auth.getAccessToken();
+              const res = await fetch(url, {
+                headers: {
+                    'Authorization': `Bearer ${accessToken.token}`
+                }
+              });
+
               const contentType = res.headers.get('content-type') || 'image/jpeg';
-              const extension = contentType.split('/')[1];
+
+              if (!contentType.startsWith('image/')) {
+                console.warn(`Skipping download of non-image content: ${contentType}`);
+                continue;
+              }
+
+              const buffer = await res.buffer();
+              const extension = contentType.split(';')[0].split('/')[1];
               const filename = `image-${imageCounter}.${extension}`;
               await fs.writeFile(path.join(recipeDir, filename), buffer);
+              imagePaths.push(filename);
           }
       }
   }
 
-  return markdown;
+  return { markdown, imagePaths };
 }
 
 async function getIngredientsWithGemini(markdownContent: string): Promise<Ingredient[]> {
@@ -425,7 +492,7 @@ async function main() {
             const cachedData = await fs.readFile(cachePath, 'utf-8');
             doc = JSON.parse(cachedData);
         }
-        const markdown = await parseGdoc(doc as docs_v1.Schema$Document, recipeDir);
+        const { markdown, imagePaths } = await parseGdoc(doc as docs_v1.Schema$Document, recipeDir, auth);
         const ingredients = await getIngredientsWithGemini(markdown);
         const metadata = parseYamlMetadata(file.description || '');
 
@@ -437,6 +504,10 @@ async function main() {
           markdown,
           metadata,
         };
+
+        if (imagePaths.length === 1) {
+            recipe.heroImage = imagePaths[0];
+        }
         
         await fs.writeFile(recipePath, JSON.stringify(recipe, null, 2));
     }

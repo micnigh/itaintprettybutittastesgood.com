@@ -14,9 +14,9 @@
       "unit": "cups"
     },
     {
-      "name": "fresh cranberries",
+      "name": "package of fresh cranberries",
       "quantity": "12",
-      "unit": "oz package"
+      "unit": "oz"
     },
     {
       "name": "raisins/currants",
@@ -24,17 +24,17 @@
       "unit": "cup"
     },
     {
-      "name": "apple",
+      "name": "apple (peeled, core removed, and chopped)",
       "quantity": "1",
       "unit": null
     },
     {
-      "name": "orange",
+      "name": "orange (peeled, seeded, and chopped)",
       "quantity": "1",
       "unit": null
     },
     {
-      "name": "pecans",
+      "name": "pecans (toasted and chopped)",
       "quantity": "½",
       "unit": "cup"
     },

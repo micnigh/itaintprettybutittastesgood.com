@@ -4,7 +4,7 @@
   "title": "Biscotti (Twice Bakes Cookie)",
   "ingredients": [
     {
-      "name": "butter",
+      "name": "butter, softened",
       "quantity": "½",
       "unit": "cup"
     },
@@ -19,7 +19,7 @@
       "unit": null
     },
     {
-      "name": "vanilla extract",
+      "name": "vanilla extract (or almond)",
       "quantity": "1",
       "unit": "teaspoons"
     },
@@ -39,28 +39,23 @@
       "unit": "teaspoons"
     },
     {
-      "name": "chopped pecans",
+      "name": "chopped pecans (baking nut)",
       "quantity": "1",
       "unit": "cup"
     },
     {
-      "name": "chopped cranberries",
+      "name": "chopped cranberries (dried fruit)",
       "quantity": "1",
       "unit": "cup"
     },
     {
-      "name": "lemon zest",
+      "name": "lemon zest (citrus zest)",
       "quantity": "2",
       "unit": "teaspoons"
     },
     {
-      "name": "egg white",
+      "name": "egg white w/2 teaspoon water beaten",
       "quantity": "1",
-      "unit": "teaspoon"
-    },
-    {
-      "name": "water",
-      "quantity": "2",
       "unit": "teaspoon"
     }
   ],

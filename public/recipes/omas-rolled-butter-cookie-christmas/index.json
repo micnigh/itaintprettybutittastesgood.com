@@ -4,7 +4,7 @@
   "title": "Oma's Rolled Butter Cookie - Christmas",
   "ingredients": [
     {
-      "name": "sifted flour",
+      "name": "flour",
       "quantity": "3",
       "unit": "cups"
     },
@@ -24,7 +24,7 @@
       "unit": "cup"
     },
     {
-      "name": "soft butter",
+      "name": "butter",
       "quantity": "1",
       "unit": "cup"
     },
