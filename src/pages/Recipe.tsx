@@ -88,18 +88,25 @@ const Recipe: FC = () => {
 
   const servingOptions = useMemo(() => {
     const multipliers = [0.25, 0.5, 0.75, 1, 2, 4];
-    const options = multipliers.map(m => {
+    const uniqueOptions = new Map<string, { value: string; multiplier: number }>();
+    multipliers.forEach(m => {
         const val = originalServings * m;
-        return new Fraction(val).toFraction(true);
+        const optionValue = new Fraction(val).toFraction(true);
+        if (!uniqueOptions.has(optionValue)) {
+            uniqueOptions.set(optionValue, {
+                value: optionValue,
+                multiplier: m
+            });
+        }
     });
-    return [...new Set(options)];
+    return Array.from(uniqueOptions.values());
   }, [originalServings]);
 
   const filteredOptions =
     query === ''
       ? servingOptions
       : servingOptions.filter((option) =>
-        option.toLowerCase().replace(/\s+/g, '').includes(query.toLowerCase().replace(/\s+/g, ''))
+        option.value.toLowerCase().replace(/\s+/g, '').includes(query.toLowerCase().replace(/\s+/g, ''))
       );
 
 
@@ -171,13 +178,22 @@ const Recipe: FC = () => {
               <Combobox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                 {filteredOptions.map((option) => (
                   <Combobox.Option
-                    key={option}
-                    value={option}
+                    key={option.value}
+                    value={option.value}
                     className={({ active }) => `relative cursor-default select-none py-2 pl-4 pr-4 ${active ? 'bg-indigo-600 text-white' : 'text-gray-900'}`}
                   >
-                    <span className={option === originalServings.toString() ? 'font-bold' : 'font-normal'}>
-                      {option}
-                    </span>
+                    {({ active }) => (
+                      <>
+                        <span className={option.multiplier === 1 ? 'font-bold' : 'font-normal'}>
+                          {option.value}
+                        </span>
+                        {option.multiplier !== 1 && (
+                          <span className={`${active ? 'text-indigo-200' : 'text-gray-500'} ml-2`}>
+                            ({new Fraction(option.multiplier).toFraction(true)}x)
+                          </span>
+                        )}
+                      </>
+                    )}
                   </Combobox.Option>
                 ))}
               </Combobox.Options>
