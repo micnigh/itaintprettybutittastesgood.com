@@ -42,6 +42,8 @@ export interface Recipe {
     title: string;
     ingredients: Ingredient[];
     markdown: string;
+    summary?: string;
+    preparation?: string;
     metadata?: RecipeMetadata;
     heroImage?: string;
 }
@@ -128,6 +130,9 @@ function slugify(text: string): string {
 
 interface GdocParseResult {
     markdown: string;
+    summary: string;
+    ingredients: string;
+    preparation: string;
     imagePaths: string[];
 }
 
@@ -137,7 +142,14 @@ async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string, auth: 
   const downloadedImageIds = new Set<string>();
   const imagePaths: string[] = [];
 
-  if (!doc.body?.content) return { markdown: '', imagePaths: [] };
+  const sections = {
+    summary: '',
+    ingredients: '',
+    preparation: '',
+  };
+  let currentSection: keyof typeof sections = 'summary';
+
+  if (!doc.body?.content) return { markdown: '', ...sections, imagePaths: [] };
 
   // Helper function to process elements and extract images
   const processElements = async (elements: docs_v1.Schema$ParagraphElement[] | undefined) => {
@@ -209,18 +221,38 @@ async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string, auth: 
       
       line = line.replace(/\n$/, '');
 
+      if (styleType?.startsWith('HEADING')) {
+        const headingText = line.toLowerCase().trim();
+        if (headingText.includes('ingredient')) {
+          currentSection = 'ingredients';
+          continue;
+        } else if (headingText.includes('preparation') || headingText.includes('instruction')) {
+          currentSection = 'preparation';
+          continue;
+        } else if (headingText.includes('summary')) {
+            currentSection = 'summary';
+            continue;
+        }
+      }
+
+      let markdownLine = '';
       if (styleType === 'TITLE') {
-        markdown += `# ${line}\n\n`;
+        markdownLine += `# ${line}\n\n`;
       } else if (styleType === 'HEADING_1') {
-        markdown += `# ${line}\n\n`;
+        markdownLine += `# ${line}\n\n`;
       } else if (styleType === 'HEADING_2') {
-        markdown += `## ${line}\n\n`;
+        markdownLine += `## ${line}\n\n`;
       } else if (styleType === 'HEADING_3') {
-        markdown += `### ${line}\n\n`;
+        markdownLine += `### ${line}\n\n`;
       } else if (isList) {
-        markdown += `* ${line}\n`;
+        markdownLine += `* ${line}\n`;
       } else if (line.trim() !== '') {
-        markdown += `${line}\n\n`;
+        markdownLine += `${line}\n\n`;
+      }
+
+      if (markdownLine) {
+        markdown += markdownLine;
+        sections[currentSection] += markdownLine;
       }
     }
   }
@@ -289,7 +321,7 @@ async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string, auth: 
       }
   }
 
-  return { markdown, imagePaths };
+  return { markdown, ...sections, imagePaths };
 }
 
 async function getIngredientsWithGemini(markdownContent: string): Promise<Ingredient[]> {
@@ -395,14 +427,14 @@ function getTextFromTableCell(cell: docs_v1.Schema$TableCell) {
   return text.replace(/\n/g, '');
 }
 
-function parseYamlMetadata(description: string | undefined): Record<string, any> | undefined {
+function parseYamlMetadata(description: string | undefined): RecipeMetadata | undefined {
   if (!description || !description.trim()) {
     return undefined;
   }
 
   try {
     // Try to parse the description as YAML
-    const metadata = yaml.load(description.trim()) as Record<string, any>;
+    const metadata = yaml.load(description.trim()) as RecipeMetadata;
     return metadata;
   } catch (error) {
     console.warn(`Failed to parse YAML metadata from description: ${error}`);
@@ -464,8 +496,8 @@ async function processDoc(file: drive_v3.Schema$File, auth: any) {
           const cachedData = await fs.readFile(cachePath, 'utf-8');
           doc = JSON.parse(cachedData);
       }
-      const { markdown, imagePaths } = await parseGdoc(doc as docs_v1.Schema$Document, recipeDir, auth);
-      const ingredients = await getIngredientsWithGemini(markdown);
+      const { markdown, summary, ingredients: ingredientsMarkdown, preparation, imagePaths } = await parseGdoc(doc as docs_v1.Schema$Document, recipeDir, auth);
+      const ingredients = await getIngredientsWithGemini(ingredientsMarkdown || markdown);
       const metadata = parseYamlMetadata(file.description || '');
 
       const recipe: Recipe = {
@@ -474,6 +506,8 @@ async function processDoc(file: drive_v3.Schema$File, auth: any) {
         title: doc?.title!,
         ingredients,
         markdown,
+        summary,
+        preparation,
         metadata,
       };
 
