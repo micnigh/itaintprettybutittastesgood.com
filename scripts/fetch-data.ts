@@ -401,6 +401,80 @@ function parseYamlMetadata(description: string | undefined): Record<string, any>
   }
 }
 
+async function processDoc(file: drive_v3.Schema$File, auth: any) {
+  const slug = slugify(file.name || '');
+  const recipeDir = path.join(RECIPES_DIR, slug);
+  await fs.mkdir(recipeDir, { recursive: true });
+
+  const cachePath = path.join(CACHE_DIR, `${slug}.json`);
+  const recipePath = path.join(recipeDir, `index.json`);
+  
+  // Stage 1: Fetch from Google Docs API only if modification time has changed
+  let doc: docs_v1.Schema$Document | undefined;
+  try {
+    const cachedData = await fs.readFile(cachePath, 'utf-8');
+    const cachedDoc: CachedDoc = JSON.parse(cachedData);
+    
+    if (file.modifiedTime !== cachedDoc.modifiedTime) {
+      console.log(`[FETCH] Modification change detected, re-fetching: ${file.name}`);
+      doc = await fetchDoc(auth, file.id!);
+      // Add modifiedTime to the document for caching
+      const docWithModifiedTime = { ...doc, modifiedTime: file.modifiedTime! };
+      await fs.writeFile(cachePath, JSON.stringify(docWithModifiedTime, null, 2));
+      doc = docWithModifiedTime as docs_v1.Schema$Document;
+    } else {
+      // console.log(`[FETCH] Using raw cache for: ${file.name}`);
+    }
+  } catch (error) { // Not in raw cache
+    console.log(`[FETCH] Not in cache, fetching: ${file.name}`);
+    doc = await fetchDoc(auth, file.id!);
+    // Add modifiedTime to the document for caching
+    const docWithModifiedTime = { ...doc, modifiedTime: file.modifiedTime! };
+    await fs.writeFile(cachePath, JSON.stringify(docWithModifiedTime, null, 2));
+    doc = docWithModifiedTime as docs_v1.Schema$Document;
+  }
+  
+  // Stage 2: Process with Gemini only if necessary
+  let shouldProcess = false;
+  try {
+      const recipeStat = await fs.stat(recipePath);
+      const cacheStat = await fs.stat(cachePath);
+      if (cacheStat.mtime > recipeStat.mtime) {
+          console.log(`[PROCESS] Raw data updated, re-processing: ${file.name}`);
+          shouldProcess = true;
+      } else {
+          // console.log(`[PROCESS] Skipping up-to-date recipe: ${file.name}`);
+      }
+  } catch (error) { // Not in processed recipe cache
+      console.log(`[PROCESS] New recipe, processing: ${file.name}`);
+      shouldProcess = true;
+  }
+
+  if (shouldProcess) {
+      if (!doc) {
+          const cachedData = await fs.readFile(cachePath, 'utf-8');
+          doc = JSON.parse(cachedData);
+      }
+      const { markdown, imagePaths } = await parseGdoc(doc as docs_v1.Schema$Document, recipeDir, auth);
+      const ingredients = await getIngredientsWithGemini(markdown);
+      const metadata = parseYamlMetadata(file.description || '');
+
+      const recipe: Recipe = {
+        id: doc?.documentId!,
+        slug: slug,
+        title: doc?.title!,
+        ingredients,
+        markdown,
+        metadata,
+      };
+
+      if (imagePaths.length === 1) {
+          recipe.heroImage = imagePaths[0];
+      }
+      
+      await fs.writeFile(recipePath, JSON.stringify(recipe, null, 2));
+  }
+}
 
 async function main() {
   const noCache = process.argv.includes('--no-cache');
@@ -438,79 +512,12 @@ async function main() {
   
   console.log(`Found ${docFiles.length} documents. Processing with modification-time-based cache...`);
   
-  for (const file of docFiles) {
-    const slug = slugify(file.name || '');
-    const recipeDir = path.join(RECIPES_DIR, slug);
-    await fs.mkdir(recipeDir, { recursive: true });
-
-    const cachePath = path.join(CACHE_DIR, `${slug}.json`);
-    const recipePath = path.join(recipeDir, `index.json`);
-    
-    // Stage 1: Fetch from Google Docs API only if modification time has changed
-    let doc: docs_v1.Schema$Document | undefined;
-    try {
-      const cachedData = await fs.readFile(cachePath, 'utf-8');
-      const cachedDoc: CachedDoc = JSON.parse(cachedData);
-      
-      if (file.modifiedTime !== cachedDoc.modifiedTime) {
-        console.log(`[FETCH] Modification change detected, re-fetching: ${file.name}`);
-        doc = await fetchDoc(auth, file.id!);
-        // Add modifiedTime to the document for caching
-        const docWithModifiedTime = { ...doc, modifiedTime: file.modifiedTime! };
-        await fs.writeFile(cachePath, JSON.stringify(docWithModifiedTime, null, 2));
-        doc = docWithModifiedTime as docs_v1.Schema$Document;
-      } else {
-        // console.log(`[FETCH] Using raw cache for: ${file.name}`);
-      }
-    } catch (error) { // Not in raw cache
-      console.log(`[FETCH] Not in cache, fetching: ${file.name}`);
-      doc = await fetchDoc(auth, file.id!);
-      // Add modifiedTime to the document for caching
-      const docWithModifiedTime = { ...doc, modifiedTime: file.modifiedTime! };
-      await fs.writeFile(cachePath, JSON.stringify(docWithModifiedTime, null, 2));
-      doc = docWithModifiedTime as docs_v1.Schema$Document;
-    }
-    
-    // Stage 2: Process with Gemini only if necessary
-    let shouldProcess = false;
-    try {
-        const recipeStat = await fs.stat(recipePath);
-        const cacheStat = await fs.stat(cachePath);
-        if (cacheStat.mtime > recipeStat.mtime) {
-            console.log(`[PROCESS] Raw data updated, re-processing: ${file.name}`);
-            shouldProcess = true;
-        } else {
-            // console.log(`[PROCESS] Skipping up-to-date recipe: ${file.name}`);
-        }
-    } catch (error) { // Not in processed recipe cache
-        console.log(`[PROCESS] New recipe, processing: ${file.name}`);
-        shouldProcess = true;
-    }
-
-    if (shouldProcess) {
-        if (!doc) {
-            const cachedData = await fs.readFile(cachePath, 'utf-8');
-            doc = JSON.parse(cachedData);
-        }
-        const { markdown, imagePaths } = await parseGdoc(doc as docs_v1.Schema$Document, recipeDir, auth);
-        const ingredients = await getIngredientsWithGemini(markdown);
-        const metadata = parseYamlMetadata(file.description || '');
-
-        const recipe: Recipe = {
-          id: doc?.documentId!,
-          slug: slug,
-          title: doc?.title!,
-          ingredients,
-          markdown,
-          metadata,
-        };
-
-        if (imagePaths.length === 1) {
-            recipe.heroImage = imagePaths[0];
-        }
-        
-        await fs.writeFile(recipePath, JSON.stringify(recipe, null, 2));
-    }
+  const BATCH_SIZE = 10;
+  for (let i = 0; i < docFiles.length; i += BATCH_SIZE) {
+    const batch = docFiles.slice(i, i + BATCH_SIZE);
+    console.log(`Processing batch ${i / BATCH_SIZE + 1}...`);
+    const processingPromises = batch.map(file => processDoc(file, auth));
+    await Promise.all(processingPromises);
   }
   
   // Combine all recipes into a single file for the app
