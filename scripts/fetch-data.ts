@@ -369,7 +369,15 @@ async function getIngredientsWithGemini(markdownContent: string): Promise<Ingred
         }
 
         const jsonString = text.substring(startIndex, endIndex + 1);
-        return JSON.parse(jsonString);
+        const ingredients: Ingredient[] = JSON.parse(jsonString);
+
+        return ingredients.map(ingredient => {
+          if (ingredient.quantity && typeof ingredient.quantity === 'string' && ingredient.quantity.includes('-')) {
+            const newQuantity = ingredient.quantity.split('-')[0].trim();
+            return { ...ingredient, quantity: newQuantity };
+          }
+          return ingredient;
+        });
       } catch (error: any) {
         if (error.status === 503 && attempt < MAX_RETRIES - 1) {
             console.warn(`Gemini API returned 503. Retrying in ${delay / 1000}s... (Attempt ${attempt + 1}/${MAX_RETRIES})`);
