@@ -402,6 +402,7 @@ async function generateImageWithGemini(recipe: Recipe): Promise<string | undefin
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const ingredientsText = recipe.ingredients.map(i => `${i.quantity || ''} ${i.unit || ''} ${i.name}`.trim()).join(', ');
+    const quirkyAddition = Math.random() < 0.5 ? 'a garden gnome' : 'a flamingo';
 
     const prompt = `
     You are an expert food photographer. Your task is to create a prompt for an image generation service to create a photorealistic image of a recipe.
@@ -414,7 +415,7 @@ async function generateImageWithGemini(recipe: Recipe): Promise<string | undefin
     
     Based on the recipe, create a detailed, descriptive prompt for an AI image generator. The prompt should result in a photorealistic, appetizing, and well-lit image.
 
-    Make sure each picture includes a garden gnome or a flamingo in it.
+    Make sure the picture includes ${quirkyAddition} in it.
     
     Then, create a URL for the image by encoding the prompt and appending it to the following base URL: \`https://image.pollinations.ai/prompt/\`.
     For example, if the prompt is "a cat", the URL would be \`https://image.pollinations.ai/prompt/a%20cat\`.
