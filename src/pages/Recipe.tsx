@@ -14,6 +14,7 @@ interface ImageProps {
 const Recipe: FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const recipe = recipes.find(r => slugify(r.title) === slug);
+  const recipeIndex = recipes.findIndex(r => slugify(r.title) === slug);
 
   if (!recipe) {
     return <div>Recipe not found</div>;
@@ -21,7 +22,7 @@ const Recipe: FC = () => {
   
   const Image: FC<ImageProps> = ({src, alt}) => {
     if (!src) {
-      return <PlacePuppy width={800} height={600} className="max-w-full h-auto rounded-lg my-4" />;
+      return <PlacePuppy width={800} height={600} className="max-w-full h-auto rounded-lg my-4" index={recipeIndex} />;
     }
     // Vite serves files from the 'public' directory at the root
     const imagePath = `/recipes/${slug}/${src?.replace('./', '')}`;

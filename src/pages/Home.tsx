@@ -12,7 +12,7 @@ const getImageUrlFromMarkdown = (markdown: string): string | null => {
 const Home: FC = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-      {recipes.map(recipe => {
+      {recipes.map((recipe, index) => {
         const imageUrl = getImageUrlFromMarkdown(recipe.markdown);
         const slug = slugify(recipe.title);
 
@@ -26,7 +26,7 @@ const Home: FC = () => {
                   className="w-full h-48 object-cover rounded-lg shadow-md" 
                 />
               ) : (
-                <PlacePuppy width={200} height={150} className="w-full h-48 object-cover rounded-lg shadow-md" />
+                <PlacePuppy width={200} height={150} className="w-full h-48 object-cover rounded-lg shadow-md" index={index} />
               )}
             </Link>
             <Link to={`/recipe/${slug}`} className="text-lg text-text hover:underline mt-2 inline-block">{recipe.title}</Link>
