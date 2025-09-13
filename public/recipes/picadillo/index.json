@@ -19,7 +19,7 @@
       "unit": null
     },
     {
-      "name": "medium carrots",
+      "name": "carrots",
       "quantity": "4",
       "unit": null
     },
@@ -83,6 +83,5 @@
     "cook": "40m",
     "servings": "12s",
     "level": "easy"
-  },
-  "heroImage": "generated-hero.jpeg"
+  }
 }

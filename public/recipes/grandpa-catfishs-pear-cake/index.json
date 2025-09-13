@@ -29,7 +29,7 @@
       "unit": "cup"
     },
     {
-      "name": "large pears (peeled and sliced thin)",
+      "name": "large pears",
       "quantity": "3",
       "unit": null
     },
@@ -73,6 +73,5 @@
     "cook": "1h",
     "servings": "12s",
     "level": "easy"
-  },
-  "heroImage": "generated-hero.jpeg"
+  }
 }

@@ -29,9 +29,9 @@
       "unit": "tsp"
     },
     {
-      "name": "semisweet chocolate chips",
+      "name": "6oz semisweet chocolate chips",
       "quantity": "2",
-      "unit": "6oz packages"
+      "unit": "packages"
     },
     {
       "name": "vanilla extract",
@@ -42,5 +42,5 @@
   "markdown": "Nathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n* ¾ cups evaporated milk\n* 1 jar marshmallow cream\n* ¼ cup butter \n* 1 ½ cup sugar\n* ¼ tsp salt\n* 2 6oz packages semisweet chocolate chips\n* 1 tsp vanilla extract\n* Mix milk, marshmallow, butter, sugar and salt in saucepan\n* Bring to boil, stirring \n* Boil for 5 min over med heat\n* Remove from heat and add chocolate chips and vanilla extract\n* Stir until smooth\n* Turn out into a greased 8x8x2 square pan\n* Chill for several hours, cut into squares\n",
   "summary": "Nathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n",
   "preparation": "* Mix milk, marshmallow, butter, sugar and salt in saucepan\n* Bring to boil, stirring \n* Boil for 5 min over med heat\n* Remove from heat and add chocolate chips and vanilla extract\n* Stir until smooth\n* Turn out into a greased 8x8x2 square pan\n* Chill for several hours, cut into squares\n",
-  "heroImage": "generated-hero.jpeg"
+  "heroImage": "generated-hero.png"
 }

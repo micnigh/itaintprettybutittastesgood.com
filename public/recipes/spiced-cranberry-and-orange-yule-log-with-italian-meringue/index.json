@@ -4,7 +4,7 @@
   "title": "Spiced Cranberry and Orange Yule Log with Italian Meringue",
   "ingredients": [
     {
-      "name": "large eggs",
+      "name": "eggs",
       "quantity": "6",
       "unit": null
     },
@@ -39,7 +39,7 @@
       "unit": "teaspoons"
     },
     {
-      "name": "fresh or frozen cranberries",
+      "name": "cranberries",
       "quantity": "12",
       "unit": "oz"
     },
@@ -104,6 +104,11 @@
       "unit": "cup"
     },
     {
+      "name": "water",
+      "quantity": "½",
+      "unit": "cup"
+    },
+    {
       "name": "egg whites",
       "quantity": "4",
       "unit": null
@@ -112,6 +117,11 @@
       "name": "cream of tartar",
       "quantity": "½",
       "unit": "teaspoon"
+    },
+    {
+      "name": "lemon juiced",
+      "quantity": "1",
+      "unit": null
     }
   ],
   "markdown": "Nathan,\n\nI made up this recipe the year before you were born for my office Christmas potluck. I wanted to make something that was traditional, yule log, but with a twist. I couldn’t find anything online that I was looking for so I had to come up with a recipe that worked and could be all combined for the perfect recipe. So this recipe you will see will be in 5 parts. There are ingredients and preparation for each of the components and then at the very end a guide to create this special yule log recipe. I love you dearly.\n\nMom\n\n* 6 large eggs , separated\n* 1 ⅓ cups cake flour\n* 1 ½ cups sugar, divided\n* ¼ teaspoon salt\n* ⅓ cup orange juice (fresh squeezed is good)\n* 3 teaspoons grated orange zest (fresh)\n* ¾ teaspoons cream of tartar\n* Put each part into the greased muffin tin and allow it to rise for a second time (double in size again)\n* Bake for 10min\n* Preheat oven at 325 degrees \n* Place egg whites in a large bowl; let stand at room temperature for 30 min\n* Sift flour, ⅓ cup of sugar, and salt together twice; set aside\n* In another bowl beat egg yolks on high speed for 5 min or until thick and lemony colored\n* Gradually beat in ⅔ cups sugar, orange juice, and orange zest; beat for 3 min longer\n* Gradually add flour mixture and mix well\n* Add cream of tartar to egg whites (when at room temperature) and beat on medium speed until soft peaks form\n* Add remaining sugar and tablespoon at a time on high until stiff peaks form\n* Fold egg white mixture into batter\n* Gently spoon into a cookie sheet with a silicone liner ½inch thick\n* Cut though batter with a knife to remove air pockets\n* Bake on the lowest oven rack until the cake springs back when lightly touched and is  golden on top and toothpick can be inserted and comes out clean)\n* Immediately invert on a lightly floured linen cloth rag (roll into desired shape with the cloth rolled up into the cake) and allow to cool till warm\n* 12oz fresh or frozen cranberries\n* 1 ¾ cups sugar\n* ½ cup water\n* ½ teaspoon cinnamon\n* ½ teaspoon ground allspice\n* ⅛ teaspoon salt\n* ⅛ teaspoon ground ginger\n* ⅛ teaspoon ground cloves\n* PIn a large saucepan combine all ingredients and bring to a boil\n* Reduce heat; simmer uncovered until the berries pop and the mixture is thickened, about 30 min\n* Cool and transfer to a covered container and refrigerate until chilled\n* ½ cup heavy whipping cream; cold\n* ¼ cup powdered sugar\n* ½ cup + 1 tablespoon mascarpone at room temperature (drain for 10-15 min to remove any excess liquid for best results)\n* ½ teaspoon vanilla\n* In a bowl beat the whipping cream and sugar until stiff peaks form\n* Beat mascarpone and vanilla until smooth\n* Combine both mixtures and whip until smooth (don’t over whip!!)\n* 1 cup sugar (7 ounces; 200g)\n* ½ cup water\n* 4 egg whites at room temperature (fresh is best)\n* ½ teaspoon cream of tartar or alternative of 1 lemon juiced \n* In a small saucepan combine sugar and water, Heat over hight heat, stirring only until it comes to a boil. Once it reaches a boil STOP STIRRING. \n* Cook until sugar syrup registers 240 degrees (115 degrees celsius) on an instant-read or candy thermometer. Brush down the sides of the pot as necessary with a pastry brush dipped in water (just to get the crystals of the walls of the pot)\n* Meanwhile,  combine egg whites and cream of tartar in a bowl of a stand mixer fitted with a whisk attachment. Mix on medium speed until soft peaks form about 2 min\n* With the mixer running, carefully and slowly drizzle in how sugar syrup\n* Increase speed to high until hard peaks form\n* Transfer to piping bag with desired tip\n### Assembly\n\nWith the cake warm and rolled with the lightly floured linen gently unroll and allow it to keep its shape slightly. Spread mascarpone cream filling over inside of the cake roll (leave 1 inch on every edge free of filling. Drop spread spiced cranberry sauce over the mascarpone filling (does not need to be exact just drop and lightly spread). Once the filling is in the cake roll re roll the cake in the lightly floured linen cloth. Do not roll the cloth back up into the roll this time. Once it is rolled tight, place in the freezer for 2 hours. Take it out of the freezer and place it on an oven safe serving dish. Pipe italian meringue lengthwise on the log and add swirls to mimic tree branch stumps when still soft, drag a fork over the meringue to add bark texture. Place the whole thing in the oven and broil until a nice golden crust forms on the meringue. Watch it carefully or it will burn. Serve to loved ones!\n\n",
@@ -128,6 +138,5 @@
       "Christmas"
     ],
     "level": "medium/hard"
-  },
-  "heroImage": "generated-hero.jpeg"
+  }
 }

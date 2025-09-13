@@ -14,7 +14,7 @@
       "unit": "14oz can"
     },
     {
-      "name": "Irish whiskey",
+      "name": "Irish whiskey (Canadian Club)",
       "quantity": "1 ⅔",
       "unit": "cups"
     },
@@ -52,6 +52,5 @@
     ],
     "prep": "10m",
     "level": "easy"
-  },
-  "heroImage": "generated-hero.jpeg"
+  }
 }

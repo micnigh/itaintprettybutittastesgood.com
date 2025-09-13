@@ -39,14 +39,14 @@
       "unit": null
     },
     {
-      "name": "Garlic Cloves",
+      "name": "Garlic",
       "quantity": "4",
-      "unit": null
+      "unit": "Cloves"
     },
     {
-      "name": "Rosemary sprig",
+      "name": "Rosemary",
       "quantity": "1",
-      "unit": null
+      "unit": "sprig"
     },
     {
       "name": "Chuck Roast",
@@ -67,5 +67,5 @@
   "markdown": "Nathan,\n\nThis is one of your Dads favorite recipes. As you know by now your dad is a meat eater and chuck is one of his favorite cuts for a few reasons and one of those being pot roast. This is a great “put in the pot before work and get home to some good food” recipe. I like to put all of this in the crockpot the night before and pull it out of the fridge and turn it on so that it is even faster when you know that you have to run out the door. I love you dearly.\n\nMom\n\n* ¾ cup Beef Broth\n* 2Tbs Tomato Paste\n* 2Tbs Worcestershire Sauce\n* 1Tbs Cornstarch\n* 1Lb Potatoes, peeled and and cut in 2” chunks\n* 3large Carrots, peeled and cut into 2” pieces\n* 1medium Onion, cut into ½” wedges \n* 4 Garlic Cloves, minced\n* 1 Rosemary sprig (1 tsp dried)\n* 3 ½ Lbs Chuck Roast\n* Salt\n* Pepper\n* In the bottom of a slow cooker whisk together broth, tomato paste, worcestershire, and cornstarch. Add potatoes, carrots, onion, garlic, and rosemary\n* Season Beef with salt and pepper then nestle into veggies\n* Cover and cook on high for 5 - 6 hours or on low for 8 hours\n",
   "summary": "Nathan,\n\nThis is one of your Dads favorite recipes. As you know by now your dad is a meat eater and chuck is one of his favorite cuts for a few reasons and one of those being pot roast. This is a great “put in the pot before work and get home to some good food” recipe. I like to put all of this in the crockpot the night before and pull it out of the fridge and turn it on so that it is even faster when you know that you have to run out the door. I love you dearly.\n\nMom\n\n",
   "preparation": "* In the bottom of a slow cooker whisk together broth, tomato paste, worcestershire, and cornstarch. Add potatoes, carrots, onion, garlic, and rosemary\n* Season Beef with salt and pepper then nestle into veggies\n* Cover and cook on high for 5 - 6 hours or on low for 8 hours\n",
-  "heroImage": "generated-hero.jpeg"
+  "heroImage": "generated-hero.png"
 }

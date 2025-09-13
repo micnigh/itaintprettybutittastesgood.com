@@ -5,6 +5,7 @@ import { GoogleGenAI } from "@google/genai";
 import fetch from 'node-fetch';
 import * as yaml from 'js-yaml';
 import 'dotenv/config';
+import PQueue from 'p-queue';
 
 // SETUP INSTRUCTIONS
 // 1. Follow this guide to create a service account and credentials:
@@ -669,24 +670,13 @@ async function main() {
 
   console.log(`Found ${docFiles.length} documents. Processing with modification-time-based cache...`);
 
-  const CONCURRENCY_LIMIT = 1;
-  const queue = [...docFiles];
-  const promises = [];
+  const queue = new PQueue({ concurrency: 5, interval: 60000, intervalCap: 5 });
 
-  const processQueue = async () => {
-    while (queue.length > 0) {
-      const file = queue.shift();
-      if (file) {
-        await processDoc(file, auth);
-      }
-    }
-  };
-
-  for (let i = 0; i < CONCURRENCY_LIMIT; i++) {
-    promises.push(processQueue());
+  for (const file of docFiles) {
+    queue.add(() => processDoc(file, auth));
   }
 
-  await Promise.all(promises);
+  await queue.onIdle();
 
   // Combine all recipes into a single file for the app
   const allRecipes: Recipe[] = [];

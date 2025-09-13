@@ -4,7 +4,7 @@
   "title": "Orange Sponge Cake",
   "ingredients": [
     {
-      "name": "large eggs",
+      "name": "large eggs, separated",
       "quantity": "6",
       "unit": null
     },
@@ -14,7 +14,7 @@
       "unit": "cups"
     },
     {
-      "name": "sugar",
+      "name": "sugar, divided",
       "quantity": "1 ½",
       "unit": "cups"
     },
@@ -39,7 +39,7 @@
       "unit": "teaspoons"
     },
     {
-      "name": "butter",
+      "name": "butter, cubed",
       "quantity": "⅓",
       "unit": "cup"
     },
@@ -75,6 +75,5 @@
     "cook": "50m",
     "servings": "18s",
     "level": "medium"
-  },
-  "heroImage": "generated-hero.jpeg"
+  }
 }

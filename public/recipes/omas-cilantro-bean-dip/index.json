@@ -9,22 +9,22 @@
       "unit": "cups"
     },
     {
-      "name": "15 oz Black beans, drained and rinsed",
+      "name": "Black beans",
       "quantity": "1",
-      "unit": "can"
+      "unit": "can 15 oz"
     },
     {
-      "name": "large fresh tomato, chopped",
+      "name": "large fresh tomato",
       "quantity": "1",
       "unit": null
     },
     {
-      "name": "red pepper, chopped",
+      "name": "red pepper",
       "quantity": "¾",
       "unit": "cup"
     },
     {
-      "name": "red onion, chopped",
+      "name": "red onion",
       "quantity": "½",
       "unit": "cup"
     },
@@ -52,5 +52,5 @@
   "markdown": "Nathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n* 2 cups frozen corn\n* 1 can 15 oz Black beans, drained and rinsed\n* 1 large fresh tomato, chopped\n* ¾ cup red pepper, chopped\n* ½ cup red onion, chopped\n* ½ cup italian dressing\n* ¼ cup fresh minced cilantro\n* ¾ tsp hot pepper sauce\n* ½ tsp garlic powder or fresh garlic\n* Mix and store in refrigerator several hours ahead\n",
   "summary": "Nathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n",
   "preparation": "* Mix and store in refrigerator several hours ahead\n",
-  "heroImage": "generated-hero.jpeg"
+  "heroImage": "generated-hero.png"
 }
