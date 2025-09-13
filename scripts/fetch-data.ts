@@ -386,6 +386,39 @@ async function getIngredientsWithGemini(markdownContent: string): Promise<Ingred
 }
 
 
+async function generateImageWithGemini(recipe: Recipe): Promise<string | undefined> {
+    if (!process.env.GEMINI_API_KEY) {
+        throw new Error("GEMINI_API_KEY is not set in the .env file.");
+    }
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+    const prompt = `
+    Generate a photorealistic image of ${recipe.title}.
+    The image should be appetizing and well-lit.
+    Here is a summary of the recipe: ${recipe.summary}
+    Consider the following tags: ${recipe.metadata?.tags?.join(', ')}
+    Return a URL to the generated image.
+  `;
+
+    try {
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = response.text();
+        
+        // Basic check for a URL.
+        if (text.startsWith('http')) {
+            return text;
+        }
+        console.warn(`Gemini did not return a URL for ${recipe.title}. Response: ${text}`);
+        return undefined;
+    } catch (error) {
+        console.error(`Error generating image for ${recipe.title}:`, error);
+        return undefined;
+    }
+}
+
+
 function extractMetadataFromTable(doc: docs_v1.Schema$Document) {
   const metadata: Record<string, string> = {};
   if (!doc.body || !doc.body.content) {
@@ -511,8 +544,28 @@ async function processDoc(file: drive_v3.Schema$File, auth: any) {
         metadata,
       };
 
-      if (imagePaths.length === 1) {
+      if (imagePaths.length > 0) {
           recipe.heroImage = imagePaths[0];
+      } else {
+        console.log(`[PROCESS] No image found for ${recipe.title}, generating one...`);
+        const imageUrl = await generateImageWithGemini(recipe);
+        if (imageUrl) {
+            try {
+                const res = await fetch(imageUrl);
+                const buffer = await res.buffer();
+                const contentType = res.headers.get('content-type') || 'image/jpeg';
+                let extension = 'jpg';
+                if (contentType.startsWith('image/')) {
+                    extension = contentType.split(';')[0].split('/')[1] || 'jpg';
+                }
+                const filename = `generated-hero.${extension}`;
+                await fs.writeFile(path.join(recipeDir, filename), buffer);
+                recipe.heroImage = filename;
+                console.log(`[PROCESS] Successfully generated and saved image for ${recipe.title}`);
+            } catch (e) {
+                console.error(`[PROCESS] Failed to download generated image for ${recipe.title} from ${imageUrl}`, e);
+            }
+        }
       }
       
       await fs.writeFile(recipePath, JSON.stringify(recipe, null, 2));
