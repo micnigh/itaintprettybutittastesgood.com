@@ -329,7 +329,7 @@ async function getIngredientsWithGemini(markdownContent: string): Promise<Ingred
     throw new Error("GEMINI_API_KEY is not set in the .env file.");
   }
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro"});
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash"});
 
   const prompt = `
     Analyze the following recipe text and extract the ingredients.
@@ -399,7 +399,7 @@ async function generateImageWithGemini(recipe: Recipe): Promise<string | undefin
         throw new Error("GEMINI_API_KEY is not set in the .env file.");
     }
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const ingredientsText = recipe.ingredients.map(i => `${i.quantity || ''} ${i.unit || ''} ${i.name}`.trim()).join(', ');
 
@@ -420,22 +420,36 @@ async function generateImageWithGemini(recipe: Recipe): Promise<string | undefin
     Only return the final, complete URL and nothing else.
   `;
 
-    try {
-        const result = await model.generateContent(prompt);
-        const response = await result.response;
-        const text = response.text();
-        
-        const urlMatch = text.match(/https?:\/\/[^\s]+/);
-        if (urlMatch) {
-            return urlMatch[0];
-        }
+    const MAX_RETRIES = 5;
+    let attempt = 0;
+    let delay = 1000; // start with 1 second
 
-        console.warn(`Gemini did not return a URL for ${recipe.title}. Response: ${text}`);
-        return undefined;
-    } catch (error) {
-        console.error(`Error generating image for ${recipe.title}:`, error);
-        return undefined;
+    while (attempt < MAX_RETRIES) {
+        try {
+            const result = await model.generateContent(prompt);
+            const response = await result.response;
+            const text = response.text();
+            
+            const urlMatch = text.match(/https?:\/\/[^\s]+/);
+            if (urlMatch) {
+                return urlMatch[0];
+            }
+
+            console.warn(`Gemini did not return a URL for ${recipe.title}. Response: ${text}`);
+            return undefined;
+        } catch (error: any) {
+            if (error.status === 503 && attempt < MAX_RETRIES - 1) {
+                console.warn(`Gemini API returned 503. Retrying in ${delay / 1000}s... (Attempt ${attempt + 1}/${MAX_RETRIES})`);
+                await new Promise(res => setTimeout(res, delay));
+                delay *= 2; // Exponential backoff
+                attempt++;
+            } else {
+                console.error(`Error generating image for ${recipe.title}:`, error);
+                return undefined;
+            }
+        }
     }
+    return undefined;
 }
 
 
@@ -628,7 +642,7 @@ async function main() {
   
   console.log(`Found ${docFiles.length} documents. Processing with modification-time-based cache...`);
   
-  const BATCH_SIZE = 10;
+  const BATCH_SIZE = 5;
   for (let i = 0; i < docFiles.length; i += BATCH_SIZE) {
     const batch = docFiles.slice(i, i + BATCH_SIZE);
     console.log(`Processing batch ${i / BATCH_SIZE + 1}...`);

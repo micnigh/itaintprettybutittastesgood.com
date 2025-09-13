@@ -29,14 +29,14 @@
       "unit": "tsp"
     },
     {
-      "name": "the batter",
-      "quantity": "1 heaping",
-      "unit": "tablespoon"
-    },
-    {
-      "name": "dark rum or fum flavoring",
+      "name": "dark rum",
       "quantity": "1 ½",
       "unit": "oz"
+    },
+    {
+      "name": "fum flavoring",
+      "quantity": "to taste",
+      "unit": null
     },
     {
       "name": "boiling hot water",
@@ -46,5 +46,6 @@
   ],
   "markdown": "Nathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n* Cream ¼ lb butter with 1 lb of dark brown sugar. Sprinkle and mix thoroughly into batter ¼ tsp each of ground cinnamon, ground nutmeg, and ground cloves. Refrigerate in covered container\n### To make a drink\n\n* In each cup or mug place 1 heaping tablespoon of the batter. Add 1 ½ oz of dark rum or fum flavoring to taste. Fill with boiling hot water, stir and serve\n* Garnish wi\n",
   "summary": "Nathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n",
-  "preparation": "* Cream ¼ lb butter with 1 lb of dark brown sugar. Sprinkle and mix thoroughly into batter ¼ tsp each of ground cinnamon, ground nutmeg, and ground cloves. Refrigerate in covered container\n### To make a drink\n\n* In each cup or mug place 1 heaping tablespoon of the batter. Add 1 ½ oz of dark rum or fum flavoring to taste. Fill with boiling hot water, stir and serve\n* Garnish wi\n"
+  "preparation": "* Cream ¼ lb butter with 1 lb of dark brown sugar. Sprinkle and mix thoroughly into batter ¼ tsp each of ground cinnamon, ground nutmeg, and ground cloves. Refrigerate in covered container\n### To make a drink\n\n* In each cup or mug place 1 heaping tablespoon of the batter. Add 1 ½ oz of dark rum or fum flavoring to taste. Fill with boiling hot water, stir and serve\n* Garnish wi\n",
+  "heroImage": "generated-hero.jpeg"
 }

@@ -1,0 +1,88 @@
+{
+  "id": "1-ikGd80Gm0QYpYY0AmiBLLuJ3MQTDEpiIu7j6nB8EYg",
+  "slug": "picadillo",
+  "title": "Picadillo",
+  "ingredients": [
+    {
+      "name": "ground beef",
+      "quantity": "1",
+      "unit": "lb"
+    },
+    {
+      "name": "onion",
+      "quantity": "½",
+      "unit": "cup"
+    },
+    {
+      "name": "green bell pepper",
+      "quantity": "1",
+      "unit": null
+    },
+    {
+      "name": "carrots",
+      "quantity": "4",
+      "unit": null
+    },
+    {
+      "name": "potato",
+      "quantity": "1",
+      "unit": "cups"
+    },
+    {
+      "name": "garlic",
+      "quantity": "4",
+      "unit": "cloves"
+    },
+    {
+      "name": "tomato sauce",
+      "quantity": "8",
+      "unit": "ounces"
+    },
+    {
+      "name": "beef broth",
+      "quantity": "1 ½",
+      "unit": "cup"
+    },
+    {
+      "name": "salt",
+      "quantity": "1",
+      "unit": "teaspoon"
+    },
+    {
+      "name": "ground black pepper",
+      "quantity": "¼",
+      "unit": "teaspoon"
+    },
+    {
+      "name": "ground cumin",
+      "quantity": "1",
+      "unit": "teaspoon"
+    },
+    {
+      "name": "ground coriander",
+      "quantity": "1",
+      "unit": "teaspoon"
+    },
+    {
+      "name": "bay leaf",
+      "quantity": "1",
+      "unit": null
+    }
+  ],
+  "markdown": "Nathan,\n\nI love you dearly.\n\nMom\n\n* 1 lb ground beef\n* ½ cup onion diced\n* 1 green bell pepper diced\n* 4 medium carrots diced\n* 1 cups potato diced\n* 4 cloves of garlic minced\n* 8 ounces tomato sauce\n* 1 ½ cup beef broth\n* 1 teaspoon salt\n* ¼ teaspoon ground black pepper\n* 1 teaspoon ground cumin\n* 1 teaspoon ground coriander\n* 1 bay leaf\n* Heat a large skillet over medium heat, add ground beef. Cook over medium heat while breaking up the meat. Cook until mostly browned, drain grease and return to heat\n* Add diced onion, green bell pepper, carrots, and potatoes. Continue to cook over medium heat until onion and peppers are softened. Add garlic and cook an additional 30 seconds\n* Pour in tomato sauce and beef broth. Add in seasonings and stir to combine. Add bay leaf\n* Bring mixture to a simmer, cover and let cook for 10 min\n* Remove lid, stir, and continue cooking with a lid off for an additional 10 min to until potatoes are softened and most of the liquid is gone\n* Serve war with flour tortillas and rice\n",
+  "summary": "Nathan,\n\nI love you dearly.\n\nMom\n\n",
+  "preparation": "* Heat a large skillet over medium heat, add ground beef. Cook over medium heat while breaking up the meat. Cook until mostly browned, drain grease and return to heat\n* Add diced onion, green bell pepper, carrots, and potatoes. Continue to cook over medium heat until onion and peppers are softened. Add garlic and cook an additional 30 seconds\n* Pour in tomato sauce and beef broth. Add in seasonings and stir to combine. Add bay leaf\n* Bring mixture to a simmer, cover and let cook for 10 min\n* Remove lid, stir, and continue cooking with a lid off for an additional 10 min to until potatoes are softened and most of the liquid is gone\n* Serve war with flour tortillas and rice\n",
+  "metadata": {
+    "date": "2022-08-16T00:00:00.000Z",
+    "published": true,
+    "tags": [
+      "savory",
+      "beef"
+    ],
+    "prep": "20m",
+    "cook": "40m",
+    "servings": "12s",
+    "level": "easy"
+  },
+  "heroImage": "generated-hero.jpeg"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "1QEuWyrrxn6UoxQVMEM9Vs4UcXpf-icD8xa0uhvyKejs",
+  "slug": "alfredo-sauce",
+  "title": "Alfredo Sauce",
+  "ingredients": [
+    {
+      "name": "butter",
+      "quantity": "½",
+      "unit": "cup"
+    },
+    {
+      "name": "heavy cream",
+      "quantity": "1 ½",
+      "unit": "cup"
+    },
+    {
+      "name": "minced garlic",
+      "quantity": "2",
+      "unit": "teaspoons"
+    },
+    {
+      "name": "salt",
+      "quantity": "½",
+      "unit": "teaspoon"
+    },
+    {
+      "name": "pepper",
+      "quantity": "½",
+      "unit": "teaspoon"
+    },
+    {
+      "name": "italian seasoning",
+      "quantity": "1",
+      "unit": "teaspoon"
+    },
+    {
+      "name": "fresh grated parmesan cheese",
+      "quantity": "2",
+      "unit": "cups"
+    }
+  ],
+  "markdown": "Nathan,\n\nI love alfredo. I mean it is one of my favorite sauces. It is so quick and easy and just makes me happy to make some pasta and grilled chicken with this sauce to comfort me after a long day. I hope you find comfort in it too. I love you dearly.\n\nMom\n\n* ½ cup butter\n* 1 ½ cup heavy cream\n* 2 teaspoons minced garlic\n* ½ teaspoon salt\n* ½ teaspoon pepper\n* 1 teaspoon italian seasoning\n* 2 cups fresh grated parmesan cheese\n* All this will be made in one pot! And takes all of 10 min to make!!\n* Saute garlic with the butter, salt, pepper, and italian seasoning\n* When the garlic is fragrant (about 2 min of cooking) add in the heavy cream\n* Set the whole thing on medium heat and stir constantly and watch for the cream to thicken\n* When there is a light simmer add in the parmesan cheese (fresh is better for taste and just the overall consistency) \n* And when everything is combined and the sauce has thickened it is ready to use\n",
+  "summary": "Nathan,\n\nI love alfredo. I mean it is one of my favorite sauces. It is so quick and easy and just makes me happy to make some pasta and grilled chicken with this sauce to comfort me after a long day. I hope you find comfort in it too. I love you dearly.\n\nMom\n\n",
+  "preparation": "* All this will be made in one pot! And takes all of 10 min to make!!\n* Saute garlic with the butter, salt, pepper, and italian seasoning\n* When the garlic is fragrant (about 2 min of cooking) add in the heavy cream\n* Set the whole thing on medium heat and stir constantly and watch for the cream to thicken\n* When there is a light simmer add in the parmesan cheese (fresh is better for taste and just the overall consistency) \n* And when everything is combined and the sauce has thickened it is ready to use\n",
+  "metadata": {
+    "date": "2022-08-16T00:00:00.000Z",
+    "tags": [
+      "comfort",
+      "sauce",
+      "pasta"
+    ],
+    "prep": "4m",
+    "cook": "6m",
+    "servings": "8s",
+    "level": "easy"
+  },
+  "heroImage": "generated-hero.jpeg"
+}
