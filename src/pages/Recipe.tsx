@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import recipes from '../recipes.json';
 import { slugify } from '../utils';
+import PlacePuppy from '../components/placepuppy';
 
 interface ImageProps {
     src?: string;
@@ -19,33 +20,28 @@ const Recipe: FC = () => {
   }
   
   const Image: FC<ImageProps> = ({src, alt}) => {
+    if (!src) {
+      return <PlacePuppy width={800} height={600} className="max-w-full h-auto rounded-lg my-4" />;
+    }
     // Vite serves files from the 'public' directory at the root
     const imagePath = `/recipes/${slug}/${src?.replace('./', '')}`;
     return <img src={imagePath} alt={alt} className="max-w-full h-auto rounded-lg my-4" />;
   }
 
   return (
-    <article className="prose lg:prose-xl">
-      <h1>{recipe.title}</h1>
-      
-      {/* <h2>Ingredients</h2>
-      <ul>
-        {recipe.ingredients.map((ingredient, index) => (
-          <li key={index}>
-            {ingredient.quantity} {ingredient.unit} {ingredient.name}
-          </li>
-        ))}
-      </ul> */}
-
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        components={{
-          img: Image,
-        }}
-      >
-        {recipe.markdown}
-      </ReactMarkdown>
-    </article>
+    <>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center my-4 sm:my-6">{recipe.title}</h1>
+      <article className="prose lg:prose-xl max-w-none prose-img:rounded-xl">
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            img: Image,
+          }}
+        >
+          {recipe.markdown}
+        </ReactMarkdown>
+      </article>
+    </>
   );
 };
 

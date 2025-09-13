@@ -1,2 +1,9 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
+@import 'tailwindcss';
+
+@theme {
+  --color-text: #333333;
+  --color-body-bg: #F9DFC9;
+  --color-primary: #6F2B9F;
+  --color-secondary: #4d90fe;
+  --font-family-serif: Georgia, serif;
+}
