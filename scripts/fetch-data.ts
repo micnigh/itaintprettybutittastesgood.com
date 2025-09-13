@@ -21,7 +21,7 @@ import 'dotenv/config';
 //    Get your key from Google AI Studio: https://makersuite.google.com/app/apikey
 
 const CREDENTIALS_PATH = path.join(process.cwd(), 'credentials.json');
-const FOLDER_ID = '1rLwZdOpl3WxkNNuKPbO1s2YR9Ew7jZRf'; // <-- ADD YOUR FOLDER ID HERE
+const FOLDER_ID = '1Karp6fSxF4ZkO9A8Og585LZ_PP-LS2_n'; // <-- ADD YOUR FOLDER ID HERE
 const CACHE_DIR = path.join(process.cwd(), 'cache/google-docs');
 const RECIPES_DIR = path.join(process.cwd(), 'public/recipes');
 
