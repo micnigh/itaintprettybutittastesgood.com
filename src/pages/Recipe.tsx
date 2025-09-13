@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState, useMemo, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -7,6 +7,62 @@ import { slugify } from '../utils';
 import PlacePuppy from '../components/placepuppy';
 import type { Recipe } from '../../scripts/fetch-data';
 import { format } from 'date-fns';
+import Fraction from 'fraction.js';
+import { Combobox, Transition } from '@headlessui/react';
+
+const parseQuantity = (quantity: string | null | undefined): Fraction | null => {
+  if (!quantity) return null;
+  let processedQuantity = quantity.trim();
+  try {
+    const unicodeFractions: { [key: string]: string } = {
+      '¼': '1/4', '½': '1/2', '¾': '3/4', '⅐': '1/7', '⅑': '1/9', '⅒': '1/10',
+      '⅓': '1/3', '⅔': '2/3', '⅕': '1/5', '⅖': '2/5', '⅗': '3/5', '⅘': '4/5',
+      '⅙': '1/6', '⅚': '5/6', '⅛': '1/8', '⅜': '3/8', '⅝': '5/8', '⅞': '7/8'
+    };
+    
+    for (const [uni, asc] of Object.entries(unicodeFractions)) {
+        processedQuantity = processedQuantity.replace(uni, asc);
+    }
+    
+    if (processedQuantity.includes('-')) {
+      processedQuantity = processedQuantity.split('-')[0].trim();
+    }
+
+    return new Fraction(processedQuantity);
+  } catch (e) {
+    return null;
+  }
+};
+
+const formatQuantity = (quantity: Fraction | null): string => {
+    if (!quantity) return '';
+    return quantity.toFraction(true);
+};
+
+const autoConvertUnits = (quantity: Fraction, unit: string | null): { quantity: Fraction, unit: string | null } => {
+  if (!unit) return { quantity, unit };
+
+  let currentQuantity = quantity;
+  let currentUnit = unit.toLowerCase().replace(/s$/, '');
+  
+  if (currentUnit === 'cup') {
+    if (currentQuantity.valueOf() < 0.25) {
+      currentQuantity = currentQuantity.mul(16);
+      currentUnit = 'tablespoon';
+    }
+  }
+
+  if (currentUnit === 'tablespoon') {
+    if (currentQuantity.valueOf() < 1) {
+      currentQuantity = currentQuantity.mul(3);
+      currentUnit = 'teaspoon';
+    }
+  }
+  
+  const finalUnit = currentQuantity.valueOf() > 1 ? `${currentUnit}s` : currentUnit;
+
+  return { quantity: currentQuantity, unit: finalUnit };
+};
 
 
 interface ImageProps {
@@ -18,6 +74,34 @@ const Recipe: FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const recipe = (recipes as Recipe[]).find(r => slugify(r.title) === slug);
   const recipeIndex = recipes.findIndex(r => slugify(r.title) === slug);
+
+  const originalServings = useMemo(() => {
+    if (recipe?.metadata?.servings) {
+      const match = recipe.metadata.servings.match(/(\d+)/);
+      return match ? parseInt(match[1], 10) : 1;
+    }
+    return 1;
+  }, [recipe]);
+
+  const [servings, setServings] = useState<string>(originalServings.toString());
+  const [query, setQuery] = useState('');
+
+  const servingOptions = useMemo(() => {
+    const multipliers = [0.25, 0.5, 0.75, 1, 2, 4];
+    const options = multipliers.map(m => {
+        const val = originalServings * m;
+        return new Fraction(val).toFraction(true);
+    });
+    return [...new Set(options)];
+  }, [originalServings]);
+
+  const filteredOptions =
+    query === ''
+      ? servingOptions
+      : servingOptions.filter((option) =>
+        option.toLowerCase().replace(/\s+/g, '').includes(query.toLowerCase().replace(/\s+/g, ''))
+      );
+
 
   if (!recipe) {
     return <div>Recipe not found</div>;
@@ -36,6 +120,8 @@ const Recipe: FC = () => {
     return <img src={imagePath} alt={alt} className="max-w-full h-auto rounded-lg my-4" />;
   }
 
+  const servingsFraction = parseQuantity(servings) || new Fraction(originalServings);
+
   return (
     <>
       <div className="flex flex-row items-center">
@@ -52,17 +138,79 @@ const Recipe: FC = () => {
         {recipe.metadata?.level && <li>Level: {recipe.metadata?.level}</li>}
         {recipe.metadata?.prep && <li>Prep: {recipe.metadata?.prep}</li>}
         {recipe.metadata?.cook && <li>Cook: {recipe.metadata?.cook}</li>}
-        {recipe.metadata?.servings && <li>Servings: {recipe.metadata?.servings}</li>}
+        {recipe.metadata?.servings && <li>Servings: {originalServings}</li>}
       </ul>
+
       <article className="prose max-w-none prose-img:rounded-xl">
         {recipe.heroImage ? <img src={`/recipes/${slug}/${recipe.heroImage}`} alt={recipe.title} className="h-auto rounded-lg inline-block float-right max-w-[500px] max-h-[500px] ml-8 my-8" /> : <PlacePuppy width={800} height={600} className="h-auto rounded-lg inline-block float-right max-w-[500px] max-h-[500px] ml-8 my-8" index={recipeIndex} />}
+        
+        {recipe.summary && <ReactMarkdown>{`### Summary\n${recipe.summary}`}</ReactMarkdown>}
+
+        <h3>Ingredients</h3>
+        <div className="my-4">
+          <label htmlFor="servings-input" className="inline-block mr-4 text-sm font-medium text-gray-700">Adjust Servings: </label>
+          <Combobox as="div" className="relative inline-block" value={servings} onChange={(value) => setServings(value || '')}>
+            <Combobox.Input
+              id="servings-input"
+              className="mt-1 inline-block w-24 rounded-md border-black shadow focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              onChange={(event) => {
+                setQuery(event.target.value);
+                setServings(event.target.value);
+              }}
+            />
+            <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+              <span className="text-gray-400">▼</span>
+            </Combobox.Button>
+            <Transition
+              as={Fragment}
+              leave="transition ease-in duration-100"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+              afterLeave={() => setQuery('')}
+            >
+              <Combobox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                {filteredOptions.map((option) => (
+                  <Combobox.Option
+                    key={option}
+                    value={option}
+                    className={({ active }) => `relative cursor-default select-none py-2 pl-4 pr-4 ${active ? 'bg-indigo-600 text-white' : 'text-gray-900'}`}
+                  >
+                    <span className={option === originalServings.toString() ? 'font-bold' : 'font-normal'}>
+                      {option}
+                    </span>
+                  </Combobox.Option>
+                ))}
+              </Combobox.Options>
+            </Transition>
+          </Combobox>
+        </div>
+        <ul>
+            {recipe.ingredients?.map((ingredient, index) => {
+                const originalQuantity = parseQuantity(ingredient.quantity);
+                let scaledQuantityStr = ingredient.quantity || '';
+                let displayUnit = ingredient.unit;
+                if (originalQuantity) {
+                    const multiplier = servingsFraction.valueOf() / originalServings;
+                    const scaledQuantity = originalQuantity.mul(multiplier);
+                    const converted = autoConvertUnits(scaledQuantity, ingredient.unit);
+                    scaledQuantityStr = formatQuantity(converted.quantity);
+                    displayUnit = converted.unit;
+                }
+                return (
+                    <li key={index}>
+                        {scaledQuantityStr} {displayUnit} {ingredient.name}
+                    </li>
+                );
+            })}
+        </ul>
+
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
             img: Image,
           }}
         >
-          {`### Summary\n${recipe.summary || ''}\n\n### Preparation\n${recipe.preparation || ''}`}
+          {`### Preparation\n${recipe.preparation || ''}`}
         </ReactMarkdown>
 
       </article>

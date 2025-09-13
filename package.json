@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "@headlessui/react": "^2.2.8",
+    "fraction.js": "^5.3.4",
     "googleapis": "^159.0.0",
     "js-yaml": "^4.1.0",
     "moment": "^2.30.1",
