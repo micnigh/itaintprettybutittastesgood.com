@@ -35,8 +35,8 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
         <header className={`text-black mt-4 mb-6 grid relative items-center ${headerGridClass}`}>
           <span className="flex-grow" />
           <div>
-            <Link to="/" className="text-xl sm:text-3xl md:text-4xl text-center no-underline">
-              <h1 className="text-black font-serif font-bold">itaintprettybutittastesgood</h1>
+            <Link to="/" className="text-3xl text-center no-underline">
+              <h1 className="font-bold text-primary">itaintprettybutittastesgood</h1>
             </Link>
           </div>
           <div className="flex-grow text-right">
@@ -47,22 +47,6 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
                 className="inline-block lg:w-[calc(100%-60px)] py-1 px-2 mt-1 lg:mt-0 lg:ml-2 border rounded-md"
               />}
           </div>
-          {(isEditMode() || process.env.NODE_ENV === 'development') &&
-            <a className="no-underline absolute -top-10 right-0 text-gray-400" target='_blank' rel='noreferrer' href={``} title={'refresh data from google drive'} onClick={e => {
-              e.preventDefault();
-              if (process.env.NODE_ENV === 'development') {
-                // This will need to be adapted for Vite's environment
-              } else if (isEditMode()) {
-                fetch(`https://api.github.com/repos/micnigh/itaintprettybutittastesgood.com/dispatches`, {
-                  method: 'POST',
-                  headers: {
-                    "Accept": "application/vnd.github+json",
-                    "Authorization": `Bearer ${getGithubToken()}`,
-                  },
-                  body: JSON.stringify({"event_type": "build"})
-                })
-              }
-            }}>Refresh</a>}
         </header>
         <main className="flex flex-col relative">
           <div>

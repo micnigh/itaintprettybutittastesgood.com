@@ -36,14 +36,23 @@ interface Ingredient {
     unit: string | null;
 }
 
-interface Recipe {
+export interface Recipe {
     id: string;
     slug: string;
     title: string;
     ingredients: Ingredient[];
     markdown: string;
-    metadata?: Record<string, any>;
+    metadata?: RecipeMetadata;
     heroImage?: string;
+}
+
+export interface RecipeMetadata {
+    date: string;
+    prep: string;
+    cook: string;
+    servings: string;
+    level: string;
+    tags: string[];
 }
 
 interface CachedDoc extends docs_v1.Schema$Document {

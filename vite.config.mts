@@ -32,7 +32,8 @@ export default defineConfig({
       // https://sharp.pixelplumbing.com/api-output#avif
       lossless: true,
     },
-    cache: false,
-    cacheLocation: undefined,
+    cache: true,
+    cacheLocation: '.tmp/cache/vite-image-optimizer',
+    includePublic: true,
   })],
 })

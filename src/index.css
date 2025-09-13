@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
@@ -6,5 +7,10 @@
   --color-body-bg: #F9DFC9;
   --color-primary: #6F2B9F;
   --color-secondary: #4d90fe;
-  --font-family-serif: Georgia, serif;
+  --font-family-serif: 'Quicksand', sans-serif;
+}
+
+html,
+body {
+  font-family: 'Quicksand', sans-serif;
 }
