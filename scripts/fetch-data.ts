@@ -329,7 +329,7 @@ async function getIngredientsWithGemini(markdownContent: string): Promise<Ingred
     throw new Error("GEMINI_API_KEY is not set in the .env file.");
   }
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash"});
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro"});
 
   const prompt = `
     Analyze the following recipe text and extract the ingredients.
@@ -399,14 +399,25 @@ async function generateImageWithGemini(recipe: Recipe): Promise<string | undefin
         throw new Error("GEMINI_API_KEY is not set in the .env file.");
     }
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
+
+    const ingredientsText = recipe.ingredients.map(i => `${i.quantity || ''} ${i.unit || ''} ${i.name}`.trim()).join(', ');
 
     const prompt = `
-    Generate a photorealistic image of ${recipe.title}.
-    The image should be appetizing and well-lit.
-    Here is a summary of the recipe: ${recipe.summary}
-    Consider the following tags: ${recipe.metadata?.tags?.join(', ')}
-    Return a URL to the generated image.
+    You are an expert food photographer. Your task is to create a prompt for an image generation service to create a photorealistic image of a recipe.
+
+    Here is the recipe:
+    - Title: ${recipe.title}
+    - Summary: ${recipe.summary}
+    - Ingredients: ${ingredientsText}
+    - Tags: ${recipe.metadata?.tags?.join(', ')}
+    
+    Based on the recipe, create a detailed, descriptive prompt for an AI image generator. The prompt should result in a photorealistic, appetizing, and well-lit image.
+    
+    Then, create a URL for the image by encoding the prompt and appending it to the following base URL: \`https://image.pollinations.ai/prompt/\`.
+    For example, if the prompt is "a cat", the URL would be \`https://image.pollinations.ai/prompt/a%20cat\`.
+    
+    Only return the final, complete URL and nothing else.
   `;
 
     try {
@@ -414,10 +425,11 @@ async function generateImageWithGemini(recipe: Recipe): Promise<string | undefin
         const response = await result.response;
         const text = response.text();
         
-        // Basic check for a URL.
-        if (text.startsWith('http')) {
-            return text;
+        const urlMatch = text.match(/https?:\/\/[^\s]+/);
+        if (urlMatch) {
+            return urlMatch[0];
         }
+
         console.warn(`Gemini did not return a URL for ${recipe.title}. Response: ${text}`);
         return undefined;
     } catch (error) {

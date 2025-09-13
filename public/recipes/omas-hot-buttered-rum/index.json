@@ -29,14 +29,14 @@
       "unit": "tsp"
     },
     {
-      "name": "dark rum",
-      "quantity": "1 ½",
-      "unit": "oz"
+      "name": "the batter",
+      "quantity": "1 heaping",
+      "unit": "tablespoon"
     },
     {
-      "name": "fum flavoring",
-      "quantity": "to taste",
-      "unit": null
+      "name": "dark rum or fum flavoring",
+      "quantity": "1 ½",
+      "unit": "oz"
     },
     {
       "name": "boiling hot water",
