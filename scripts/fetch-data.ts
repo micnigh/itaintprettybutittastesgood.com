@@ -644,13 +644,24 @@ async function main() {
   
   console.log(`Found ${docFiles.length} documents. Processing with modification-time-based cache...`);
   
-  const BATCH_SIZE = 5;
-  for (let i = 0; i < docFiles.length; i += BATCH_SIZE) {
-    const batch = docFiles.slice(i, i + BATCH_SIZE);
-    console.log(`Processing batch ${i / BATCH_SIZE + 1}...`);
-    const processingPromises = batch.map(file => processDoc(file, auth));
-    await Promise.all(processingPromises);
+  const CONCURRENCY_LIMIT = 10;
+  const queue = [...docFiles];
+  const promises = [];
+
+  const processQueue = async () => {
+    while (queue.length > 0) {
+      const file = queue.shift();
+      if (file) {
+        await processDoc(file, auth);
+      }
+    }
+  };
+
+  for (let i = 0; i < CONCURRENCY_LIMIT; i++) {
+    promises.push(processQueue());
   }
+
+  await Promise.all(promises);
   
   // Combine all recipes into a single file for the app
   const allRecipes: Recipe[] = [];
