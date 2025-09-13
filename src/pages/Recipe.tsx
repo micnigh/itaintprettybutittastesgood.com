@@ -62,9 +62,9 @@ const Recipe: FC = () => {
             img: Image,
           }}
         >
-          {recipe.markdown}
+          {`### Summary\n${recipe.summary || ''}\n\n### Preparation\n${recipe.preparation || ''}`}
         </ReactMarkdown>
-        
+
       </article>
     </>
   );

@@ -44,7 +44,7 @@
       "unit": "cup"
     },
     {
-      "name": "coconut oil",
+      "name": "coconut oil (melted)",
       "quantity": "½",
       "unit": "cup"
     },
@@ -54,7 +54,9 @@
       "unit": "cup"
     }
   ],
-  "markdown": "### Summary\n\nNathan,\n\nSo I wanted banana bread that didn’t get hard when reheated because of the butter so I just tried it with coconut oil. It worked!!  I love you dearly.\n\nMom\n\n### Ingredients \n\n* 2 cups flour\n* 1 ½ teaspoon baking powder\n* ½ teaspoon baking soda\n* ¼ teaspoon cinnamon\n* ⅛ teaspoon nutmeg\n* 2 eggs\n* 1 ½ cups mashed banana\n* 1 cup sugar\n* ½ cup coconut oil (melted)\n* ¼ cup walnuts\n### Preparation\n\n* Preheat oven to 350 degrees and grease bread pan (1 regular or 5 mini)\n* Mix all wet ingredients in a stand mixer\n* Mix all dry ingredients in a separate bowl\n* Add dry ingredients into the wet mixture and then add the walnuts\n* Pour batter into either 1 regular sized greased bread pan or 5 mini pans\n* Bake at 350 degrees for 30 min for mini loafs for 55 min for standard size \n* Bake until a toothpick comes out clean\n* Can be frozen for 3 months\n",
+  "markdown": "Nathan,\n\nSo I wanted banana bread that didn’t get hard when reheated because of the butter so I just tried it with coconut oil. It worked!!  I love you dearly.\n\nMom\n\n* 2 cups flour\n* 1 ½ teaspoon baking powder\n* ½ teaspoon baking soda\n* ¼ teaspoon cinnamon\n* ⅛ teaspoon nutmeg\n* 2 eggs\n* 1 ½ cups mashed banana\n* 1 cup sugar\n* ½ cup coconut oil (melted)\n* ¼ cup walnuts\n* Preheat oven to 350 degrees and grease bread pan (1 regular or 5 mini)\n* Mix all wet ingredients in a stand mixer\n* Mix all dry ingredients in a separate bowl\n* Add dry ingredients into the wet mixture and then add the walnuts\n* Pour batter into either 1 regular sized greased bread pan or 5 mini pans\n* Bake at 350 degrees for 30 min for mini loafs for 55 min for standard size \n* Bake until a toothpick comes out clean\n* Can be frozen for 3 months\n",
+  "summary": "Nathan,\n\nSo I wanted banana bread that didn’t get hard when reheated because of the butter so I just tried it with coconut oil. It worked!!  I love you dearly.\n\nMom\n\n",
+  "preparation": "* Preheat oven to 350 degrees and grease bread pan (1 regular or 5 mini)\n* Mix all wet ingredients in a stand mixer\n* Mix all dry ingredients in a separate bowl\n* Add dry ingredients into the wet mixture and then add the walnuts\n* Pour batter into either 1 regular sized greased bread pan or 5 mini pans\n* Bake at 350 degrees for 30 min for mini loafs for 55 min for standard size \n* Bake until a toothpick comes out clean\n* Can be frozen for 3 months\n",
   "metadata": {
     "date": "2022-08-16T00:00:00.000Z",
     "tags": [
