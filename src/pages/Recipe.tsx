@@ -229,31 +229,23 @@ const Recipe: FC = () => {
                   <ComboboxOption
                     key={option.value}
                     value={option.value}
-                    className={({ active }) =>
-                      `relative cursor-default select-none py-2 pl-4 pr-4 ${active ? 'bg-indigo-600 text-white' : 'text-gray-900'}`
-                    }
+                    className="group relative cursor-default select-none py-2 pl-4 pr-4 text-gray-900 data-[focus]:bg-indigo-600 data-[focus]:text-white"
                   >
-                    {({ active }) => (
-                      <>
-                        <span
-                          className={
-                            option.multiplier === 1
-                              ? 'font-bold'
-                              : 'font-normal'
-                          }
-                        >
-                          {option.value}
+                    <>
+                      <span
+                        className={
+                          option.multiplier === 1 ? 'font-bold' : 'font-normal'
+                        }
+                      >
+                        {option.value}
+                      </span>
+                      {option.multiplier !== 1 && (
+                        <span className="ml-2 text-gray-500 group-data-[focus]:text-indigo-200">
+                          ({new Fraction(option.multiplier).toFraction(true)}
+                          x)
                         </span>
-                        {option.multiplier !== 1 && (
-                          <span
-                            className={`${active ? 'text-indigo-200' : 'text-gray-500'} ml-2`}
-                          >
-                            ({new Fraction(option.multiplier).toFraction(true)}
-                            x)
-                          </span>
-                        )}
-                      </>
-                    )}
+                      )}
+                    </>
                   </ComboboxOption>
                 ))}
               </ComboboxOptions>
@@ -270,7 +262,7 @@ const Recipe: FC = () => {
               const scaledQuantity = originalQuantity.mul(multiplier)
               const converted = autoConvertUnits(
                 scaledQuantity,
-                ingredient.unit,
+                ingredient.unit
               )
               scaledQuantityStr = formatQuantity(converted.quantity)
               displayUnit = converted.unit
