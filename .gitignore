@@ -27,3 +27,6 @@ src/recipes.json
 
 dist/
 .tmp/
+
+playwright-report/
+test-results/

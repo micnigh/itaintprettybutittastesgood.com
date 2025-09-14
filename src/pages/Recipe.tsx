@@ -193,7 +193,7 @@ const Recipe: FC = () => {
         )}
 
         <h3>Ingredients</h3>
-        <div className="my-4">
+        <div data-testid="ingredients-container" className="my-4">
           <label
             htmlFor="servings-input"
             className="inline-block mr-4 text-sm font-medium text-gray-700"
@@ -208,6 +208,7 @@ const Recipe: FC = () => {
           >
             <ComboboxInput
               id="servings-input"
+              data-testid="servings-input"
               className="mt-1 inline-block w-24 rounded-md border-black shadow focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               onChange={(event) => {
                 setQuery(event.target.value)
@@ -252,7 +253,7 @@ const Recipe: FC = () => {
             </Transition>
           </Combobox>
         </div>
-        <ul>
+        <ul data-testid="ingredients-list">
           {recipe.ingredients?.map((ingredient) => {
             const originalQuantity = parseQuantity(ingredient.quantity)
             let scaledQuantityStr = ingredient.quantity || ''
@@ -268,7 +269,7 @@ const Recipe: FC = () => {
               displayUnit = converted.unit
             }
             return (
-              <li key={ingredient.name}>
+              <li data-testid="ingredient" key={ingredient.name}>
                 {scaledQuantityStr} {displayUnit} {ingredient.name}
               </li>
             )
