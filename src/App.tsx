@@ -9,6 +9,7 @@ import { create } from 'zustand'
 import { Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Recipe from './pages/Recipe'
+import NotFound from './pages/NotFound'
 
 // This would be in a separate file (e.g., src/pages/admin.ts)
 export const isEditMode = () => false
@@ -71,6 +72,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipe/:slug" element={<Recipe />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </Router>
