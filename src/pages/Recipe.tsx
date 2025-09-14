@@ -7,7 +7,14 @@ import { slugify } from '../utils'
 import type { Recipe } from '../../scripts/fetch-data/config'
 import { format } from 'date-fns'
 import Fraction from 'fraction.js'
-import { Combobox, Transition } from '@headlessui/react'
+import {
+  Combobox,
+  ComboboxButton,
+  ComboboxInput,
+  ComboboxOptions,
+  ComboboxOption,
+  Transition,
+} from '@headlessui/react'
 
 const parseQuantity = (
   quantity: string | null | undefined
@@ -196,7 +203,7 @@ const Recipe: FC = () => {
             value={servings}
             onChange={(value) => setServings(value || '')}
           >
-            <Combobox.Input
+            <ComboboxInput
               id="servings-input"
               className="mt-1 inline-block w-24 rounded-md border-black shadow focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               onChange={(event) => {
@@ -204,9 +211,9 @@ const Recipe: FC = () => {
                 setServings(event.target.value)
               }}
             />
-            <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+            <ComboboxButton className="absolute inset-y-0 right-0 flex items-center pr-2">
               <span className="text-gray-400">▼</span>
-            </Combobox.Button>
+            </ComboboxButton>
             <Transition
               as={Fragment}
               leave="transition ease-in duration-100"
@@ -214,9 +221,9 @@ const Recipe: FC = () => {
               leaveTo="opacity-0"
               afterLeave={() => setQuery('')}
             >
-              <Combobox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              <ComboboxOptions className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                 {filteredOptions.map((option) => (
-                  <Combobox.Option
+                  <ComboboxOption
                     key={option.value}
                     value={option.value}
                     className={({ active }) =>
@@ -244,9 +251,9 @@ const Recipe: FC = () => {
                         )}
                       </>
                     )}
-                  </Combobox.Option>
+                  </ComboboxOption>
                 ))}
-              </Combobox.Options>
+              </ComboboxOptions>
             </Transition>
           </Combobox>
         </div>
