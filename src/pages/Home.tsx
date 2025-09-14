@@ -23,10 +23,10 @@ const Home: FC = () => {
                 <img 
                   src={`/recipes/${recipe.slug}/${recipe.heroImage}`} 
                   alt={recipe.title} 
-                  className="w-full h-48 object-cover rounded-lg shadow-md" 
+                  className="w-full h-auto object-cover rounded-lg shadow-md" 
                 />
               ) : (
-                <PlacePuppy width={200} height={150} className="w-full h-48 object-cover rounded-lg shadow-md" index={index} />
+                <PlacePuppy width={200} height={150} className="w-full h-64 object-cover rounded-lg shadow-md" index={index} />
               )}
             </Link>
             <Link to={`/recipe/${recipe.slug}`} className="text-lg text-text hover:underline mt-2 inline-block">{recipe.title}</Link>

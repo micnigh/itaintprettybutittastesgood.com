@@ -39,12 +39,12 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
               <h1 className="font-bold text-primary">itaintprettybutittastesgood</h1>
             </Link>
           </div>
-          <div className="flex-grow text-right">
+          <div className="flex-grow sm:text-right mt-4 lg:mt-0">
             {displaySearch &&
               <input type='text' placeholder='filter'
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                className="inline-block lg:w-[calc(100%-60px)] py-1 px-2 mt-1 lg:mt-0 lg:ml-2 border rounded-md"
+                className="inline-block w-full lg:w-[calc(100%-60px)] py-1 px-2 mt-1 lg:mt-0 lg:ml-2 border rounded-md"
               />}
           </div>
         </header>
