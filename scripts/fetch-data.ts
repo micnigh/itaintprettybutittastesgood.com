@@ -14,6 +14,17 @@ import PQueue from 'p-queue';
 const imageGenerationModel = "imagen-4.0-generate-001";
 const contentGenerationModel = "gemini-2.5-flash";
 
+const CONCURRENCY = {
+  // Google Docs and Drive APIs
+  GOOGLE_DOC_RETRIEVAL: 10,
+  // Gemini text generation
+  TEXT_PROCESSING: 10,
+  TEXT_PROCESSING_RPM: 1000, // RPM for gemini-2.5-flash
+  // Gemini image generation
+  IMAGE_GENERATION: 10,
+  IMAGE_GENERATION_RPM: 10, // RPM for imagen-4.0-generate-001
+};
+
 // SETUP INSTRUCTIONS
 // 1. Follow this guide to create a service account and credentials:
 //    https://developers.google.com/workspace/guides/create-credentials
@@ -148,7 +159,7 @@ interface GdocParseResult {
   imagePaths: string[];
 }
 
-async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string, auth: any): Promise<GdocParseResult> {
+async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string, auth: any, googleDocQueue: PQueue): Promise<GdocParseResult> {
   let markdown = '';
   let imageCounter = 0;
   const downloadedImageIds = new Set<string>();
@@ -181,35 +192,37 @@ async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string, auth: 
           imageCounter++;
           const url = image.imageProperties.contentUri;
 
-          const accessToken = await auth.getAccessToken();
+          await googleDocQueue.add(async () => {
+            const accessToken = await auth.getAccessToken();
 
-          const controller = new AbortController();
-          const timeout = setTimeout(() => {
-            controller.abort();
-          }, 30000);
+            const controller = new AbortController();
+            const timeout = setTimeout(() => {
+              controller.abort();
+            }, 30000);
 
-          const res = await fetch(url, {
-            headers: {
-              'Authorization': `Bearer ${accessToken.token}`
-            },
-            signal: controller.signal,
+            const res = await fetch(url, {
+              headers: {
+                'Authorization': `Bearer ${accessToken.token}`
+              },
+              signal: controller.signal,
+            });
+
+            clearTimeout(timeout);
+
+            const contentType = res.headers.get('content-type') || 'image/jpeg';
+
+            if (!contentType.startsWith('image/')) {
+              console.warn(`Skipping download of non-image content: ${contentType}`);
+              return;
+            }
+
+            const buffer = await res.buffer();
+            const extension = contentType.split(';')[0].split('/')[1];
+            const filename = `image-${imageCounter}.${extension}`;
+            await fs.writeFile(path.join(recipeDir, filename), buffer);
+            text += `![${doc.title} image ${imageCounter}](./${filename})`;
+            imagePaths.push(filename);
           });
-
-          clearTimeout(timeout);
-
-          const contentType = res.headers.get('content-type') || 'image/jpeg';
-
-          if (!contentType.startsWith('image/')) {
-            console.warn(`Skipping download of non-image content: ${contentType}`);
-            return text;
-          }
-
-          const buffer = await res.buffer();
-          const extension = contentType.split(';')[0].split('/')[1];
-          const filename = `image-${imageCounter}.${extension}`;
-          await fs.writeFile(path.join(recipeDir, filename), buffer);
-          text += `![${doc.title} image ${imageCounter}](./${filename})`;
-          imagePaths.push(filename);
         }
       }
     }
@@ -288,34 +301,36 @@ async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string, auth: 
         imageCounter++;
         const url = image.imageProperties.contentUri;
 
-        const accessToken = await auth.getAccessToken();
+        await googleDocQueue.add(async () => {
+          const accessToken = await auth.getAccessToken();
 
-        const controller = new AbortController();
-        const timeout = setTimeout(() => {
-          controller.abort();
-        }, 30000);
+          const controller = new AbortController();
+          const timeout = setTimeout(() => {
+            controller.abort();
+          }, 30000);
 
-        const res = await fetch(url, {
-          headers: {
-            'Authorization': `Bearer ${accessToken.token}`
-          },
-          signal: controller.signal,
+          const res = await fetch(url, {
+            headers: {
+              'Authorization': `Bearer ${accessToken.token}`
+            },
+            signal: controller.signal,
+          });
+
+          clearTimeout(timeout);
+
+          const contentType = res.headers.get('content-type') || 'image/jpeg';
+
+          if (!contentType.startsWith('image/')) {
+            console.warn(`Skipping download of non-image content: ${contentType}`);
+            return;
+          }
+
+          const buffer = await res.buffer();
+          const extension = contentType.split(';')[0].split('/')[1];
+          const filename = `image-${imageCounter}.${extension}`;
+          await fs.writeFile(path.join(recipeDir, filename), buffer);
+          imagePaths.push(filename);
         });
-
-        clearTimeout(timeout);
-
-        const contentType = res.headers.get('content-type') || 'image/jpeg';
-
-        if (!contentType.startsWith('image/')) {
-          console.warn(`Skipping download of non-image content: ${contentType}`);
-          continue;
-        }
-
-        const buffer = await res.buffer();
-        const extension = contentType.split(';')[0].split('/')[1];
-        const filename = `image-${imageCounter}.${extension}`;
-        await fs.writeFile(path.join(recipeDir, filename), buffer);
-        imagePaths.push(filename);
       }
     }
   }
@@ -328,34 +343,36 @@ async function parseGdoc(doc: docs_v1.Schema$Document, recipeDir: string, auth: 
         imageCounter++;
         const url = image.imageProperties.contentUri;
 
-        const accessToken = await auth.getAccessToken();
+        await googleDocQueue.add(async () => {
+          const accessToken = await auth.getAccessToken();
 
-        const controller = new AbortController();
-        const timeout = setTimeout(() => {
-          controller.abort();
-        }, 30000);
+          const controller = new AbortController();
+          const timeout = setTimeout(() => {
+            controller.abort();
+          }, 30000);
 
-        const res = await fetch(url, {
-          headers: {
-            'Authorization': `Bearer ${accessToken.token}`
-          },
-          signal: controller.signal,
+          const res = await fetch(url, {
+            headers: {
+              'Authorization': `Bearer ${accessToken.token}`
+            },
+            signal: controller.signal,
+          });
+
+          clearTimeout(timeout);
+
+          const contentType = res.headers.get('content-type') || 'image/jpeg';
+
+          if (!contentType.startsWith('image/')) {
+            console.warn(`Skipping download of non-image content: ${contentType}`);
+            return;
+          }
+
+          const buffer = await res.buffer();
+          const extension = contentType.split(';')[0].split('/')[1];
+          const filename = `image-${imageCounter}.${extension}`;
+          await fs.writeFile(path.join(recipeDir, filename), buffer);
+          imagePaths.push(filename);
         });
-
-        clearTimeout(timeout);
-
-        const contentType = res.headers.get('content-type') || 'image/jpeg';
-
-        if (!contentType.startsWith('image/')) {
-          console.warn(`Skipping download of non-image content: ${contentType}`);
-          continue;
-        }
-
-        const buffer = await res.buffer();
-        const extension = contentType.split(';')[0].split('/')[1];
-        const filename = `image-${imageCounter}.${extension}`;
-        await fs.writeFile(path.join(recipeDir, filename), buffer);
-        imagePaths.push(filename);
       }
     }
   }
@@ -541,7 +558,13 @@ function parseYamlMetadata(description: string | undefined): RecipeMetadata | un
   }
 }
 
-async function processDoc(file: drive_v3.Schema$File, auth: any) {
+interface Queues {
+  googleDocQueue: PQueue;
+  textProcessingQueue: PQueue;
+  imageGenerationQueue: PQueue;
+}
+
+async function processDoc(file: drive_v3.Schema$File, auth: any, queues: Queues) {
   const slug = slugify(file.name || '');
   const recipeDir = path.join(RECIPES_DIR, slug);
   await fs.mkdir(recipeDir, { recursive: true });
@@ -557,7 +580,7 @@ async function processDoc(file: drive_v3.Schema$File, auth: any) {
 
     if (file.modifiedTime !== cachedDoc.modifiedTime) {
       console.log(`[FETCH] Modification change detected, re-fetching: ${file.name}`);
-      doc = await fetchDoc(auth, file.id!);
+      doc = await queues.googleDocQueue.add(() => fetchDoc(auth, file.id!)) as docs_v1.Schema$Document;
       // Add modifiedTime to the document for caching
       const docWithModifiedTime = { ...doc, modifiedTime: file.modifiedTime! };
       await fs.writeFile(cachePath, JSON.stringify(docWithModifiedTime, null, 2));
@@ -567,7 +590,7 @@ async function processDoc(file: drive_v3.Schema$File, auth: any) {
     }
   } catch (error) { // Not in raw cache
     console.log(`[FETCH] Not in cache, fetching: ${file.name}`);
-    doc = await fetchDoc(auth, file.id!);
+    doc = await queues.googleDocQueue.add(() => fetchDoc(auth, file.id!)) as docs_v1.Schema$Document;
     // Add modifiedTime to the document for caching
     const docWithModifiedTime = { ...doc, modifiedTime: file.modifiedTime! };
     await fs.writeFile(cachePath, JSON.stringify(docWithModifiedTime, null, 2));
@@ -604,8 +627,8 @@ async function processDoc(file: drive_v3.Schema$File, auth: any) {
       const cachedData = await fs.readFile(cachePath, 'utf-8');
       doc = JSON.parse(cachedData);
     }
-    const { markdown, summary, ingredients: ingredientsMarkdown, preparation, imagePaths } = await parseGdoc(doc as docs_v1.Schema$Document, recipeDir, auth);
-    const ingredients = await getIngredientsWithGemini(ingredientsMarkdown || markdown);
+    const { markdown, summary, ingredients: ingredientsMarkdown, preparation, imagePaths } = await parseGdoc(doc as docs_v1.Schema$Document, recipeDir, auth, queues.googleDocQueue);
+    const ingredients = await queues.textProcessingQueue.add(() => getIngredientsWithGemini(ingredientsMarkdown || markdown)) as Ingredient[];
     const metadata = parseYamlMetadata(file.description || '');
 
     const recipe: Recipe = {
@@ -623,7 +646,7 @@ async function processDoc(file: drive_v3.Schema$File, auth: any) {
       recipe.heroImage = imagePaths[0];
     } else {
       console.log(`[PROCESS] No image found for ${recipe.title}, generating one...`);
-      const imageData = await generateImageWithGemini(recipe);
+      const imageData = await queues.imageGenerationQueue.add(() => generateImageWithGemini(recipe));
       if (imageData) {
         try {
           const extension = imageData.mimeType.split('/')[1] || 'jpeg';
@@ -677,14 +700,22 @@ async function main() {
 
   console.log(`Found ${docFiles.length} documents. Processing with modification-time-based cache...`);
 
-  const queue = new PQueue({ concurrency: 10, interval: 60000, intervalCap: 10 });
-  // const queue = new PQueue({ concurrency: 10 });
+  const docProcessingQueue = new PQueue({ concurrency: 10 });
+  const googleDocQueue = new PQueue({ concurrency: CONCURRENCY.GOOGLE_DOC_RETRIEVAL });
+  const textProcessingQueue = new PQueue({ concurrency: CONCURRENCY.TEXT_PROCESSING, interval: 60000, intervalCap: CONCURRENCY.TEXT_PROCESSING_RPM });
+  const imageGenerationQueue = new PQueue({ concurrency: CONCURRENCY.IMAGE_GENERATION, interval: 60000, intervalCap: CONCURRENCY.IMAGE_GENERATION_RPM });
+
+  const queues: Queues = {
+    googleDocQueue,
+    textProcessingQueue,
+    imageGenerationQueue,
+  };
 
   for (const file of docFiles) {
-    queue.add(() => processDoc(file, auth));
+    docProcessingQueue.add(() => processDoc(file, auth, queues));
   }
 
-  await queue.onIdle();
+  await docProcessingQueue.onIdle();
 
   // Combine all recipes into a single file for the app
   const allRecipes: Recipe[] = [];
