@@ -19,11 +19,11 @@ const parseQuantity = (quantity: string | null | undefined): Fraction | null => 
       '⅓': '1/3', '⅔': '2/3', '⅕': '1/5', '⅖': '2/5', '⅗': '3/5', '⅘': '4/5',
       '⅙': '1/6', '⅚': '5/6', '⅛': '1/8', '⅜': '3/8', '⅝': '5/8', '⅞': '7/8'
     };
-    
+
     for (const [uni, asc] of Object.entries(unicodeFractions)) {
-        processedQuantity = processedQuantity.replace(uni, asc);
+      processedQuantity = processedQuantity.replace(uni, asc);
     }
-    
+
     if (processedQuantity.includes('-')) {
       processedQuantity = processedQuantity.split('-')[0].trim();
     }
@@ -35,8 +35,8 @@ const parseQuantity = (quantity: string | null | undefined): Fraction | null => 
 };
 
 const formatQuantity = (quantity: Fraction | null): string => {
-    if (!quantity) return '';
-    return quantity.toFraction(true);
+  if (!quantity) return '';
+  return quantity.toFraction(true);
 };
 
 const autoConvertUnits = (quantity: Fraction, unit: string | null): { quantity: Fraction, unit: string | null } => {
@@ -44,7 +44,7 @@ const autoConvertUnits = (quantity: Fraction, unit: string | null): { quantity: 
 
   let currentQuantity = quantity;
   let currentUnit = unit.toLowerCase().replace(/s$/, '');
-  
+
   if (currentUnit === 'cup') {
     if (currentQuantity.valueOf() < 0.25) {
       currentQuantity = currentQuantity.mul(16);
@@ -58,7 +58,7 @@ const autoConvertUnits = (quantity: Fraction, unit: string | null): { quantity: 
       currentUnit = 'teaspoon';
     }
   }
-  
+
   const finalUnit = currentQuantity.valueOf() > 1 ? `${currentUnit}s` : currentUnit;
 
   return { quantity: currentQuantity, unit: finalUnit };
@@ -90,14 +90,14 @@ const Recipe: FC = () => {
     const multipliers = [0.25, 0.5, 0.75, 1, 2, 4];
     const uniqueOptions = new Map<string, { value: string; multiplier: number }>();
     multipliers.forEach(m => {
-        const val = originalServings * m;
-        const optionValue = new Fraction(val).toFraction(true);
-        if (!uniqueOptions.has(optionValue)) {
-            uniqueOptions.set(optionValue, {
-                value: optionValue,
-                multiplier: m
-            });
-        }
+      const val = originalServings * m;
+      const optionValue = new Fraction(val).toFraction(true);
+      if (!uniqueOptions.has(optionValue)) {
+        uniqueOptions.set(optionValue, {
+          value: optionValue,
+          multiplier: m
+        });
+      }
     });
     return Array.from(uniqueOptions.values());
   }, [originalServings]);
@@ -131,13 +131,13 @@ const Recipe: FC = () => {
 
   return (
     <>
-      <div className="flex flex-row items-center">
-        <span><h1 className="text-3xl font-bold mt-4 sm:mt-6 mr-4">{recipe.title}</h1>
+      <div className="flex flex-row items-baseline space-x-2">
+        <span className="w-max"><h1 className="text-3xl font-bold mt-4 sm:mt-6 mr-4">{recipe.title}</h1>
           {recipe.metadata?.date && <div className="text-sm text-gray-500 mb-4">{format(new Date(recipe.metadata?.date || ''), 'MMM d, yyyy')}</div>}
         </span>
-        <span>
+        <span className="flex-grow min-w-48">
           {recipe.metadata?.tags?.map((tag) => (
-            <span className="bg-blue-400 text-white rounded-full px-2 py-1 text-sm mr-4">{tag}</span>
+            <span className="bg-blue-400 text-white whitespace-nowrap rounded-full px-2 py-0.5 text-xs mr-4 mb-4 inline-block">{tag}</span>
           ))}
         </span>
       </div>
@@ -150,7 +150,7 @@ const Recipe: FC = () => {
 
       <article className="prose max-w-none prose-img:rounded-xl">
         {recipe.heroImage ? <img src={`/recipes/${slug}/${recipe.heroImage}`} alt={recipe.title} className="h-auto rounded-lg inline-block float-right max-w-[500px] max-h-[500px] ml-8 my-8" /> : <PlacePuppy width={800} height={600} className="h-auto rounded-lg inline-block float-right max-w-[500px] max-h-[500px] ml-8 my-8" index={recipeIndex} />}
-        
+
         {recipe.summary && <ReactMarkdown>{`### Summary\n${recipe.summary}`}</ReactMarkdown>}
 
         <h3>Ingredients</h3>
@@ -201,23 +201,23 @@ const Recipe: FC = () => {
           </Combobox>
         </div>
         <ul>
-            {recipe.ingredients?.map((ingredient, index) => {
-                const originalQuantity = parseQuantity(ingredient.quantity);
-                let scaledQuantityStr = ingredient.quantity || '';
-                let displayUnit = ingredient.unit;
-                if (originalQuantity) {
-                    const multiplier = servingsFraction.valueOf() / originalServings;
-                    const scaledQuantity = originalQuantity.mul(multiplier);
-                    const converted = autoConvertUnits(scaledQuantity, ingredient.unit);
-                    scaledQuantityStr = formatQuantity(converted.quantity);
-                    displayUnit = converted.unit;
-                }
-                return (
-                    <li key={index}>
-                        {scaledQuantityStr} {displayUnit} {ingredient.name}
-                    </li>
-                );
-            })}
+          {recipe.ingredients?.map((ingredient, index) => {
+            const originalQuantity = parseQuantity(ingredient.quantity);
+            let scaledQuantityStr = ingredient.quantity || '';
+            let displayUnit = ingredient.unit;
+            if (originalQuantity) {
+              const multiplier = servingsFraction.valueOf() / originalServings;
+              const scaledQuantity = originalQuantity.mul(multiplier);
+              const converted = autoConvertUnits(scaledQuantity, ingredient.unit);
+              scaledQuantityStr = formatQuantity(converted.quantity);
+              displayUnit = converted.unit;
+            }
+            return (
+              <li key={index}>
+                {scaledQuantityStr} {displayUnit} {ingredient.name}
+              </li>
+            );
+          })}
         </ul>
 
         <ReactMarkdown
