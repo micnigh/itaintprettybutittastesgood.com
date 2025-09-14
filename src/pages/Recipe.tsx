@@ -1,4 +1,4 @@
-import { FC, useState, useMemo, Fragment } from 'react';
+import { FC, useState, useMemo, Fragment, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -71,6 +71,10 @@ interface ImageProps {
 }
 
 const Recipe: FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { slug } = useParams<{ slug: string }>();
   const recipe = (recipes as Recipe[]).find(r => slugify(r.title) === slug);
   const recipeIndex = recipes.findIndex(r => slugify(r.title) === slug);
