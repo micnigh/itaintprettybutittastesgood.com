@@ -466,6 +466,8 @@ async function generateImageWithGemini(recipe: Recipe): Promise<{ buffer: Buffer
     Ingredients: ${ingredientsText}
     Tags: ${recipe.metadata?.tags?.join(', ')}
     The image should be high quality and suitable for a recipe website.
+    Please don't add any text to the image unless its written on an object in the image.
+    Please don't use typos or spelling errors anywhere in text of the image.
     Make sure the picture includes ${quirkyAddition} in it.
   `;
 
