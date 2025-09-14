@@ -1,0 +1,29 @@
+# yarn without zero installs
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+node_modules
+coverage
+
+.env
+
+/src/gatsby-types.d.ts
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+credentials.json
+
+src/recipes.json
+
+dist/
+.tmp/
