@@ -139,11 +139,11 @@ const Recipe: FC = () => {
         <span className="w-max"><h1 className="text-3xl font-bold mt-4 sm:mt-6 mr-4">{recipe.title}</h1>
           {recipe.metadata?.date && <div className="text-sm text-gray-500 mb-4">{format(new Date(recipe.metadata?.date || ''), 'MMM d, yyyy')}</div>}
         </span>
-        <span className="flex-grow min-w-48">
+        {recipe.metadata?.tags && <span className="flex-grow min-w-48">
           {recipe.metadata?.tags?.map((tag) => (
             <span className="bg-blue-400 text-white whitespace-nowrap rounded-full px-2 py-0.5 text-xs mr-4 mb-4 inline-block">{tag}</span>
           ))}
-        </span>
+        </span>}
       </div>
       <ul className="flex flex-row gap-4 mb-2">
         {recipe.metadata?.level && <li>Level: {recipe.metadata?.level}</li>}
