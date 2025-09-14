@@ -84,11 +84,6 @@ const autoConvertUnits = (
   return { quantity: currentQuantity, unit: finalUnit }
 }
 
-interface ImageProps {
-  src?: string
-  alt?: string
-}
-
 const Recipe: FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -139,31 +134,6 @@ const Recipe: FC = () => {
 
   if (!recipe) {
     return <div>Recipe not found</div>
-  }
-
-  const Image: FC<ImageProps> = ({ src, alt }) => {
-    if (!src) {
-      if (recipe.heroImage) {
-        const imagePath = `/recipes/${slug}/${recipe.heroImage}`
-        return (
-          <img
-            src={imagePath}
-            alt={alt || recipe.title}
-            className="max-w-full h-auto rounded-lg my-4"
-          />
-        )
-      }
-      return null
-    }
-    // Vite serves files from the 'public' directory at the root
-    const imagePath = `/recipes/${slug}/${src?.replace('./', '')}`
-    return (
-      <img
-        src={imagePath}
-        alt={alt}
-        className="max-w-full h-auto rounded-lg my-4"
-      />
-    )
   }
 
   const servingsFraction =
@@ -303,12 +273,7 @@ const Recipe: FC = () => {
           })}
         </ul>
 
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            img: Image,
-          }}
-        >
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
           {`### Preparation\n${recipe.preparation || ''}`}
         </ReactMarkdown>
       </article>

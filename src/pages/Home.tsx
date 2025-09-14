@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import recipes from '../recipes.json'
-import PlacePuppy from '../components/placepuppy'
 import { useStore } from '../App'
 interface Recipe {
   id: string
@@ -23,18 +22,11 @@ const Home: FC = () => {
           return (
             <div key={recipe.id} className="text-center">
               <Link to={`/recipe/${recipe.slug}`}>
-                {recipe.heroImage ? (
+                {recipe.heroImage && (
                   <img
                     src={`/recipes/${recipe.slug}/${recipe.heroImage}`}
                     alt={recipe.title}
                     className="w-full h-auto object-cover rounded-lg shadow-md"
-                  />
-                ) : (
-                  <PlacePuppy
-                    width={200}
-                    height={150}
-                    className="w-full h-64 object-cover rounded-lg shadow-md"
-                    index={index}
                   />
                 )}
               </Link>
