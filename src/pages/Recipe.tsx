@@ -149,7 +149,7 @@ const Recipe: FC = () => {
       </ul>
 
       <article className="prose max-w-none prose-img:rounded-xl">
-        {recipe.heroImage ? <img src={`/recipes/${slug}/${recipe.heroImage}`} alt={recipe.title} className="h-auto rounded-lg inline-block float-right max-w-[500px] max-h-[500px] ml-8 my-8" /> : <PlacePuppy width={800} height={600} className="h-auto rounded-lg inline-block float-right max-w-[500px] max-h-[500px] ml-8 my-8" index={recipeIndex} />}
+        {recipe.heroImage ? <img src={`/recipes/${slug}/${recipe.heroImage}`} alt={recipe.title} className="h-auto rounded-lg inline-block float-right w-full h-full sm:max-w-[500px] sm:max-h-[500px] ml-8 my-8" /> : <PlacePuppy width={800} height={600} className="h-auto rounded-lg inline-block float-right w-full h-full sm:max-w-[500px] sm:max-h-[500px] ml-8 my-8" index={recipeIndex} />}
 
         {recipe.summary && <ReactMarkdown>{`### Summary\n${recipe.summary}`}</ReactMarkdown>}
 
