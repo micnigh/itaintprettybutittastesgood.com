@@ -24,3 +24,6 @@ coverage
 credentials.json
 
 src/recipes.json
+
+dist/
+.tmp/

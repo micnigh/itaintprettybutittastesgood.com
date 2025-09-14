@@ -5,6 +5,7 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/itaintprettybutittastesgood.com/',
   plugins: [react(), tailwindcss(), ViteImageOptimizer({
     /* pass your config */
     png: {
