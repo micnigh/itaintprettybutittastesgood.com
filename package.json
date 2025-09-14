@@ -10,7 +10,11 @@
     "fetch-data": "tsx scripts/fetch-data.ts",
     "fetch-data:clean": "tsx scripts/fetch-data.ts --no-cache",
     "predeploy": "npm run build && echo \"itaintprettybutittastesgood.com\" > dist/CNAME && cp dist/index.html dist/404.html",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e:local": "cypress run --config baseUrl=http://localhost:5173",
+    "test:e2e:prod": "cypress run --config baseUrl=https://itaintprettybutittastesgood.com/"
   },
   "dependencies": {
     "@google/genai": "^1.19.0",
@@ -48,6 +52,7 @@
     "@typescript-eslint/parser": "^8.43.0",
     "@vitejs/plugin-react": "^5.0.2",
     "autoprefixer": "^10.4.21",
+    "cypress": "^15.2.0",
     "date-fns": "^4.1.0",
     "dotenv": "^17.2.2",
     "eslint": "^9.35.0",
