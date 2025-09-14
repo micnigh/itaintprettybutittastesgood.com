@@ -6,6 +6,9 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
+  server: {
+    host: '0.0.0.0',
+  },
   plugins: [react(), tailwindcss(), ViteImageOptimizer({
     /* pass your config */
     png: {
