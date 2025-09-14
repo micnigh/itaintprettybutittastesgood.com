@@ -7,18 +7,21 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    sourceType: "module",
+    sourceType: 'module',
     ecmaVersion: 2019,
   },
-  plugins: ["@typescript-eslint", "@emotion"],
-  extends: ["plugin:@typescript-eslint/recommended", "plugin:react/recommended"],
+  plugins: ['@typescript-eslint', '@emotion'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+  ],
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
   },
   rules: {
-    "react/prop-types": "off",
-    "react/no-unknown-property": "off",
+    'react/prop-types': 'off',
+    'react/no-unknown-property': 'off',
   },
 }

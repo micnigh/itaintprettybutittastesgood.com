@@ -5,12 +5,14 @@ itaintprettybutittastesgood.com static site generator
 Assuming Windows WSL 2 Ubuntu 22 env
 
 Node 18+
+
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install nodejs
 ```
 
 Yarn
+
 ```sh
 sudo corepack enable
 sudo corepack prepare yarn@stable --activate
@@ -36,4 +38,3 @@ https://console.cloud.google.com/home/dashboard?project=itaintprettybutittastesg
 
 Had an issue completing token generation (invalid redirect), see
 https://github.com/cedricdelpoux/gatsby-source-google-docs/issues/180#issuecomment-1175154112
-

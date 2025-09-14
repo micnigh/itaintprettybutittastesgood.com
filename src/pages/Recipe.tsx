@@ -1,149 +1,205 @@
-import { FC, useState, useMemo, Fragment, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import recipes from '../recipes.json';
-import { slugify } from '../utils';
-import PlacePuppy from '../components/placepuppy';
-import type { Recipe } from '../../scripts/fetch-data';
-import { format } from 'date-fns';
-import Fraction from 'fraction.js';
-import { Combobox, Transition } from '@headlessui/react';
+import { FC, useState, useMemo, Fragment, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import recipes from '../recipes.json'
+import { slugify } from '../utils'
+import PlacePuppy from '../components/placepuppy'
+import type { Recipe } from '../../scripts/fetch-data'
+import { format } from 'date-fns'
+import Fraction from 'fraction.js'
+import { Combobox, Transition } from '@headlessui/react'
 
-const parseQuantity = (quantity: string | null | undefined): Fraction | null => {
-  if (!quantity) return null;
-  let processedQuantity = quantity.trim();
+const parseQuantity = (
+  quantity: string | null | undefined
+): Fraction | null => {
+  if (!quantity) return null
+  let processedQuantity = quantity.trim()
   try {
     const unicodeFractions: { [key: string]: string } = {
-      '¼': '1/4', '½': '1/2', '¾': '3/4', '⅐': '1/7', '⅑': '1/9', '⅒': '1/10',
-      '⅓': '1/3', '⅔': '2/3', '⅕': '1/5', '⅖': '2/5', '⅗': '3/5', '⅘': '4/5',
-      '⅙': '1/6', '⅚': '5/6', '⅛': '1/8', '⅜': '3/8', '⅝': '5/8', '⅞': '7/8'
-    };
+      '¼': '1/4',
+      '½': '1/2',
+      '¾': '3/4',
+      '⅐': '1/7',
+      '⅑': '1/9',
+      '⅒': '1/10',
+      '⅓': '1/3',
+      '⅔': '2/3',
+      '⅕': '1/5',
+      '⅖': '2/5',
+      '⅗': '3/5',
+      '⅘': '4/5',
+      '⅙': '1/6',
+      '⅚': '5/6',
+      '⅛': '1/8',
+      '⅜': '3/8',
+      '⅝': '5/8',
+      '⅞': '7/8',
+    }
 
     for (const [uni, asc] of Object.entries(unicodeFractions)) {
-      processedQuantity = processedQuantity.replace(uni, asc);
+      processedQuantity = processedQuantity.replace(uni, asc)
     }
 
     if (processedQuantity.includes('-')) {
-      processedQuantity = processedQuantity.split('-')[0].trim();
+      processedQuantity = processedQuantity.split('-')[0].trim()
     }
 
-    return new Fraction(processedQuantity);
+    return new Fraction(processedQuantity)
   } catch (e) {
-    return null;
+    return null
   }
-};
+}
 
 const formatQuantity = (quantity: Fraction | null): string => {
-  if (!quantity) return '';
-  return quantity.toFraction(true);
-};
+  if (!quantity) return ''
+  return quantity.toFraction(true)
+}
 
-const autoConvertUnits = (quantity: Fraction, unit: string | null): { quantity: Fraction, unit: string | null } => {
-  if (!unit) return { quantity, unit };
+const autoConvertUnits = (
+  quantity: Fraction,
+  unit: string | null
+): { quantity: Fraction; unit: string | null } => {
+  if (!unit) return { quantity, unit }
 
-  let currentQuantity = quantity;
-  let currentUnit = unit.toLowerCase().replace(/s$/, '');
+  let currentQuantity = quantity
+  let currentUnit = unit.toLowerCase().replace(/s$/, '')
 
   if (currentUnit === 'cup') {
     if (currentQuantity.valueOf() < 0.25) {
-      currentQuantity = currentQuantity.mul(16);
-      currentUnit = 'tablespoon';
+      currentQuantity = currentQuantity.mul(16)
+      currentUnit = 'tablespoon'
     }
   }
 
   if (currentUnit === 'tablespoon') {
     if (currentQuantity.valueOf() < 1) {
-      currentQuantity = currentQuantity.mul(3);
-      currentUnit = 'teaspoon';
+      currentQuantity = currentQuantity.mul(3)
+      currentUnit = 'teaspoon'
     }
   }
 
-  const finalUnit = currentQuantity.valueOf() > 1 ? `${currentUnit}s` : currentUnit;
+  const finalUnit =
+    currentQuantity.valueOf() > 1 ? `${currentUnit}s` : currentUnit
 
-  return { quantity: currentQuantity, unit: finalUnit };
-};
-
+  return { quantity: currentQuantity, unit: finalUnit }
+}
 
 interface ImageProps {
-  src?: string;
-  alt?: string;
+  src?: string
+  alt?: string
 }
 
 const Recipe: FC = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo(0, 0)
+  }, [])
 
-  const { slug } = useParams<{ slug: string }>();
-  const recipe = (recipes as Recipe[]).find(r => slugify(r.title) === slug);
-  const recipeIndex = recipes.findIndex(r => slugify(r.title) === slug);
+  const { slug } = useParams<{ slug: string }>()
+  const recipe = (recipes as Recipe[]).find((r) => slugify(r.title) === slug)
+  const recipeIndex = recipes.findIndex((r) => slugify(r.title) === slug)
 
   const originalServings = useMemo(() => {
     if (recipe?.metadata?.servings) {
-      const match = recipe.metadata.servings.match(/(\d+)/);
-      return match ? parseInt(match[1], 10) : 1;
+      const match = recipe.metadata.servings.match(/(\d+)/)
+      return match ? parseInt(match[1], 10) : 1
     }
-    return 1;
-  }, [recipe]);
+    return 1
+  }, [recipe])
 
-  const [servings, setServings] = useState<string>(originalServings.toString());
-  const [query, setQuery] = useState('');
+  const [servings, setServings] = useState<string>(originalServings.toString())
+  const [query, setQuery] = useState('')
 
   const servingOptions = useMemo(() => {
-    const multipliers = [0.25, 0.5, 0.75, 1, 2, 4];
-    const uniqueOptions = new Map<string, { value: string; multiplier: number }>();
-    multipliers.forEach(m => {
-      const val = originalServings * m;
-      const optionValue = new Fraction(val).toFraction(true);
+    const multipliers = [0.25, 0.5, 0.75, 1, 2, 4]
+    const uniqueOptions = new Map<
+      string,
+      { value: string; multiplier: number }
+    >()
+    multipliers.forEach((m) => {
+      const val = originalServings * m
+      const optionValue = new Fraction(val).toFraction(true)
       if (!uniqueOptions.has(optionValue)) {
         uniqueOptions.set(optionValue, {
           value: optionValue,
-          multiplier: m
-        });
+          multiplier: m,
+        })
       }
-    });
-    return Array.from(uniqueOptions.values());
-  }, [originalServings]);
+    })
+    return Array.from(uniqueOptions.values())
+  }, [originalServings])
 
   const filteredOptions =
     query === ''
       ? servingOptions
       : servingOptions.filter((option) =>
-        option.value.toLowerCase().replace(/\s+/g, '').includes(query.toLowerCase().replace(/\s+/g, ''))
-      );
-
+          option.value
+            .toLowerCase()
+            .replace(/\s+/g, '')
+            .includes(query.toLowerCase().replace(/\s+/g, ''))
+        )
 
   if (!recipe) {
-    return <div>Recipe not found</div>;
+    return <div>Recipe not found</div>
   }
 
   const Image: FC<ImageProps> = ({ src, alt }) => {
     if (!src) {
       if (recipe.heroImage) {
-        const imagePath = `/recipes/${slug}/${recipe.heroImage}`;
-        return <img src={imagePath} alt={alt || recipe.title} className="max-w-full h-auto rounded-lg my-4" />;
+        const imagePath = `/recipes/${slug}/${recipe.heroImage}`
+        return (
+          <img
+            src={imagePath}
+            alt={alt || recipe.title}
+            className="max-w-full h-auto rounded-lg my-4"
+          />
+        )
       }
-      return <PlacePuppy width={800} height={600} className="max-w-full h-auto rounded-lg my-4" index={recipeIndex} />;
+      return (
+        <PlacePuppy
+          width={800}
+          height={600}
+          className="max-w-full h-auto rounded-lg my-4"
+          index={recipeIndex}
+        />
+      )
     }
     // Vite serves files from the 'public' directory at the root
-    const imagePath = `/recipes/${slug}/${src?.replace('./', '')}`;
-    return <img src={imagePath} alt={alt} className="max-w-full h-auto rounded-lg my-4" />;
+    const imagePath = `/recipes/${slug}/${src?.replace('./', '')}`
+    return (
+      <img
+        src={imagePath}
+        alt={alt}
+        className="max-w-full h-auto rounded-lg my-4"
+      />
+    )
   }
 
-  const servingsFraction = parseQuantity(servings) || new Fraction(originalServings);
+  const servingsFraction =
+    parseQuantity(servings) || new Fraction(originalServings)
 
   return (
     <>
       <div className="flex flex-row items-baseline space-x-2">
-        <span className="w-max"><h1 className="text-3xl font-bold mt-4 sm:mt-6 mr-4">{recipe.title}</h1>
-          {recipe.metadata?.date && <div className="text-sm text-gray-500 mb-4">{format(new Date(recipe.metadata?.date || ''), 'MMM d, yyyy')}</div>}
+        <span className="w-max">
+          <h1 className="text-3xl font-bold mt-4 sm:mt-6 mr-4">
+            {recipe.title}
+          </h1>
+          {recipe.metadata?.date && (
+            <div className="text-sm text-gray-500 mb-4">
+              {format(new Date(recipe.metadata?.date || ''), 'MMM d, yyyy')}
+            </div>
+          )}
         </span>
-        {recipe.metadata?.tags && <span className="flex-grow min-w-48">
-          {recipe.metadata?.tags?.map((tag) => (
-            <span className="bg-blue-400 text-white whitespace-nowrap rounded-full px-2 py-0.5 text-sm mr-4 mb-4 inline-block">{tag}</span>
-          ))}
-        </span>}
+        {recipe.metadata?.tags && (
+          <span className="flex-grow min-w-48">
+            {recipe.metadata?.tags?.map((tag) => (
+              <span className="bg-blue-400 text-white whitespace-nowrap rounded-full px-2 py-0.5 text-sm mr-4 mb-4 inline-block">
+                {tag}
+              </span>
+            ))}
+          </span>
+        )}
       </div>
       <ul className="flex flex-row gap-4 mb-2">
         {recipe.metadata?.level && <li>Level: {recipe.metadata?.level}</li>}
@@ -153,20 +209,45 @@ const Recipe: FC = () => {
       </ul>
 
       <article className="prose max-w-none prose-img:rounded-xl">
-        {recipe.heroImage ? <img src={`/recipes/${slug}/${recipe.heroImage}`} alt={recipe.title} className="rounded-lg inline-block float-right w-full h-full sm:max-w-[500px] sm:max-h-[500px] ml-8 my-8" /> : <PlacePuppy width={800} height={600} className="h-auto rounded-lg inline-block float-right w-full h-full sm:max-w-[500px] sm:max-h-[500px] ml-8 my-8" index={recipeIndex} />}
+        {recipe.heroImage ? (
+          <img
+            src={`/recipes/${slug}/${recipe.heroImage}`}
+            alt={recipe.title}
+            className="rounded-lg inline-block float-right w-full h-full sm:max-w-[500px] sm:max-h-[500px] ml-8 my-8"
+          />
+        ) : (
+          <PlacePuppy
+            width={800}
+            height={600}
+            className="h-auto rounded-lg inline-block float-right w-full h-full sm:max-w-[500px] sm:max-h-[500px] ml-8 my-8"
+            index={recipeIndex}
+          />
+        )}
 
-        {recipe.summary && <ReactMarkdown>{`### Summary\n${recipe.summary}`}</ReactMarkdown>}
+        {recipe.summary && (
+          <ReactMarkdown>{`### Summary\n${recipe.summary}`}</ReactMarkdown>
+        )}
 
         <h3>Ingredients</h3>
         <div className="my-4">
-          <label htmlFor="servings-input" className="inline-block mr-4 text-sm font-medium text-gray-700">Adjust Servings: </label>
-          <Combobox as="div" className="relative inline-block" value={servings} onChange={(value) => setServings(value || '')}>
+          <label
+            htmlFor="servings-input"
+            className="inline-block mr-4 text-sm font-medium text-gray-700"
+          >
+            Adjust Servings:{' '}
+          </label>
+          <Combobox
+            as="div"
+            className="relative inline-block"
+            value={servings}
+            onChange={(value) => setServings(value || '')}
+          >
             <Combobox.Input
               id="servings-input"
               className="mt-1 inline-block w-24 rounded-md border-black shadow focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               onChange={(event) => {
-                setQuery(event.target.value);
-                setServings(event.target.value);
+                setQuery(event.target.value)
+                setServings(event.target.value)
               }}
             />
             <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
@@ -184,16 +265,27 @@ const Recipe: FC = () => {
                   <Combobox.Option
                     key={option.value}
                     value={option.value}
-                    className={({ active }) => `relative cursor-default select-none py-2 pl-4 pr-4 ${active ? 'bg-indigo-600 text-white' : 'text-gray-900'}`}
+                    className={({ active }) =>
+                      `relative cursor-default select-none py-2 pl-4 pr-4 ${active ? 'bg-indigo-600 text-white' : 'text-gray-900'}`
+                    }
                   >
                     {({ active }) => (
                       <>
-                        <span className={option.multiplier === 1 ? 'font-bold' : 'font-normal'}>
+                        <span
+                          className={
+                            option.multiplier === 1
+                              ? 'font-bold'
+                              : 'font-normal'
+                          }
+                        >
                           {option.value}
                         </span>
                         {option.multiplier !== 1 && (
-                          <span className={`${active ? 'text-indigo-200' : 'text-gray-500'} ml-2`}>
-                            ({new Fraction(option.multiplier).toFraction(true)}x)
+                          <span
+                            className={`${active ? 'text-indigo-200' : 'text-gray-500'} ml-2`}
+                          >
+                            ({new Fraction(option.multiplier).toFraction(true)}
+                            x)
                           </span>
                         )}
                       </>
@@ -206,21 +298,24 @@ const Recipe: FC = () => {
         </div>
         <ul>
           {recipe.ingredients?.map((ingredient, index) => {
-            const originalQuantity = parseQuantity(ingredient.quantity);
-            let scaledQuantityStr = ingredient.quantity || '';
-            let displayUnit = ingredient.unit;
+            const originalQuantity = parseQuantity(ingredient.quantity)
+            let scaledQuantityStr = ingredient.quantity || ''
+            let displayUnit = ingredient.unit
             if (originalQuantity) {
-              const multiplier = servingsFraction.valueOf() / originalServings;
-              const scaledQuantity = originalQuantity.mul(multiplier);
-              const converted = autoConvertUnits(scaledQuantity, ingredient.unit);
-              scaledQuantityStr = formatQuantity(converted.quantity);
-              displayUnit = converted.unit;
+              const multiplier = servingsFraction.valueOf() / originalServings
+              const scaledQuantity = originalQuantity.mul(multiplier)
+              const converted = autoConvertUnits(
+                scaledQuantity,
+                ingredient.unit
+              )
+              scaledQuantityStr = formatQuantity(converted.quantity)
+              displayUnit = converted.unit
             }
             return (
               <li key={index}>
                 {scaledQuantityStr} {displayUnit} {ingredient.name}
               </li>
-            );
+            )
           })}
         </ul>
 
@@ -232,10 +327,9 @@ const Recipe: FC = () => {
         >
           {`### Preparation\n${recipe.preparation || ''}`}
         </ReactMarkdown>
-
       </article>
     </>
-  );
-};
+  )
+}
 
-export default Recipe;
+export default Recipe
