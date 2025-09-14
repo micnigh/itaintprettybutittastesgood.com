@@ -395,6 +395,7 @@ async function getIngredientsWithGemini(markdownContent: string): Promise<Ingred
     "1 egg" should be { "name": "egg", "quantity": "1", "unit": null }.
     "½ cup + 1 tablespoon mascarpone" should be { "name": "mascarpone", "quantity": "9", "unit": "tablespoons" }.
     "1/2 cup of sugar" should be { "name": "sugar", "quantity": "0.5", "unit": "cups" }.
+    "Couple Ham Hawks smoked" should be { "name": "ham hawks smoked", "quantity": "3", "unit": null }.
     Here is the recipe:
     ---
     ${markdownContent}
