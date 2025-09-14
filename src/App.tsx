@@ -29,16 +29,12 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
 
   const displaySearch = location.pathname === '/'
   const { search, setSearch } = useStore((state) => state)
-
-  const headerGridClass = displaySearch
-    ? 'lg:grid-cols-[min-content_min-content_1fr]'
-    : 'lg:grid-cols-[1fr_min-content_1fr]'
-
+  
   return (
     <div className="bg-body-bg">
       <div className="flex flex-col w-full max-w-5xl mx-auto relative min-h-screen p-4 sm:p-6 bg-white shadow-lg text-text">
         <header
-          className={`text-black mt-4 mb-6 grid relative items-center ${headerGridClass}`}
+          className={`text-black mt-4 mb-6 grid relative items-center lg:grid-cols-[min-content_min-content_1fr]`}
         >
           <span className="flex-grow" />
           <div>
