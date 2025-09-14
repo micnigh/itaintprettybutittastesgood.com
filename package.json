@@ -7,7 +7,7 @@
     "preview": "vite preview",
     "fetch-data": "tsx scripts/fetch-data.ts",
     "fetch-data:clean": "tsx scripts/fetch-data.ts --no-cache",
-    "predeploy": "npm run build && echo \"itaintprettybutittastesgood.com\" > dist/CNAME",
+    "predeploy": "npm run build && echo \"itaintprettybutittastesgood.com\" > dist/CNAME && cp dist/index.html dist/404.html",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
