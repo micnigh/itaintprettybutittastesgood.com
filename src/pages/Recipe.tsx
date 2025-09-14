@@ -4,8 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import recipes from '../recipes.json'
 import { slugify } from '../utils'
-import PlacePuppy from '../components/placepuppy'
-import type { Recipe } from '../../scripts/fetch-data'
+import type { Recipe } from '../../scripts/fetch-data/config'
 import { format } from 'date-fns'
 import Fraction from 'fraction.js'
 import { Combobox, Transition } from '@headlessui/react'
@@ -97,7 +96,6 @@ const Recipe: FC = () => {
 
   const { slug } = useParams<{ slug: string }>()
   const recipe = (recipes as Recipe[]).find((r) => slugify(r.title) === slug)
-  const recipeIndex = recipes.findIndex((r) => slugify(r.title) === slug)
 
   const originalServings = useMemo(() => {
     if (recipe?.metadata?.servings) {
@@ -155,14 +153,7 @@ const Recipe: FC = () => {
           />
         )
       }
-      return (
-        <PlacePuppy
-          width={800}
-          height={600}
-          className="max-w-full h-auto rounded-lg my-4"
-          index={recipeIndex}
-        />
-      )
+      return null
     }
     // Vite serves files from the 'public' directory at the root
     const imagePath = `/recipes/${slug}/${src?.replace('./', '')}`
@@ -209,18 +200,11 @@ const Recipe: FC = () => {
       </ul>
 
       <article className="prose max-w-none prose-img:rounded-xl">
-        {recipe.heroImage ? (
+        {recipe.heroImage && (
           <img
             src={`/recipes/${slug}/${recipe.heroImage}`}
             alt={recipe.title}
             className="rounded-lg inline-block float-right w-full h-full sm:max-w-[500px] sm:max-h-[500px] ml-8 my-8"
-          />
-        ) : (
-          <PlacePuppy
-            width={800}
-            height={600}
-            className="h-auto rounded-lg inline-block float-right w-full h-full sm:max-w-[500px] sm:max-h-[500px] ml-8 my-8"
-            index={recipeIndex}
           />
         )}
 
