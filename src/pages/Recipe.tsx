@@ -52,7 +52,7 @@ const parseQuantity = (
     }
 
     return new Fraction(processedQuantity)
-  } catch (e) {
+  } catch {
     return null
   }
 }
@@ -162,7 +162,10 @@ const Recipe: FC = () => {
         {recipe.metadata?.tags && (
           <span className="flex-grow min-w-48">
             {recipe.metadata?.tags?.map((tag) => (
-              <span className="bg-blue-400 text-white whitespace-nowrap rounded-full px-2 py-0.5 text-sm mr-4 mb-4 inline-block">
+              <span
+                key={tag}
+                className="bg-blue-400 text-white whitespace-nowrap rounded-full px-2 py-0.5 text-sm mr-4 mb-4 inline-block"
+              >
                 {tag}
               </span>
             ))}
@@ -258,7 +261,7 @@ const Recipe: FC = () => {
           </Combobox>
         </div>
         <ul>
-          {recipe.ingredients?.map((ingredient, index) => {
+          {recipe.ingredients?.map((ingredient) => {
             const originalQuantity = parseQuantity(ingredient.quantity)
             let scaledQuantityStr = ingredient.quantity || ''
             let displayUnit = ingredient.unit
@@ -267,13 +270,13 @@ const Recipe: FC = () => {
               const scaledQuantity = originalQuantity.mul(multiplier)
               const converted = autoConvertUnits(
                 scaledQuantity,
-                ingredient.unit
+                ingredient.unit,
               )
               scaledQuantityStr = formatQuantity(converted.quantity)
               displayUnit = converted.unit
             }
             return (
-              <li key={index}>
+              <li key={ingredient.name}>
                 {scaledQuantityStr} {displayUnit} {ingredient.name}
               </li>
             )

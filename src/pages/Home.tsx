@@ -18,7 +18,7 @@ const Home: FC = () => {
         .filter((recipe) =>
           recipe.title.toLowerCase().includes(search.toLowerCase())
         )
-        .map((recipe, index) => {
+        .map((recipe) => {
           return (
             <div key={recipe.id} className="text-center">
               <Link to={`/recipe/${recipe.slug}`}>
