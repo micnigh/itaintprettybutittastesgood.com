@@ -54,5 +54,6 @@
     "cook": "18m",
     "servings": "48s",
     "level": "easy"
-  }
+  },
+  "heroImage": "generated-hero.png"
 }

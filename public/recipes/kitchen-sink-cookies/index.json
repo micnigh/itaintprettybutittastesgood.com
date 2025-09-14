@@ -93,5 +93,6 @@
     "cook": "10-12m",
     "servings": "36s",
     "level": "easy"
-  }
+  },
+  "heroImage": "generated-hero.png"
 }

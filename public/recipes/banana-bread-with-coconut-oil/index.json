@@ -69,5 +69,6 @@
     "cook": "30-55m",
     "servings": "5 mini - 1 regular",
     "level": "easy"
-  }
+  },
+  "heroImage": "generated-hero.png"
 }

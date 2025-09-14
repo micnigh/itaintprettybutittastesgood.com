@@ -19,7 +19,7 @@
       "unit": "teaspoon"
     },
     {
-      "name": "butter",
+      "name": "butter (softened)",
       "quantity": "2",
       "unit": "tablespoons"
     },
@@ -64,7 +64,7 @@
       "unit": "teaspoon"
     },
     {
-      "name": "butter",
+      "name": "softened butter",
       "quantity": "¼",
       "unit": "cup"
     },
@@ -94,5 +94,6 @@
     "cook": "18m",
     "servings": "24s",
     "level": "easy"
-  }
+  },
+  "heroImage": "generated-hero.png"
 }

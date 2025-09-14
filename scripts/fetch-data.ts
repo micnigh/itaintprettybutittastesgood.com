@@ -7,6 +7,13 @@ import * as yaml from 'js-yaml';
 import 'dotenv/config';
 import PQueue from 'p-queue';
 
+// rate limits
+// https://ai.google.dev/gemini-api/docs/rate-limits#tier-1
+// models
+// https://ai.google.dev/gemini-api/docs/models
+const imageGenerationModel = "imagen-4.0-generate-001";
+const contentGenerationModel = "gemini-2.5-flash";
+
 // SETUP INSTRUCTIONS
 // 1. Follow this guide to create a service account and credentials:
 //    https://developers.google.com/workspace/guides/create-credentials
@@ -384,7 +391,7 @@ async function getIngredientsWithGemini(markdownContent: string): Promise<Ingred
 
   while (attempt < MAX_RETRIES) {
     try {
-      const result = await genAI.models.generateContent({ model: "gemini-2.5-flash", contents: [prompt] });
+      const result = await genAI.models.generateContent({ model: contentGenerationModel, contents: [prompt] });
       const text = result.text;
       if (!text) {
         console.error("Error: Could not find a valid JSON array in the Gemini response for the document.");
@@ -451,7 +458,7 @@ async function generateImageWithGemini(recipe: Recipe): Promise<{ buffer: Buffer
 
   while (attempt < MAX_RETRIES) {
     try {
-      const result = await genAI.models.generateImages({ model: "imagen-4.0-ultra-generate-001", prompt });
+      const result = await genAI.models.generateImages({ model: imageGenerationModel, prompt, config: { numberOfImages: 1 } });
       const image = result.generatedImages?.[0]?.image!;
       if (!image) {
         console.warn(`Gemini did not return an image for ${recipe.title}.`);
@@ -670,7 +677,8 @@ async function main() {
 
   console.log(`Found ${docFiles.length} documents. Processing with modification-time-based cache...`);
 
-  const queue = new PQueue({ concurrency: 5, interval: 60000, intervalCap: 5 });
+  const queue = new PQueue({ concurrency: 10, interval: 60000, intervalCap: 10 });
+  // const queue = new PQueue({ concurrency: 10 });
 
   for (const file of docFiles) {
     queue.add(() => processDoc(file, auth));

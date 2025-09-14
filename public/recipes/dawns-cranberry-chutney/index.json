@@ -16,7 +16,7 @@
     {
       "name": "fresh cranberries",
       "quantity": "12",
-      "unit": "oz"
+      "unit": "oz package"
     },
     {
       "name": "raisins/currants",
@@ -79,5 +79,6 @@
     "cook": "20m",
     "servings": "1 quart",
     "level": "easy"
-  }
+  },
+  "heroImage": "generated-hero.png"
 }

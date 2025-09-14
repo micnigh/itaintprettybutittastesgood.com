@@ -4,7 +4,7 @@
   "title": "Cranberry Pie",
   "ingredients": [
     {
-      "name": "fresh cranberries",
+      "name": "fresh cranberries or frozen",
       "quantity": "4",
       "unit": "cups"
     },
@@ -63,5 +63,6 @@
     "cook": "40-45m",
     "servings": "8s",
     "level": "easy"
-  }
+  },
+  "heroImage": "generated-hero.png"
 }

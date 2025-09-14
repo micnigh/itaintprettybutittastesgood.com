@@ -29,7 +29,7 @@
       "unit": "cup"
     },
     {
-      "name": "large pears",
+      "name": "pears",
       "quantity": "3",
       "unit": null
     },
@@ -73,5 +73,6 @@
     "cook": "1h",
     "servings": "12s",
     "level": "easy"
-  }
+  },
+  "heroImage": "generated-hero.png"
 }
