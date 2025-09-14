@@ -393,7 +393,8 @@ async function getIngredientsWithGemini(markdownContent: string): Promise<Ingred
     For example: "2 cups of flour" should be { "name": "flour", "quantity": "2", "unit": "cups" }.
     "a pinch of salt" should be { "name": "salt", "quantity": "a pinch", "unit": null }.
     "1 egg" should be { "name": "egg", "quantity": "1", "unit": null }.
-    
+    "½ cup + 1 tablespoon mascarpone" should be { "name": "mascarpone", "quantity": "9", "unit": "tablespoons" }.
+    "1/2 cup of sugar" should be { "name": "sugar", "quantity": "0.5", "unit": "cups" }.
     Here is the recipe:
     ---
     ${markdownContent}
@@ -466,7 +467,7 @@ async function generateImageWithGemini(recipe: Recipe): Promise<{ buffer: Buffer
     Ingredients: ${ingredientsText}
     Tags: ${recipe.metadata?.tags?.join(', ')}
     The image should be high quality and suitable for a recipe website.
-    Please don't add any text to the image unless its written on an object in the image.
+    Please don't add any text to the image unless its written on an object in the image like a recipe card or a cookbook.
     Please don't use typos or spelling errors anywhere in text of the image.
     Make sure the picture includes ${quirkyAddition} in it.
   `;
