@@ -68,7 +68,7 @@ export const parseServingsFromMetadata = (
 
 /**
  * Filters recipes based on a search query.
- * Searches in title, tags, ingredient names, and summary.
+ * Searches in title and tags only.
  */
 export const filterRecipes = (
   recipes: Recipe[],
@@ -92,20 +92,6 @@ export const filterRecipes = (
         tag.toLowerCase().includes(normalizedQuery)
       )
     ) {
-      return true
-    }
-
-    // Search in ingredient names
-    if (
-      recipe.ingredients.some((ingredient) =>
-        ingredient.name.toLowerCase().includes(normalizedQuery)
-      )
-    ) {
-      return true
-    }
-
-    // Search in summary
-    if (recipe.summary?.toLowerCase().includes(normalizedQuery)) {
       return true
     }
 
