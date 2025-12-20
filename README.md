@@ -1,40 +1,35 @@
-itaintprettybutittastesgood.com static site generator
+# itaintprettybutittastesgood.com
 
-# Requirements
+Static site generator for a recipe collection. Recipes are stored in Google Docs and processed into a React-based static site.
 
-Assuming Windows WSL 2 Ubuntu 22 env
+## Requirements
 
-Node 18+
+- Node 18+
+- pnpm
 
-```sh
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install nodejs
-```
-
-pnpm
+## Setup
 
 ```sh
-sudo corepack enable
-sudo corepack prepare pnpm@stable --activate
-```
-
-# Quick start
-
-```sh
-# initial setup
+# Install dependencies
 pnpm install
 
-# refresh token data (about once a month)
-pnpm token
+# Configure Google Drive API access (see scripts/fetch-data.ts for setup instructions)
+# Add credentials.json to project root
 
-# start server
-pnpm dev
+# Configure Gemini API (for ingredient parsing and image generation)
+# Add GEMINI_API_KEY to .env file
 ```
 
-# Troubleshooting Notes
+## Scripts
 
-Had to setup a new project to grant API access to google drive
-https://console.cloud.google.com/home/dashboard?project=itaintprettybutittastesgood
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm test` - Run all tests (unit, integration, e2e)
+- `pnpm fetch-data` - Fetch and process recipes from Google Docs
+- `pnpm fetch-data:clean` - Fetch data without using cache
+- `pnpm validate` - Run lint, typecheck, format, and tests
 
-Had an issue completing token generation (invalid redirect), see
-https://github.com/cedricdelpoux/gatsby-source-google-docs/issues/180#issuecomment-1175154112
+## Troubleshooting
+
+- Google Drive API setup: https://console.cloud.google.com/home/dashboard?project=itaintprettybutittastesgood
+- Token generation issues: https://github.com/cedricdelpoux/gatsby-source-google-docs/issues/180#issuecomment-1175154112

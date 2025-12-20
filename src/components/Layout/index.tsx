@@ -1,0 +1,46 @@
+import { FC, PropsWithChildren } from 'react'
+import { useLocation, Link } from 'react-router-dom'
+import { useStore } from '../../store/search'
+
+const Layout: FC<PropsWithChildren> = ({ children }) => {
+  const location = useLocation()
+
+  const displaySearch = location.pathname === '/'
+  const { search, setSearch } = useStore((state) => state)
+
+  return (
+    <div className="bg-body-bg">
+      <div className="flex flex-col w-full max-w-5xl mx-auto relative min-h-screen p-4 sm:p-6 bg-white shadow-lg text-text">
+        <header
+          className={`text-black mt-4 mb-6 grid relative items-center lg:grid-cols-[min-content_min-content_1fr]`}
+        >
+          <span className="flex-grow" />
+          <div>
+            <Link to="/" className="text-3xl text-center no-underline">
+              <h1 className="font-bold text-primary">
+                itaintprettybutittastesgood
+              </h1>
+            </Link>
+          </div>
+          <div className="flex-grow sm:text-right mt-4 lg:mt-0">
+            {displaySearch && (
+              <input
+                type="text"
+                placeholder="filter"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="inline-block w-full lg:w-[calc(100%-60px)] py-1 px-2 mt-1 lg:mt-0 lg:ml-2 border rounded-md"
+              />
+            )}
+          </div>
+        </header>
+        <main className="flex flex-col relative">
+          <div>{children}</div>
+        </main>
+      </div>
+    </div>
+  )
+}
+
+export default Layout
+

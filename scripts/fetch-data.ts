@@ -78,6 +78,7 @@ async function main() {
   const googleDocQueue = new PQueue({
     concurrency: CONCURRENCY.GOOGLE_DOC_RETRIEVAL,
   })
+  // Rate-limited queues: intervalCap limits requests per interval (60s) to respect API rate limits
   const textProcessingQueue = new PQueue({
     concurrency: CONCURRENCY.TEXT_PROCESSING,
     interval: 60000,

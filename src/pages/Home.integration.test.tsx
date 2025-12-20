@@ -5,7 +5,7 @@ import Home from './Home'
 
 // Mock the store
 const mockUseStore = vi.hoisted(() => vi.fn())
-vi.mock('../App', () => ({
+vi.mock('../store/search', () => ({
   useStore: () => mockUseStore(),
 }))
 

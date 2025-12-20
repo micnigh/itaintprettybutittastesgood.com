@@ -2,14 +2,8 @@ import { FC, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import recipes from '../recipes.json'
-import { useStore } from '../App'
-interface Recipe {
-  id: string
-  slug: string
-  title: string
-  heroImage?: string
-  markdown: string
-}
+import { useStore } from '../store/search'
+import type { Recipe } from '../types/recipe'
 
 const Home: FC = () => {
   const { search } = useStore()
