@@ -30,7 +30,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
 
   const displaySearch = location.pathname === '/'
   const { search, setSearch } = useStore((state) => state)
-  
+
   return (
     <div className="bg-body-bg">
       <div className="flex flex-col w-full max-w-5xl mx-auto relative min-h-screen p-4 sm:p-6 bg-white shadow-lg text-text">
