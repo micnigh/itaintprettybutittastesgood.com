@@ -16,7 +16,8 @@
     "fetch-data": "tsx scripts/fetch-data.ts",
     "fetch-data:clean": "tsx scripts/fetch-data.ts --no-cache",
     "predeploy": "npm run build && echo \"itaintprettybutittastesgood.com\" > dist/CNAME && cp dist/index.html dist/404.html",
-    "deploy": "pnpm predeploy && gh-pages -d dist"
+    "deploy": "pnpm predeploy && gh-pages -d dist",
+    "deploy:gh-pages": "gh-pages -d dist"
   },
   "dependencies": {
     "@google/genai": "^1.31.0",
