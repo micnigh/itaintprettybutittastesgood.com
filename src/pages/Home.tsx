@@ -1,5 +1,6 @@
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
 import recipes from '../recipes.json'
 import { useStore } from '../App'
 interface Recipe {
@@ -12,15 +13,31 @@ interface Recipe {
 
 const Home: FC = () => {
   const { search } = useStore()
+  const filteredRecipes = useMemo(
+    () =>
+      (recipes as Recipe[]).filter((recipe) =>
+        recipe.title.toLowerCase().includes(search.toLowerCase())
+      ),
+    [search]
+  )
+  
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-      {(recipes as Recipe[])
-        .filter((recipe) =>
-          recipe.title.toLowerCase().includes(search.toLowerCase())
-        )
-        .map((recipe) => {
+      <AnimatePresence>
+        {filteredRecipes.map((recipe) => {
           return (
-            <div key={recipe.id} className="text-center">
+            <motion.div
+              key={recipe.id}
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{
+                opacity: { duration: 0.2 },
+                y: { duration: 0.2 },
+              }}
+              layout
+            >
               <Link to={`/recipe/${recipe.slug}`}>
                 {recipe.heroImage && (
                   <img
@@ -36,9 +53,10 @@ const Home: FC = () => {
               >
                 {recipe.title}
               </Link>
-            </div>
+            </motion.div>
           )
         })}
+      </AnimatePresence>
     </div>
   )
 }
