@@ -11,24 +11,24 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install nodejs
 ```
 
-Yarn
+pnpm
 
 ```sh
 sudo corepack enable
-sudo corepack prepare yarn@stable --activate
+sudo corepack prepare pnpm@stable --activate
 ```
 
 # Quick start
 
 ```sh
 # initial setup
-yarn install
+pnpm install
 
 # refresh token data (about once a month)
-yarn token
+pnpm token
 
 # start server
-yarn dev
+pnpm dev
 ```
 
 # Troubleshooting Notes
