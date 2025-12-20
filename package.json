@@ -15,6 +15,7 @@
     "test:e2e:report": "playwright show-report",
     "fetch-data": "tsx scripts/fetch-data.ts",
     "fetch-data:clean": "tsx scripts/fetch-data.ts --no-cache",
+    "validate": "pnpm lint && pnpm typecheck && pnpm format && pnpm test:e2e",
     "predeploy": "npm run build && echo \"itaintprettybutittastesgood.com\" > dist/CNAME && cp dist/index.html dist/404.html",
     "deploy": "pnpm predeploy && gh-pages -d dist"
   },

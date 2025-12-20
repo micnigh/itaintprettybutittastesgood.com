@@ -1,0 +1,20 @@
+---
+description: Run validation after code changes
+globs: **
+---
+# Validation Rule
+
+After completing a request that involves modifying code, ALWAYS run the validation command to ensure code quality.
+
+## Command
+
+Run the following command:
+
+```bash
+pnpm validate
+```
+
+## Behavior
+
+1.  If the validation fails, fix the errors reported by the command.
+2.  Do not mark the task as complete until validation passes.
