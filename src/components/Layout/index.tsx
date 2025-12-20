@@ -6,7 +6,8 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
   const location = useLocation()
 
   const displaySearch = location.pathname === '/'
-  const { search, setSearch } = useStore((state) => state)
+  const search = useStore((state) => state.search)
+  const setSearch = useStore((state) => state.setSearch)
 
   return (
     <div className="bg-body-bg">
@@ -43,4 +44,3 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
 }
 
 export default Layout
-

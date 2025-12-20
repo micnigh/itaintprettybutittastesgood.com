@@ -1,7 +1,11 @@
 import { FC } from 'react'
 import Fraction from 'fraction.js'
 import type { Ingredient } from '../../types/recipe'
-import { parseQuantity, formatQuantity, autoConvertUnits } from '../../utils/recipe'
+import {
+  parseQuantity,
+  formatQuantity,
+  autoConvertUnits,
+} from '../../utils/recipe'
 
 interface IngredientsListProps {
   ingredients: Ingredient[]
@@ -38,4 +42,3 @@ const IngredientsList: FC<IngredientsListProps> = ({
 }
 
 export default IngredientsList
-

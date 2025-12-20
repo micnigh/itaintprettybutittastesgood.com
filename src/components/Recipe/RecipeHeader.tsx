@@ -1,15 +1,14 @@
 import { FC } from 'react'
 import { format } from 'date-fns'
 import type { Recipe } from '../../types/recipe'
+import { parseServingsFromMetadata } from '../../utils/recipe'
 
 interface RecipeHeaderProps {
   recipe: Recipe
 }
 
 const RecipeHeader: FC<RecipeHeaderProps> = ({ recipe }) => {
-  const originalServings = recipe.metadata?.servings
-    ? parseInt(recipe.metadata.servings.match(/(\d+)/)?.[1] || '1', 10)
-    : 1
+  const originalServings = parseServingsFromMetadata(recipe.metadata?.servings)
 
   return (
     <>
@@ -41,13 +40,10 @@ const RecipeHeader: FC<RecipeHeaderProps> = ({ recipe }) => {
         {recipe.metadata?.level && <li>Level: {recipe.metadata.level}</li>}
         {recipe.metadata?.prep && <li>Prep: {recipe.metadata.prep}</li>}
         {recipe.metadata?.cook && <li>Cook: {recipe.metadata.cook}</li>}
-        {recipe.metadata?.servings && (
-          <li>Servings: {originalServings}</li>
-        )}
+        {recipe.metadata?.servings && <li>Servings: {originalServings}</li>}
       </ul>
     </>
   )
 }
 
 export default RecipeHeader
-

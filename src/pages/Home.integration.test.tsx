@@ -3,10 +3,18 @@ import { render } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 import Home from './Home'
 
+interface MockStoreState {
+  search: string
+  setSearch: (search: string) => void
+}
+
 // Mock the store
 const mockUseStore = vi.hoisted(() => vi.fn())
 vi.mock('../store/search', () => ({
-  useStore: () => mockUseStore(),
+  useStore: (selector?: (state: MockStoreState) => unknown): unknown => {
+    const state = mockUseStore() as MockStoreState
+    return selector ? selector(state) : state
+  },
 }))
 
 describe('Home Integration Tests', () => {

@@ -24,4 +24,3 @@ export interface Recipe {
   metadata?: RecipeMetadata
   heroImage?: string
 }
-

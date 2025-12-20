@@ -1,4 +1,5 @@
 import Fraction from 'fraction.js'
+import type { Recipe } from '../types/recipe'
 
 // Unicode fraction characters mapped to their ASCII fraction equivalents
 const UNICODE_FRACTIONS: { [key: string]: string } = {
@@ -54,6 +55,65 @@ export const formatQuantity = (quantity: Fraction | null): string => {
 }
 
 /**
+ * Parses the servings number from recipe metadata.
+ * Extracts the first numeric value from the servings string (e.g., "4 servings" -> 4).
+ */
+export const parseServingsFromMetadata = (
+  servings: string | undefined | null
+): number => {
+  if (!servings) return 1
+  const match = servings.match(/(\d+)/)
+  return match ? parseInt(match[1], 10) : 1
+}
+
+/**
+ * Filters recipes based on a search query.
+ * Searches in title, tags, ingredient names, and summary.
+ */
+export const filterRecipes = (
+  recipes: Recipe[],
+  searchQuery: string | undefined | null
+): Recipe[] => {
+  if (!searchQuery || typeof searchQuery !== 'string' || !searchQuery.trim()) {
+    return recipes
+  }
+
+  const normalizedQuery = searchQuery.toLowerCase().trim()
+
+  return recipes.filter((recipe) => {
+    // Search in title
+    if (recipe.title.toLowerCase().includes(normalizedQuery)) {
+      return true
+    }
+
+    // Search in tags
+    if (
+      recipe.metadata?.tags?.some((tag) =>
+        tag.toLowerCase().includes(normalizedQuery)
+      )
+    ) {
+      return true
+    }
+
+    // Search in ingredient names
+    if (
+      recipe.ingredients.some((ingredient) =>
+        ingredient.name.toLowerCase().includes(normalizedQuery)
+      )
+    ) {
+      return true
+    }
+
+    // Search in summary
+    if (recipe.summary?.toLowerCase().includes(normalizedQuery)) {
+      return true
+    }
+
+    return false
+  })
+}
+
+/**
  * Automatically converts units to more appropriate sizes when quantities are small.
  * For example: converts cups to tablespoons when < 0.25 cups, and tablespoons to teaspoons when < 1 tablespoon.
  */
@@ -87,4 +147,3 @@ export const autoConvertUnits = (
 
   return { quantity: currentQuantity, unit: finalUnit }
 }
-

@@ -8,6 +8,9 @@ import {
   ComboboxOption,
   Transition,
 } from '@headlessui/react'
+import { normalizeString } from '../../utils/string'
+
+const SERVING_MULTIPLIERS = [0.25, 0.5, 0.75, 1, 2, 4] as const
 
 interface ServingsSelectorProps {
   servings: string
@@ -23,7 +26,7 @@ const ServingsSelector: FC<ServingsSelectorProps> = ({
   const [query, setQuery] = useState('')
 
   const servingOptions = useMemo(() => {
-    const multipliers = [0.25, 0.5, 0.75, 1, 2, 4]
+    const multipliers = SERVING_MULTIPLIERS
     const uniqueOptions = new Map<
       string,
       { value: string; multiplier: number }
@@ -45,10 +48,7 @@ const ServingsSelector: FC<ServingsSelectorProps> = ({
     query === ''
       ? servingOptions
       : servingOptions.filter((option) =>
-          option.value
-            .toLowerCase()
-            .replace(/\s+/g, '')
-            .includes(query.toLowerCase().replace(/\s+/g, ''))
+          normalizeString(option.value).includes(normalizeString(query))
         )
 
   return (
@@ -116,4 +116,3 @@ const ServingsSelector: FC<ServingsSelectorProps> = ({
 }
 
 export default ServingsSelector
-

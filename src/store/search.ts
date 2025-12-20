@@ -9,4 +9,3 @@ export const useStore = create<StoreState>((set) => ({
   search: '',
   setSearch: (search) => set(() => ({ search })),
 }))
-

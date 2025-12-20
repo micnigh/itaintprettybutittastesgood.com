@@ -28,8 +28,4 @@ export interface Credentials {
   private_key: string
 }
 
-export type {
-  Ingredient,
-  Recipe,
-  RecipeMetadata,
-} from '../../src/types/recipe'
+export type { Ingredient, Recipe, RecipeMetadata } from '../../src/types/recipe'

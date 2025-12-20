@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { slugify } from './utils'
+import { slugify } from './utils/string'
 
 describe('slugify', () => {
   it('should convert text to lowercase', () => {

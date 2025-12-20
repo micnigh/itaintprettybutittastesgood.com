@@ -1,55 +1,23 @@
 import { FC, useMemo } from 'react'
-import { Link } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import recipes from '../recipes.json'
+import { AnimatePresence } from 'framer-motion'
+import { recipes } from '../data/recipes'
 import { useStore } from '../store/search'
-import type { Recipe } from '../types/recipe'
+import { filterRecipes } from '../utils/recipe'
+import RecipeCard from '../components/Recipe/RecipeCard'
 
 const Home: FC = () => {
-  const { search } = useStore()
+  const search = useStore((state) => state.search)
   const filteredRecipes = useMemo(
-    () =>
-      (recipes as Recipe[]).filter((recipe) =>
-        recipe.title.toLowerCase().includes(search.toLowerCase())
-      ),
+    () => filterRecipes(recipes, search),
     [search]
   )
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
       <AnimatePresence>
-        {filteredRecipes.map((recipe) => {
-          return (
-            <motion.div
-              key={recipe.id}
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{
-                opacity: { duration: 0.2 },
-                y: { duration: 0.2 },
-              }}
-              layout
-            >
-              <Link to={`/recipe/${recipe.slug}`}>
-                {recipe.heroImage && (
-                  <img
-                    src={`/recipes/${recipe.slug}/${recipe.heroImage}`}
-                    alt={recipe.title}
-                    className="w-full h-auto object-cover rounded-lg shadow-md"
-                  />
-                )}
-              </Link>
-              <Link
-                to={`/recipe/${recipe.slug}`}
-                className="text-lg text-text hover:underline mt-2 inline-block"
-              >
-                {recipe.title}
-              </Link>
-            </motion.div>
-          )
-        })}
+        {filteredRecipes.map((recipe) => (
+          <RecipeCard key={recipe.id} recipe={recipe} />
+        ))}
       </AnimatePresence>
     </div>
   )
