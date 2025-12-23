@@ -1,5 +1,6 @@
 import { FC, useState, Fragment } from 'react'
 import { Menu, MenuButton, MenuItems, MenuItem, Transition } from '@headlessui/react'
+import { Tooltip } from 'react-tooltip'
 
 interface ShareButtonProps {
   recipeTitle: string
@@ -50,7 +51,11 @@ const ShareButton: FC<ShareButtonProps> = ({ recipeTitle }) => {
 
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <MenuButton className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 cursor-pointer">
+      <MenuButton
+        className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 cursor-pointer"
+        data-tooltip-id="share-tooltip"
+        data-tooltip-content="Share"
+      >
         <span className="sr-only">Share recipe</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +66,7 @@ const ShareButton: FC<ShareButtonProps> = ({ recipeTitle }) => {
           <path d="M6 22q-.825 0-1.412-.587T4 20V10q0-.825.588-1.412T6 8h3v2H6v10h12V10h-3V8h3q.825 0 1.413.588T20 10v10q0 .825-.587 1.413T18 22zm5-6V4.825l-1.6 1.6L8 5l4-4l4 4l-1.4 1.425l-1.6-1.6V16z" />
         </svg>
       </MenuButton>
+      <Tooltip id="share-tooltip" />
 
       <Transition
         as={Fragment}
