@@ -34,11 +34,14 @@ const Recipe: FC = () => {
             src={`/recipes/${slug}/${recipe.heroImage}`}
             alt={recipe.title}
             className="rounded-lg inline-block float-right w-full h-full sm:max-w-[500px] sm:max-h-[500px] ml-8 my-8"
+            data-print-section="image"
           />
         )}
 
         {recipe.summary && (
-          <ReactMarkdown>{`### Summary\n${recipe.summary}`}</ReactMarkdown>
+          <div data-print-section="summary">
+            <ReactMarkdown>{`### Summary\n${recipe.summary}`}</ReactMarkdown>
+          </div>
         )}
 
         <h3>Ingredients</h3>

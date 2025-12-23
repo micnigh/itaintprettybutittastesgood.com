@@ -1,9 +1,53 @@
-import { FC } from 'react'
+import { FC, useState, useEffect } from 'react'
 import { Tooltip } from 'react-tooltip'
+import PrintModal from './PrintModal'
 
 const PrintButton: FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  useEffect(() => {
+    const handleAfterPrint = () => {
+      // Clean up: remove all print-hide attributes after printing
+      const elements = document.querySelectorAll('[data-print-hide]')
+      elements.forEach((el) => {
+        el.removeAttribute('data-print-hide')
+      })
+    }
+
+    window.addEventListener('afterprint', handleAfterPrint)
+    return () => {
+      window.removeEventListener('afterprint', handleAfterPrint)
+    }
+  }, [])
+
   const handlePrint = () => {
-    window.print()
+    setIsModalOpen(true)
+  }
+
+  const handlePrintConfirm = (options: {
+    includeSummary: boolean
+    includeImage: boolean
+  }) => {
+    // Apply data-print-hide attributes based on user selections
+    const summaryElements = document.querySelectorAll('[data-print-section="summary"]')
+    const imageElements = document.querySelectorAll('[data-print-section="image"]')
+
+    if (!options.includeSummary) {
+      summaryElements.forEach((el) => {
+        el.setAttribute('data-print-hide', 'true')
+      })
+    }
+
+    if (!options.includeImage) {
+      imageElements.forEach((el) => {
+        el.setAttribute('data-print-hide', 'true')
+      })
+    }
+
+    // Small delay to ensure DOM updates, then print
+    setTimeout(() => {
+      window.print()
+    }, 100)
   }
 
   return (
@@ -25,6 +69,11 @@ const PrintButton: FC = () => {
         </svg>
       </button>
       <Tooltip id="print-tooltip" />
+      <PrintModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onPrint={handlePrintConfirm}
+      />
     </>
   )
 }
