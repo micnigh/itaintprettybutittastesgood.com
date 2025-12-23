@@ -3,6 +3,7 @@ import { format } from 'date-fns'
 import type { Recipe } from '../../types/recipe'
 import { parseServingsFromMetadata } from '../../utils/recipe'
 import ShareButton from './ShareButton'
+import PrintButton from './PrintButton'
 
 interface RecipeHeaderProps {
   recipe: Recipe
@@ -38,7 +39,8 @@ const RecipeHeader: FC<RecipeHeaderProps> = ({ recipe }) => {
             </span>
           )}
         </div>
-        <div className="mt-4 sm:mt-6">
+        <div className="mt-4 sm:mt-6 flex items-center gap-2">
+          <PrintButton />
           <ShareButton recipeTitle={recipe.title} />
         </div>
       </div>
