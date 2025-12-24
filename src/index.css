@@ -14,3 +14,88 @@ html,
 body {
   font-family: 'Quicksand', sans-serif;
 }
+
+/* Print styles */
+@media print {
+  /* Reduce page margins */
+  @page {
+    margin: 0.5in;
+  }
+
+  /* Hide sections marked for exclusion */
+  [data-print-hide='true'] {
+    display: none !important;
+  }
+
+  /* Reduce top spacing on header */
+  h1 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Reduce spacing in header area */
+  .flex.flex-row.items-start.justify-between {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Reduce spacing on metadata list */
+  ul.flex.flex-row {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Reduce article spacing */
+  article {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Improve print layout - maintain float-right positioning like desktop */
+  img[data-print-section='image'] {
+    float: right !important;
+    display: block;
+    max-width: 40% !important;
+    max-height: 500px !important;
+    margin-left: 1.5rem !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    margin-right: 0 !important;
+    page-break-inside: avoid;
+  }
+
+  /* Remove unnecessary elements for print */
+  button,
+  [data-tooltip-id],
+  .cursor-pointer,
+  header {
+    display: none !important;
+  }
+
+  /* Remove background colors and shadows for print */
+  .bg-body-bg,
+  .bg-white,
+  .shadow-lg {
+    background: white !important;
+    box-shadow: none !important;
+  }
+
+  /* Reduce container padding for print */
+  .max-w-5xl {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Remove main container spacing */
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure good page breaks */
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
