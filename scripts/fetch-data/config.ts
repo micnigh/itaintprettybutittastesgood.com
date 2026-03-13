@@ -2,7 +2,7 @@
 // https://ai.google.dev/gemini-api/docs/rate-limits#tier-1
 // models
 // https://ai.google.dev/gemini-api/docs/models
-export const imageGenerationModel = 'imagen-4.0-generate-001'
+export const imageGenerationModel = 'imagen-4.0-ultra-generate-001'
 export const contentGenerationModel = 'gemini-2.5-flash'
 
 export const CONCURRENCY = {
