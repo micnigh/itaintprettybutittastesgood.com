@@ -10,22 +10,22 @@
     },
     {
       "name": "cake flour",
-      "quantity": "1 ⅓",
+      "quantity": "1.33",
       "unit": "cups"
     },
     {
       "name": "sugar",
-      "quantity": "1 ½",
+      "quantity": "1.5",
       "unit": "cups"
     },
     {
       "name": "salt",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "teaspoon"
     },
     {
       "name": "orange juice",
-      "quantity": "⅓",
+      "quantity": "0.33",
       "unit": "cup"
     },
     {
@@ -35,12 +35,12 @@
     },
     {
       "name": "cream of tartar",
-      "quantity": "¾",
+      "quantity": "0.75",
       "unit": "teaspoons"
     },
     {
       "name": "butter",
-      "quantity": "⅓",
+      "quantity": "0.33",
       "unit": "cup"
     },
     {
@@ -50,12 +50,12 @@
     },
     {
       "name": "water",
-      "quantity": "3 to 5",
+      "quantity": "3",
       "unit": "teaspoons"
     },
     {
       "name": "vanilla extract",
-      "quantity": "1 ½",
+      "quantity": "1.5",
       "unit": "teaspoons"
     }
   ],

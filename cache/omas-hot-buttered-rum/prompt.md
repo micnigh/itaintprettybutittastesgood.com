@@ -7,7 +7,7 @@ Oma Dianne has some of the best recipes! When she decided to move from her home 
 Mom
 
 
-    Ingredients: 0.25 lb butter, 1 lb dark brown sugar, 0.25 tsp ground cinnamon, 0.25 tsp ground nutmeg, 0.25 tsp ground cloves, 1.5 oz dark rum, to taste  fum flavoring, fill  boiling hot water
+    Ingredients: 0.25 lb butter, 1 lb dark brown sugar, 0.25 tsp ground cinnamon, 0.25 tsp ground nutmeg, 0.25 tsp ground cloves, 1 heaping tablespoon batter, 1.5 oz dark rum, 1.5 oz fum flavoring, boiling hot water
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.

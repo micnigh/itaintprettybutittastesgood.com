@@ -4,28 +4,28 @@
   "title": "Spiced Cranberry and Orange Yule Log with Italian Meringue",
   "ingredients": [
     {
-      "name": "eggs",
+      "name": "large eggs",
       "quantity": "6",
       "unit": null
     },
     {
       "name": "cake flour",
-      "quantity": "1 ⅓",
+      "quantity": "1.33",
       "unit": "cups"
     },
     {
       "name": "sugar",
-      "quantity": "1 ½",
+      "quantity": "1.5",
       "unit": "cups"
     },
     {
       "name": "salt",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "teaspoon"
     },
     {
       "name": "orange juice",
-      "quantity": "⅓",
+      "quantity": "0.33",
       "unit": "cup"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "name": "cream of tartar",
-      "quantity": "¾",
+      "quantity": "0.75",
       "unit": "teaspoons"
     },
     {
@@ -45,57 +45,57 @@
     },
     {
       "name": "sugar",
-      "quantity": "1 ¾",
+      "quantity": "1.75",
       "unit": "cups"
     },
     {
       "name": "water",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "cup"
     },
     {
       "name": "cinnamon",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "teaspoon"
     },
     {
       "name": "ground allspice",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "teaspoon"
     },
     {
       "name": "salt",
-      "quantity": "⅛",
+      "quantity": "0.125",
       "unit": "teaspoon"
     },
     {
       "name": "ground ginger",
-      "quantity": "⅛",
+      "quantity": "0.125",
       "unit": "teaspoon"
     },
     {
       "name": "ground cloves",
-      "quantity": "⅛",
+      "quantity": "0.125",
       "unit": "teaspoon"
     },
     {
       "name": "heavy whipping cream",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "cup"
     },
     {
       "name": "powdered sugar",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "cup"
     },
     {
       "name": "mascarpone",
-      "quantity": "½ cup + 1 tablespoon",
-      "unit": null
+      "quantity": "9",
+      "unit": "tablespoons"
     },
     {
       "name": "vanilla",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "teaspoon"
     },
     {
@@ -105,7 +105,7 @@
     },
     {
       "name": "water",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "cup"
     },
     {
@@ -115,11 +115,11 @@
     },
     {
       "name": "cream of tartar",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "teaspoon"
     },
     {
-      "name": "lemon",
+      "name": "lemon juiced",
       "quantity": "1",
       "unit": null
     }

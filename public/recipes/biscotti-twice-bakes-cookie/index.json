@@ -6,7 +6,7 @@
     {
       "name": "butter, softened",
       "quantity": "0.5",
-      "unit": "cups"
+      "unit": "cup"
     },
     {
       "name": "sugar",
@@ -21,7 +21,7 @@
     {
       "name": "vanilla extract (or almond)",
       "quantity": "1",
-      "unit": "teaspoon"
+      "unit": "teaspoons"
     },
     {
       "name": "flour",
@@ -39,17 +39,17 @@
       "unit": "teaspoons"
     },
     {
-      "name": "chopped pecans",
+      "name": "chopped pecans (baking nut)",
       "quantity": "1",
       "unit": "cup"
     },
     {
-      "name": "chopped cranberries",
+      "name": "chopped cranberries (dried fruit)",
       "quantity": "1",
       "unit": "cup"
     },
     {
-      "name": "lemon zest",
+      "name": "lemon zest (citrus zest)",
       "quantity": "2",
       "unit": "teaspoons"
     },
@@ -74,5 +74,6 @@
     "cook": "35m",
     "servings": "48approx",
     "level": "medium"
-  }
+  },
+  "heroImage": "generated-hero.png"
 }

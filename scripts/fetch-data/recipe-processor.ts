@@ -21,6 +21,18 @@ interface Queues {
 
 export type { Queues }
 
+const GENERATED_HERO_PREFIX = 'generated-hero.'
+
+async function findExistingGeneratedHero(
+  recipeDir: string
+): Promise<string | null> {
+  const entries = await fs.readdir(recipeDir, { withFileTypes: true })
+  const found = entries.find(
+    (e) => e.isFile() && e.name.startsWith(GENERATED_HERO_PREFIX)
+  )
+  return found ? found.name : null
+}
+
 export async function processDoc(
   file: drive_v3.Schema$File,
   auth: any,
@@ -88,10 +100,19 @@ export async function processDoc(
       const recipeContent = await fs.readFile(recipePath, 'utf-8')
       const existingRecipe: Recipe = JSON.parse(recipeContent)
       if (!existingRecipe.heroImage) {
-        console.log(
-          `[PROCESS] Recipe is missing hero image, re-processing: ${file.name}`
-        )
-        shouldProcess = true
+        const existingHero = await findExistingGeneratedHero(recipeDir)
+        if (existingHero) {
+          existingRecipe.heroImage = existingHero
+          await fs.writeFile(
+            recipePath,
+            JSON.stringify(existingRecipe, null, 2)
+          )
+        } else {
+          console.log(
+            `[PROCESS] Recipe is missing hero image, re-processing: ${file.name}`
+          )
+          shouldProcess = true
+        }
       } else if (existingRecipe.heroImage?.startsWith('generated-hero')) {
         const promptPath = path.join(cacheDirForSlug, 'prompt.md')
         try {
@@ -160,8 +181,26 @@ export async function processDoc(
           // Hero file was deleted; fall through to doc image or generate
         }
       }
+      if (!heroDecided) {
+        const existingHero = await findExistingGeneratedHero(recipeDir)
+        if (existingHero) {
+          recipe.heroImage = existingHero
+          console.log(
+            `[PROCESS] Adopted existing hero image from disk for ${file.name}`
+          )
+          heroDecided = true
+        }
+      }
     } catch {
-      // No existing recipe (e.g. new recipe); fall through
+      // No existing recipe (e.g. new recipe); try adopting from disk
+      const existingHero = await findExistingGeneratedHero(recipeDir)
+      if (existingHero) {
+        recipe.heroImage = existingHero
+        console.log(
+          `[PROCESS] Adopted existing hero image from disk for ${file.name}`
+        )
+        heroDecided = true
+      }
     }
 
     if (!heroDecided) {
