@@ -113,17 +113,31 @@ export async function processDoc(
           )
           shouldProcess = true
         }
-      } else if (existingRecipe.heroImage?.startsWith('generated-hero')) {
-        const promptPath = path.join(cacheDirForSlug, 'prompt.md')
+      } else {
+        const heroPath = path.join(recipeDir, existingRecipe.heroImage)
         try {
-          await fs.access(promptPath)
+          await fs.access(heroPath)
         } catch {
-          const backfillPrompt = buildImagePrompt(existingRecipe, {
-            quirky: 'a garden gnome',
-          })
-          await fs.mkdir(cacheDirForSlug, { recursive: true })
-          await fs.writeFile(promptPath, backfillPrompt, 'utf-8')
-          console.log(`[PROCESS] Backfilled image prompt for ${file.name}`)
+          console.log(
+            `[PROCESS] Hero image file missing, re-processing: ${file.name}`
+          )
+          shouldProcess = true
+        }
+        if (
+          !shouldProcess &&
+          existingRecipe.heroImage?.startsWith('generated-hero')
+        ) {
+          const promptPath = path.join(cacheDirForSlug, 'prompt.md')
+          try {
+            await fs.access(promptPath)
+          } catch {
+            const backfillPrompt = buildImagePrompt(existingRecipe, {
+              quirky: 'a garden gnome',
+            })
+            await fs.mkdir(cacheDirForSlug, { recursive: true })
+            await fs.writeFile(promptPath, backfillPrompt, 'utf-8')
+            console.log(`[PROCESS] Backfilled image prompt for ${file.name}`)
+          }
         }
       }
     }
