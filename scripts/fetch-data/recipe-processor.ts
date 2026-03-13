@@ -145,32 +145,53 @@ export async function processDoc(
       metadata,
     }
 
-    if (imagePaths.length > 0) {
-      recipe.heroImage = imagePaths[0]
-    } else {
-      console.log(
-        `[PROCESS] No image found for ${recipe.title}, generating one...`
-      )
-      const imageData = await queues.imageGenerationQueue.add(() =>
-        generateImageWithGemini(recipe)
-      )
-      if (imageData) {
+    let heroDecided = false
+    try {
+      const existingContent = await fs.readFile(recipePath, 'utf-8')
+      const existingRecipe: Recipe = JSON.parse(existingContent)
+      if (existingRecipe.heroImage) {
+        const heroPath = path.join(recipeDir, existingRecipe.heroImage)
         try {
-          const extension = imageData.mimeType.split('/')[1] || 'jpeg'
-          const filename = `generated-hero.${extension}`
-          await fs.writeFile(path.join(recipeDir, filename), imageData.buffer)
-          await fs.mkdir(cacheDirForSlug, { recursive: true })
-          const promptPath = path.join(cacheDirForSlug, 'prompt.md')
-          await fs.writeFile(promptPath, imageData.prompt, 'utf-8')
-          recipe.heroImage = filename
-          console.log(
-            `[PROCESS] Successfully generated and saved image for ${recipe.title}`
-          )
-        } catch (e) {
-          console.error(
-            `[PROCESS] Failed to save generated image for ${recipe.title}`,
-            e
-          )
+          await fs.access(heroPath)
+          recipe.heroImage = existingRecipe.heroImage
+          console.log(`[PROCESS] Keeping existing hero image for ${file.name}`)
+          heroDecided = true
+        } catch {
+          // Hero file was deleted; fall through to doc image or generate
+        }
+      }
+    } catch {
+      // No existing recipe (e.g. new recipe); fall through
+    }
+
+    if (!heroDecided) {
+      if (imagePaths.length > 0) {
+        recipe.heroImage = imagePaths[0]
+      } else {
+        console.log(
+          `[PROCESS] No image found for ${recipe.title}, generating one...`
+        )
+        const imageData = await queues.imageGenerationQueue.add(() =>
+          generateImageWithGemini(recipe)
+        )
+        if (imageData) {
+          try {
+            const extension = imageData.mimeType.split('/')[1] || 'jpeg'
+            const filename = `generated-hero.${extension}`
+            await fs.writeFile(path.join(recipeDir, filename), imageData.buffer)
+            await fs.mkdir(cacheDirForSlug, { recursive: true })
+            const promptPath = path.join(cacheDirForSlug, 'prompt.md')
+            await fs.writeFile(promptPath, imageData.prompt, 'utf-8')
+            recipe.heroImage = filename
+            console.log(
+              `[PROCESS] Successfully generated and saved image for ${recipe.title}`
+            )
+          } catch (e) {
+            console.error(
+              `[PROCESS] Failed to save generated image for ${recipe.title}`,
+              e
+            )
+          }
         }
       }
     }
