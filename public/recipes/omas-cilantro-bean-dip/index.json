@@ -9,48 +9,47 @@
       "unit": "cups"
     },
     {
-      "name": "Black beans",
-      "quantity": "1",
-      "unit": "can 15 oz"
+      "name": "black beans, drained and rinsed",
+      "quantity": "15",
+      "unit": "oz"
     },
     {
-      "name": "large fresh tomato",
+      "name": "fresh tomato, chopped",
       "quantity": "1",
       "unit": null
     },
     {
-      "name": "red pepper",
-      "quantity": "¾",
-      "unit": "cup"
+      "name": "red pepper, chopped",
+      "quantity": "0.75",
+      "unit": "cups"
     },
     {
-      "name": "red onion",
-      "quantity": "½",
-      "unit": "cup"
+      "name": "red onion, chopped",
+      "quantity": "0.5",
+      "unit": "cups"
     },
     {
       "name": "italian dressing",
-      "quantity": "½",
-      "unit": "cup"
+      "quantity": "0.5",
+      "unit": "cups"
     },
     {
       "name": "fresh minced cilantro",
-      "quantity": "¼",
-      "unit": "cup"
+      "quantity": "0.25",
+      "unit": "cups"
     },
     {
       "name": "hot pepper sauce",
-      "quantity": "¾",
+      "quantity": "0.75",
       "unit": "tsp"
     },
     {
       "name": "garlic powder or fresh garlic",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "tsp"
     }
   ],
   "markdown": "Nathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n* 2 cups frozen corn\n* 1 can 15 oz Black beans, drained and rinsed\n* 1 large fresh tomato, chopped\n* ¾ cup red pepper, chopped\n* ½ cup red onion, chopped\n* ½ cup italian dressing\n* ¼ cup fresh minced cilantro\n* ¾ tsp hot pepper sauce\n* ½ tsp garlic powder or fresh garlic\n* Mix and store in refrigerator several hours ahead\n",
   "summary": "Nathan,\n\nOma Dianne has some of the best recipes! When she decided to move from her home into assisted living she allowed me to have her recipe cards. I have not made all of them but I can almost guarantee they are the best. Just like you and your soon to be little brother. I love you dearly.\n\nMom\n\n",
-  "preparation": "* Mix and store in refrigerator several hours ahead\n",
-  "heroImage": "generated-hero.png"
+  "preparation": "* Mix and store in refrigerator several hours ahead\n"
 }

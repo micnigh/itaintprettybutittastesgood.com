@@ -1,0 +1,1507 @@
+{
+  "title": "Coconut Macaroons",
+  "body": {
+    "content": [
+      {
+        "endIndex": 1,
+        "sectionBreak": {
+          "sectionStyle": {
+            "columnSeparatorStyle": "NONE",
+            "contentDirection": "LEFT_TO_RIGHT",
+            "sectionType": "CONTINUOUS"
+          }
+        }
+      },
+      {
+        "startIndex": 1,
+        "endIndex": 9,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 1,
+              "endIndex": 9,
+              "textRun": {
+                "content": "Summary\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "headingId": "h.3u526gdsmej1",
+            "namedStyleType": "HEADING_3",
+            "direction": "LEFT_TO_RIGHT"
+          }
+        }
+      },
+      {
+        "startIndex": 9,
+        "endIndex": 10,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 9,
+              "endIndex": 10,
+              "textRun": {
+                "content": "\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT"
+          }
+        }
+      },
+      {
+        "startIndex": 10,
+        "endIndex": 28,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 10,
+              "endIndex": 28,
+              "textRun": {
+                "content": "Nathan & Thorton,\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT"
+          }
+        }
+      },
+      {
+        "startIndex": 28,
+        "endIndex": 270,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 28,
+              "endIndex": 270,
+              "textRun": {
+                "content": "Ok so your father knows that it is the holiday season (any holiday to be honest) when I break out these cookies. They are achingly sweet and gluten free. You can lessen the sugar content but where is the fun in that?! I love you both dearly.\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT"
+          }
+        }
+      },
+      {
+        "startIndex": 270,
+        "endIndex": 274,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 270,
+              "endIndex": 274,
+              "textRun": {
+                "content": "Mom\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "alignment": "END",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "unit": "PT"
+            },
+            "indentStart": {
+              "unit": "PT"
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 274,
+        "endIndex": 275,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 274,
+              "endIndex": 275,
+              "textRun": {
+                "content": "\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "unit": "PT"
+            },
+            "indentStart": {
+              "unit": "PT"
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 275,
+        "endIndex": 288,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 275,
+              "endIndex": 288,
+              "textRun": {
+                "content": "Ingredients \n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "headingId": "h.xc4l7r28lsie",
+            "namedStyleType": "HEADING_3",
+            "direction": "LEFT_TO_RIGHT"
+          }
+        }
+      },
+      {
+        "startIndex": 288,
+        "endIndex": 301,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 288,
+              "endIndex": 301,
+              "textRun": {
+                "content": "4 egg whites\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.ti11o7tro4xp",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 301,
+        "endIndex": 336,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 301,
+              "endIndex": 336,
+              "textRun": {
+                "content": "4 cups shredded coconut, sweetened\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.ti11o7tro4xp",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 336,
+        "endIndex": 357,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 336,
+              "endIndex": 357,
+              "textRun": {
+                "content": "1 tsp almond extract\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.ti11o7tro4xp",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 357,
+        "endIndex": 380,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 357,
+              "endIndex": 380,
+              "textRun": {
+                "content": "½ cup granulated sugar\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.ti11o7tro4xp",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 380,
+        "endIndex": 402,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 380,
+              "endIndex": 402,
+              "textRun": {
+                "content": "⅛ tsp cream of tartar\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.ti11o7tro4xp",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 402,
+        "endIndex": 425,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 402,
+              "endIndex": 425,
+              "textRun": {
+                "content": "Dash of salt if wanted\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.ti11o7tro4xp",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 425,
+        "endIndex": 437,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 425,
+              "endIndex": 437,
+              "textRun": {
+                "content": "Preparation\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "headingId": "h.r6xq7pfkkogo",
+            "namedStyleType": "HEADING_3",
+            "direction": "LEFT_TO_RIGHT"
+          }
+        }
+      },
+      {
+        "startIndex": 437,
+        "endIndex": 513,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 437,
+              "endIndex": 513,
+              "textRun": {
+                "content": "Preheat oven to 350 degrees and set a baking tray with a silicone mat aside\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.jnts3yfq3drn",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 513,
+        "endIndex": 595,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 513,
+              "endIndex": 595,
+              "textRun": {
+                "content": "Beat eggs whites in stand mixer until soft peaks form (just past the foamy stage)\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.jnts3yfq3drn",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 595,
+        "endIndex": 647,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 595,
+              "endIndex": 647,
+              "textRun": {
+                "content": "Add cream of tartar and whip until stiff peaks form\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.jnts3yfq3drn",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 647,
+        "endIndex": 733,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 647,
+              "endIndex": 733,
+              "textRun": {
+                "content": "While the mixer is still going add in sugar slowly until stiff peaks get even stiffer\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.jnts3yfq3drn",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 733,
+        "endIndex": 799,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 733,
+              "endIndex": 799,
+              "textRun": {
+                "content": "Add in almond extract and quickly whip into egg and sugar mixture\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.jnts3yfq3drn",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 799,
+        "endIndex": 950,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 799,
+              "endIndex": 950,
+              "textRun": {
+                "content": "Take the bowl off the stand mixer and hand in fold with a silicone spatula the shredded coconut until combined, try not to over mix or it will deflate\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.jnts3yfq3drn",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 950,
+        "endIndex": 1002,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 950,
+              "endIndex": 1002,
+              "textRun": {
+                "content": "bake 350 degrees for 20 min will golden on the tips\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          },
+          "bullet": {
+            "listId": "kix.jnts3yfq3drn",
+            "textStyle": {
+              "underline": false
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 1002,
+        "endIndex": 1003,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 1002,
+              "endIndex": 1003,
+              "textRun": {
+                "content": "\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 36,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 1003,
+        "endIndex": 1004,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 1003,
+              "endIndex": 1004,
+              "textRun": {
+                "content": "\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT",
+            "indentFirstLine": {
+              "magnitude": 36,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            }
+          }
+        }
+      },
+      {
+        "startIndex": 1004,
+        "endIndex": 1005,
+        "paragraph": {
+          "elements": [
+            {
+              "startIndex": 1004,
+              "endIndex": 1005,
+              "textRun": {
+                "content": "\n",
+                "textStyle": {}
+              }
+            }
+          ],
+          "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT"
+          }
+        }
+      }
+    ]
+  },
+  "headers": {
+    "kix.q0jj7o765vkn": {
+      "headerId": "kix.q0jj7o765vkn",
+      "content": [
+        {
+          "endIndex": 1,
+          "paragraph": {
+            "elements": [
+              {
+                "endIndex": 1,
+                "textRun": {
+                  "content": "\n",
+                  "textStyle": {}
+                }
+              }
+            ],
+            "paragraphStyle": {
+              "namedStyleType": "NORMAL_TEXT",
+              "direction": "LEFT_TO_RIGHT"
+            }
+          }
+        }
+      ]
+    },
+    "kix.80xbd1bs2xxd": {
+      "headerId": "kix.80xbd1bs2xxd",
+      "content": [
+        {
+          "endIndex": 1,
+          "paragraph": {
+            "elements": [
+              {
+                "endIndex": 1,
+                "textRun": {
+                  "content": "\n",
+                  "textStyle": {}
+                }
+              }
+            ],
+            "paragraphStyle": {
+              "namedStyleType": "NORMAL_TEXT",
+              "direction": "LEFT_TO_RIGHT"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "footers": {
+    "kix.ces0yq1s0u9w": {
+      "footerId": "kix.ces0yq1s0u9w",
+      "content": [
+        {
+          "endIndex": 1,
+          "paragraph": {
+            "elements": [
+              {
+                "endIndex": 1,
+                "textRun": {
+                  "content": "\n",
+                  "textStyle": {}
+                }
+              }
+            ],
+            "paragraphStyle": {
+              "namedStyleType": "NORMAL_TEXT",
+              "direction": "LEFT_TO_RIGHT"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "documentStyle": {
+    "background": {
+      "color": {}
+    },
+    "defaultHeaderId": "kix.q0jj7o765vkn",
+    "firstPageHeaderId": "kix.80xbd1bs2xxd",
+    "firstPageFooterId": "kix.ces0yq1s0u9w",
+    "useFirstPageHeaderFooter": true,
+    "pageNumberStart": 1,
+    "marginTop": {
+      "magnitude": 72,
+      "unit": "PT"
+    },
+    "marginBottom": {
+      "magnitude": 72,
+      "unit": "PT"
+    },
+    "marginRight": {
+      "magnitude": 72,
+      "unit": "PT"
+    },
+    "marginLeft": {
+      "magnitude": 72,
+      "unit": "PT"
+    },
+    "pageSize": {
+      "height": {
+        "magnitude": 792,
+        "unit": "PT"
+      },
+      "width": {
+        "magnitude": 612,
+        "unit": "PT"
+      }
+    },
+    "marginHeader": {
+      "magnitude": 36,
+      "unit": "PT"
+    },
+    "marginFooter": {
+      "magnitude": 36,
+      "unit": "PT"
+    },
+    "useCustomHeaderFooterMargins": true,
+    "documentFormat": {
+      "documentMode": "PAGES"
+    }
+  },
+  "namedStyles": {
+    "styles": [
+      {
+        "namedStyleType": "NORMAL_TEXT",
+        "textStyle": {
+          "bold": false,
+          "italic": false,
+          "underline": false,
+          "strikethrough": false,
+          "smallCaps": false,
+          "backgroundColor": {},
+          "foregroundColor": {
+            "color": {
+              "rgbColor": {}
+            }
+          },
+          "fontSize": {
+            "magnitude": 11,
+            "unit": "PT"
+          },
+          "weightedFontFamily": {
+            "fontFamily": "Arial",
+            "weight": 400
+          },
+          "baselineOffset": "NONE"
+        },
+        "paragraphStyle": {
+          "namedStyleType": "NORMAL_TEXT",
+          "alignment": "START",
+          "lineSpacing": 115,
+          "direction": "LEFT_TO_RIGHT",
+          "spacingMode": "COLLAPSE_LISTS",
+          "spaceAbove": {
+            "unit": "PT"
+          },
+          "spaceBelow": {
+            "unit": "PT"
+          },
+          "borderBetween": {
+            "color": {},
+            "width": {
+              "unit": "PT"
+            },
+            "padding": {
+              "unit": "PT"
+            },
+            "dashStyle": "SOLID"
+          },
+          "borderTop": {
+            "color": {},
+            "width": {
+              "unit": "PT"
+            },
+            "padding": {
+              "unit": "PT"
+            },
+            "dashStyle": "SOLID"
+          },
+          "borderBottom": {
+            "color": {},
+            "width": {
+              "unit": "PT"
+            },
+            "padding": {
+              "unit": "PT"
+            },
+            "dashStyle": "SOLID"
+          },
+          "borderLeft": {
+            "color": {},
+            "width": {
+              "unit": "PT"
+            },
+            "padding": {
+              "unit": "PT"
+            },
+            "dashStyle": "SOLID"
+          },
+          "borderRight": {
+            "color": {},
+            "width": {
+              "unit": "PT"
+            },
+            "padding": {
+              "unit": "PT"
+            },
+            "dashStyle": "SOLID"
+          },
+          "indentFirstLine": {
+            "unit": "PT"
+          },
+          "indentStart": {
+            "unit": "PT"
+          },
+          "indentEnd": {
+            "unit": "PT"
+          },
+          "keepLinesTogether": false,
+          "keepWithNext": false,
+          "avoidWidowAndOrphan": true,
+          "shading": {
+            "backgroundColor": {}
+          },
+          "pageBreakBefore": false
+        }
+      },
+      {
+        "namedStyleType": "HEADING_1",
+        "textStyle": {
+          "fontSize": {
+            "magnitude": 20,
+            "unit": "PT"
+          }
+        },
+        "paragraphStyle": {
+          "namedStyleType": "NORMAL_TEXT",
+          "direction": "LEFT_TO_RIGHT",
+          "spaceAbove": {
+            "magnitude": 20,
+            "unit": "PT"
+          },
+          "spaceBelow": {
+            "magnitude": 6,
+            "unit": "PT"
+          },
+          "keepLinesTogether": true,
+          "keepWithNext": true,
+          "pageBreakBefore": false
+        }
+      },
+      {
+        "namedStyleType": "HEADING_2",
+        "textStyle": {
+          "bold": false,
+          "fontSize": {
+            "magnitude": 16,
+            "unit": "PT"
+          }
+        },
+        "paragraphStyle": {
+          "namedStyleType": "NORMAL_TEXT",
+          "direction": "LEFT_TO_RIGHT",
+          "spaceAbove": {
+            "magnitude": 18,
+            "unit": "PT"
+          },
+          "spaceBelow": {
+            "magnitude": 6,
+            "unit": "PT"
+          },
+          "keepLinesTogether": true,
+          "keepWithNext": true,
+          "pageBreakBefore": false
+        }
+      },
+      {
+        "namedStyleType": "HEADING_3",
+        "textStyle": {
+          "bold": false,
+          "foregroundColor": {
+            "color": {
+              "rgbColor": {
+                "red": 0.2627451,
+                "green": 0.2627451,
+                "blue": 0.2627451
+              }
+            }
+          },
+          "fontSize": {
+            "magnitude": 14,
+            "unit": "PT"
+          }
+        },
+        "paragraphStyle": {
+          "namedStyleType": "NORMAL_TEXT",
+          "direction": "LEFT_TO_RIGHT",
+          "spaceAbove": {
+            "magnitude": 16,
+            "unit": "PT"
+          },
+          "spaceBelow": {
+            "magnitude": 4,
+            "unit": "PT"
+          },
+          "keepLinesTogether": true,
+          "keepWithNext": true,
+          "pageBreakBefore": false
+        }
+      },
+      {
+        "namedStyleType": "HEADING_4",
+        "textStyle": {
+          "foregroundColor": {
+            "color": {
+              "rgbColor": {
+                "red": 0.4,
+                "green": 0.4,
+                "blue": 0.4
+              }
+            }
+          },
+          "fontSize": {
+            "magnitude": 12,
+            "unit": "PT"
+          }
+        },
+        "paragraphStyle": {
+          "namedStyleType": "NORMAL_TEXT",
+          "direction": "LEFT_TO_RIGHT",
+          "spaceAbove": {
+            "magnitude": 14,
+            "unit": "PT"
+          },
+          "spaceBelow": {
+            "magnitude": 4,
+            "unit": "PT"
+          },
+          "keepLinesTogether": true,
+          "keepWithNext": true,
+          "pageBreakBefore": false
+        }
+      },
+      {
+        "namedStyleType": "HEADING_5",
+        "textStyle": {
+          "foregroundColor": {
+            "color": {
+              "rgbColor": {
+                "red": 0.4,
+                "green": 0.4,
+                "blue": 0.4
+              }
+            }
+          },
+          "fontSize": {
+            "magnitude": 11,
+            "unit": "PT"
+          }
+        },
+        "paragraphStyle": {
+          "namedStyleType": "NORMAL_TEXT",
+          "direction": "LEFT_TO_RIGHT",
+          "spaceAbove": {
+            "magnitude": 12,
+            "unit": "PT"
+          },
+          "spaceBelow": {
+            "magnitude": 4,
+            "unit": "PT"
+          },
+          "keepLinesTogether": true,
+          "keepWithNext": true,
+          "pageBreakBefore": false
+        }
+      },
+      {
+        "namedStyleType": "HEADING_6",
+        "textStyle": {
+          "italic": true,
+          "foregroundColor": {
+            "color": {
+              "rgbColor": {
+                "red": 0.4,
+                "green": 0.4,
+                "blue": 0.4
+              }
+            }
+          },
+          "fontSize": {
+            "magnitude": 11,
+            "unit": "PT"
+          }
+        },
+        "paragraphStyle": {
+          "namedStyleType": "NORMAL_TEXT",
+          "direction": "LEFT_TO_RIGHT",
+          "spaceAbove": {
+            "magnitude": 12,
+            "unit": "PT"
+          },
+          "spaceBelow": {
+            "magnitude": 4,
+            "unit": "PT"
+          },
+          "keepLinesTogether": true,
+          "keepWithNext": true,
+          "pageBreakBefore": false
+        }
+      },
+      {
+        "namedStyleType": "TITLE",
+        "textStyle": {
+          "fontSize": {
+            "magnitude": 26,
+            "unit": "PT"
+          }
+        },
+        "paragraphStyle": {
+          "namedStyleType": "NORMAL_TEXT",
+          "direction": "LEFT_TO_RIGHT",
+          "spaceAbove": {
+            "unit": "PT"
+          },
+          "spaceBelow": {
+            "magnitude": 3,
+            "unit": "PT"
+          },
+          "keepLinesTogether": true,
+          "keepWithNext": true,
+          "pageBreakBefore": false
+        }
+      },
+      {
+        "namedStyleType": "SUBTITLE",
+        "textStyle": {
+          "italic": false,
+          "foregroundColor": {
+            "color": {
+              "rgbColor": {
+                "red": 0.4,
+                "green": 0.4,
+                "blue": 0.4
+              }
+            }
+          },
+          "fontSize": {
+            "magnitude": 15,
+            "unit": "PT"
+          },
+          "weightedFontFamily": {
+            "fontFamily": "Arial",
+            "weight": 400
+          }
+        },
+        "paragraphStyle": {
+          "namedStyleType": "NORMAL_TEXT",
+          "direction": "LEFT_TO_RIGHT",
+          "spaceAbove": {
+            "unit": "PT"
+          },
+          "spaceBelow": {
+            "magnitude": 16,
+            "unit": "PT"
+          },
+          "keepLinesTogether": true,
+          "keepWithNext": true,
+          "pageBreakBefore": false
+        }
+      }
+    ]
+  },
+  "lists": {
+    "kix.jnts3yfq3drn": {
+      "listProperties": {
+        "nestingLevels": [
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%0",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%1",
+            "indentFirstLine": {
+              "magnitude": 54,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 72,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%2",
+            "indentFirstLine": {
+              "magnitude": 90,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 108,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%3",
+            "indentFirstLine": {
+              "magnitude": 126,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 144,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%4",
+            "indentFirstLine": {
+              "magnitude": 162,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 180,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%5",
+            "indentFirstLine": {
+              "magnitude": 198,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 216,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%6",
+            "indentFirstLine": {
+              "magnitude": 234,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 252,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%7",
+            "indentFirstLine": {
+              "magnitude": 270,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 288,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%8",
+            "indentFirstLine": {
+              "magnitude": 306,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 324,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          }
+        ]
+      }
+    },
+    "kix.ti11o7tro4xp": {
+      "listProperties": {
+        "nestingLevels": [
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%0",
+            "indentFirstLine": {
+              "magnitude": 18,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 36,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%1",
+            "indentFirstLine": {
+              "magnitude": 54,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 72,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%2",
+            "indentFirstLine": {
+              "magnitude": 90,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 108,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%3",
+            "indentFirstLine": {
+              "magnitude": 126,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 144,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%4",
+            "indentFirstLine": {
+              "magnitude": 162,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 180,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%5",
+            "indentFirstLine": {
+              "magnitude": 198,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 216,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%6",
+            "indentFirstLine": {
+              "magnitude": 234,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 252,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%7",
+            "indentFirstLine": {
+              "magnitude": 270,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 288,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          },
+          {
+            "bulletAlignment": "START",
+            "glyphSymbol": "-",
+            "glyphFormat": "%8",
+            "indentFirstLine": {
+              "magnitude": 306,
+              "unit": "PT"
+            },
+            "indentStart": {
+              "magnitude": 324,
+              "unit": "PT"
+            },
+            "textStyle": {
+              "underline": false
+            },
+            "startNumber": 1
+          }
+        ]
+      }
+    }
+  },
+  "revisionId": "AIxLkSstBqd11rpXM2OdMKSs9-inuUXHAPdtyAvS5xXXhgW5IGJEdCqLs1td4fADSyKJ-iRhaM6Our3dzhSs1kQVagOfBC41xTyAiurVo-HbkOY",
+  "suggestionsViewMode": "SUGGESTIONS_INLINE",
+  "documentId": "1m7qf7UFSiaB_ADd-uqEysE57_DwiIEfPlMt8WHfSuLU",
+  "modifiedTime": "2025-12-28T20:38:03.814Z"
+}

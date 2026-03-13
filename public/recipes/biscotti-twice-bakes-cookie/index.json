@@ -5,8 +5,8 @@
   "ingredients": [
     {
       "name": "butter, softened",
-      "quantity": "½",
-      "unit": "cup"
+      "quantity": "0.5",
+      "unit": "cups"
     },
     {
       "name": "sugar",
@@ -21,11 +21,11 @@
     {
       "name": "vanilla extract (or almond)",
       "quantity": "1",
-      "unit": "teaspoons"
+      "unit": "teaspoon"
     },
     {
       "name": "flour",
-      "quantity": "2 ½",
+      "quantity": "2.5",
       "unit": "cups"
     },
     {
@@ -35,21 +35,21 @@
     },
     {
       "name": "salt",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "teaspoons"
     },
     {
-      "name": "chopped pecans (baking nut)",
+      "name": "chopped pecans",
       "quantity": "1",
       "unit": "cup"
     },
     {
-      "name": "chopped cranberries (dried fruit)",
+      "name": "chopped cranberries",
       "quantity": "1",
       "unit": "cup"
     },
     {
-      "name": "lemon zest (citrus zest)",
+      "name": "lemon zest",
       "quantity": "2",
       "unit": "teaspoons"
     },
@@ -74,6 +74,5 @@
     "cook": "35m",
     "servings": "48approx",
     "level": "medium"
-  },
-  "heroImage": "generated-hero.png"
+  }
 }

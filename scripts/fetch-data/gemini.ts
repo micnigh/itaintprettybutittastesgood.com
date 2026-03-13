@@ -96,20 +96,17 @@ async function getIngredientsWithGemini(
   return [] // Should not be reached if MAX_RETRIES > 0
 }
 
-async function generateImageWithGemini(
-  recipe: Recipe
-): Promise<{ buffer: Buffer; mimeType: string } | undefined> {
-  if (!process.env.GEMINI_API_KEY) {
-    throw new Error('GEMINI_API_KEY is not set in the .env file.')
-  }
-  const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY })
-
+export function buildImagePrompt(
+  recipe: Recipe,
+  options?: { quirky?: string }
+): string {
   const ingredientsText = recipe.ingredients
     .map((i) => `${i.quantity || ''} ${i.unit || ''} ${i.name}`.trim())
     .join(', ')
-  const quirkyAddition = Math.random() < 0.5 ? 'a garden gnome' : 'a flamingo'
+  const quirkyAddition =
+    options?.quirky ?? (Math.random() < 0.5 ? 'a garden gnome' : 'a flamingo')
 
-  const prompt = `
+  return `
     A photorealistic, appetizing, and well-lit image of ${recipe.title}.
     Summary: ${recipe.summary}
     Ingredients: ${ingredientsText}
@@ -118,6 +115,17 @@ async function generateImageWithGemini(
     Do not include any letters or text in the image.
     Make sure the picture includes ${quirkyAddition} in it.
   `
+}
+
+async function generateImageWithGemini(
+  recipe: Recipe
+): Promise<{ buffer: Buffer; mimeType: string; prompt: string } | undefined> {
+  if (!process.env.GEMINI_API_KEY) {
+    throw new Error('GEMINI_API_KEY is not set in the .env file.')
+  }
+  const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY })
+
+  const prompt = buildImagePrompt(recipe)
 
   const MAX_RETRIES = 5
   let attempt = 0
@@ -139,6 +147,7 @@ async function generateImageWithGemini(
       return {
         buffer: Buffer.from(image.imageBytes!, 'base64'),
         mimeType: image.mimeType!,
+        prompt,
       }
     } catch (error: any) {
       if (error.status === 503 && attempt < MAX_RETRIES - 1) {

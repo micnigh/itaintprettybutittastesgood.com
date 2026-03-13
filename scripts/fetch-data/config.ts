@@ -20,7 +20,7 @@ import path from 'path'
 
 export const CREDENTIALS_PATH = path.join(process.cwd(), 'credentials.json')
 export const FOLDER_ID = '1Karp6fSxF4ZkO9A8Og585LZ_PP-LS2_n' // <-- ADD YOUR FOLDER ID HERE
-export const CACHE_DIR = path.join(process.cwd(), 'cache/google-docs')
+export const CACHE_DIR = path.join(process.cwd(), 'cache')
 export const RECIPES_DIR = path.join(process.cwd(), 'public/recipes')
 
 export interface Credentials {

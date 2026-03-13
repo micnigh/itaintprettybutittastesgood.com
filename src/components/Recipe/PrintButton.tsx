@@ -29,8 +29,12 @@ const PrintButton: FC = () => {
     includeImage: boolean
   }) => {
     // Apply data-print-hide attributes based on user selections
-    const summaryElements = document.querySelectorAll('[data-print-section="summary"]')
-    const imageElements = document.querySelectorAll('[data-print-section="image"]')
+    const summaryElements = document.querySelectorAll(
+      '[data-print-section="summary"]'
+    )
+    const imageElements = document.querySelectorAll(
+      '[data-print-section="image"]'
+    )
 
     if (!options.includeSummary) {
       summaryElements.forEach((el) => {
@@ -79,4 +83,3 @@ const PrintButton: FC = () => {
 }
 
 export default PrintButton
-

@@ -40,7 +40,9 @@ async function main() {
   await fs.mkdir(RECIPES_DIR, { recursive: true })
 
   if (FOLDER_ID === ('your-folder-id-here' as any)) {
-    console.log('No folder ID provided. Please update `scripts/fetch-data/config.ts`.')
+    console.log(
+      'No folder ID provided. Please update `scripts/fetch-data/config.ts`.'
+    )
     return
   }
 

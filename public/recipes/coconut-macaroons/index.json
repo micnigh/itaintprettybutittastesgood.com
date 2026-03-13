@@ -29,8 +29,8 @@
       "unit": "tsp"
     },
     {
-      "name": "salt if wanted",
-      "quantity": "Dash",
+      "name": "salt",
+      "quantity": "a dash",
       "unit": null
     }
   ],

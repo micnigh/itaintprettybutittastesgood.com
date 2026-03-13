@@ -7,7 +7,11 @@ import { RECIPES_DIR, CACHE_DIR, Recipe, Ingredient } from './config'
 import { slugify } from './utils'
 import { fetchDoc } from './google-api'
 import { parseGdoc, parseYamlMetadata } from './gdoc-parser'
-import { getIngredientsWithGemini, generateImageWithGemini } from './gemini'
+import {
+  getIngredientsWithGemini,
+  generateImageWithGemini,
+  buildImagePrompt,
+} from './gemini'
 
 interface Queues {
   googleDocQueue: PQueue
@@ -26,7 +30,8 @@ export async function processDoc(
   const recipeDir = path.join(RECIPES_DIR, slug)
   await fs.mkdir(recipeDir, { recursive: true })
 
-  const cachePath = path.join(CACHE_DIR, `${slug}.json`)
+  const cacheDirForSlug = path.join(CACHE_DIR, slug)
+  const cachePath = path.join(cacheDirForSlug, 'recipe.json')
   const recipePath = path.join(recipeDir, `index.json`)
 
   // Stage 1: Fetch from Google Docs API only if modification time has changed
@@ -45,6 +50,7 @@ export async function processDoc(
       )) as docs_v1.Schema$Document
       // Add modifiedTime to the document for caching
       const docWithModifiedTime = { ...doc, modifiedTime: file.modifiedTime! }
+      await fs.mkdir(cacheDirForSlug, { recursive: true })
       await fs.writeFile(
         cachePath,
         JSON.stringify(docWithModifiedTime, null, 2)
@@ -61,6 +67,7 @@ export async function processDoc(
     )) as docs_v1.Schema$Document
     // Add modifiedTime to the document for caching
     const docWithModifiedTime = { ...doc, modifiedTime: file.modifiedTime! }
+    await fs.mkdir(cacheDirForSlug, { recursive: true })
     await fs.writeFile(cachePath, JSON.stringify(docWithModifiedTime, null, 2))
     doc = docWithModifiedTime as docs_v1.Schema$Document
   }
@@ -85,6 +92,18 @@ export async function processDoc(
           `[PROCESS] Recipe is missing hero image, re-processing: ${file.name}`
         )
         shouldProcess = true
+      } else if (existingRecipe.heroImage?.startsWith('generated-hero')) {
+        const promptPath = path.join(cacheDirForSlug, 'prompt.md')
+        try {
+          await fs.access(promptPath)
+        } catch {
+          const backfillPrompt = buildImagePrompt(existingRecipe, {
+            quirky: 'a garden gnome',
+          })
+          await fs.mkdir(cacheDirForSlug, { recursive: true })
+          await fs.writeFile(promptPath, backfillPrompt, 'utf-8')
+          console.log(`[PROCESS] Backfilled image prompt for ${file.name}`)
+        }
       }
     }
   } catch (error) {
@@ -140,6 +159,9 @@ export async function processDoc(
           const extension = imageData.mimeType.split('/')[1] || 'jpeg'
           const filename = `generated-hero.${extension}`
           await fs.writeFile(path.join(recipeDir, filename), imageData.buffer)
+          await fs.mkdir(cacheDirForSlug, { recursive: true })
+          const promptPath = path.join(cacheDirForSlug, 'prompt.md')
+          await fs.writeFile(promptPath, imageData.prompt, 'utf-8')
           recipe.heroImage = filename
           console.log(
             `[PROCESS] Successfully generated and saved image for ${recipe.title}`

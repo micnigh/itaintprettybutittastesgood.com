@@ -1,5 +1,11 @@
 import { FC, useState, Fragment } from 'react'
-import { Menu, MenuButton, MenuItems, MenuItem, Transition } from '@headlessui/react'
+import {
+  Menu,
+  MenuButton,
+  MenuItems,
+  MenuItem,
+  Transition,
+} from '@headlessui/react'
 import { Tooltip } from 'react-tooltip'
 
 interface ShareButtonProps {
@@ -179,4 +185,3 @@ const ShareButton: FC<ShareButtonProps> = ({ recipeTitle }) => {
 }
 
 export default ShareButton
-

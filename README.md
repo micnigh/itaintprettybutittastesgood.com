@@ -13,10 +13,10 @@ The system fetches recipes from Google Docs, processes them, and generates a sta
 
 1. **Fetch**: Google Docs are retrieved from a shared Google Drive folder using the Google Drive/Docs APIs
 2. **Process**: Each document is parsed, extracting:
-   - Text content (converted to Markdown)
-   - Images (downloaded and saved locally)
-   - Ingredients (parsed with Gemini AI into structured data)
-   - Metadata (from YAML in the document description)
+    - Text content (converted to Markdown)
+    - Images (downloaded and saved locally)
+    - Ingredients (parsed with Gemini AI into structured data)
+    - Metadata (from YAML in the document description)
 3. **Generate**: If no images are found in a recipe, a hero image is generated using Gemini AI
 4. **Build**: All processed recipes are combined into a single JSON file and the React site is built
 
@@ -43,22 +43,25 @@ The Gemini API is used for ingredient parsing and image generation:
 1. Enable the Gemini API in your Google Cloud project
 2. Get your API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
 3. Create a `.env` file in the project root:
-   ```
-   GEMINI_API_KEY="YOUR_API_KEY_HERE"
-   ```
+    ```
+    GEMINI_API_KEY="YOUR_API_KEY_HERE"
+    ```
 
 ## Scripts
 
 ### Development
+
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production
 - `pnpm preview` - Preview production build locally
 
 ### Data Processing
+
 - `pnpm fetch-data` - Fetch and process recipes from Google Docs (uses cache)
 - `pnpm fetch-data:clean` - Fetch data without using cache (forces full reprocessing)
 
 ### Testing
+
 - `pnpm test` - Run all tests (unit, integration, e2e)
 - `pnpm test:unit` - Run unit tests only
 - `pnpm test:integration` - Run integration tests only
@@ -67,12 +70,14 @@ The Gemini API is used for ingredient parsing and image generation:
 - `pnpm test:e2e:report` - Show Playwright test report
 
 ### Code Quality
+
 - `pnpm validate` - Run lint, typecheck, format, and tests
 - `pnpm lint` - Run ESLint
 - `pnpm typecheck` - Run TypeScript type checking
 - `pnpm format` - Format code with Prettier
 
 ### Deployment
+
 - `pnpm deploy` - Build and deploy to GitHub Pages
 
 ## Troubleshooting
@@ -97,5 +102,6 @@ If you encounter token generation issues, refer to: [gatsby-source-google-docs t
 ### Cache Issues
 
 If recipes aren't updating after changes in Google Docs:
+
 - Run `pnpm fetch-data:clean` to force a full reprocessing
 - Check that the Google Docs modification time has actually changed
