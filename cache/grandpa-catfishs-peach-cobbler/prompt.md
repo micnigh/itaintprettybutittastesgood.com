@@ -7,9 +7,9 @@ This one comes from Grandpa Catfish as well and please trust that it is so amazi
 Mom
 
 
-    Ingredients: 1/3 cups butter melted, 1 cup sugar, 1 cup flour, 1 teaspoon baking powder, ¾ cups milk, ¼ teaspoon salt, 1 teaspoon ground cinnamon, 1 can peaches
+    Ingredients: 0.33 cups butter melted, 1 cup sugar, 1 cup flour, 1 teaspoon baking powder, 0.75 cups milk, 0.25 teaspoon salt, 1 teaspoon ground cinnamon, 1 can peaches
     Tags: cobbler, peach, sweet
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.
-    Make sure the picture includes a garden gnome in it.
+    Make sure the picture includes a flamingo in it.
   

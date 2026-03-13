@@ -7,7 +7,7 @@ Oma Dianne has some of the best recipes! When she decided to move from her home 
 Mom
 
 
-    Ingredients: 2 cups frozen corn, 1 can 15 oz Black beans, 1  large fresh tomato, ¾ cup red pepper, ½ cup red onion, ½ cup italian dressing, ¼ cup fresh minced cilantro, ¾ tsp hot pepper sauce, ½ tsp garlic powder or fresh garlic
+    Ingredients: 2 cups frozen corn, 15 oz black beans, drained and rinsed, 1  large fresh tomato, chopped, 0.75 cup red pepper, chopped, 0.5 cup red onion, chopped, 0.5 cup italian dressing, 0.25 cup fresh minced cilantro, 0.75 tsp hot pepper sauce, 0.5 tsp garlic powder or fresh garlic
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.

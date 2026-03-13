@@ -9,9 +9,9 @@ Everyone and their mother (literally) have asked me for this recipe when they tr
 Mom
 
 
-    Ingredients: ½ cup butter, softened, 1 cup sugar, 2  eggs, 1 teaspoons vanilla extract (or almond), 2 ½ cups flour, 2 teaspoons baking powder, ¼ teaspoons salt, 1 cup chopped pecans (baking nut), 1 cup chopped cranberries (dried fruit), 2 teaspoons lemon zest (citrus zest), 1 teaspoon egg white w/2 teaspoon water beaten
+    Ingredients: 0.5 cup butter, softened, 1 cup sugar, 2  eggs, 1 teaspoons vanilla extract (or almond), 2.5 cups flour, 2 teaspoons baking powder, 0.25 teaspoons salt, 1 cup chopped pecans (baking nut), 1 cup chopped cranberries (dried fruit), 2 teaspoons lemon zest (citrus zest), 1 teaspoon egg white w/2 teaspoon water beaten
     Tags: cookie, cranberry, sweet, Christmas
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.
-    Make sure the picture includes a garden gnome in it.
+    Make sure the picture includes a flamingo in it.
   

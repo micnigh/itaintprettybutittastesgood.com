@@ -7,9 +7,9 @@ Oma Dianne has some of the best recipes! When she decided to move from her home 
 Mom
 
 
-    Ingredients: 1 8oz package cream cheese, ¼ cup lemon juice, 1 cup cooked shrimp chopped, ½ cup green pepper, 1 ¼ oz package onion soup mix, 1 Tbs horseradish, 1 cup sour cream
+    Ingredients: 8 oz cream cheese, 0.25 cup lemon juice, 1 cup cooked shrimp chopped, 0.5 cup green pepper, 1.25 oz onion soup mix, 1 tablespoon horseradish, 1 cup sour cream
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.
-    Make sure the picture includes a garden gnome in it.
+    Make sure the picture includes a flamingo in it.
   

@@ -7,7 +7,7 @@ Please please please follow this recipe if you want beans.  It will never do you
 Mom
 
 
-    Ingredients: 1 Lb Pinto Beans, Couple  Ham Hawks smoked, 1 Lb bacon, 1 tsp Pepper, 1 tsp Salt, 1 tsp Garlic Powder, 1 tsp Onion Powder, 2 cups Chicken Broth, 4 cups Water
+    Ingredients: 1 Lb pinto beans, 3  ham hawks smoked, 1 tsp pepper, 1 tsp salt, 1 tsp garlic powder, 1 tsp onion powder, 2 cups chicken broth, 4 cups water
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.

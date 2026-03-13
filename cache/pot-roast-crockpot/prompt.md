@@ -7,9 +7,9 @@ This is one of your Dads favorite recipes. As you know by now your dad is a meat
 Mom
 
 
-    Ingredients: ¾ cup Beef Broth, 2 Tbs Tomato Paste, 2 Tbs Worcestershire Sauce, 1 Tbs Cornstarch, 1 Lb Potatoes, 3 large  Carrots, 1 medium  Onion, 4 Cloves Garlic, 1 sprig Rosemary, 3 ½ Lbs Chuck Roast, Salt, Pepper
+    Ingredients: 0.75 cups Beef Broth, 2 tablespoons Tomato Paste, 2 tablespoons Worcestershire Sauce, 1 tablespoon Cornstarch, 1 pound Potatoes, peeled and and cut in 2” chunks, 3  Carrots, peeled and cut into 2” pieces, 1  Onion, cut into ½” wedges, 4  Garlic Cloves, minced, 1 sprig Rosemary, 3.5 pounds Chuck Roast, Salt, Pepper
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.
-    Make sure the picture includes a garden gnome in it.
+    Make sure the picture includes a flamingo in it.
   

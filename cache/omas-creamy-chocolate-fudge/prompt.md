@@ -7,7 +7,7 @@ Oma Dianne has some of the best recipes! When she decided to move from her home 
 Mom
 
 
-    Ingredients: ¾ cups evaporated milk, 1 jar marshmallow cream, ¼ cup butter, 1 ½ cup sugar, ¼ tsp salt, 2 packages 6oz semisweet chocolate chips, 1 tsp vanilla extract
+    Ingredients: 0.75 cups evaporated milk, 1 jar marshmallow cream, 0.25 cup butter, 1.5 cup sugar, 0.25 tsp salt, 2 6oz packages semisweet chocolate chips, 1 tsp vanilla extract
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.

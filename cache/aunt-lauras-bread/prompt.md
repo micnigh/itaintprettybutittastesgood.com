@@ -7,7 +7,7 @@ So for a time my biological mother Dawn didn’t think that Laura could cook so 
 Mom
 
 
-    Ingredients: 3 cups flour, 1 teaspoon salt, ½ teaspoon yeast, 1 teaspoons sugar, 1 ½ cups hot water
+    Ingredients: 3 cups flour, 1 teaspoon salt, 0.5 teaspoon yeast, 1.5 teaspoons sugar, 1.5 cups hot water
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.

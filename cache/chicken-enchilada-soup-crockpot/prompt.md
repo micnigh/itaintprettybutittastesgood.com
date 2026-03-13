@@ -7,9 +7,9 @@ On cold days I want something that soothes my soul. This is one of the many croc
 Mom
 
 
-    Ingredients: ½ cup Chopped Onion, 1 tsp Chili Powder, 1 tsp Cumin, 1 tsp Garlic Powder, 1 19oz can Red Enchilada Sauce, 1 28oz can Fire-Roasted Diced Tomatoes, 1 15oz can Black Beans, drained and rinsed, 2 lb Chicken Breasts, cut into thirds, 2 ½ cup Chicken Broth, ⅓ cup Cheddar Cheese, shredded, ¼ cup Heavy Cream, Sour Cream, Sliced Lime, Crushed Tortilla Chips or Tortilla Strips
+    Ingredients: 0.5 cup Chopped Onion, 1 tsp Chili Powder, 1 tsp Cumin, 1 tsp Garlic Powder, 1 19oz can Red Enchilada Sauce, 1 28oz can Fire-Roasted Diced Tomatoes, 1 15oz can Black Beans, drained and rinsed, 2 lb Chicken Breasts, cut into thirds, 2.5 cup Chicken Broth, 0.33 cup Cheddar Cheese, shredded, 0.25 cup Heavy Cream, Sour Cream, Sliced Lime, Crushed Tortilla Chips or Tortilla Strips
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.
-    Make sure the picture includes a garden gnome in it.
+    Make sure the picture includes a flamingo in it.
   

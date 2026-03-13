@@ -7,7 +7,7 @@ Oma Dianne has some of the best recipes! When she decided to move from her home 
 Mom
 
 
-    Ingredients: ½  butter, ⅓ cup water, 1 16oz package powdered sugar, ½ cup nonfat dry milk powder, ½ cup unsweetened cocoa powder, Dash  salt, ½ cup chopped nuts
+    Ingredients: 0.5  butter, 0.333 cup water, 16 oz powdered sugar, 0.5 cup nonfat dry milk powder, 0.5 cup unsweetened cocoa powder, Dash  salt, 0.5 cup chopped nuts (toasted is good!)
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.

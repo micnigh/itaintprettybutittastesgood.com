@@ -7,7 +7,7 @@ Oma Dianne has some of the best recipes! When she decided to move from her home 
 Mom
 
 
-    Ingredients: 2 sticks butter, ½ cup crisco, 3 cup white sugar, ¼ tsp salt, 5  large eggs, 3 cups flour, 1 cup milk, 2 Tbs Vanilla Butter and Nut Flavoring (McCormick), ½ cup chopped walnuts, 1 cup chopped and drained maraschino cherries
+    Ingredients: 2 sticks butter, 0.5 cups crisco, 3 cups white sugar, 0.25 teaspoons salt, 5  large eggs, 3 cups flour, 1 cups milk, 2 tablespoons Vanilla Butter and Nut Flavoring, 0.5 cups chopped walnuts, 1 cups chopped and drained maraschino cherries
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.

@@ -7,9 +7,9 @@ Oma Dianne has some of the best recipes! When she decided to move from her home 
 Mom
 
 
-    Ingredients: 6 to 8  ripe tomatoes, 1 to 2 cups cold water with ice cubes, ⅓ to ½  onion, ½  green pepper, ⅓ to ¾  cucumber, 1 to 2 cloves garlic, ⅓ to ½ cup olive oil, ⅓ to ½ c sherry vinegar, 1 ½ Tbs salt, 1 tsp sugar
+    Ingredients: 7  ripe tomatoes, 1.5 cups cold water with ice cubes, 0.4  onion, 0.5  green pepper, 0.5  cucumber, 1.5 cloves garlic, 0.4 cups olive oil, 0.4 cups sherry vinegar, 1.5 tablespoons salt, 1 teaspoon sugar
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.
-    Make sure the picture includes a garden gnome in it.
+    Make sure the picture includes a flamingo in it.
   

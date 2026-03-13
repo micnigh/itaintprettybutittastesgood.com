@@ -7,9 +7,9 @@ These cookies came to our family because I bought too much ground cardamom and I
 Mom
 
 
-    Ingredients: 1 Cup brown butter, ¾ Cup Sugar, 1  large egg yolk, 1 tablespoon vanilla, ½ teaspoon ground cardamom, 2 cups flour, 1 cup powdered sugar
+    Ingredients: 1 Cup brown butter, 0.75 Cup sugar, 1  large egg yolk, 1 tablespoon vanilla, 0.5 teaspoon ground cardamom, 2 cups flour, 1 cup powdered sugar
     Tags: cookie, sweet, cardamom
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.
-    Make sure the picture includes a garden gnome in it.
+    Make sure the picture includes a flamingo in it.
   

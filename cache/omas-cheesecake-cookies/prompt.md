@@ -7,9 +7,9 @@ Every year since I met your Oma Dianne I have been obsessed with her cheesecake 
 Mom
 
 
-    Ingredients: ¼ cup butter, ⅓ cup firmly packed brown sugar, 1 cup flour, ½ cup chopped pecans, ¼ cup currant jelly, 1 8oz package cream cheese, 1  egg, ¼ cup sugar, 2 Tbs milk, 2 Tbs lemon juice, ½ tsp vanilla extract
+    Ingredients: 0.25 cups butter, 0.33 cups firmly packed brown sugar, 1 cups flour, 0.5 cups chopped pecans, 0.25 cups currant jelly, 1 8oz package cream cheese, 1  egg, 0.25 cups sugar, 2 tablespoons milk, 2 tablespoons lemon juice, 0.5 teaspoons vanilla extract
     Tags: undefined
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.
-    Make sure the picture includes a garden gnome in it.
+    Make sure the picture includes a flamingo in it.
   

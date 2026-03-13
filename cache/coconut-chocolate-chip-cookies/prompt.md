@@ -7,9 +7,9 @@ These cookies can be made vegan with just a little bit of ingredient swaps if yo
 Mom
 
 
-    Ingredients: ½ cup coconut oil, 1 cup brown sugar, ¼ cup milk, 1 tablespoon vanilla extract, 2 cups flour, 1 teaspoon baking soda, 1 teaspoon baking powder, ½ teaspoon salt, 1 cup chocolate chips
+    Ingredients: 0.5 cups coconut oil, softened not liquid, 1 cups brown sugar, 0.25 cups milk, 1 tablespoons vanilla extract, 2 cups flour, 1 teaspoons baking soda, 1 teaspoons baking powder, 0.5 teaspoons salt, 1 cups chocolate chips
     Tags: cookie, chocolate, coconut, vegan
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.
-    Make sure the picture includes a garden gnome in it.
+    Make sure the picture includes a flamingo in it.
   

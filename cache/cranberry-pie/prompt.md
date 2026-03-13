@@ -7,7 +7,7 @@ Ok so I had way too many cranberries over the holiday because I shopped at Costc
 Mom
 
 
-    Ingredients: 4 cups fresh cranberries or frozen, 1  orange, 1 ½ cups sugar, 1 tablespoon salt, 1 tablespoons flour, 1 packet gelatin, 1  store bought pie crust, 1  egg, 3 tablespoons sugar
+    Ingredients: 4 cups fresh cranberries or frozen, 1  orange (zest then juice), 1.5 cups sugar, 1 tablespoon salt, 1 tablespoons flour, 1 packet gelatin, 1  store bought pie crust, 1  egg beaten to wash, 3 tablespoons sugar to top
     Tags: pie, cranberry, sweet
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.

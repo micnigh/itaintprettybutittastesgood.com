@@ -7,7 +7,7 @@ So Grandpa Catfish has this small spiral notebook full of delicious recipes and 
 Mom
 
 
-    Ingredients: 2 cups sugar, 2 cups flour, 1 teaspoon soda, 2  eggs, 1 cup oil, 3  pears, 2 teaspoon ground cinnamon, ¼ teaspoon salt, ½ teaspoon ground nutmeg, 1 teaspoon vanilla, 1 teaspoon water
+    Ingredients: 2 cups sugar, 2 cups flour, 1 teaspoon soda, 2  eggs, 1 cup oil, 3  large pears (peeled and sliced thin), 2 teaspoon ground cinnamon, 0.25 teaspoon salt, 0.5 teaspoon ground nutmeg, 1 teaspoon vanilla, 1 teaspoon water
     Tags: sweet, pear, cake
     The image should be high quality and suitable for a recipe website.
     Do not include any letters or text in the image.
