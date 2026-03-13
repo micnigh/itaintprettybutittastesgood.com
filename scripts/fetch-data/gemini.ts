@@ -1,3 +1,6 @@
+import { promises as fs } from 'fs'
+import path from 'path'
+
 import { GoogleGenAI } from '@google/genai'
 import {
   Ingredient,
@@ -5,6 +8,11 @@ import {
   contentGenerationModel,
   imageGenerationModel,
 } from './config'
+
+export interface ImageGenerationExtras {
+  additionalPrompt?: string
+  exampleImagePaths?: string[]
+}
 
 async function getIngredientsWithGemini(
   markdownContent: string
@@ -98,7 +106,7 @@ async function getIngredientsWithGemini(
 
 export function buildImagePrompt(
   recipe: Recipe,
-  options?: { quirky?: string }
+  options?: { quirky?: string; additionalPrompt?: string }
 ): string {
   const ingredientsText = recipe.ingredients
     .map((i) => `${i.quantity || ''} ${i.unit || ''} ${i.name}`.trim())
@@ -106,7 +114,7 @@ export function buildImagePrompt(
   const quirkyAddition =
     options?.quirky ?? (Math.random() < 0.5 ? 'a garden gnome' : 'a flamingo')
 
-  return `
+  let prompt = `
     A photorealistic, appetizing, and well-lit image of ${recipe.title}.
     Summary: ${recipe.summary}
     Ingredients: ${ingredientsText}
@@ -115,17 +123,78 @@ export function buildImagePrompt(
     Do not include any letters or text in the image.
     Make sure the picture includes ${quirkyAddition} in it.
   `
+  if (options?.additionalPrompt?.trim()) {
+    prompt += `\n\nAdditional instructions: ${options.additionalPrompt.trim()}`
+  }
+  return prompt
+}
+
+const EXAMPLE_IMAGE_MIME: Record<string, string> = {
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
+  '.gif': 'image/gif',
+}
+
+async function describeExampleImagesForPrompt(
+  genAI: InstanceType<typeof GoogleGenAI>,
+  imagePaths: string[]
+): Promise<string | undefined> {
+  const parts: Array<{
+    text?: string
+    inlineData?: { data: string; mimeType: string }
+  }> = [
+    {
+      text: `These ${imagePaths.length} image(s) show what the dish/food looks like. In 1–3 short sentences, describe only the appearance of the food itself: color, texture, shape, and any distinctive visual traits. Do NOT describe what it is baked on, plated on, or served on; do NOT describe photography style, lighting, composition, or mood—we will use a professional recipe-website photo style separately. Output only the description of the food itself, no preamble.`,
+    },
+  ]
+  for (const imagePath of imagePaths) {
+    try {
+      const buf = await fs.readFile(imagePath)
+      const ext = path.extname(imagePath).toLowerCase()
+      const mimeType = EXAMPLE_IMAGE_MIME[ext] ?? 'image/jpeg'
+      parts.push({
+        inlineData: { data: buf.toString('base64'), mimeType },
+      })
+    } catch {
+      // Skip unreadable file
+    }
+  }
+  if (parts.length <= 1) return undefined
+  try {
+    const result = await genAI.models.generateContent({
+      model: contentGenerationModel,
+      contents: parts,
+    })
+    const text = result.text?.trim()
+    return text || undefined
+  } catch {
+    return undefined
+  }
 }
 
 async function generateImageWithGemini(
-  recipe: Recipe
+  recipe: Recipe,
+  extras?: ImageGenerationExtras
 ): Promise<{ buffer: Buffer; mimeType: string; prompt: string } | undefined> {
   if (!process.env.GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY is not set in the .env file.')
   }
   const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY })
 
-  const prompt = buildImagePrompt(recipe)
+  let prompt = buildImagePrompt(recipe, {
+    additionalPrompt: extras?.additionalPrompt,
+  })
+  if (extras?.exampleImagePaths?.length) {
+    const described = await describeExampleImagesForPrompt(
+      genAI,
+      extras.exampleImagePaths
+    )
+    if (described) {
+      prompt += `\n\nThe dish should look like this: ${described}`
+    }
+  }
 
   const MAX_RETRIES = 5
   let attempt = 0

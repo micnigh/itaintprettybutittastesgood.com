@@ -20,6 +20,15 @@ The system fetches recipes from Google Docs, processes them, and generates a sta
 3. **Generate**: If no images are found in a recipe, a hero image is generated using Gemini AI
 4. **Build**: All processed recipes are combined into a single JSON file and the React site is built
 
+### Optional: extra image-generation input (cache per slug)
+
+For any recipe, you can add optional files under `cache/<slug>/` to steer hero image generation:
+
+- **`additional-prompt.md`** – Extra instructions appended to the image prompt (e.g. style, composition, “no text in image”).
+- **`examples/`** – Directory of reference images (e.g. `.png`, `.jpg`, `.webp`). The pipeline uses Gemini vision to describe their style and mood and appends that to the prompt. No need to copy these into the built site; they are only used when generating the hero image.
+
+Both are optional and can be used independently. The slug is the recipe’s URL slug (e.g. `coconut-macaroons`).
+
 ## Setup
 
 ### 1. Install Dependencies

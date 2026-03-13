@@ -11,6 +11,7 @@ import {
   getIngredientsWithGemini,
   generateImageWithGemini,
   buildImagePrompt,
+  type ImageGenerationExtras,
 } from './gemini'
 
 interface Queues {
@@ -22,6 +23,36 @@ interface Queues {
 export type { Queues }
 
 const GENERATED_HERO_PREFIX = 'generated-hero.'
+
+const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif'])
+
+async function loadImageGenerationExtras(
+  cacheDirForSlug: string
+): Promise<ImageGenerationExtras> {
+  const result: ImageGenerationExtras = {}
+  const additionalPath = path.join(cacheDirForSlug, 'additional-prompt.md')
+  try {
+    const content = await fs.readFile(additionalPath, 'utf-8')
+    const trimmed = content.trim()
+    if (trimmed) result.additionalPrompt = trimmed
+  } catch {
+    // File missing or unreadable; ignore
+  }
+  const examplesDir = path.join(cacheDirForSlug, 'examples')
+  try {
+    const entries = await fs.readdir(examplesDir, { withFileTypes: true })
+    const imagePaths = entries
+      .filter(
+        (e) =>
+          e.isFile() && IMAGE_EXTENSIONS.has(path.extname(e.name).toLowerCase())
+      )
+      .map((e) => path.join(examplesDir, e.name))
+    if (imagePaths.length > 0) result.exampleImagePaths = imagePaths
+  } catch {
+    // Dir missing or unreadable; ignore
+  }
+  return result
+}
 
 async function findExistingGeneratedHero(
   recipeDir: string
@@ -131,8 +162,10 @@ export async function processDoc(
           try {
             await fs.access(promptPath)
           } catch {
+            const extras = await loadImageGenerationExtras(cacheDirForSlug)
             const backfillPrompt = buildImagePrompt(existingRecipe, {
               quirky: 'a garden gnome',
+              additionalPrompt: extras.additionalPrompt,
             })
             await fs.mkdir(cacheDirForSlug, { recursive: true })
             await fs.writeFile(promptPath, backfillPrompt, 'utf-8')
@@ -224,8 +257,9 @@ export async function processDoc(
         console.log(
           `[PROCESS] No image found for ${recipe.title}, generating one...`
         )
+        const extras = await loadImageGenerationExtras(cacheDirForSlug)
         const imageData = await queues.imageGenerationQueue.add(() =>
-          generateImageWithGemini(recipe)
+          generateImageWithGemini(recipe, extras)
         )
         if (imageData) {
           try {
