@@ -5,7 +5,7 @@
   "ingredients": [
     {
       "name": "butter, softened",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "cup"
     },
     {
@@ -25,7 +25,7 @@
     },
     {
       "name": "flour",
-      "quantity": "2 ½",
+      "quantity": "2.5",
       "unit": "cups"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "name": "salt",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "teaspoons"
     },
     {

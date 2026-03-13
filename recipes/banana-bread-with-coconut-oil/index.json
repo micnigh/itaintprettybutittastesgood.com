@@ -10,22 +10,22 @@
     },
     {
       "name": "baking powder",
-      "quantity": "1 ½",
+      "quantity": "1.5",
       "unit": "teaspoon"
     },
     {
       "name": "baking soda",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "teaspoon"
     },
     {
       "name": "cinnamon",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "teaspoon"
     },
     {
       "name": "nutmeg",
-      "quantity": "⅛",
+      "quantity": "0.125",
       "unit": "teaspoon"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "name": "mashed banana",
-      "quantity": "1 ½",
+      "quantity": "1.5",
       "unit": "cups"
     },
     {
@@ -45,12 +45,12 @@
     },
     {
       "name": "coconut oil (melted)",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "cup"
     },
     {
       "name": "walnuts",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "cup"
     }
   ],

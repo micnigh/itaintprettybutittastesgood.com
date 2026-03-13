@@ -10,37 +10,37 @@
     },
     {
       "name": "sugar",
-      "quantity": "1 ¾",
+      "quantity": "1.75",
       "unit": "cups"
     },
     {
       "name": "water",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "cup"
     },
     {
       "name": "cinnamon",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "teaspoon"
     },
     {
       "name": "ground allspice",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "teaspoon"
     },
     {
       "name": "salt",
-      "quantity": "⅛",
+      "quantity": "0.125",
       "unit": "teaspoon"
     },
     {
       "name": "ground ginger",
-      "quantity": "⅛",
+      "quantity": "0.125",
       "unit": "teaspoon"
     },
     {
       "name": "ground cloves",
-      "quantity": "⅛",
+      "quantity": "0.125",
       "unit": "teaspoon"
     }
   ],

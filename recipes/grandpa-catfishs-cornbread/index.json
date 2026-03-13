@@ -6,37 +6,37 @@
     {
       "name": "Cornmeal",
       "quantity": "1",
-      "unit": "cup"
+      "unit": "cups"
     },
     {
       "name": "Flour",
       "quantity": "1",
-      "unit": "cup"
+      "unit": "cups"
     },
     {
       "name": "Baking Powder",
       "quantity": "1",
-      "unit": "Tbs"
+      "unit": "tablespoons"
     },
     {
       "name": "Sugar",
-      "quantity": "¼",
-      "unit": "cup"
+      "quantity": "0.25",
+      "unit": "cups"
     },
     {
       "name": "salt",
-      "quantity": "½",
-      "unit": "Tbs"
+      "quantity": "0.5",
+      "unit": "tablespoons"
     },
     {
       "name": "Oil or melted butter",
-      "quantity": "¼",
-      "unit": "cup"
+      "quantity": "0.25",
+      "unit": "cups"
     },
     {
       "name": "milk",
-      "quantity": "¾",
-      "unit": "cup"
+      "quantity": "1",
+      "unit": "cups"
     },
     {
       "name": "egg",

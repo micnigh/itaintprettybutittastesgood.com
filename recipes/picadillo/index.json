@@ -9,27 +9,27 @@
       "unit": "lb"
     },
     {
-      "name": "onion",
-      "quantity": "½",
+      "name": "onion diced",
+      "quantity": "0.5",
       "unit": "cup"
     },
     {
-      "name": "green bell pepper",
+      "name": "green bell pepper diced",
       "quantity": "1",
       "unit": null
     },
     {
-      "name": "medium carrots",
+      "name": "medium carrots diced",
       "quantity": "4",
       "unit": null
     },
     {
-      "name": "potato",
+      "name": "potato diced",
       "quantity": "1",
       "unit": "cups"
     },
     {
-      "name": "garlic",
+      "name": "garlic minced",
       "quantity": "4",
       "unit": "cloves"
     },
@@ -40,7 +40,7 @@
     },
     {
       "name": "beef broth",
-      "quantity": "1 ½",
+      "quantity": "1.5",
       "unit": "cup"
     },
     {
@@ -50,7 +50,7 @@
     },
     {
       "name": "ground black pepper",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "teaspoon"
     },
     {

@@ -5,56 +5,56 @@
   "ingredients": [
     {
       "name": "flour",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "cup"
     },
     {
       "name": "sugar",
       "quantity": "1",
-      "unit": "Tbs"
+      "unit": "tablespoon"
     },
     {
-      "name": "eggs",
+      "name": "large eggs",
       "quantity": "2",
       "unit": null
     },
     {
       "name": "half and half",
-      "quantity": "⅔",
+      "quantity": "0.67",
       "unit": "cup"
     },
     {
       "name": "vanilla",
       "quantity": "1",
-      "unit": "Tsp"
+      "unit": "teaspoon"
     },
     {
       "name": "butter",
       "quantity": "2",
-      "unit": "Tbs"
+      "unit": "tablespoons"
     },
     {
       "name": "apples",
-      "quantity": "1 ¼",
+      "quantity": "1.25",
       "unit": "lbs"
     },
     {
       "name": "brown sugar",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "cup"
     },
     {
       "name": "cinnamon",
-      "quantity": "¼",
-      "unit": "tsp"
+      "quantity": "0.25",
+      "unit": "teaspoon"
     },
     {
-      "name": "lemon Juice",
+      "name": "lemon juice",
       "quantity": "1",
-      "unit": "tsp"
+      "unit": "teaspoon"
     },
     {
-      "name": "Confectioners sugar",
+      "name": "confectioners sugar",
       "quantity": null,
       "unit": null
     }

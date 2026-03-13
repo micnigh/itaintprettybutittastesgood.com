@@ -9,43 +9,43 @@
       "unit": "cups"
     },
     {
-      "name": "Black beans",
-      "quantity": "1",
-      "unit": "can 15 oz"
+      "name": "black beans, drained and rinsed",
+      "quantity": "15",
+      "unit": "oz"
     },
     {
-      "name": "large fresh tomato",
+      "name": "large fresh tomato, chopped",
       "quantity": "1",
       "unit": null
     },
     {
-      "name": "red pepper",
-      "quantity": "¾",
-      "unit": "cup"
+      "name": "red pepper, chopped",
+      "quantity": "0.75",
+      "unit": "cups"
     },
     {
-      "name": "red onion",
-      "quantity": "½",
-      "unit": "cup"
+      "name": "red onion, chopped",
+      "quantity": "0.5",
+      "unit": "cups"
     },
     {
       "name": "italian dressing",
-      "quantity": "½",
-      "unit": "cup"
+      "quantity": "0.5",
+      "unit": "cups"
     },
     {
       "name": "fresh minced cilantro",
-      "quantity": "¼",
-      "unit": "cup"
+      "quantity": "0.25",
+      "unit": "cups"
     },
     {
       "name": "hot pepper sauce",
-      "quantity": "¾",
+      "quantity": "0.75",
       "unit": "tsp"
     },
     {
       "name": "garlic powder or fresh garlic",
-      "quantity": "½",
+      "quantity": "0.5",
       "unit": "tsp"
     }
   ],

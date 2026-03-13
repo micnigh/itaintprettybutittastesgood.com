@@ -5,7 +5,7 @@
   "ingredients": [
     {
       "name": "butter",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "lb"
     },
     {
@@ -15,27 +15,32 @@
     },
     {
       "name": "ground cinnamon",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "tsp"
     },
     {
       "name": "ground nutmeg",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "tsp"
     },
     {
       "name": "ground cloves",
-      "quantity": "¼",
+      "quantity": "0.25",
       "unit": "tsp"
     },
     {
+      "name": "batter",
+      "quantity": "1 heaping",
+      "unit": "tablespoon"
+    },
+    {
       "name": "dark rum",
-      "quantity": "1 ½",
+      "quantity": "1.5",
       "unit": "oz"
     },
     {
-      "name": "rum flavoring",
-      "quantity": "1 ½",
+      "name": "fum flavoring",
+      "quantity": "1.5",
       "unit": "oz"
     },
     {
