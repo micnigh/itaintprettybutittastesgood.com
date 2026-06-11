@@ -1,5 +1,4 @@
 import { promises as fs } from 'fs'
-import path from 'path'
 import 'dotenv/config'
 import PQueue from 'p-queue'
 import {
@@ -8,11 +7,11 @@ import {
   FOLDER_ID,
   CACHE_DIR,
   RECIPES_DIR,
-  Recipe,
 } from './fetch-data/config'
 import { authorize, listDocsRecursive } from './fetch-data/google-api'
 import { processDoc } from './fetch-data/recipe-processor'
 import { Queues } from './fetch-data/recipe-processor'
+import { generateRecipesJson } from './generate-recipes-json'
 
 // SETUP INSTRUCTIONS
 // For detailed setup instructions, see README.md in the project root.
@@ -98,21 +97,7 @@ async function main() {
 
   await docProcessingQueue.onIdle()
 
-  // Combine all recipes into a single file for the app
-  const allRecipes: Recipe[] = []
-  const recipeDirs = await fs.readdir(RECIPES_DIR, { withFileTypes: true })
-  for (const recipeDir of recipeDirs) {
-    if (recipeDir.isDirectory()) {
-      const content = await fs.readFile(
-        path.join(RECIPES_DIR, recipeDir.name, 'index.json'),
-        'utf-8'
-      )
-      allRecipes.push(JSON.parse(content))
-    }
-  }
-
-  const finalOutputPath = path.join(process.cwd(), 'src', 'recipes.json')
-  await fs.writeFile(finalOutputPath, JSON.stringify(allRecipes, null, 2))
+  await generateRecipesJson({ recipesDir: RECIPES_DIR })
 
   console.log(`Successfully processed ${docFiles.length} recipes.`)
 }

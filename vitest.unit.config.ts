@@ -10,7 +10,7 @@ export default mergeConfig(
       globals: true,
       environment: 'jsdom',
       setupFiles: ['./src/test-setup.ts'],
-      include: ['src/**/*.unit.test.{ts,tsx}'],
+      include: ['src/**/*.unit.test.{ts,tsx}', 'scripts/**/*.unit.test.ts'],
     },
     resolve: {
       alias: {
