@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "tsx scripts/generate-recipes-json.ts",
     "build": "vite build",
     "format": "prettier --write .",
     "preview": "vite preview",
