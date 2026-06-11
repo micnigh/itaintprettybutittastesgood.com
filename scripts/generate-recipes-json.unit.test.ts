@@ -40,7 +40,9 @@ describe('generateRecipesJson', () => {
     )
 
     const recipes = await generateRecipesJson({ recipesDir, outputPath })
-    const output = JSON.parse(await fs.readFile(outputPath, 'utf-8')) as Recipe[]
+    const output = JSON.parse(
+      await fs.readFile(outputPath, 'utf-8')
+    ) as Recipe[]
 
     expect(recipes.map(({ slug }) => slug)).toEqual(['a-recipe', 'z-recipe'])
     expect(output.map(({ slug }) => slug)).toEqual(['a-recipe', 'z-recipe'])
