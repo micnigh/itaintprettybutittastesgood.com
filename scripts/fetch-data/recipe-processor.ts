@@ -54,7 +54,7 @@ async function loadImageGenerationExtras(
   return result
 }
 
-async function findExistingGeneratedHero(
+export async function findExistingGeneratedHero(
   recipeDir: string
 ): Promise<string | null> {
   const entries = await fs.readdir(recipeDir, { withFileTypes: true })
