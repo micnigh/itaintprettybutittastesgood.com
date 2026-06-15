@@ -18,7 +18,30 @@ The system fetches recipes from Google Docs, processes them, and generates a sta
     - Ingredients (parsed with Gemini AI into structured data)
     - Metadata (from YAML in the document description)
 3. **Generate**: If no images are found in a recipe, a hero image is generated using Gemini AI
-4. **Build**: All processed recipes are combined into a single JSON file and the React site is built
+4. **Build**: Per-recipe JSON under `public/recipes/<slug>/index.json` is aggregated into `src/recipes.json`, then the React site is built
+
+### Local recipe bundle (`src/recipes.json`)
+
+`src/recipes.json` is gitignored. It is regenerated automatically before `dev`, `build`, `typecheck`, and tests via the `prepare-recipes` script (reads every `public/recipes/*/index.json`).
+
+To regenerate manually:
+
+```sh
+pnpm prepare-recipes
+```
+
+After `pnpm install`, you can run `pnpm dev` or `pnpm prepare-recipes` — no Google credentials required when committed recipe data already exists under `public/recipes/`.
+
+### Hero image behavior
+
+When `pnpm fetch-data` processes a recipe:
+
+- **Reuse first**: If `index.json` references a hero image file that exists on disk, or a `generated-hero.*` file is present in the recipe directory, that image is kept — Gemini is not called again.
+- **Doc images**: If the Google Doc contains images, the first downloaded image becomes the hero.
+- **Generate**: Only when no reusable hero exists and the doc has no images does the pipeline call Gemini to create `generated-hero.<ext>`.
+- **Force regeneration**: Delete the hero file from `public/recipes/<slug>/` (and clear the `heroImage` field in `index.json` if needed), then run `pnpm fetch-data` or `pnpm fetch-data:clean`.
+
+Optional prompt steering lives under `cache/<slug>/` (see below).
 
 ### Optional: extra image-generation input (cache per slug)
 
@@ -66,6 +89,7 @@ The Gemini API is used for ingredient parsing and image generation:
 
 ### Data Processing
 
+- `pnpm prepare-recipes` - Aggregate `public/recipes/*/index.json` into `src/recipes.json` (also runs automatically before dev/build/test)
 - `pnpm fetch-data` - Fetch and process recipes from Google Docs (uses cache)
 - `pnpm fetch-data:clean` - Fetch data without using cache (forces full reprocessing)
 
