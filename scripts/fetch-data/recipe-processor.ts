@@ -13,6 +13,7 @@ import {
   buildImagePrompt,
   type ImageGenerationExtras,
 } from './gemini'
+import { findExistingGeneratedHero } from './hero-image'
 
 interface Queues {
   googleDocQueue: PQueue
@@ -21,8 +22,6 @@ interface Queues {
 }
 
 export type { Queues }
-
-const GENERATED_HERO_PREFIX = 'generated-hero.'
 
 const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif'])
 
@@ -52,16 +51,6 @@ async function loadImageGenerationExtras(
     // Dir missing or unreadable; ignore
   }
   return result
-}
-
-async function findExistingGeneratedHero(
-  recipeDir: string
-): Promise<string | null> {
-  const entries = await fs.readdir(recipeDir, { withFileTypes: true })
-  const found = entries.find(
-    (e) => e.isFile() && e.name.startsWith(GENERATED_HERO_PREFIX)
-  )
-  return found ? found.name : null
 }
 
 export async function processDoc(
