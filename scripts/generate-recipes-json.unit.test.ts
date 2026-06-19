@@ -47,4 +47,36 @@ describe('generateRecipesJson', () => {
     expect(recipes.map(({ slug }) => slug)).toEqual(['a-recipe', 'z-recipe'])
     expect(output.map(({ slug }) => slug)).toEqual(['a-recipe', 'z-recipe'])
   })
+
+  it('writes empty array when recipes directory has no recipe folders', async () => {
+    const recipesDir = path.join(tempDir, 'public', 'recipes')
+    const outputPath = path.join(tempDir, 'src', 'recipes.json')
+
+    await fs.mkdir(recipesDir, { recursive: true })
+    await fs.writeFile(path.join(recipesDir, 'README.txt'), 'not a recipe')
+
+    const recipes = await generateRecipesJson({ recipesDir, outputPath })
+    const output = JSON.parse(
+      await fs.readFile(outputPath, 'utf-8')
+    ) as Recipe[]
+
+    expect(recipes).toEqual([])
+    expect(output).toEqual([])
+  })
+
+  it('ignores non-directory entries in recipes folder', async () => {
+    const recipesDir = path.join(tempDir, 'public', 'recipes')
+    const outputPath = path.join(tempDir, 'src', 'recipes.json')
+
+    await fs.mkdir(path.join(recipesDir, 'solo-recipe'), { recursive: true })
+    await fs.writeFile(
+      path.join(recipesDir, 'solo-recipe', 'index.json'),
+      JSON.stringify(recipe('solo-recipe', 'Solo Recipe'))
+    )
+    await fs.writeFile(path.join(recipesDir, 'loose.json'), '{}')
+
+    const recipes = await generateRecipesJson({ recipesDir, outputPath })
+
+    expect(recipes.map(({ slug }) => slug)).toEqual(['solo-recipe'])
+  })
 })
