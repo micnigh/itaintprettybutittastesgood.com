@@ -13,16 +13,10 @@ Family recipe collection site (React SPA + static data). No backend, database, o
 After `pnpm install`, regenerate it from committed per-recipe JSON under `public/recipes/`:
 
 ```bash
-node -e "
-const fs = require('fs');
-const path = require('path');
-const recipesDir = path.join('public', 'recipes');
-const allRecipes = fs.readdirSync(recipesDir, { withFileTypes: true })
-  .filter((d) => d.isDirectory())
-  .map((d) => JSON.parse(fs.readFileSync(path.join(recipesDir, d.name, 'index.json'), 'utf-8')));
-fs.writeFileSync(path.join('src', 'recipes.json'), JSON.stringify(allRecipes, null, 2));
-"
+pnpm prepare-recipes
 ```
+
+This runs automatically before `dev`, `build`, `typecheck`, and tests (`predev` / `prebuild` / `pretest` hooks in `package.json`).
 
 To refresh data from Google Docs (optional), use `pnpm fetch-data` with `credentials.json` and `GEMINI_API_KEY` — see `README.md`.
 
