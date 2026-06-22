@@ -113,6 +113,18 @@ The Gemini API is used for ingredient parsing and image generation:
 
 - `pnpm deploy` - Build and deploy to GitHub Pages
 
+## Site behavior
+
+The React app reads bundled `src/recipes.json` at build time — no runtime API.
+
+### Search
+
+The header search box filters the home page list by **recipe title and metadata tags only** (`src/utils/recipe.ts` → `filterRecipes`). It does not search ingredients, instructions, or markdown body text.
+
+### Servings and ingredient scaling
+
+On a recipe page, changing the servings control scales ingredient quantities proportionally. Parsing supports unicode fractions (e.g. `½`) and range strings like `1-2 cups` (lower bound used). Small quantities auto-convert units for readability (e.g. under ¼ cup → tablespoons, under 1 tablespoon → teaspoons) via `autoConvertUnits` in `src/utils/recipe.ts`.
+
 ## Troubleshooting
 
 ### Google Drive API Setup
