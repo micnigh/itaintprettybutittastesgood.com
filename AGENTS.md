@@ -20,6 +20,12 @@ This runs automatically before `dev`, `build`, `typecheck`, and tests (`predev` 
 
 To refresh data from Google Docs (optional), use `pnpm fetch-data` with `credentials.json` and `GEMINI_API_KEY` — see `README.md`.
 
+### Site behavior (runtime)
+
+Recipe list search (`src/utils/recipe.ts` → `filterRecipes`) matches **title and tags only** — not ingredients or markdown body text.
+
+On a recipe page, servings scaling uses `useRecipeServings` (`src/hooks/useRecipeServings.ts`): metadata servings are parsed via the first number in the string (defaults to 1). Ingredient quantities scale by `servingsFraction / originalServings`. Small amounts auto-convert for display (`autoConvertUnits`: cups → tablespoons below ¼ cup; tablespoons → teaspoons below 1 tbsp).
+
 ### Services
 
 | Service | Command | URL |
